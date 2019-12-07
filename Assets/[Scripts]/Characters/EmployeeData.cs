@@ -7,9 +7,9 @@ namespace Characters
 
     public class EmployeeData : CharacterDataBase
     {
-        
-        [ConfigSelector(paramsSetKey = "EmployeeType")]
-     
+
+        [ConfigSelector(paramsSetKey = GlobalConfig.EmployeeTypeSelectorKey)]
+
         public string employeeType;
         public float salary;
         [RangeAttribute(0.0f,100.0f)]

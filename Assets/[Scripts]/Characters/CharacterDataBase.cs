@@ -9,8 +9,8 @@ namespace Characters
     public  class CharacterDataBase : ScriptableObject
     {
         public string id;
-        //[CharacterTypeSelector]
-        protected  string characterType;
+        [ConfigSelector(paramsSetKey = GlobalConfig.CharacterTypeSelectorKey)]
+        protected string characterType;
         //Name + surname ?
         public string displayName;
         public GameObject prefab;

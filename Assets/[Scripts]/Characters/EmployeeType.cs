@@ -9,7 +9,7 @@ namespace Characters
     {
         public string id;
 
-        [ConfigSelector(paramsSetKey =GlobalConfig.EmployeeParameter)]
+        [ConfigSelector(paramsSetKey =GlobalConfig.EmployeeParameterSelectorKey)]
         public List<string> affectedParameters;
     }
 }
