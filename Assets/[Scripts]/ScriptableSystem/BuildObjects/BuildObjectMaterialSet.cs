@@ -12,10 +12,10 @@ namespace ScriptableSystems
     {
         public string id;
 
-        [ConfigSelector(paramsSetKey = GlobalConfig.MaterialTypeSelectorKey)]
+        [ConfigSelector(paramsSetKey = StringDefines.MaterialTypeSelectorKey)]
         public string materialType;
 
-        [ConfigSelector(paramsSetKey = GlobalConfig.ObjectTypeSelectorKey)]
+        [ConfigSelector(paramsSetKey = StringDefines.ObjectTypeSelectorKey)]
 
         public string objectType;
 

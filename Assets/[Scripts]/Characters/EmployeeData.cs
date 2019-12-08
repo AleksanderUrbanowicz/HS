@@ -8,7 +8,7 @@ namespace Characters
     public class EmployeeData : CharacterDataBase
     {
 
-        [ConfigSelector(paramsSetKey = GlobalConfig.EmployeeTypeSelectorKey)]
+        [ConfigSelector(paramsSetKey = StringDefines.EmployeeTypeSelectorKey)]
 
         public string employeeType;
         public float salary;

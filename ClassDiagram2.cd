@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Characters.CharacterDataBase">
+    <Position X="1.5" Y="8.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAgAAAAAAAAICAAAAAAAAAAAAAAIAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\Characters\CharacterDataBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Characters.CharacterType" Collapsed="true">
+    <Position X="17.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\Characters\CharacterType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Characters.EmployeeData">
+    <Position X="0.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAgAAAAAAQAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Characters\EmployeeData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Characters.EmployeeType" Collapsed="true">
+    <Position X="17.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\Characters\EmployeeType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Characters.GuestData">
+    <Position X="2.75" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAARAEAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Characters\GuestData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Characters.GuestType" Collapsed="true">
+    <Position X="15.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\Characters\GuestType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player.PlayerData" Collapsed="true">
+    <Position X="22.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Characters\PlayerData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.ConfigBase">
+    <Position X="12" Y="5.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAEAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Configs\ConfigBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.ConfigSelectorAttribute" Collapsed="true">
+    <Position X="19" Y="1.5" Width="2" />
+    <NestedTypes>
+      <Delegate Name="EditorTools.ConfigSelectorAttribute.GetStringList" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\[Scripts]\Configs\ConfigSelectorAttribute.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAACAACAAAAAAAAAAAAQAAAAAAAAAAAAgACAAACAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Configs\ConfigSelectorAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.BuildObjectStaticParameterTypeSelectorDrawer" Collapsed="true">
+    <Position X="24.25" Y="0.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Configs\ConfigSelectorAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.DynamicParameter">
+    <Position X="9.5" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Configs\DynamicParameter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.GameSettings" Collapsed="true">
+    <Position X="26" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IBAAAgCACAAAAABAgIQACAAAAAGAAMgAAACIQAAACBA=</HashCode>
+      <FileName>Assets\[Scripts]\Configs\GameSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.GlobalConfig">
+    <Position X="11.5" Y="7.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>ACAJIhAJOBEKAARAAIIABAAgAAAAgBCEAAIACQAACEg=</HashCode>
+      <FileName>Assets\[Scripts]\Configs\GlobalConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.ParameterBase">
+    <Position X="9.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\Configs\ParameterBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.ParamsList" Collapsed="true">
+    <Position X="19" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\Configs\ParamsList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.StringDefines" Collapsed="true">
+    <Position X="26" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAiAgCAAAAAAAAAAAAAABAAAEGQgQIAEAAAAlBAEAA=</HashCode>
+      <FileName>Assets\[Scripts]\Configs\StringDefines.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.EditorColors" Collapsed="true">
+    <Position X="22.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\EditorTools\EditorColors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.EditorColorsCustomizer" Collapsed="true">
+    <Position X="24.25" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\EditorTools\EditorColors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.EditorList" Collapsed="true">
+    <Position X="26" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\EditorTools\EditorList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.EditorStaticTools" Collapsed="true">
+    <Position X="15.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAIAAAIAAAAAAAAAAAAAAAAAAAABCAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\EditorTools\EditorStaticTools.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.DataSystemMonoBehaviour" Collapsed="true">
+    <Position X="20.75" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQIAAAAAIAABABAAIAAABAAAEAAAAAAEAACAABAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\EditorTools\DataSystemMonoBehaviour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.BuildSystemRaycast" Collapsed="true">
+    <Position X="15.5" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQABIAAAAAAQAAAAAAAAAAASoQQAAkAABBCAAAAIAA=</HashCode>
+      <FileName>Assets\[Scripts]\Gameplay\BuildSystemRaycast.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.GameEventListener" Collapsed="true">
+    <Position X="22.5" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAABAAAAAggAAAAIAAAAAAAACAA=</HashCode>
+      <FileName>Assets\[Scripts]\Gameplay\GameEventListener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.RaycastExecutor" Collapsed="true">
+    <Position X="26" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAQAAAIAAAAAAACIAQAAEAABBCBAAAIAA=</HashCode>
+      <FileName>Assets\[Scripts]\Gameplay\RaycastExecutor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.SpawnerHelper" Collapsed="true">
+    <Position X="24.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAQAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Gameplay\SpawnerHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.BuildObjectCategoryData" Collapsed="true">
+    <Position X="15.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystem\BuildObjects\BuildObjectCategoryData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.BuildObjectData">
+    <Position X="8.75" Y="12" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAQCAAAAgUAMAAIAAgAAAAQDAAAAgAAAAAACgA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystem\BuildObjects\BuildObjectData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.BuildObjectListData" Collapsed="true">
+    <Position X="19" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystem\BuildObjects\BuildObjectListData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.BuildObjectMaterialData" Collapsed="true">
+    <Position X="20.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAACAAAIAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystem\BuildObjects\BuildObjectMaterialData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.BuildObjectMaterialSet" Collapsed="true">
+    <Position X="22.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystem\BuildObjects\BuildObjectMaterialSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.ObjectData" Collapsed="true">
+    <Position X="17.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAIAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystem\BuildObjects\ObjectData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.BuildSystemMonoBehaviour" Collapsed="true">
+    <Position X="26" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>yQSUBCAACCAFKEAACCiAEQJKYAACo4kAUhISgCBEICI=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystem\BuildSystemMonoBehaviour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.GameEvent" Collapsed="true">
+    <Position X="20.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgIAAAAAAAAAAAAAAAAAgAAAAAAQAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystem\GameEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.ScriptableBuildSystem">
+    <Position X="3.5" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AACAADAAAAABEQAAAAAAEAAAAAAAAIAAgpJAAACAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystem\ScriptableBuildSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.ScriptableDataSystem">
+    <Position X="6.25" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAACAAAAAAAAAAAgAAAAgAAAAAAQ=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystem\ScriptableDataSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.ScriptableEvent" Collapsed="true">
+    <Position X="15.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgIAAAAAAAAAAAAAAAAAgAAAAAAQAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystem\ScriptableEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.ScriptableEventEditor" Collapsed="true">
+    <Position X="17.25" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystem\ScriptableEventEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.ScriptableEventListener" Collapsed="true">
+    <Position X="19" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAADAAAAAAAABAAAAAggAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystem\ScriptableEventListener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.ScriptableSelectSystem">
+    <Position X="0.75" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAQIAAAAEAAAQAAgAAAAAAAACAAAAAAABBAQAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystem\ScriptableSelectSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.ScriptableSystem">
+    <Position X="3.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAIQAAAAAAAAQAAAAAAAAAAAAAAAAAEgA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystem\ScriptableSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.ScriptableSystemManager" Collapsed="true">
+    <Position X="20.75" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAEAAAAAAAAAAAAAAAAAAAAAAAAACAABAA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystem\ScriptableSystemManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.SelectSystemMonoBehaviour" Collapsed="true">
+    <Position X="22.5" Y="4.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>QAQABAEAAABACEAAgAAAAAAAACAAAMAIARBCQAAAABY=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystem\SelectSystemMonoBehaviour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.ThemeUI">
+    <Position X="7.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\[Scripts]\UI\ThemeUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.ThemeUIButton">
+    <Position X="6.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAFAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\UI\ThemeUIButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.ThemeUIData" Collapsed="true">
+    <Position X="15.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACABAEAAUAAAAAQAAAEAAAABAAAAAAAIggI=</HashCode>
+      <FileName>Assets\[Scripts]\UI\ThemeUIData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.ThemeUIPanel">
+    <Position X="8.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\UI\ThemeUIPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.ThemeUISpawner" Collapsed="true">
+    <Position X="17.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAQAAAAAAAAAEAAAAAAAIAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\UI\ThemeUISpawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EasySurvivalScripts.FPSAnimator_SMB" Collapsed="true">
+    <Position X="19" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Gameplay\FPSAnimator_SMB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EasySurvivalScripts.PlayerCamera" Collapsed="true">
+    <Position X="20.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQLAAAAEqKwAAAAAAAAAAAAAQYAARAEACQAEgQAAEA=</HashCode>
+      <FileName>Assets\[Scripts]\Gameplay\PlayerCamera.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EasySurvivalScripts.PlayerMovement" Collapsed="true">
+    <Position X="24.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QkQAKEAAQiAAASAAIIwIEBgEAAMAKAAAEABACAIAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Gameplay\PlayerMovement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gameplay.GameManager" Collapsed="true">
+    <Position X="24.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQIAAAAASAEAAAQAAIAABAAAADAAAAAAIAAQIAABUA=</HashCode>
+      <FileName>Assets\[Scripts]\Gameplay\GameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

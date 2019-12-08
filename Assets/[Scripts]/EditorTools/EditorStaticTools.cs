@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace EditorTools
 {
+
     public class EditorStaticTools
     {
 #if UNITY_EDITOR
@@ -70,20 +71,43 @@ namespace EditorTools
 
         public static T GetFirstInstance<T>() where T : ScriptableObject
         {
-            //Debug.LogWarning("typeof(T): " + typeof(T));
-           // Debug.LogWarning("typeof(T).name: " + typeof(T).Name);
-            string guid = AssetDatabase.FindAssets("t:" + typeof(T).Name)[0];
+          //  Debug.LogWarning("typeof(T): " + typeof(T));
+            //Debug.LogWarning("typeof(T).name: " + typeof(T).Name);
+            string[] assets = AssetDatabase.FindAssets("t:" + typeof(T).Name);
             T a;
+            string guid="";
+            if (assets.Length > 0)
+            {
+                 guid = AssetDatabase.FindAssets("t:" + typeof(T).Name)[0];
+            }
 
-            string path = AssetDatabase.GUIDToAssetPath(guid);
-            a = AssetDatabase.LoadAssetAtPath<T>(path);
+                string path = AssetDatabase.GUIDToAssetPath(guid);
+                a = AssetDatabase.LoadAssetAtPath<T>(path);
+
+            
+           
 
 
             return a;
 
         }
 
+        public static class EditorColorsCustomizer
+        {
 
+            public static Color GetColor(ColorPurpose _purpose, ref Color[] _colorsSet)
+            {
+
+                int colorPurposeInt = (int)(_purpose);
+                if (_colorsSet != null && _colorsSet.Length > colorPurposeInt)
+                {
+
+                    return _colorsSet[colorPurposeInt];
+                }
+                return Color.white;
+            }
+
+        }
 
 
         public static string[] GetAllScenes()
@@ -105,4 +129,61 @@ namespace EditorTools
 #endif
     }
 
+
+    public static class EditorList
+    {
+        public static void Show(SerializedProperty list, EditorListOption options = EditorListOption.Default)
+        {
+
+            bool
+                showListLabel = (options & EditorListOption.ListLabel) != 0,
+                showListSize = (options & EditorListOption.ListSize) != 0;
+
+            if (showListLabel)
+            {
+                EditorGUILayout.PropertyField(list);
+                EditorGUI.indentLevel += 1;
+            }
+
+
+            if (!showListLabel || list.isExpanded)
+            {
+                if (showListSize)
+                {
+
+                    EditorGUILayout.PropertyField(list.FindPropertyRelative("Array.size"));
+
+                }
+                ShowElements(list, options);
+
+
+            }
+
+            if (showListLabel)
+            {
+                EditorGUI.indentLevel -= 1;
+            }
+        }
+
+
+
+        private static void ShowElements(SerializedProperty list, EditorListOption options)
+        {
+            bool showElementLabels = (options & EditorListOption.ElementLabels) != 0;
+
+            for (int i = 0; i < list.arraySize; i++)
+            {
+                if (showElementLabels)
+                {
+                    EditorGUILayout.PropertyField(list.GetArrayElementAtIndex(i));
+                }
+                else
+                {
+                    EditorGUILayout.PropertyField(list.GetArrayElementAtIndex(i), GUIContent.none);
+                }
+            }
+        }
+
+
+    }
 }

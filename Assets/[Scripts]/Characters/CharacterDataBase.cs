@@ -1,5 +1,6 @@
 ﻿using EditorTools;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Characters
@@ -9,16 +10,20 @@ namespace Characters
     public  class CharacterDataBase : ScriptableObject
     {
         public string id;
-        [ConfigSelector(paramsSetKey = GlobalConfig.CharacterTypeSelectorKey)]
-        protected string characterType;
+        //[ConfigSelector(paramsSetKey = StringDefines.CharacterTypeSelectorKey)]
+        protected  string characterType;
         //Name + surname ?
         public string displayName;
         public GameObject prefab;
 
+        public List<ParameterBase> staticParameters;
+        public List<DynamicParameter> dynamicParameters;
+
+
         public CharacterDataBase()
         {
 
-            characterType = "Employee";
+            characterType = "CharacterDataBase";
         }
     }
 }

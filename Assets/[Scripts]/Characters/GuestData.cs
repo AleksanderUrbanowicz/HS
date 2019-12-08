@@ -8,11 +8,19 @@ namespace Characters
     [CreateAssetMenu(fileName = "GuestData", menuName = "Characters/Guest Data")]
     public class GuestData : CharacterDataBase
     {
-        [ConfigSelector(paramsSetKey = GlobalConfig.GuestTypeSelectorKey)]
+        [ConfigSelector(paramsSetKey = StringDefines.GuestTypeSelectorKey)]
 
         public string GuestType;
+        [RangeAttribute(0.0f, 100.0f)]
+        public float generousity;
+        [RangeAttribute(0.0f, 100.0f)]
+        public float politeness;
+        
+      
+        //[ConfigSelector(paramsSetKey = StringDefines.GuestParameterSelectorKey)]
+
         //additional requirements, besides requirements based on GuestType
-        public List<string> requirements = new List<string>(); 
+        public List<ParameterBase> requirements = new List<ParameterBase>(); 
         
         public GuestData()
         {

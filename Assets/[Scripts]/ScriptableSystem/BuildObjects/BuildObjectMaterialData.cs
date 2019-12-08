@@ -12,7 +12,7 @@ namespace ScriptableSystems
         public Material defaultMaterial;
         public Texture2D dirtyMask, damagedMask;
 
-        [ConfigSelector(paramsSetKey = GlobalConfig.MaterialSetSelectorKey)]
+        [ConfigSelector(paramsSetKey = StringDefines.MaterialSetSelectorKey)]
         public string materialSet;
     }
 }

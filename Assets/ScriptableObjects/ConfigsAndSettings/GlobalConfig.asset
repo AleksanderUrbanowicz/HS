@@ -1,0 +1,261 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a52cb07654549b940b88d4db07098424, type: 3}
+  m_Name: GlobalConfig
+  m_EditorClassIdentifier: 
+  allSelectorParameters:
+  - Speed
+  - Skill
+  - Salary
+  - Comfort
+  - Hygiene
+  - Affordability
+  - Renown
+  - Personel
+  - Durability
+  - Cleanness
+  - Wood
+  - Cloth
+  - BuildObject1
+  - BuildObject2
+  - NewBuildObjectData 2
+  - NewBuildObjectData 3
+  - NewBuildObjectCategoryData
+  - NewBuildObjectListData
+  - NewGameEvent
+  - ScriptableSystemEvent
+  - ScriptableSystemEvent 1
+  - ScriptableSystemEvent 2
+  - ThemeUIData
+  - ThemeUIData 1
+  - BuildObjectMaterialSet
+  - EmployeeData1
+  - GuestData
+  - Maid
+  - ServiceWorker
+  - Waiter
+  - Furniture
+  - Default
+  - Pedantic
+  - Receptionist
+  - EmployeeData2
+  - EmployeeData3
+  - GuestData1
+  - Speed
+  - Skill
+  - Salary
+  - Comfort
+  - Hygiene
+  - Affordability
+  - Renown
+  - Personel
+  - Durability
+  - Cleanness
+  - Wood
+  - Cloth
+  - Speed
+  - Skill
+  - Salary
+  - Comfort
+  - Hygiene
+  - Affordability
+  - Renown
+  - Personel
+  - Durability
+  - Cleanness
+  - Wood
+  - Cloth
+  - Speed
+  - Skill
+  - Salary
+  - Comfort
+  - Hygiene
+  - Affordability
+  - Renown
+  - Personel
+  - Durability
+  - Cleanness
+  - Wood
+  - Cloth
+  selectorParameters:
+  - id: EmployeeParameter
+    parameters:
+    - Durability
+    - Cleanness
+    - Personel
+  - id: GuestParameter
+    parameters:
+    - Comfort
+    - Hygiene
+    - Affordability
+    - Renown
+    - Personel
+  - id: HotelParameter
+    parameters:
+    - Comfort
+    - Hygiene
+    - Affordability
+    - Renown
+    - Personel
+  - id: BuildObjectParameter
+    parameters:
+    - Durability
+    - Cleanness
+    - Hygiene
+  - id: BuildObject
+    parameters:
+    - BuildObject1
+    - BuildObject2
+    - NewBuildObjectData 2
+    - NewBuildObjectData 3
+  - id: BuildObjectCategory
+    parameters:
+    - NewBuildObjectCategoryData
+  - id: BuildObjectList
+    parameters:
+    - NewBuildObjectListData
+  - id: MaterialSet
+    parameters:
+    - BuildObjectMaterialSet
+  - id: GameEvent
+    parameters:
+    - NewGameEvent
+  - id: ThemeUIData
+    parameters:
+    - ThemeUIData
+    - ThemeUIData 1
+  - id: ScriptableEvent
+    parameters:
+    - ScriptableSystemEvent
+    - ScriptableSystemEvent 1
+    - ScriptableSystemEvent 2
+  - id: EmployeeType
+    parameters:
+    - Maid
+    - ServiceWorker
+    - Waiter
+    - Receptionist
+  - id: GuestType
+    parameters:
+    - Default
+    - Pedantic
+  - id: ObjectType
+    parameters:
+    - Furniture
+  - id: MaterialType
+    parameters:
+    - Wood
+    - Cloth
+  - id: ThemeUIData
+    parameters: []
+  - id: ScriptableEvent
+    parameters: []
+  - id: EmployeeType
+    parameters: []
+  - id: GuestType
+    parameters: []
+  - id: ObjectType
+    parameters: []
+  - id: MaterialType
+    parameters: []
+  - id: ThemeUIData
+    parameters: []
+  - id: ScriptableEvent
+    parameters: []
+  - id: EmployeeType
+    parameters: []
+  - id: GuestType
+    parameters: []
+  - id: ObjectType
+    parameters: []
+  - id: MaterialType
+    parameters: []
+  - id: ThemeUIData
+    parameters: []
+  - id: ScriptableEvent
+    parameters: []
+  - id: EmployeeType
+    parameters: []
+  - id: GuestType
+    parameters: []
+  - id: ObjectType
+    parameters: []
+  - id: MaterialType
+    parameters: []
+  anySelector: Speed
+  employeeDatas:
+  - {fileID: 11400000, guid: 52b4d5ea4b7eb42419699d87c22dcf9d, type: 2}
+  - {fileID: 11400000, guid: f329b2159e3194440a5dbe2f20eba70d, type: 2}
+  - {fileID: 11400000, guid: f4901df45e630724a9b28de64d0aeef2, type: 2}
+  guestDatas:
+  - {fileID: 11400000, guid: 078e8f5317cea384fa8ecca0ac5f8072, type: 2}
+  - {fileID: 11400000, guid: 7d43103e39970c04e86db9f10d1a84a5, type: 2}
+  characterDatas: []
+  buildObjects:
+  - {fileID: 11400000, guid: ae9e397c59aa98744bf0068ac197f5c0, type: 2}
+  - {fileID: 11400000, guid: 3b19c22db5266d842bc3ce64ff378ad7, type: 2}
+  - {fileID: 11400000, guid: fbac3ccc0b1a908408e3abfd136405ff, type: 2}
+  - {fileID: 11400000, guid: f1a645d4fc0dc1a4aa54d7685eb5aa2b, type: 2}
+  buildObjectCategories:
+  - {fileID: 11400000, guid: 829450335f094a44e99865da002e1edd, type: 2}
+  buildObjectLists:
+  - {fileID: 11400000, guid: 55649c043f053354787f492b97a82ecd, type: 2}
+  gameEvents:
+  - {fileID: 11400000, guid: 1efd9078093ea3f42b352ad3549ca619, type: 2}
+  scriptableEvents:
+  - {fileID: 11400000, guid: bc25fed80e8a0d249b62f005752fb52b, type: 2}
+  - {fileID: 11400000, guid: 08d415dc2c436f2479b5fa8f1cee933b, type: 2}
+  - {fileID: 11400000, guid: 2472e931eb48fac41a8ba465fcf645e7, type: 2}
+  uiThemes:
+  - {fileID: 11400000, guid: e919aef664dc2504288f1026640439d8, type: 2}
+  - {fileID: 11400000, guid: 5405a0ae12a5d974ab6ccbdb0a136e74, type: 2}
+  materialSets:
+  - {fileID: 11400000, guid: ec3780ad34cba364583ff0e11645292f, type: 2}
+  colorsSet:
+  - {r: 1, g: 1, b: 1, a: 0.7921569}
+  - {r: 0, g: 1, b: 0.10661459, a: 0.8862745}
+  - {r: 0.9811321, g: 0.9045425, b: 0.013883919, a: 0.85882354}
+  - {r: 1, g: 0.13217431, b: 0, a: 0.85882354}
+  - {r: 1, g: 1, b: 1, a: 0.9019608}
+  - {r: 0, g: 0, b: 0, a: 0.9019608}
+  guestColor: {r: 0, g: 0.2391901, b: 1, a: 0.7921569}
+  employeeColor: {r: 1, g: 0.94259167, b: 0, a: 0.7411765}
+  buildObjectColor: {r: 0, g: 0.7254902, b: 1, a: 0.5529412}
+  defaultColor: {r: 0, g: 0, b: 0, a: 1}
+  characterTabOpen: 0
+  colorsCustomizerTabOpen: 0
+  definitionsTabOpen: 0
+  objectsTabOpen: 1
+  employeeTypes:
+  - id: Maid
+    affectedParameters:
+    - Cleanness
+  - id: ServiceWorker
+    affectedParameters:
+    - Durability
+  - id: Waiter
+    affectedParameters:
+    - Personel
+  - id: Receptionist
+    affectedParameters:
+    - Personel
+  guestTypes:
+  - id: Default
+    requirements:
+    - id: Hygiene
+      value: 1
+    - id: Personel
+      value: 1
+  - id: Pedantic
+    requirements:
+    - id: Hygiene
+      value: 2

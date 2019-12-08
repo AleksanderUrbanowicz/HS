@@ -9,8 +9,8 @@ namespace Characters
     public class GuestType
     {
         public string id;
-        [ConfigSelector(paramsSetKey = GlobalConfig.GuestParameterSelectorKey)]
+        /// [ConfigSelector(paramsSetKey = StringDefines.GuestParameterSelectorKey)]
 
-        public List<string> requirements = new List<string>();
+        public List<ParameterBase> requirements;
     }
 }

@@ -11,7 +11,7 @@ namespace EditorTools
     public class ParamsList
     {
         public string id;
-        [ConfigSelector(paramsSetKey = GlobalConfig.AnyParameterSelectorKey)]
+        [ConfigSelector(paramsSetKey = StringDefines.AnyParameterSelectorKey)]
         public List<string> parameters;
 
 

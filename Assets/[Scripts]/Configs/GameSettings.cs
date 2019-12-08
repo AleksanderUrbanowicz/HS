@@ -17,65 +17,71 @@ namespace EditorTools
         private BuildObjectData[] allObjectsArray;
 
 
-        [ConfigSelector(paramsSetKey = GlobalConfig.CharacterTypeSelectorKey)]
 
-        public string characterType;
-
-
-
-        [ConfigSelector(paramsSetKey = GlobalConfig.EmployeeTypeSelectorKey)]
+        public ParameterBase parameterBase = new ParameterBase();
+        public DynamicParameter parameterdynamic = new DynamicParameter();
 
 
-        public string employeeType;
+        [ConfigSelector(paramsSetKey = StringDefines.EmployeeTypeSelectorKey)]
+public string employeeType;
 
-        [ConfigSelector(paramsSetKey = GlobalConfig.GuestTypeSelectorKey)]
+        [ConfigSelector(paramsSetKey = StringDefines.GuestTypeSelectorKey)]
 
 
 
         public string guestType;
-        [ConfigSelector(paramsSetKey = GlobalConfig.MaterialTypeSelectorKey)]
+        [ConfigSelector(paramsSetKey = StringDefines.MaterialTypeSelectorKey)]
 
           public string materialType;
 
-        [ConfigSelector(paramsSetKey = GlobalConfig.BuildObjectSelectorKey)]
+        [ConfigSelector(paramsSetKey = StringDefines.ObjectTypeSelectorKey)]
 
         public string objectType;
 
-        [ConfigSelector(paramsSetKey = GlobalConfig.MaterialSetSelectorKey)]
+        [ConfigSelector(paramsSetKey = StringDefines.MaterialSetSelectorKey)]
 
           public string materialSet;
 
-        [ConfigSelector(paramsSetKey = GlobalConfig.BuildObjectSelectorKey)]
+        [ConfigSelector(paramsSetKey = StringDefines.BuildObjectSelectorKey)]
 
 
         public string defaultBuildObject;
 
-        [ConfigSelector(paramsSetKey = GlobalConfig.BuildObjectCategorySelectorKey)]
+        [ConfigSelector(paramsSetKey = StringDefines.BuildObjectCategorySelectorKey)]
 
         public string BuildObjectCategoryData;
 
 
 
 
-        [ConfigSelector(paramsSetKey = GlobalConfig.GameEventSelectorKey)]
+        [ConfigSelector(paramsSetKey = StringDefines.GameEventSelectorKey)]
 
         public string gameEvent;
 
-        [ConfigSelector(paramsSetKey = GlobalConfig.ScriptableEventSelectorKey)]
+        [ConfigSelector(paramsSetKey = StringDefines.ScriptableEventSelectorKey)]
 
         public string scriptableEvent;
 
-        [ConfigSelector(paramsSetKey = GlobalConfig.ThemeUIDataSelectorKey)]
+        [ConfigSelector(paramsSetKey = StringDefines.ThemeUIDataSelectorKey)]
         public string uiThemeData;
 
 
 
-        [ConfigSelector(paramsSetKey = GlobalConfig.BuildObjectParameterSelectorKey)]
-        public string buildObjectDynamicParameterTypes;
+        [ConfigSelector(paramsSetKey = StringDefines.BuildObjectParameterSelectorKey)]
+        public string buildObjectParameterTypes;
 
-        [ConfigSelector(paramsSetKey = GlobalConfig.HotelParameterSelectorKey)]
-
+        [ConfigSelector(paramsSetKey = StringDefines.HotelParameterSelectorKey)]
+      
         public string hotelParameterType;
+
+
+        [ConfigSelector(paramsSetKey = StringDefines.AnyParameterSelectorKey)]
+
+        public string anyParameterType;
+
+//[ConfigSelector(paramsSetKey = StringDefines.EmployeeSelectorKey)]
+
+//public string employee;
 
         private void OnEnable()
         {

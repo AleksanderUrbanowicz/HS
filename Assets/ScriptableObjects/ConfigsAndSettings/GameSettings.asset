@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79db107851c06e429798fbc08f3d974, type: 3}
+  m_Name: GameSettings
+  m_EditorClassIdentifier: 
+  scriptableBuildSystem: {fileID: 0}
+  scriptableDataSystem: {fileID: 0}
+  scriptableSelectSystem: {fileID: 0}
+  parameterBase:
+    id: sdb
+    value: 7
+  parameterdynamic:
+    id: sbs
+    value: 4
+    changeRate: 0
+  employeeType: Maid
+  guestType: Default
+  materialType: Wood
+  objectType: Furniture
+  materialSet: BuildObjectMaterialSet
+  defaultBuildObject: BuildObject1
+  BuildObjectCategoryData: NewBuildObjectCategoryData
+  gameEvent: NewGameEvent
+  scriptableEvent: ScriptableSystemEvent
+  uiThemeData: ThemeUIData
+  buildObjectParameterTypes: Durability
+  hotelParameterType: Comfort
+  anyParameterType: Speed
