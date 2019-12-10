@@ -17,6 +17,7 @@ namespace EditorTools
 
         public ParamsList(string _id, List<string> _parameters)
         {
+
             id = _id;
             parameters = _parameters;
 

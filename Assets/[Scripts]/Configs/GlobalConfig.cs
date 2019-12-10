@@ -20,156 +20,162 @@ namespace EditorTools
         /// //////////////////////////////////Settings/Selectors///////////////////////////////////////////////////////////
 
         new public const string Key = "GlobalConfig";
-        private  bool isInitialized;
-        
+        private bool isInitialized;
 
-        [ConfigSelector]
-        public string anySelector;
-
-        public static  string[] autoIncludeParams ={ "Receptionist","Waiter", "Maid", "Comfort","Hygiene", "Affordability", "Renown","Personel","Durability", "Cleanness","Wood", "Cloth"};
-
-      /// <summary>
-      /// //////////////////////////////////Scriptable Objects///////////////////////////////////////////////////////////
-      /// </summary>
-
-#if HIDE
-        [HideInInspector]
-        #endif
-        public List<EmployeeData> employeeDatas = new List<EmployeeData>();
-#if HIDE
-        [HideInInspector]
-#endif
-        public List<GuestData> guestDatas = new List<GuestData>();
-#if HIDE
-        [HideInInspector]
-#endif
-        public List<CharacterDataBase> characterDatas = new List<CharacterDataBase>();
-#if HIDE
-        [HideInInspector]
-#endif
-        public BuildObjectData[] buildObjects;
-#if HIDE
-        [HideInInspector]
-#endif
-        public BuildObjectCategoryData[] buildObjectCategories;
-#if HIDE
-        [HideInInspector]
-#endif
-        public BuildObjectListData[] buildObjectLists;
-#if HIDE
-        [HideInInspector]
-#endif
-        public GameEvent[] gameEvents;
-#if HIDE
-        [HideInInspector]
-#endif
-        public ScriptableEvent[] scriptableEvents;
-#if HIDE
-        [HideInInspector]
-#endif
-        public ThemeUIData[] uiThemes;
-#if HIDE
-        [HideInInspector]
-#endif
-        public BuildObjectMaterialSet[] materialSets;
+        bool initWithDefaultParameters;
+        public static string[] autoIncludeParams = { "Receptionist", "Waiter", "Maid", "Comfort", "Hygiene", "Affordability", "Renown", "Personel", "Durability", "Cleanness", "Wood", "Cloth" };
 
         /// <summary>
-        /// ////////////////////////////////////////Color Customizer////////////////////////////////////////////////////////
+        ///Scriptable Objects///////////////////////////////////////////////////////////
+        /// </summary>
+
+        [HideInInspector] public List<EmployeeData> employeeDatas = new List<EmployeeData>();
+        [HideInInspector] public List<GuestData> guestDatas = new List<GuestData>();
+        [HideInInspector] public List<CharacterDataBase> characterDatas = new List<CharacterDataBase>();
+        [HideInInspector] public BuildObjectData[] buildObjects;
+        [HideInInspector] public BuildObjectCategoryData[] buildObjectCategories;
+        [HideInInspector] public BuildObjectListData[] buildObjectLists;
+        [HideInInspector] public GameEvent[] gameEvents;
+        [HideInInspector] public ScriptableEvent[] scriptableEvents;
+        [HideInInspector] public ThemeUIData[] uiThemes;
+        [HideInInspector] public BuildObjectMaterialSet[] materialSets;
+
+        /// <summary>
+        /// Color Customizer////////////////////////////////////////////////////////
         /// </summary>
         public Color[] colorsSet;
-        public Color guestColor;
-        public Color employeeColor;
-        public Color buildObjectColor;
-        public Color defaultColor;
+        public Color guestColor=Color.green;
+        public Color employeeColor=Color.red;
+        public Color buildObjectColor=Color.blue;
+        public Color defaultColor=Color.black;
         /// //////////////////////////////////Tabs///////////////////////////////////////////////////////////
 
+        [HideInInspector] public bool  initTabOpen;
+    [HideInInspector]public bool characterTabOpen;
+        [HideInInspector]public bool colorsCustomizerTabOpen;
+        [HideInInspector]public bool definitionsTabOpen;
+        [HideInInspector]public bool objectsTabOpen;
 
-#if HIDE
-        [HideInInspector]
-#endif
-        public bool characterTabOpen;
-#if HIDE
-        [HideInInspector]
-#endif
-        public bool colorsCustomizerTabOpen;
-#if HIDE
-        [HideInInspector]
-#endif
-        public bool definitionsTabOpen;
+        //classes 
 
-#if HIDE
-        [HideInInspector]
-#endif
-        public bool objectsTabOpen;
-
-        /// /////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-        //public List<CharacterType> characterTypes = new List<CharacterType>();
         public List<EmployeeType> employeeTypes = new List<EmployeeType>();
         public List<GuestType> guestTypes = new List<GuestType>();
+        
+       // public List<string> guestTypes = new List<GuestType>();
 
-
+        //public EditorTools.ScriptableCollections.Collection<ParameterBase> collectionOfParameters =new EditorTools.ScriptableCollections.Collection<ParameterBase>();
 
         private void Awake()
         {
-#if LOGS
-            Debug.LogError("GlobalConfig.Awake");
-#endif
+            InitColors();
             InitSelectors();
         }
 
+
+        public void InitColors()
+        {
+            colorsSet=Enumerable.Repeat(Color.white, Enum.GetValues(typeof(ColorPurpose)).Length).ToArray() ;
+        }
         public void InitSelectors()
         {
-#if UNITY_EDITOR
+
             if (!isInitialized)
             {
                // Debug.LogError("GlobalConfig.InitSelectors");
-                if (selectorParameters.FirstOrDefault(x => x.id == StringDefines.EmployeeParameterSelectorKey) == null)
-                {
-                    selectorParameters.Add(new ParamsList(StringDefines.EmployeeParameterSelectorKey, new List<string>()));
-                }
+                //if (selectorParameters.FirstOrDefault(x => x.id == StringDefines.EmployeeParameterSelectorKey) == null)
+               // {
+                    selectorParameters.Add(new ParamsList(StringDefines.EmployeeParameterSelectorKey, new List<string>()  {
+            StringDefines.EmployeeParameterSelectorKey+"1",
+            StringDefines.EmployeeParameterSelectorKey+"2",
+            StringDefines.EmployeeParameterSelectorKey+"3"
+        }));
+              //  }
                 if (selectorParameters.FirstOrDefault(x => x.id == StringDefines.GuestParameterSelectorKey) == null)
                 {
-                    selectorParameters.Add(new ParamsList(StringDefines.GuestParameterSelectorKey, new List<string>()));
+                    selectorParameters.Add(new ParamsList(StringDefines.GuestParameterSelectorKey, new List<string>(){
+            StringDefines.GuestParameterSelectorKey+"1",
+            StringDefines.GuestParameterSelectorKey+"2",
+            StringDefines.GuestParameterSelectorKey+"3"
+        }));
                 }
-                if (selectorParameters.FirstOrDefault(x => x.id == StringDefines.HotelParameterSelectorKey) == null)
-                {
-                    selectorParameters.Add(new ParamsList(StringDefines.HotelParameterSelectorKey, new List<string>()));
-                }
-                if (selectorParameters.FirstOrDefault(x => x.id == StringDefines.BuildObjectParameterSelectorKey) == null)
-                {
-                    selectorParameters.Add(new ParamsList(StringDefines.BuildObjectParameterSelectorKey, new List<string>()));
-                }
+               // if (selectorParameters.FirstOrDefault(x => x.id == StringDefines.HotelParameterSelectorKey) == null)
+              //  {
+                    selectorParameters.Add(new ParamsList(StringDefines.HotelParameterSelectorKey, new List<string>(){
+            StringDefines.HotelParameterSelectorKey+"1",
+            StringDefines.HotelParameterSelectorKey+"2",
+            StringDefines.HotelParameterSelectorKey+"3"
+        }));
+             //   }
+                //if (selectorParameters.FirstOrDefault(x => x.id == StringDefines.BuildObjectParameterSelectorKey) == null)
+               // {
+                    selectorParameters.Add(new ParamsList(StringDefines.BuildObjectParameterSelectorKey, new List<string>(){
+            StringDefines.BuildObjectParameterSelectorKey+"1",
+            StringDefines.BuildObjectParameterSelectorKey+"2",
+            StringDefines.BuildObjectParameterSelectorKey+"3"
+        }));
+             //   }
                 if (selectorParameters.FirstOrDefault(x => x.id == StringDefines.BuildObjectSelectorKey) == null)
                 {
-                    selectorParameters.Add(new ParamsList(StringDefines.BuildObjectSelectorKey, new List<string>()));
+                    selectorParameters.Add(new ParamsList(StringDefines.BuildObjectSelectorKey, new List<string>(){
+            StringDefines.BuildObjectSelectorKey+"1",
+            StringDefines.BuildObjectSelectorKey+"2",
+            StringDefines.BuildObjectSelectorKey+"3"
+        }));
 
                 }
                 if (selectorParameters.FirstOrDefault(x => x.id == StringDefines.BuildObjectCategorySelectorKey) == null)
                 {
-                    selectorParameters.Add(new ParamsList(StringDefines.BuildObjectCategorySelectorKey, new List<string>()));
+                    selectorParameters.Add(new ParamsList(StringDefines.BuildObjectCategorySelectorKey, new List<string>(){
+            StringDefines.BuildObjectCategorySelectorKey+"1",
+            StringDefines.BuildObjectCategorySelectorKey+"2",
+            StringDefines.BuildObjectCategorySelectorKey+"3"
+        }));
 
                 }
                 if (selectorParameters.FirstOrDefault(x => x.id == StringDefines.BuildObjectsListSelectorKey) == null)
                 {
-                    selectorParameters.Add(new ParamsList(StringDefines.BuildObjectsListSelectorKey, new List<string>()));
+                    selectorParameters.Add(new ParamsList(StringDefines.BuildObjectsListSelectorKey, new List<string>(){
+            StringDefines.BuildObjectsListSelectorKey+"1",
+            StringDefines.BuildObjectsListSelectorKey+"2",
+            StringDefines.BuildObjectsListSelectorKey+"3"
+        }));
                 }
                 if (selectorParameters.FirstOrDefault(x => x.id == StringDefines.MaterialSetSelectorKey) == null)
                 {
-                    selectorParameters.Add(new ParamsList(StringDefines.MaterialSetSelectorKey, new List<string>()));
+                    selectorParameters.Add(new ParamsList(StringDefines.MaterialSetSelectorKey, new List<string>(){
+            StringDefines.MaterialSetSelectorKey+"1",
+            StringDefines.MaterialSetSelectorKey+"2",
+            StringDefines.MaterialSetSelectorKey+"3"
+        }));
                 }
                 if (selectorParameters.FirstOrDefault(x => x.id == StringDefines.GameEventSelectorKey) == null)
                 {
-                    selectorParameters.Add(new ParamsList(StringDefines.GameEventSelectorKey, new List<string>()));
+                    selectorParameters.Add(new ParamsList(StringDefines.GameEventSelectorKey, new List<string>(){
+            StringDefines.GameEventSelectorKey+"1",
+            StringDefines.GameEventSelectorKey+"2",
+            StringDefines.GameEventSelectorKey+"3"
+        }));
                 }
-                selectorParameters.Add(new ParamsList(StringDefines.ThemeUIDataSelectorKey, new List<string>()));
-                selectorParameters.Add(new ParamsList(StringDefines.ScriptableEventSelectorKey, new List<string>()));
-                selectorParameters.Add(new ParamsList(StringDefines.EmployeeTypeSelectorKey, new List<string>()));
-                selectorParameters.Add(new ParamsList(StringDefines.GuestTypeSelectorKey, new List<string>()));
-                selectorParameters.Add(new ParamsList(StringDefines.ObjectTypeSelectorKey, new List<string>()));
-                selectorParameters.Add(new ParamsList(StringDefines.MaterialTypeSelectorKey, new List<string>()));
+
+         
+                selectorParameters.Add(new ParamsList(StringDefines.EmployeeTypeSelectorKey, new List<string>(){
+            StringDefines.EmployeeTypeSelectorKey+"1",
+            StringDefines.EmployeeTypeSelectorKey+"6",
+            StringDefines.EmployeeTypeSelectorKey+"6"
+        }));
+                selectorParameters.Add(new ParamsList(StringDefines.GuestTypeSelectorKey, new List<string>(){
+            StringDefines.GuestTypeSelectorKey+"1",
+            StringDefines.GuestTypeSelectorKey+"6",
+            StringDefines.GuestTypeSelectorKey+"9"
+        }));
+                selectorParameters.Add(new ParamsList(StringDefines.ObjectTypeSelectorKey, new List<string>(){
+            StringDefines.ObjectTypeSelectorKey+"1",
+            StringDefines.ObjectTypeSelectorKey+"6",
+            StringDefines.ObjectTypeSelectorKey+"9"
+        }));
+                selectorParameters.Add(new ParamsList(StringDefines.MaterialTypeSelectorKey, new List<string>(){
+            "Default"
+        }));
                foreach(string s in autoIncludeParams)
                 {
                     if (!allSelectorParameters.Contains(s))
@@ -182,15 +188,11 @@ namespace EditorTools
                 }
                 isInitialized = true;
             }
-#endif
-        }
 
+        }
 
         private void OnEnable()
         {
-#if LOGS
-            Debug.LogError("GlobalConfig.OnEnable");
-#endif
 
             OnEnableMethod();
         }
@@ -199,9 +201,9 @@ namespace EditorTools
         {
 #if UNITY_EDITOR
 
-
-            UpdateScriptableSelectors();
             UpdateCharacters();
+            UpdateScriptableSelectors();
+            
 #endif
         }
 
@@ -292,6 +294,7 @@ namespace EditorTools
             }
 
         }
+
 
         public void AddOrEditSelectorParams(ParamsList _paramsList)
         {

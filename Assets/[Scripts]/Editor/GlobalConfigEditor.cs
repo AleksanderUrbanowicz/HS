@@ -28,6 +28,7 @@ namespace EditorTools
         private SerializedProperty definitionsTabOpenProperty;
         private SerializedProperty charactersTabOpenProperty;
         private SerializedProperty objectsTabOpenProperty;
+        private SerializedProperty initTabOpenProperty;
         private SerializedProperty colorsCustomizerTabOpenProperty;
         private SerializedProperty allSelectorParametersProperty;
         private SerializedProperty selectorParametersProperty;
@@ -91,6 +92,8 @@ namespace EditorTools
             objectsTabOpenProperty = serializedObject.FindProperty("objectsTabOpen");
             colorsCustomizerTabOpenProperty = serializedObject.FindProperty("colorsCustomizerTabOpen");
             definitionsTabOpenProperty = serializedObject.FindProperty("definitionsTabOpen");
+            initTabOpenProperty = serializedObject.FindProperty("initTabOpen");
+
             selectorParametersProperty = serializedObject.FindProperty("selectorParameters");
             allSelectorParametersProperty = serializedObject.FindProperty("allSelectorParameters");
 
@@ -112,12 +115,18 @@ namespace EditorTools
         public override void OnInspectorGUI()
         {
             
+            GUI.color = EditorColorsCustomizer.GetColor(ColorPurpose.NegateColor, ref defaultColors);
+            GUI.backgroundColor = EditorColorsCustomizer.GetColor(ColorPurpose.NegateColor, ref defaultColors);
+
+
+
+            DrawTab(initTabOpenProperty, "Initialization");
+
             GUI.color = EditorColorsCustomizer.GetColor(ColorPurpose.MainColor, ref defaultColors);
             GUI.backgroundColor = EditorColorsCustomizer.GetColor(ColorPurpose.BackgroundColorLight, ref defaultColors);
+            DrawInitContent();
 
 
-
-            //DrawDefinitionsTab();
             DrawTab(definitionsTabOpenProperty, "Definitions");
             DrawDefinitionsContent();
             DrawTab(charactersTabOpenProperty, "Characters");
@@ -172,6 +181,68 @@ namespace EditorTools
             EditorGUILayout.EndHorizontal();
         
 
+        }
+
+        public void DrawInitContent()
+        {
+            EditorGUILayout.BeginHorizontal();
+            if (initTabOpenProperty.boolValue)
+            {
+
+                EditorGUILayout.LabelField("DrawInitContent");
+                bool b = true;
+                for (int i = 0; i < selectorParametersProperty.arraySize; i++)
+                {
+
+                    SerializedProperty parameters = selectorParametersProperty.GetArrayElementAtIndex(i).FindPropertyRelative("parameters");
+                    if (parameters == null || parameters.arraySize == 0)
+                    {
+
+                        b = false;
+                        break;
+                    }
+                    else
+                    {
+                        for (int j = 0; j < parameters.arraySize; j++)
+                        {
+                            string id = parameters.GetArrayElementAtIndex(j).stringValue;
+                            if (string.IsNullOrEmpty(id))
+                            {
+                                b = false;
+                                break;
+
+                            }
+                        }
+
+                    }
+                }
+                   if(b)
+                    {
+                        if (GUILayout.Button("Create Config"))
+                        {
+
+                            ScriptableObject.CreateInstance<GameSettings>();
+                        }
+                        else
+                        {
+                            if (GUILayout.Button("Fill parameters !"))
+                            {
+
+                                
+                            }
+
+                        }
+
+                    }
+         
+
+                if (GUILayout.Button("Refresh"))
+                {
+                    AssetDatabase.Refresh();
+
+                }
+            }
+            EditorGUILayout.EndHorizontal();
         }
 
         public void DrawDefinitionsContent()
@@ -308,14 +379,13 @@ namespace EditorTools
 
         }
 
-
         public void DrawGuestData(CharacterDataBase characterData)
         {
             if (characterData is GuestData)
             {
 
                 GuestData guestData = (characterData as GuestData);
-                EditorGUILayout.TextField(new GUIContent("Type: "), guestData.GuestType, GUILayout.Height(smallControlHeight));
+                EditorGUILayout.TextField(new GUIContent("Type: "), guestData.guestTypeData.id, GUILayout.Height(smallControlHeight));
 
 
                 guestData.generousity = EditorGUILayout.FloatField(new GUIContent("Generosity: "), guestData.generousity, GUILayout.Height(smallControlHeight));

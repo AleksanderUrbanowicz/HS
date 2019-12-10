@@ -16,22 +16,22 @@ MonoBehaviour:
   scriptableDataSystem: {fileID: 0}
   scriptableSelectSystem: {fileID: 0}
   parameterBase:
-    id: sdb
-    value: 7
+    id: Receptionist
+    value: 0
   parameterdynamic:
-    id: sbs
-    value: 4
+    id: 
+    value: 0
     changeRate: 0
-  employeeType: Maid
-  guestType: Default
-  materialType: Wood
-  objectType: Furniture
+  employeeType: 
+  guestType: 
+  materialType: Receptionist
+  objectType: GuestData1
   materialSet: BuildObjectMaterialSet
   defaultBuildObject: BuildObject1
   BuildObjectCategoryData: NewBuildObjectCategoryData
   gameEvent: NewGameEvent
-  scriptableEvent: ScriptableSystemEvent
-  uiThemeData: ThemeUIData
-  buildObjectParameterTypes: Durability
-  hotelParameterType: Comfort
-  anyParameterType: Speed
+  scriptableEvent: 
+  uiThemeData: 
+  buildObjectParameterTypes: Receptionist
+  hotelParameterType: Receptionist
+  anyParameterType: Receptionist

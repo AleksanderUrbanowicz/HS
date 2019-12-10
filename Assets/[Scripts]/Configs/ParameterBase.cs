@@ -8,11 +8,11 @@ namespace EditorTools
     [Serializable]
     public class ParameterBase
     {
-        [ConfigSelector]
+        [ConfigSelector(paramsSetKey = StringDefines.AnyParameterSelectorKey)]
         public string id;
        
         //Initial value/ one-time increment.
-        [Range(0,100)]
+        [Range(-100,100)]
         public float value;
         public ParameterBase()
         {

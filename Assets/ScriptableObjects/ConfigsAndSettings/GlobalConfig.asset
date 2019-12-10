@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: GlobalConfig
   m_EditorClassIdentifier: 
   allSelectorParameters:
-  - Speed
-  - Skill
-  - Salary
+  - Receptionist
+  - Waiter
+  - Maid
   - Comfort
   - Hygiene
   - Affordability
   - Renown
   - Personel
-  - Durability
+  - Condition
   - Cleanness
   - Wood
   - Cloth
@@ -39,78 +39,41 @@ MonoBehaviour:
   - ThemeUIData 1
   - BuildObjectMaterialSet
   - EmployeeData1
-  - GuestData
-  - Maid
-  - ServiceWorker
-  - Waiter
-  - Furniture
-  - Default
-  - Pedantic
-  - Receptionist
   - EmployeeData2
   - EmployeeData3
+  - GuestData
   - GuestData1
-  - Speed
   - Skill
   - Salary
-  - Comfort
-  - Hygiene
-  - Affordability
-  - Renown
-  - Personel
   - Durability
-  - Cleanness
-  - Wood
-  - Cloth
+  - MaidData1
+  - Politeness
+  - Fatigue
+  - Service
   - Speed
-  - Skill
-  - Salary
-  - Comfort
-  - Hygiene
-  - Affordability
-  - Renown
-  - Personel
-  - Durability
-  - Cleanness
-  - Wood
-  - Cloth
-  - Speed
-  - Skill
-  - Salary
-  - Comfort
-  - Hygiene
-  - Affordability
-  - Renown
-  - Personel
-  - Durability
-  - Cleanness
-  - Wood
-  - Cloth
+  - Need
+  - Wealth
   selectorParameters:
   - id: EmployeeParameter
     parameters:
-    - Durability
-    - Cleanness
-    - Personel
+    - Receptionist
+    - Receptionist
+    - Receptionist
   - id: GuestParameter
     parameters:
-    - Comfort
-    - Hygiene
-    - Affordability
-    - Renown
-    - Personel
+    - Receptionist
+    - Receptionist
+    - Receptionist
   - id: HotelParameter
     parameters:
-    - Comfort
-    - Hygiene
-    - Affordability
-    - Renown
-    - Personel
+    - Receptionist
+    - Receptionist
+    - Receptionist
   - id: BuildObjectParameter
     parameters:
-    - Durability
-    - Cleanness
-    - Hygiene
+    - Receptionist
+    - Receptionist
+    - Receptionist
   - id: BuildObject
     parameters:
     - BuildObject1
@@ -129,76 +92,186 @@ MonoBehaviour:
   - id: GameEvent
     parameters:
     - NewGameEvent
-  - id: ThemeUIData
+  - id: EmployeeType
+    parameters: []
+  - id: GuestType
+    parameters: []
+  - id: ObjectType
     parameters:
-    - ThemeUIData
-    - ThemeUIData 1
-  - id: ScriptableEvent
+    - GuestData1
+    - Receptionist
+    - Receptionist
+  - id: MaterialType
     parameters:
-    - ScriptableSystemEvent
-    - ScriptableSystemEvent 1
-    - ScriptableSystemEvent 2
+    - Receptionist
+  - id: EmployeeParameter
+    parameters:
+    - Receptionist
+    - Receptionist
+    - Receptionist
+  - id: HotelParameter
+    parameters:
+    - Receptionist
+    - Receptionist
+    - Receptionist
+  - id: BuildObjectParameter
+    parameters:
+    - Receptionist
+    - Receptionist
+    - Receptionist
   - id: EmployeeType
     parameters:
-    - Maid
-    - ServiceWorker
-    - Waiter
+    - Receptionist
+    - Receptionist
     - Receptionist
   - id: GuestType
     parameters:
+    - Receptionist
+    - Receptionist
+    - Receptionist
+  - id: ObjectType
+    parameters:
+    - ObjectType1
+    - ObjectType6
+    - ObjectType9
+  - id: MaterialType
+    parameters:
+    - Receptionist
+  - id: EmployeeParameter
+    parameters:
+    - Receptionist
+    - Receptionist
+    - Receptionist
+  - id: HotelParameter
+    parameters:
+    - HotelParameter1
+    - HotelParameter2
+    - HotelParameter3
+  - id: BuildObjectParameter
+    parameters:
+    - BuildObjectParameter1
+    - BuildObjectParameter2
+    - BuildObjectParameter3
+  - id: EmployeeType
+    parameters:
+    - EmployeeType1
+    - EmployeeType6
+    - EmployeeType6
+  - id: GuestType
+    parameters:
+    - GuestType1
+    - GuestType6
+    - GuestType9
+  - id: ObjectType
+    parameters:
+    - ObjectType1
+    - ObjectType6
+    - ObjectType9
+  - id: MaterialType
+    parameters:
     - Default
-    - Pedantic
+  - id: EmployeeParameter
+    parameters:
+    - EmployeeParameter1
+    - EmployeeParameter2
+    - EmployeeParameter3
+  - id: HotelParameter
+    parameters:
+    - HotelParameter1
+    - HotelParameter2
+    - HotelParameter3
+  - id: BuildObjectParameter
+    parameters:
+    - BuildObjectParameter1
+    - BuildObjectParameter2
+    - BuildObjectParameter3
+  - id: EmployeeType
+    parameters:
+    - EmployeeType1
+    - EmployeeType6
+    - EmployeeType6
+  - id: GuestType
+    parameters:
+    - GuestType1
+    - GuestType6
+    - GuestType9
   - id: ObjectType
     parameters:
-    - Furniture
+    - ObjectType1
+    - ObjectType6
+    - ObjectType9
   - id: MaterialType
     parameters:
-    - Wood
-    - Cloth
-  - id: ThemeUIData
-    parameters: []
-  - id: ScriptableEvent
-    parameters: []
+    - Default
+  - id: EmployeeParameter
+    parameters:
+    - EmployeeParameter1
+    - EmployeeParameter2
+    - EmployeeParameter3
+  - id: HotelParameter
+    parameters:
+    - HotelParameter1
+    - HotelParameter2
+    - HotelParameter3
+  - id: BuildObjectParameter
+    parameters:
+    - BuildObjectParameter1
+    - BuildObjectParameter2
+    - BuildObjectParameter3
   - id: EmployeeType
-    parameters: []
+    parameters:
+    - EmployeeType1
+    - EmployeeType6
+    - EmployeeType6
   - id: GuestType
-    parameters: []
+    parameters:
+    - GuestType1
+    - GuestType6
+    - GuestType9
   - id: ObjectType
-    parameters: []
+    parameters:
+    - ObjectType1
+    - ObjectType6
+    - ObjectType9
   - id: MaterialType
-    parameters: []
-  - id: ThemeUIData
-    parameters: []
-  - id: ScriptableEvent
-    parameters: []
+    parameters:
+    - Default
+  - id: EmployeeParameter
+    parameters:
+    - EmployeeParameter1
+    - EmployeeParameter2
+    - EmployeeParameter3
+  - id: HotelParameter
+    parameters:
+    - HotelParameter1
+    - HotelParameter2
+    - HotelParameter3
+  - id: BuildObjectParameter
+    parameters:
+    - BuildObjectParameter1
+    - BuildObjectParameter2
+    - BuildObjectParameter3
   - id: EmployeeType
-    parameters: []
+    parameters:
+    - EmployeeType1
+    - EmployeeType6
+    - EmployeeType6
   - id: GuestType
-    parameters: []
+    parameters:
+    - GuestType1
+    - GuestType6
+    - GuestType9
   - id: ObjectType
-    parameters: []
+    parameters:
+    - ObjectType1
+    - ObjectType6
+    - ObjectType9
   - id: MaterialType
-    parameters: []
-  - id: ThemeUIData
-    parameters: []
-  - id: ScriptableEvent
-    parameters: []
-  - id: EmployeeType
-    parameters: []
-  - id: GuestType
-    parameters: []
-  - id: ObjectType
-    parameters: []
-  - id: MaterialType
-    parameters: []
-  anySelector: Speed
+    parameters:
+    - Default
   employeeDatas:
-  - {fileID: 11400000, guid: 52b4d5ea4b7eb42419699d87c22dcf9d, type: 2}
-  - {fileID: 11400000, guid: f329b2159e3194440a5dbe2f20eba70d, type: 2}
-  - {fileID: 11400000, guid: f4901df45e630724a9b28de64d0aeef2, type: 2}
-  guestDatas:
-  - {fileID: 11400000, guid: 078e8f5317cea384fa8ecca0ac5f8072, type: 2}
-  - {fileID: 11400000, guid: 7d43103e39970c04e86db9f10d1a84a5, type: 2}
+  - {fileID: 11400000, guid: 31aaf2d2c07e8da43974084638569384, type: 2}
+  guestDatas: []
   characterDatas: []
   buildObjects:
   - {fileID: 11400000, guid: ae9e397c59aa98744bf0068ac197f5c0, type: 2}
@@ -221,41 +294,20 @@ MonoBehaviour:
   materialSets:
   - {fileID: 11400000, guid: ec3780ad34cba364583ff0e11645292f, type: 2}
   colorsSet:
-  - {r: 1, g: 1, b: 1, a: 0.7921569}
-  - {r: 0, g: 1, b: 0.10661459, a: 0.8862745}
-  - {r: 0.9811321, g: 0.9045425, b: 0.013883919, a: 0.85882354}
-  - {r: 1, g: 0.13217431, b: 0, a: 0.85882354}
-  - {r: 1, g: 1, b: 1, a: 0.9019608}
-  - {r: 0, g: 0, b: 0, a: 0.9019608}
-  guestColor: {r: 0, g: 0.2391901, b: 1, a: 0.7921569}
-  employeeColor: {r: 1, g: 0.94259167, b: 0, a: 0.7411765}
-  buildObjectColor: {r: 0, g: 0.7254902, b: 1, a: 0.5529412}
-  defaultColor: {r: 0, g: 0, b: 0, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  guestColor: {r: 0, g: 1, b: 0, a: 1}
+  employeeColor: {r: 1, g: 0, b: 0, a: 1}
+  buildObjectColor: {r: 0, g: 0, b: 1, a: 1}
+  defaultColor: {r: 0.03773582, g: 0.03773582, b: 0.03773582, a: 1}
+  initTabOpen: 1
   characterTabOpen: 0
-  colorsCustomizerTabOpen: 0
-  definitionsTabOpen: 0
-  objectsTabOpen: 1
-  employeeTypes:
-  - id: Maid
-    affectedParameters:
-    - Cleanness
-  - id: ServiceWorker
-    affectedParameters:
-    - Durability
-  - id: Waiter
-    affectedParameters:
-    - Personel
-  - id: Receptionist
-    affectedParameters:
-    - Personel
-  guestTypes:
-  - id: Default
-    requirements:
-    - id: Hygiene
-      value: 1
-    - id: Personel
-      value: 1
-  - id: Pedantic
-    requirements:
-    - id: Hygiene
-      value: 2
+  colorsCustomizerTabOpen: 1
+  definitionsTabOpen: 1
+  objectsTabOpen: 0
+  employeeTypes: []
+  guestTypes: []

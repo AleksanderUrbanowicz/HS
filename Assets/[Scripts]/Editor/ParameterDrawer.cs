@@ -5,7 +5,7 @@ using UnityEngine;
 namespace EditorTools
 {
     
-    [CustomPropertyDrawer(typeof(ParameterBase))]
+    //[CustomPropertyDrawer(typeof(ParameterBase))]
     public class ParameterDrawer : PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)

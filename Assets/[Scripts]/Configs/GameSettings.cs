@@ -17,7 +17,7 @@ namespace EditorTools
         private BuildObjectData[] allObjectsArray;
 
 
-
+      //  [ConfigSelector]
         public ParameterBase parameterBase = new ParameterBase();
         public DynamicParameter parameterdynamic = new DynamicParameter();
 

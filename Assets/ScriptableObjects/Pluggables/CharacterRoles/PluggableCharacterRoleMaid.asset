@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bff11caa8622984897fe000bef869a4, type: 3}
+  m_Name: PluggableCharacterRoleMaid
+  m_EditorClassIdentifier: 
+  id: Waiter
+  displayName: Waiter
+  characterBaseParameters: {fileID: 11400000, guid: 6b59041c419828043b761f3da766d889,
+    type: 2}
+  characterTypeParams: {fileID: 11400000, guid: 71e39902a3d87a844a0a329fdb846c81,
+    type: 2}
+  individualRoleParams:
+    dynamicBaseParameters:
+    - id: Cleanness
+      value: 0
+    staticBaseParameters: []
+  accumulatedParams:
+    dynamicBaseParameters:
+    - id: Politeness
+      value: -3
+    staticBaseParameters: []
