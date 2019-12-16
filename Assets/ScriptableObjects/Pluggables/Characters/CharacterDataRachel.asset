@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e58efc00266d784d8b34176ac697054, type: 3}
+  m_Name: CharacterDataRachel
+  m_EditorClassIdentifier: 
+  id: Rachel
+  displayName: Receptionist Rachel
+  prefab: {fileID: 2603261765910609650, guid: 83936194ae8dbea49b724846a107045d, type: 3}
+  accumulatedParams:
+    dynamicParameters: []
+    staticParameters: []
+  individualParams:
+    dynamicParameters: []
+    staticParameters: []
+  characterRole: {fileID: 11400000, guid: 9cef067db68b5014e939b7651a2020e5, type: 2}

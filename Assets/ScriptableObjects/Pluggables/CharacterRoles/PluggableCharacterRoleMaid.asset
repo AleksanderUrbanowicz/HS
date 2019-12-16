@@ -12,19 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bff11caa8622984897fe000bef869a4, type: 3}
   m_Name: PluggableCharacterRoleMaid
   m_EditorClassIdentifier: 
-  id: Waiter
-  displayName: Waiter
+  id: Maid
+  displayName: Maid
   characterBaseParameters: {fileID: 11400000, guid: 6b59041c419828043b761f3da766d889,
     type: 2}
   characterTypeParams: {fileID: 11400000, guid: 71e39902a3d87a844a0a329fdb846c81,
     type: 2}
   individualRoleParams:
-    dynamicBaseParameters:
-    - id: Cleanness
-      value: 0
-    staticBaseParameters: []
+    activeParameters: []
+    passiveParameters: []
   accumulatedParams:
-    dynamicBaseParameters:
+    activeParameters:
     - id: Politeness
-      value: -3
-    staticBaseParameters: []
+      value: 0
+    - id: Fatigue
+      value: 0
+    - id: Speed
+      value: 10
+    - id: Skill
+      value: 50
+    passiveParameters:
+    - id: Personel
+      value: 1
+  startState: {fileID: 11400000, guid: e3780dea3208ba64d9f488e3e581609b, type: 2}

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6901ca0b327dbc34e952877ca176e413, type: 3}
   m_Name: PluggableParamsCharacterTypeGuest
   m_EditorClassIdentifier: 
-  dynamicBaseParameters:
+  dynamicParameters:
   - id: Need
     value: 0
+  staticParameters:
   - id: Wealth
     value: 0
-  staticBaseParameters: []

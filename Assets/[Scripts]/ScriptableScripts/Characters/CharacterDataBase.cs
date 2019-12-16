@@ -1,5 +1,4 @@
 ﻿using EditorTools;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,24 +20,24 @@ namespace Characters
         public List<ParameterBase> staticParameters = new List<ParameterBase>();
         public List<ParameterBase> dynamicParameters = new List<ParameterBase>();
 
-      //  public List<ParameterBase> StaticParameters { get => (this as IPluggableParameters).GetAccumulatedStaticParameters(); set => staticParameters = value; }
-      //  public List<ParameterBase> DynamicParameters { get => (this as IPluggableParameters).GetAccumulatedDynamicParameters(); set => dynamicParameters = value; }
+        //  public List<ParameterBase> StaticParameters { get => (this as IPluggableParameters).GetAccumulatedStaticParameters(); set => staticParameters = value; }
+        //  public List<ParameterBase> DynamicParameters { get => (this as IPluggableParameters).GetAccumulatedDynamicParameters(); set => dynamicParameters = value; }
 
 
 
         public CharacterDataBase()
         {
-          
+
             characterType = "CharacterDataBase";
 
         }
 
-      public  void OnEnable()
+        public void OnEnable()
         {
 
         }
 
-         List<ParameterBase> GetAccumulatedDynamicParameters()
+        List<ParameterBase> GetAccumulatedDynamicParameters()
         {
             List<ParameterBase> accumulatedParams = dynamicParameters;
             foreach (ParameterBase par in dynamicBaseParameters)
@@ -52,9 +51,9 @@ namespace Characters
                     accumulatedParams.Add(par);
 
                 }
-                
+
             }
-          
+
             return accumulatedParams;
         }
 
@@ -78,4 +77,4 @@ namespace Characters
             return accumulatedParams;
         }
     }
-    }
+}

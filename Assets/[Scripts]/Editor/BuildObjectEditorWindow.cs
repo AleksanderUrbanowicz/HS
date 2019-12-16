@@ -149,7 +149,7 @@ namespace ScriptableSystems
                     buildObjectData.id = sceneObject.name + Random.Range(0, 9);
                 }
 
-               
+
 
                 GUILayout.Label("Size \nX: " + buildObjectData.actualSize.x + "   Y: " + buildObjectData.actualSize.y + "   Z: " + buildObjectData.actualSize.z);
                 GUILayout.Label("Grid size\nX: " + buildObjectData.gridSize.x + "   Y: " + buildObjectData.gridSize.y + "   Z: " + buildObjectData.gridSize.z);
@@ -167,7 +167,7 @@ namespace ScriptableSystems
                     buildObjectData.obstacleLayers = defaultObstaclesLayer;
                 }
                 GUI.backgroundColor = Color.red;
-                
+
 
 
                 if (buildObjectData.gridSize != Vector3.zero)
@@ -176,7 +176,7 @@ namespace ScriptableSystems
 
                 }
 
-           
+
 
                 if (GUILayout.Button("Create Prefab"))
                 {
@@ -201,7 +201,7 @@ namespace ScriptableSystems
                 GUI.backgroundColor = Color.red;
                 if (GUILayout.Button("Delete Object"))
                 {
-                    
+
 
                     AssetDatabase.DeleteAsset(scriptableObjectsPath + buildObjectData.id + scriptableObjectSuffix + ".asset");
                     Reset();
@@ -303,7 +303,7 @@ namespace ScriptableSystems
         {
             sceneObject = null;
             displayObject = false;
-            
+
             InitData();
         }
 

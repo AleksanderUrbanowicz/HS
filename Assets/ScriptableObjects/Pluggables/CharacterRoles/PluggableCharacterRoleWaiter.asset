@@ -19,24 +19,27 @@ MonoBehaviour:
   characterTypeParams: {fileID: 11400000, guid: 71e39902a3d87a844a0a329fdb846c81,
     type: 2}
   individualRoleParams:
-    dynamicBaseParameters:
-    - id: Speed
-      value: -1
+    dynamicParameters:
     - id: Service
-      value: 0
-    staticBaseParameters:
+      value: 25
+    - id: Politeness
+      value: 5
+    staticParameters:
     - id: Personel
       value: 1
   accumulatedParams:
-    dynamicBaseParameters:
+    dynamicParameters:
     - id: Politeness
-      value: 50
+      value: 5
+    - id: Fatigue
+      value: 0
     - id: Speed
       value: 10
     - id: Skill
       value: 50
     - id: Service
-      value: 0
-    staticBaseParameters:
+      value: 25
+    staticParameters:
     - id: Personel
-      value: 1
+      value: 2
+  startState: {fileID: 11400000, guid: d806e113ee6502e4aaf523eb03c3fb29, type: 2}

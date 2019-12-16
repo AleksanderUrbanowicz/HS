@@ -33,7 +33,10 @@ namespace EditorTools
                 if (layerName != "")
                 {
 
-                    for (; emptyLayers > 0; emptyLayers--) layers.Add("Layer " + (i - emptyLayers));
+                    for (; emptyLayers > 0; emptyLayers--)
+                    {
+                        layers.Add("Layer " + (i - emptyLayers));
+                    }
                     layers.Add(layerName);
                 }
                 else
@@ -46,7 +49,10 @@ namespace EditorTools
             {
                 layerNames = new string[layers.Count];
             }
-            for (int i = 0; i < layerNames.Length; i++) layerNames[i] = layers[i];
+            for (int i = 0; i < layerNames.Length; i++)
+            {
+                layerNames[i] = layers[i];
+            }
 
             selected.value = EditorGUILayout.MaskField(label, selected.value, layerNames);
 
@@ -57,7 +63,7 @@ namespace EditorTools
         public static T[] GetAllInstances<T>() where T : ScriptableObject
         {
             string[] guids = AssetDatabase.FindAssets("t:" + typeof(T).Name);
-           // Debug.LogError("GetAllInstances: typeof(T): " + typeof(T)+", name: "+ typeof(T).Name+" length: "+guids.Length);
+            // Debug.LogError("GetAllInstances: typeof(T): " + typeof(T)+", name: "+ typeof(T).Name+" length: "+guids.Length);
             T[] a = new T[guids.Length];
             for (int i = 0; i < guids.Length; i++)
             {
@@ -71,22 +77,17 @@ namespace EditorTools
 
         public static T GetFirstInstance<T>() where T : ScriptableObject
         {
-          //  Debug.LogWarning("typeof(T): " + typeof(T));
             //Debug.LogWarning("typeof(T).name: " + typeof(T).Name);
             string[] assets = AssetDatabase.FindAssets("t:" + typeof(T).Name);
             T a;
-            string guid="";
+            string guid = "";
             if (assets.Length > 0)
             {
-                 guid = AssetDatabase.FindAssets("t:" + typeof(T).Name)[0];
+                guid = AssetDatabase.FindAssets("t:" + typeof(T).Name)[0];
             }
 
-                string path = AssetDatabase.GUIDToAssetPath(guid);
-                a = AssetDatabase.LoadAssetAtPath<T>(path);
-
-            
-           
-
+            string path = AssetDatabase.GUIDToAssetPath(guid);
+            a = AssetDatabase.LoadAssetAtPath<T>(path);
 
             return a;
 

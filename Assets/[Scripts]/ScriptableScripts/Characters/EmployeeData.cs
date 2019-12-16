@@ -14,12 +14,12 @@ namespace Characters
         public string employeeType;
         public EmployeeTypeData employeeTypeData;
         public float salary;
-        [RangeAttribute(0.0f,100.0f)]
+        [RangeAttribute(0.0f, 100.0f)]
         public float skill;
         [RangeAttribute(0.0f, 10.0f)]
         public float speed;
 
-        List<ParameterBase>  GetAccumulatedDynamicParameters()
+        List<ParameterBase> GetAccumulatedDynamicParameters()
         {
             List<ParameterBase> accumulatedParams = base.dynamicParameters;
             foreach (ParameterBase par in employeeTypeData.dynamicEmployeeTypeModifiers)
@@ -38,7 +38,7 @@ namespace Characters
             return accumulatedParams;
         }
 
-         List<ParameterBase> GetAccumulatedStaticParameters()
+        List<ParameterBase> GetAccumulatedStaticParameters()
         {
 
             List<ParameterBase> accumulatedParams = base.staticParameters;

@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicParameters:
   - id: Politeness
-    value: 50
+    value: 0
+  - id: Fatigue
+    value: 0
   staticParameters: []

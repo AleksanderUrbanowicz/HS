@@ -6,7 +6,7 @@ namespace ScriptableSystems
     public class ObjectData
     {
         public string id;
-        
+
         public float positionX;
         public float positionY;
         public float positionZ;

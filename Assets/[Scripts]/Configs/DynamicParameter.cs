@@ -1,8 +1,4 @@
-﻿using EditorTools;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System;
 
 namespace EditorTools
 {
@@ -15,10 +11,10 @@ namespace EditorTools
         public float changeRate;
         public DynamicParameter()
         {
-          
+
 
         }
-        public DynamicParameter(string _id, float _val,float _valChange)
+        public DynamicParameter(string _id, float _val, float _valChange)
         {
             id = _id;
             value = _val;

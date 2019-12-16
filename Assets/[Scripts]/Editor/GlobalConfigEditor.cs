@@ -1,9 +1,6 @@
 ﻿using Characters;
 using ScriptableSystems;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using static EditorTools.EditorStaticTools;
@@ -52,7 +49,7 @@ namespace EditorTools
             "employeeTypes",
             "guestTypes",
            "anySelector",
-         
+
               "guestDatas",
               "employeeDatas",
               "employeeColor",
@@ -114,7 +111,7 @@ namespace EditorTools
         }
         public override void OnInspectorGUI()
         {
-            
+
             GUI.color = EditorColorsCustomizer.GetColor(ColorPurpose.NegateColor, ref defaultColors);
             GUI.backgroundColor = EditorColorsCustomizer.GetColor(ColorPurpose.NegateColor, ref defaultColors);
 
@@ -136,7 +133,7 @@ namespace EditorTools
 
             DrawTab(objectsTabOpenProperty, "Objects");
             DrawObjectsContent();
-            
+
 
             GUI.color = EditorColorsCustomizer.GetColor(ColorPurpose.MainColor, ref defaultColors);
             GUI.backgroundColor = EditorColorsCustomizer.GetColor(ColorPurpose.BackgroundColorLight, ref defaultColors);
@@ -179,7 +176,7 @@ namespace EditorTools
             }
 
             EditorGUILayout.EndHorizontal();
-        
+
 
         }
 
@@ -216,25 +213,25 @@ namespace EditorTools
 
                     }
                 }
-                   if(b)
+                if (b)
+                {
+                    if (GUILayout.Button("Create Config"))
                     {
-                        if (GUILayout.Button("Create Config"))
+
+                        ScriptableObject.CreateInstance<GameSettings>();
+                    }
+                    else
+                    {
+                        if (GUILayout.Button("Fill parameters !"))
                         {
 
-                            ScriptableObject.CreateInstance<GameSettings>();
-                        }
-                        else
-                        {
-                            if (GUILayout.Button("Fill parameters !"))
-                            {
-
-                                
-                            }
 
                         }
 
                     }
-         
+
+                }
+
 
                 if (GUILayout.Button("Refresh"))
                 {
@@ -328,10 +325,10 @@ namespace EditorTools
 
             }
 
-         
+
         }
 
-      
+
         public void DrawCharactersList()
         {
             EditorGUILayout.BeginHorizontal();
@@ -359,7 +356,7 @@ namespace EditorTools
             EditorGUILayout.BeginHorizontal();
             GUI.backgroundColor = EditorColorsCustomizer.GetColor(ColorPurpose.ConfirmColor, ref defaultColors);
 
-            if ( GUILayout.Button("Add"))
+            if (GUILayout.Button("Add"))
             {
 
                 Debug.LogWarning("Add");
@@ -425,7 +422,7 @@ namespace EditorTools
             {
 
 
-                 EditorGUILayout.TextField(new GUIContent("Type: "),(characterData as EmployeeData).employeeType, GUILayout.Height(smallControlHeight));
+                EditorGUILayout.TextField(new GUIContent("Type: "), (characterData as EmployeeData).employeeType, GUILayout.Height(smallControlHeight));
 
                 (characterData as EmployeeData).salary = EditorGUILayout.FloatField(new GUIContent("Wage: "), (characterData as EmployeeData).salary, GUILayout.Height(smallControlHeight));
 
@@ -438,7 +435,7 @@ namespace EditorTools
         public void DrawEmployeesList()
         {
             GUI.backgroundColor = employeeColorProperty.colorValue;
-          
+
             EditorGUILayout.BeginVertical(GUI.skin.GetStyle("HelpBox"));
 
             for (int i = 0; i < employeeDatasProperty.arraySize; i++)
@@ -447,11 +444,11 @@ namespace EditorTools
 
                 if (GUILayout.Button(employeeData.displayName, GUILayout.Height(hugeControlHeight), GUILayout.Width(Screen.width / 4.0f)))
                 {
-                   
+
                     characterDataBase = employeeData;
                 }
 
-                
+
             }
             EditorGUILayout.EndVertical();
             GUI.backgroundColor = EditorColorsCustomizer.GetColor(ColorPurpose.BackgroundColorLight, ref defaultColors);
@@ -470,7 +467,7 @@ namespace EditorTools
                 if (GUILayout.Button(guestData.displayName, GUILayout.Height(hugeControlHeight), GUILayout.Width(Screen.width / 4.0f)))
                 {
                     characterDataBase = guestData;
-                  
+
                 }
 
             }
@@ -491,7 +488,7 @@ namespace EditorTools
             DrawCharacterData(characterData);
             DrawEmployeeData(characterData);
             DrawGuestData(characterData);
-         
+
             EditorGUILayout.EndVertical();
         }
 
@@ -539,7 +536,7 @@ namespace EditorTools
 
         public void DrawObjectsList()
         {
-            EditorGUILayout.BeginHorizontal(GUI.skin.GetStyle("HelpBox"), GUILayout.Width(Screen.width/3));
+            EditorGUILayout.BeginHorizontal(GUI.skin.GetStyle("HelpBox"), GUILayout.Width(Screen.width / 3));
             GUI.backgroundColor = buildObjectColorProperty.colorValue;
 
             EditorGUILayout.BeginVertical(GUI.skin.GetStyle("HelpBox"));
@@ -564,10 +561,10 @@ namespace EditorTools
 
         public void DrawObjectsContent()
         {
-            if(objectsTabOpenProperty.boolValue)
+            if (objectsTabOpenProperty.boolValue)
 
             {
-                if(Selection.activeGameObject)
+                if (Selection.activeGameObject)
                 {
                     DrawObjectCreator();
 
@@ -576,7 +573,7 @@ namespace EditorTools
                 {
                     DrawObjectsList();
                 }
-               
+
             }
         }
 
@@ -593,19 +590,19 @@ namespace EditorTools
         public void DrawObjectCreator()
         {
             GUIStyle myStyle = GUI.skin.GetStyle("HelpBox");
-            
 
 
-            EditorGUILayout.BeginVertical(myStyle, GUILayout.Width(Screen.width/3 ));
+
+            EditorGUILayout.BeginVertical(myStyle, GUILayout.Width(Screen.width / 3));
             for (int i = 0; i < Selection.objects.Length; i++)
             {
 
-              GUILayout.Button(Selection.objects[i].name, GUILayout.Height(hugeControlHeight), GUILayout.Width(Screen.width / 3.0f));
-           
+                GUILayout.Button(Selection.objects[i].name, GUILayout.Height(hugeControlHeight), GUILayout.Width(Screen.width / 3.0f));
+
             }
 
-            if(Selection.objects.Length==1)
-                {
+            if (Selection.objects.Length == 1)
+            {
 
 
             }

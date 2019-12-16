@@ -19,20 +19,29 @@ MonoBehaviour:
   characterTypeParams: {fileID: 11400000, guid: 71e39902a3d87a844a0a329fdb846c81,
     type: 2}
   individualRoleParams:
-    dynamicBaseParameters:
-    - id: Durability
-      value: 0
-    - id: Politeness
-      value: -10.6
-    staticBaseParameters: []
+    dynamicParameters:
+    - id: Condition
+      value: 10
+    staticParameters:
+    - id: Salary
+      value: -5
   accumulatedParams:
-    dynamicBaseParameters:
+    dynamicParameters:
     - id: Politeness
-      value: 50
+      value: 0
+    - id: Fatigue
+      value: 0
     - id: Speed
       value: 10
     - id: Skill
       value: 50
-    - id: Durability
-      value: 0
-    staticBaseParameters: []
+    - id: Condition
+      value: 10
+    - id: Hygiene
+      value: -1
+    staticParameters:
+    - id: Personel
+      value: 1
+    - id: Salary
+      value: -5
+  startState: {fileID: 11400000, guid: d806e113ee6502e4aaf523eb03c3fb29, type: 2}

@@ -9,15 +9,15 @@ namespace ScriptableSystems
         public bool initializeOnStart;
 
         public MonoBehaviour monoBehaviourScript;
-        
+
         private ScriptableEvent OnStartEvent;
         private ScriptableEvent OnStopEvent;
         public virtual void Initialize(GameObject obj)
         {
             obj.name = id;
 
-          
+
         }
-        
+
     }
 }

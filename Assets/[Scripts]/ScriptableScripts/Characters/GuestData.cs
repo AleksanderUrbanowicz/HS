@@ -1,5 +1,4 @@
 ﻿using EditorTools;
-using ScriptableSystems;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,8 +18,8 @@ namespace Characters
 
         //additional requirements, besides requirements based on GuestType
         //move to  guestTypeData.dynamicGuestTypeModifiers ?
-        public List<ParameterBase> requirements = new List<ParameterBase>(); 
-        
+        public List<ParameterBase> requirements = new List<ParameterBase>();
+
         public GuestData()
         {
             characterType = "Guest";

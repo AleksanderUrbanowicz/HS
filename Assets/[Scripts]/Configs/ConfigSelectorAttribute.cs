@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
@@ -10,7 +8,7 @@ namespace EditorTools
 {
     public class ConfigSelectorAttribute : PropertyAttribute
     {
-        public  string configKey;
+        public string configKey;
         public string paramsSetKey;
         public ConfigBase config;
         public string[] parameters;
@@ -82,8 +80,8 @@ namespace EditorTools
                     }
                 }
 
-   }
-   
+            }
+
         }
     }
 
@@ -99,8 +97,8 @@ namespace EditorTools
             var list = stringInList.Elements;
             if (property.propertyType == SerializedPropertyType.String)
             {
-               // int index = Mathf.Max(0, Array.IndexOf(list, property.stringValue));
-               // index = EditorGUI.Popup(position, property.displayName, index, list);
+                // int index = Mathf.Max(0, Array.IndexOf(list, property.stringValue));
+                // index = EditorGUI.Popup(position, property.displayName, index, list);
 
                 if (list == null || list.Length == 0)
                 {

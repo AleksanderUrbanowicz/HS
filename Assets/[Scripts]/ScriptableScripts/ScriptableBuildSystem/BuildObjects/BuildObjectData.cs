@@ -1,5 +1,4 @@
-﻿using EditorTools;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace ScriptableSystems
@@ -29,7 +28,7 @@ namespace ScriptableSystems
         public List<string> dynamicParameters;
         public List<string> hotelParameters;
 
-        
+
         public BuildObjectData()
         {
             objectOrientation = ObjectOrientation.FLOOR;
@@ -38,7 +37,7 @@ namespace ScriptableSystems
             collsionBoundsFraction = 0.95f;
         }
 
-  
+
 
         private void OnEnable()
         {

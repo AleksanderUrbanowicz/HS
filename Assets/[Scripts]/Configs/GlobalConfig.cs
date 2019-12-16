@@ -14,12 +14,22 @@ namespace EditorTools
 
     [Serializable]
     [CreateAssetMenu(fileName = "GlobalConfig", menuName = "Config/Global Config")]
-    public class GlobalConfig : ConfigBase
+    public class GlobalConfig :ConfigBase
     {
 
         /// //////////////////////////////////Settings/Selectors///////////////////////////////////////////////////////////
 
         new public const string Key = "GlobalConfig";
+        [ConfigSelector]
+        public List<string> interactionParameters = new List<string>();
+        public List<string> bonusParameters = new List<string>();
+
+        public PluggableRuntimeCollection AllPluggables;
+        public PluggableRuntimeCollection AllStatPluggables;
+        public PluggableRuntimeCollection AllPasiveInteractables;
+        public PluggableRuntimeCollection AllActiveInteractables;
+        public PluggableRuntimeCollection AllPluggableCharacters;
+        public PluggableRuntimeCollection AllPluggableObjects;
         private bool isInitialized;
 
         bool initWithDefaultParameters;
@@ -44,24 +54,24 @@ namespace EditorTools
         /// Color Customizer////////////////////////////////////////////////////////
         /// </summary>
         public Color[] colorsSet;
-        public Color guestColor=Color.green;
-        public Color employeeColor=Color.red;
-        public Color buildObjectColor=Color.blue;
-        public Color defaultColor=Color.black;
+        public Color guestColor = Color.green;
+        public Color employeeColor = Color.red;
+        public Color buildObjectColor = Color.blue;
+        public Color defaultColor = Color.black;
         /// //////////////////////////////////Tabs///////////////////////////////////////////////////////////
 
-        [HideInInspector] public bool  initTabOpen;
-    [HideInInspector]public bool characterTabOpen;
-        [HideInInspector]public bool colorsCustomizerTabOpen;
-        [HideInInspector]public bool definitionsTabOpen;
-        [HideInInspector]public bool objectsTabOpen;
+        [HideInInspector] public bool initTabOpen;
+        [HideInInspector] public bool characterTabOpen;
+        [HideInInspector] public bool colorsCustomizerTabOpen;
+        [HideInInspector] public bool definitionsTabOpen;
+        [HideInInspector] public bool objectsTabOpen;
 
         //classes 
 
         public List<EmployeeType> employeeTypes = new List<EmployeeType>();
         public List<GuestType> guestTypes = new List<GuestType>();
-        
-       // public List<string> guestTypes = new List<GuestType>();
+        // public static RemainsInState remainsInState;
+        // public List<string> guestTypes = new List<GuestType>();
 
         //public EditorTools.ScriptableCollections.Collection<ParameterBase> collectionOfParameters =new EditorTools.ScriptableCollections.Collection<ParameterBase>();
 
@@ -69,27 +79,34 @@ namespace EditorTools
         {
             InitColors();
             InitSelectors();
+            Debug.LogError("GlobalCOnfig Awake");
+            //  if(remainsInState==null)
+            //  {
+
+            // remainsInState = EditorStaticTools.GetFirstInstance<RemainsInState>();
+
+            // }
         }
 
 
         public void InitColors()
         {
-            colorsSet=Enumerable.Repeat(Color.white, Enum.GetValues(typeof(ColorPurpose)).Length).ToArray() ;
+            colorsSet = Enumerable.Repeat(Color.white, Enum.GetValues(typeof(ColorPurpose)).Length).ToArray();
         }
         public void InitSelectors()
         {
 
             if (!isInitialized)
             {
-               // Debug.LogError("GlobalConfig.InitSelectors");
+                // Debug.LogError("GlobalConfig.InitSelectors");
                 //if (selectorParameters.FirstOrDefault(x => x.id == StringDefines.EmployeeParameterSelectorKey) == null)
-               // {
-                    selectorParameters.Add(new ParamsList(StringDefines.EmployeeParameterSelectorKey, new List<string>()  {
+                // {
+                selectorParameters.Add(new ParamsList(StringDefines.EmployeeParameterSelectorKey, new List<string>()  {
             StringDefines.EmployeeParameterSelectorKey+"1",
             StringDefines.EmployeeParameterSelectorKey+"2",
             StringDefines.EmployeeParameterSelectorKey+"3"
         }));
-              //  }
+                //  }
                 if (selectorParameters.FirstOrDefault(x => x.id == StringDefines.GuestParameterSelectorKey) == null)
                 {
                     selectorParameters.Add(new ParamsList(StringDefines.GuestParameterSelectorKey, new List<string>(){
@@ -98,22 +115,22 @@ namespace EditorTools
             StringDefines.GuestParameterSelectorKey+"3"
         }));
                 }
-               // if (selectorParameters.FirstOrDefault(x => x.id == StringDefines.HotelParameterSelectorKey) == null)
-              //  {
-                    selectorParameters.Add(new ParamsList(StringDefines.HotelParameterSelectorKey, new List<string>(){
+                // if (selectorParameters.FirstOrDefault(x => x.id == StringDefines.HotelParameterSelectorKey) == null)
+                //  {
+                selectorParameters.Add(new ParamsList(StringDefines.HotelParameterSelectorKey, new List<string>(){
             StringDefines.HotelParameterSelectorKey+"1",
             StringDefines.HotelParameterSelectorKey+"2",
             StringDefines.HotelParameterSelectorKey+"3"
         }));
-             //   }
+                //   }
                 //if (selectorParameters.FirstOrDefault(x => x.id == StringDefines.BuildObjectParameterSelectorKey) == null)
-               // {
-                    selectorParameters.Add(new ParamsList(StringDefines.BuildObjectParameterSelectorKey, new List<string>(){
+                // {
+                selectorParameters.Add(new ParamsList(StringDefines.BuildObjectParameterSelectorKey, new List<string>(){
             StringDefines.BuildObjectParameterSelectorKey+"1",
             StringDefines.BuildObjectParameterSelectorKey+"2",
             StringDefines.BuildObjectParameterSelectorKey+"3"
         }));
-             //   }
+                //   }
                 if (selectorParameters.FirstOrDefault(x => x.id == StringDefines.BuildObjectSelectorKey) == null)
                 {
                     selectorParameters.Add(new ParamsList(StringDefines.BuildObjectSelectorKey, new List<string>(){
@@ -157,7 +174,7 @@ namespace EditorTools
         }));
                 }
 
-         
+
                 selectorParameters.Add(new ParamsList(StringDefines.EmployeeTypeSelectorKey, new List<string>(){
             StringDefines.EmployeeTypeSelectorKey+"1",
             StringDefines.EmployeeTypeSelectorKey+"6",
@@ -176,7 +193,7 @@ namespace EditorTools
                 selectorParameters.Add(new ParamsList(StringDefines.MaterialTypeSelectorKey, new List<string>(){
             "Default"
         }));
-               foreach(string s in autoIncludeParams)
+                foreach (string s in autoIncludeParams)
                 {
                     if (!allSelectorParameters.Contains(s))
                     {
@@ -203,11 +220,11 @@ namespace EditorTools
 
             UpdateCharacters();
             UpdateScriptableSelectors();
-            
+
 #endif
         }
 
-      
+
 
         public void UpdateScriptableSelectors()
         {
@@ -255,8 +272,8 @@ namespace EditorTools
 
         public List<string> GetSelectorParameters(string key)
         {
-           ParamsList paramsList= selectorParameters.FirstOrDefault(x => x.id == key);
-            if(paramsList!=null)
+            ParamsList paramsList = selectorParameters.FirstOrDefault(x => x.id == key);
+            if (paramsList != null)
             {
 
                 return paramsList.parameters;
@@ -267,22 +284,22 @@ namespace EditorTools
 
         public void SetSelectorParameters(string _key, List<string> _parameters)
         {
-            if(_parameters==null)
+            if (_parameters == null)
             {
                 return;
 
             }
             ParamsList selectorParams = selectorParameters.FirstOrDefault(x => x.id == _key);
-            if(selectorParams!=null)
+            if (selectorParams != null)
             {
-              
+
                 foreach (string s in _parameters)
                 {
-                    if (!allSelectorParameters.Contains(s) )
+                    if (!allSelectorParameters.Contains(s))
                     {
 
                         allSelectorParameters.Add(s);
-                        #if LOGS
+#if LOGS
                         Debug.LogError("GlobalConfig.SetSelectorParameters.Add: " + s);
 #endif
                     }
@@ -290,7 +307,7 @@ namespace EditorTools
                 }
 
                 selectorParams.parameters = _parameters;
-               
+
             }
 
         }
@@ -298,12 +315,12 @@ namespace EditorTools
 
         public void AddOrEditSelectorParams(ParamsList _paramsList)
         {
-            if(GetSelectorParameters(_paramsList.id)==null)
+            if (GetSelectorParameters(_paramsList.id) == null)
             {
                 selectorParameters.Add(_paramsList);
-                foreach(string s in _paramsList.parameters)
+                foreach (string s in _paramsList.parameters)
                 {
-                    if(!allSelectorParameters.Contains(s))
+                    if (!allSelectorParameters.Contains(s))
                     {
 
                         allSelectorParameters.Add(s);
@@ -319,13 +336,13 @@ namespace EditorTools
 
             }
 
-            
+
 
         }
         public void AddOrEditSelectorParams(string _key, List<string> _parameters)
         {
             //Debug.LogError("GlobalConfig.AddOrEditSelectorParams, _key,  count: " + _key+","+_parameters.Count); 
-            if(_parameters==null)
+            if (_parameters == null)
             {
                 _parameters = new List<string>();
 
@@ -345,8 +362,8 @@ namespace EditorTools
             }
             if (GetSelectorParameters(_key) == null)
             {
-                selectorParameters.Add(new ParamsList(_key,_parameters));
-                
+                selectorParameters.Add(new ParamsList(_key, _parameters));
+
             }
             else
             {

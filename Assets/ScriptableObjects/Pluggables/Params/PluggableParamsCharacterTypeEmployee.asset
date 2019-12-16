@@ -17,4 +17,6 @@ MonoBehaviour:
     value: 10
   - id: Skill
     value: 50
-  staticParameters: []
+  staticParameters:
+  - id: Personel
+    value: 1

@@ -1,6 +1,4 @@
 ﻿using EditorTools;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Characters
@@ -13,23 +11,23 @@ namespace Characters
         public PluggableParamsData characterBaseParameters;
 
         public PluggableParamsData characterTypeParams;//Employee, guest  
-        
-        public PluggableParams individualRoleParams;  
+
+        public PluggableParams individualRoleParams;
 
         public PluggableParams accumulatedParams;
-
-        public  PluggableParams AccumulatedParams
+        public State startState;
+        public PluggableParams AccumulatedParams
         {
             get { return (this as IPluggableParameters).GetAccumulatedParameters(); }
-           
+
 
         }
         void OnEnable()
         {
-            Debug.LogError("CharacterRoleOnEnable");
-            accumulatedParams = (this as IPluggableParameters).GetAccumulatedParameters();
+            // Debug.LogError("CharacterRoleOnEnable");
+            (this as IPluggableParameters).GetAccumulatedParameters();
         }
-         PluggableParams IPluggableParameters.GetAccumulatedParameters()
+        PluggableParams IPluggableParameters.GetAccumulatedParameters()
         {
 
             accumulatedParams = new PluggableParams();
@@ -48,11 +46,11 @@ namespace Characters
 
                 // if (accumulatedParams.staticBaseParameters.Contains(par))
                 {
-                    accumulatedParams.staticParameters[index].value += par.value;
+                    accumulatedParams.passiveParameters[index].value += par.value;
                 }
                 else
                 {
-                    accumulatedParams.staticParameters.Add(par);
+                    accumulatedParams.passiveParameters.Add(new ParameterBase(par.id, par.value));
 
                 }
 
@@ -64,11 +62,11 @@ namespace Characters
 
                 // if (accumulatedParams.staticBaseParameters.Contains(par))
                 {
-                    accumulatedParams.dynamicParameters[index].value += par.value;
+                    accumulatedParams.activeParameters[index].value += par.value;
                 }
                 else
                 {
-                    accumulatedParams.dynamicParameters.Add(par);
+                    accumulatedParams.activeParameters.Add(new ParameterBase(par.id, par.value));
 
                 }
 
@@ -78,34 +76,34 @@ namespace Characters
         private void AddIndividualParams()
         {
 
-            foreach (ParameterBase par in individualRoleParams.staticParameters)
+            foreach (ParameterBase par in individualRoleParams.passiveParameters)
             {
                 int index = accumulatedParams.GetIndexOfStatic(par.id);
-               if(index!=-1)
-                
+                if (index != -1)
+
                 // if (accumulatedParams.staticBaseParameters.Contains(par))
                 {
-                    accumulatedParams.staticParameters[index].value += par.value;
+                    accumulatedParams.passiveParameters[index].value += par.value;
                 }
                 else
                 {
-                    accumulatedParams.staticParameters.Add(par);
+                    accumulatedParams.passiveParameters.Add(new ParameterBase(par.id, par.value));
 
                 }
 
             }
-            foreach (ParameterBase par in individualRoleParams.dynamicParameters)
+            foreach (ParameterBase par in individualRoleParams.activeParameters)
             {
                 int index = accumulatedParams.GetIndexOfDynamic(par.id);
                 if (index != -1)
 
                 // if (accumulatedParams.staticBaseParameters.Contains(par))
                 {
-                    accumulatedParams.dynamicParameters[index].value += par.value;
+                    accumulatedParams.activeParameters[index].value += par.value;
                 }
                 else
                 {
-                    accumulatedParams.dynamicParameters.Add(par);
+                    accumulatedParams.activeParameters.Add(new ParameterBase(par.id, par.value));
 
                 }
 
@@ -121,11 +119,11 @@ namespace Characters
 
                 // if (accumulatedParams.staticBaseParameters.Contains(par))
                 {
-                    accumulatedParams.staticParameters[index].value += par.value;
+                    accumulatedParams.passiveParameters[index].value += par.value;
                 }
                 else
                 {
-                    accumulatedParams.staticParameters.Add(par);
+                    accumulatedParams.passiveParameters.Add(new ParameterBase(par.id, par.value));
 
                 }
 
@@ -137,11 +135,11 @@ namespace Characters
 
                 // if (accumulatedParams.staticBaseParameters.Contains(par))
                 {
-                    accumulatedParams.dynamicParameters[index].value += par.value;
+                    accumulatedParams.activeParameters[index].value += par.value;
                 }
                 else
                 {
-                    accumulatedParams.dynamicParameters.Add(par);
+                    accumulatedParams.activeParameters.Add(new ParameterBase(par.id, par.value));
 
                 }
 

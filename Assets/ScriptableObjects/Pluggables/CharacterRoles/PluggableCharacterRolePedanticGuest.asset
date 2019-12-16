@@ -19,10 +19,18 @@ MonoBehaviour:
   characterTypeParams: {fileID: 11400000, guid: 8a10d9321d5db254ba7ab9809c80ab78,
     type: 2}
   individualRoleParams:
-    dynamicBaseParameters: []
-    staticBaseParameters:
+    dynamicParameters: []
+    staticParameters:
     - id: Hygiene
-      value: 1
+      value: 3
   accumulatedParams:
-    dynamicBaseParameters: []
-    staticBaseParameters: []
+    dynamicParameters:
+    - id: Politeness
+      value: 0
+    - id: Fatigue
+      value: 0
+    - id: Need
+      value: 0
+    staticParameters:
+    - id: Wealth
+      value: 0

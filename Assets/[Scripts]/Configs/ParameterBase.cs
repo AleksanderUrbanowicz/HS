@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace EditorTools
@@ -10,13 +8,13 @@ namespace EditorTools
     {
         [ConfigSelector(paramsSetKey = StringDefines.AnyParameterSelectorKey)]
         public string id;
-       
+
         //Initial value/ one-time increment.
-        [Range(-100,100)]
+        [Range(-100, 100)]
         public float value;
         public ParameterBase()
         {
-           
+
         }
         public ParameterBase(string _id, float _val)
         {
@@ -24,5 +22,5 @@ namespace EditorTools
             value = _val;
 
         }
-            }
+    }
 }

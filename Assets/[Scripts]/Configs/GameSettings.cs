@@ -17,13 +17,13 @@ namespace EditorTools
         private BuildObjectData[] allObjectsArray;
 
 
-      //  [ConfigSelector]
+        //  [ConfigSelector]
         public ParameterBase parameterBase = new ParameterBase();
         public DynamicParameter parameterdynamic = new DynamicParameter();
 
 
         [ConfigSelector(paramsSetKey = StringDefines.EmployeeTypeSelectorKey)]
-public string employeeType;
+        public string employeeType;
 
         [ConfigSelector(paramsSetKey = StringDefines.GuestTypeSelectorKey)]
 
@@ -32,7 +32,7 @@ public string employeeType;
         public string guestType;
         [ConfigSelector(paramsSetKey = StringDefines.MaterialTypeSelectorKey)]
 
-          public string materialType;
+        public string materialType;
 
         [ConfigSelector(paramsSetKey = StringDefines.ObjectTypeSelectorKey)]
 
@@ -40,7 +40,7 @@ public string employeeType;
 
         [ConfigSelector(paramsSetKey = StringDefines.MaterialSetSelectorKey)]
 
-          public string materialSet;
+        public string materialSet;
 
         [ConfigSelector(paramsSetKey = StringDefines.BuildObjectSelectorKey)]
 
@@ -71,7 +71,7 @@ public string employeeType;
         public string buildObjectParameterTypes;
 
         [ConfigSelector(paramsSetKey = StringDefines.HotelParameterSelectorKey)]
-      
+
         public string hotelParameterType;
 
 
@@ -79,9 +79,9 @@ public string employeeType;
 
         public string anyParameterType;
 
-//[ConfigSelector(paramsSetKey = StringDefines.EmployeeSelectorKey)]
+        //[ConfigSelector(paramsSetKey = StringDefines.EmployeeSelectorKey)]
 
-//public string employee;
+        //public string employee;
 
         private void OnEnable()
         {

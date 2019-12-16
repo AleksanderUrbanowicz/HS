@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e58efc00266d784d8b34176ac697054, type: 3}
+  m_Name: CharacterDataWalter
+  m_EditorClassIdentifier: 
+  id: Walter
+  displayName: Waiter Walter
+  prefab: {fileID: 6229906721473331052, guid: c018f59881ca06c499941718b076f5a1, type: 3}
+  accumulatedParams:
+    dynamicParameters:
+    - id: Politeness
+      value: 5
+    - id: Fatigue
+      value: 0
+    - id: Speed
+      value: 15
+    - id: Skill
+      value: 50
+    - id: Service
+      value: 25
+    staticParameters:
+    - id: Personel
+      value: 2
+    - id: Salary
+      value: 5
+  individualParams:
+    dynamicParameters:
+    - id: Speed
+      value: 5
+    staticParameters:
+    - id: Salary
+      value: 5
+  characterRole: {fileID: 11400000, guid: 95b2f4de4d1938c4d9649f806b2e9655, type: 2}

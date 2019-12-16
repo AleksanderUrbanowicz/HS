@@ -1,24 +1,35 @@
-﻿using System.Collections;
+﻿using EditorTools;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class StateControllerMB : MonoBehaviour
 {
     public State currentState;
     public State remainState;
-
-    [HideInInspector] public float stateTimeElapsed;
-
+    public Transform target;
+    public NavMeshAgent navMeshAgent;
+    public List<Transform> wayPointList;
+    public List<Transform> interactablePoints;
+    public int nextWayPoint;
+    public float stateTimeElapsed;
+    public PluggableRuntimeCollection Set;
     private bool aiActive;
-
 
     void Awake()
     {
-        
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        if (wayPointList == null || wayPointList.Count == 0)
+        {
+            wayPointList = new List<Transform>();
+            wayPointList.Add(new GameObject().transform);
+        }
+        //SetupAI(true);
     }
 
     public void SetupAI(bool dynamiAI)
     {
+
         aiActive = dynamiAI;
         if (aiActive)
         {
@@ -28,6 +39,8 @@ public class StateControllerMB : MonoBehaviour
         {
             Debug.LogError("SetupAI Active");
         }
+
+
     }
 
     void Update()
@@ -37,7 +50,7 @@ public class StateControllerMB : MonoBehaviour
         currentState.UpdateState(this);
     }
 
- 
+
 
     public void TransitionToState(State nextState)
     {
@@ -45,6 +58,15 @@ public class StateControllerMB : MonoBehaviour
         {
             currentState = nextState;
             OnExitState();
+        }
+    }
+
+    void OnDrawGizmos()
+    {
+        if (currentState != null)
+        {
+            Gizmos.color = currentState.sceneGizmoColor;
+            Gizmos.DrawWireSphere(transform.position, 2);
         }
     }
 

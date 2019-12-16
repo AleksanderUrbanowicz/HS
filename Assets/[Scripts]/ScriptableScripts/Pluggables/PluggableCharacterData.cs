@@ -1,65 +1,77 @@
 ﻿using EditorTools;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
-namespace Characters {
-     [CreateAssetMenu(fileName = "CharacterData", menuName = "Characters/Pluggable Character Data")]
+namespace Characters
+{
+    [CreateAssetMenu(fileName = "CharacterData", menuName = "Characters/Pluggable Character Data")]
 
-    public class PluggableCharacterData :PluggableCharacterBase, IPluggableParameters
+    public class PluggableCharacterData : PluggableCharacterBase, IPluggableParameters
     {
         public PluggableParams accumulatedParams;
-
+        public PluggableParams individualParams;
+        public PluggableCharacterRole characterRole;
 
         PluggableParams IPluggableParameters.GetAccumulatedParameters()
         {
+            accumulatedParams = new PluggableParams();
             if (characterRole != null)
             {
                 accumulatedParams = characterRole.AccumulatedParams;
                 AddIndividualParams();
             }
             return accumulatedParams;
-           
+
 
         }
 
         void OnEnable()
         {
-            Debug.LogError("CharacterDataOnEnable");
-            accumulatedParams= (this as IPluggableParameters).GetAccumulatedParameters();
+            //  Debug.LogError("CharacterDataOnEnable");
+            (this as IPluggableParameters).GetAccumulatedParameters();
         }
+
+
+
 
         private void AddIndividualParams()
         {
 
-            foreach (ParameterBase par in individualParams.staticParameters)
+            foreach (ParameterBase par in individualParams.passiveParameters)
             {
                 if (accumulatedParams.GetIndexOfStatic(par.id) != -1)
                 {
-                    accumulatedParams.staticParameters[accumulatedParams.GetIndexOfStatic(par.id)].value += par.value;
+                    accumulatedParams.passiveParameters[accumulatedParams.GetIndexOfStatic(par.id)].value += par.value;
                 }
                 else
                 {
-                    accumulatedParams.staticParameters.Add(par);
+                    accumulatedParams.passiveParameters.Add(new ParameterBase(par.id, par.value));
 
                 }
 
             }
-            foreach (ParameterBase par in individualParams.dynamicParameters)
+            foreach (ParameterBase par in individualParams.activeParameters)
             {
 
-                if (accumulatedParams.GetIndexOfDynamic(par.id)!=-1)
+                if (accumulatedParams.GetIndexOfDynamic(par.id) != -1)
                 {
-                    accumulatedParams.dynamicParameters[accumulatedParams.GetIndexOfDynamic(par.id)].value += par.value;
+                    accumulatedParams.activeParameters[accumulatedParams.GetIndexOfDynamic(par.id)].value += par.value;
                 }
                 else
                 {
-                    accumulatedParams.dynamicParameters.Add(par);
+                    accumulatedParams.activeParameters.Add(new ParameterBase(par.id, par.value));
 
                 }
 
             }
         }
+
+        public GameObject CreateInstance(GameObject go, Vector3 position)
+        {
+            GameObject instance = GameObject.Instantiate(prefab, position, Quaternion.identity, go.transform);
+            instance.name = id;
+            instance.GetComponent<PluggableCharacterMonoBehaviour>().Init(this);
+            return instance;
+        }
+
     }
 }
