@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b1900b75220d1d40b0c98e487caacda, type: 3}
-  m_Name: NewGameEvent
+  m_Script: {fileID: 11500000, guid: 434d20417d0277b4ba6a5aed6a922909, type: 3}
+  m_Name: State_RemainIn
   m_EditorClassIdentifier: 
-  id: NewGameEvent
+  actions: []
+  transitions: []
+  sceneGizmoColor: {r: 0, g: 0, b: 0, a: 1}
