@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "LookDecision", menuName = "States/Decisions/LookDecision")]
+[CreateAssetMenu(fileName = "Decision_InteractionInRange", menuName = "States/Decisions/InteractionInRangDecision")]
 
 
 public class InteractionsInRangeDecision : Decision

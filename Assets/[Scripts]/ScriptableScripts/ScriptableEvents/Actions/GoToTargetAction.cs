@@ -2,11 +2,11 @@
 
 [CreateAssetMenu(fileName = "GoToAction", menuName = "States/Actions/Go To Action")]
 
-public class GoToAction : Action
+public class GoToTargetAction : Action
 {
     public override void Act(StateControllerMB controller)
     {
-        if (controller.interactablePoints != null && controller.interactablePoints.Count > 0)
+        if (controller.target!=null)
         {
             GoToTarget(controller);
 
@@ -14,7 +14,7 @@ public class GoToAction : Action
         }
         else
         {
-            // Debug.LogError("GoToAction: controller.target is null");
+             Debug.LogError("GoToAction: controller.target is null");
         }
     }
 
@@ -22,7 +22,7 @@ public class GoToAction : Action
     {
 
 
-        controller.navMeshAgent.destination = controller.interactablePoints[0].position;
+        controller.navMeshAgent.destination = controller.target.position;
         controller.navMeshAgent.isStopped = false;
     }
 }

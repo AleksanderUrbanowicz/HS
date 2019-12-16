@@ -31,7 +31,7 @@ namespace ScriptableSystems
         public List<Transform> patrolWaypoints = new List<Transform>();
         public List<Transform> interactablePoints = new List<Transform>();
         public List<ScriptableSystem> scriptableSystems = new List<ScriptableSystem>();
-        public List<PluggableMonoBehaviour> pluggablesInScene = new List<PluggableMonoBehaviour>();
+        //public List<PluggableMonoBehaviour> pluggablesInScene = new List<PluggableMonoBehaviour>();
 
         public PluggableRuntimeCollection Set;
 
@@ -46,6 +46,12 @@ namespace ScriptableSystems
 
         private void Update()
         {
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                GameObject instance = charactersToSpawn[0].CreateInstance(charactersTransform.gameObject, new Vector3(0, 0, 0));
+
+            }
             if (previousCount != Set.Items.Count)
             {
                 UpdateText();
@@ -102,9 +108,9 @@ namespace ScriptableSystems
                 vector2Int = new Vector2Int(Random.Range(-charactersRandomSpread.x, charactersRandomSpread.x), Random.Range(-charactersRandomSpread.y, charactersRandomSpread.y));
 
 
-                GameObject characterGO = new GameObject();
-                characterGO.transform.parent = charactersTransform;
-                GameObject instance = characterData.CreateInstance(characterGO, new Vector3(vector2Int.x, 0, vector2Int.y));
+               // GameObject characterGO = new GameObject();
+               // characterGO.transform.parent = charactersTransform;
+                GameObject instance = characterData.CreateInstance(charactersTransform.gameObject, new Vector3(vector2Int.x, 0, vector2Int.y));
                 // instance.transform.localPosition=new Vector3(charactersRandomSpread.x, 0 ,  charactersRandomSpread.y);
 
 

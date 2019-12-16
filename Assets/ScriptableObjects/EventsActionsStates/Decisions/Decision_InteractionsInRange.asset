@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654e2f36f5dc5a84a93d68ac519b2ee9, type: 3}
   m_Name: Decision_InteractionsInRange
   m_EditorClassIdentifier: 
-  min: 83.79
+  min: 10

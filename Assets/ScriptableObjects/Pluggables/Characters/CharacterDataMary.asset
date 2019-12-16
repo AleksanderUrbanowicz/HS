@@ -16,31 +16,19 @@ MonoBehaviour:
   displayName: Mary The Maid
   prefab: {fileID: 1238819513634161656, guid: 258d8696c889a2043a555bd41956008b, type: 3}
   accumulatedParams:
-    dynamicParameters:
+    activeParameters:
     - id: Politeness
-      value: -2
+      value: 0
     - id: Fatigue
       value: 0
     - id: Speed
       value: 10
     - id: Skill
-      value: 60
-    - id: Cleanness
-      value: 15
-    staticParameters:
+      value: 50
+    passiveParameters:
     - id: Personel
-      value: 3
-    - id: Hygiene
-      value: 2
+      value: 1
   individualParams:
-    dynamicParameters:
-    - id: Politeness
-      value: -2
-    - id: Cleanness
-      value: 5
-    - id: Skill
-      value: 10
-    staticParameters:
-    - id: Personel
-      value: 2
+    activeParameters: []
+    passiveParameters: []
   characterRole: {fileID: 11400000, guid: 2b50937b8e9d5d048a41dfc8ee130110, type: 2}

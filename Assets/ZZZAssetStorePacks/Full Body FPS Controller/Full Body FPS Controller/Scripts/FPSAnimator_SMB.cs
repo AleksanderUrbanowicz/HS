@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 
-
-//From Unity standard assets
 namespace EasySurvivalScripts
 {
     public class FPSAnimator_SMB : StateMachineBehaviour

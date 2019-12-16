@@ -51,7 +51,6 @@ namespace Gameplay
         {
             bool b = s.scriptableBuildSystem != null;
             b = b && s.scriptableBuildSystem.initializeOnStart;
-            // if (s.scriptableBuildSystem != null && s.scriptableBuildSystem.initializeOnStart)
             if (b)
             {
                 GameObject systemGO = new GameObject();

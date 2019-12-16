@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a04f91841b81e240b3b479c578f4d17, type: 3}
   m_Name: Decision_TimedLong
   m_EditorClassIdentifier: 
-  time: 20
+  time: 10

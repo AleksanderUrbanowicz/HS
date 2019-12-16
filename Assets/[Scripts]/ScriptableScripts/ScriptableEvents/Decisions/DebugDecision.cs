@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-[CreateAssetMenu(fileName = "DebugDecision", menuName = "States/Decisions/Debug Decision")]
+[CreateAssetMenu(fileName = "Decision_Debug", menuName = "States/Decisions/Debug Decision")]
 
 public class DebugDecision : Decision
 {

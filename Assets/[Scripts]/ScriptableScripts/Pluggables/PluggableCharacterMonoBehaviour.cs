@@ -55,8 +55,9 @@ namespace Characters
             }
             stateController.currentState = pluggableCharacterData.characterRole.startState;
 
-
-
+           // navMeshAgent.speed = Random.Range(5.0f, 25.0f);
+            //navMeshAgent.acceleration = 10.0f;
+           // navMeshAgent.stoppingDistance = 0.5f;
             stateController.SetupAI(setupUI);
         }
 

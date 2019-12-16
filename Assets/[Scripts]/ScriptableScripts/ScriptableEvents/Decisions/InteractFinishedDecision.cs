@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-[CreateAssetMenu(fileName = "InteractFinishedDecision", menuName = "States/Decisions/Interact Finished Decision")]
+[CreateAssetMenu(fileName = "Decision_InteractFinished", menuName = "States/Decisions/Interact Finished Decision")]
 
 public class InteractFinishedDecision : Decision
 {
@@ -11,7 +11,7 @@ public class InteractFinishedDecision : Decision
             if (t.transform.position == controller.target.position)
             {
 
-                controller.interactablePoints.Remove(controller.target);
+               // controller.interactablePoints.Remove(controller.target);
                 return true;
             }
 
