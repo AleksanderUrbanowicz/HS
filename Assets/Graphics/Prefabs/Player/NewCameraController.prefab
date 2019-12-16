@@ -1386,11 +1386,11 @@ MonoBehaviour:
   VerticalInput: Vertical
   RunInput: Run
   JumpInput: Jump
-  walkSpeed: 3
-  runSpeed: 6
+  walkSpeed: 5
+  runSpeed: 7
   JumpForce: 8
   FootLocation: {fileID: 1816801667674978408}
-  CharacterAnimator: {fileID: 0}
+  CharacterAnimator: {fileID: 1759415951851331212}
   HorzAnimation: 0
   VertAnimation: 0
   JumpAnimation: 0
@@ -2740,7 +2740,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1819254710064363536}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.05, y: 0.7, z: 0.18}
+  m_LocalPosition: {x: 0.05, y: 4.9, z: 0.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4519927532155352328}
@@ -2813,10 +2813,10 @@ MonoBehaviour:
   MouseXInput: Mouse X
   MouseYInput: Mouse Y
   SwitchPerspectiveInput: Crouch
-  mouseSensitivity: 500
-  cameraPerspective: 0
+  mouseSensitivity: 250
+  cameraPerspective: 1
   CharacterAnimator: {fileID: 1759415951851331212}
-  FPS_CameraOffset: {x: -0.1, y: 0.22, z: 0}
+  FPS_CameraOffset: {x: -0.72, y: 0.13, z: 0.1}
   FPS_MinMaxAngles: {x: -75, y: 60}
   TPS_CameraOffset: {x: 0, y: 0.9, z: -1.27}
   TPS_MinMaxAngles: {x: -15, y: 25}

@@ -32,7 +32,7 @@ namespace ScriptableSystems
         public List<Transform> interactablePoints = new List<Transform>();
         public List<ScriptableSystem> scriptableSystems = new List<ScriptableSystem>();
         //public List<PluggableMonoBehaviour> pluggablesInScene = new List<PluggableMonoBehaviour>();
-
+       // BuildSystemMonoBehaviour buildSystemMonoBehaviour;
         public PluggableRuntimeCollection Set;
 
         public Text Text;

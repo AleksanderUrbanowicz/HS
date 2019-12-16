@@ -99,7 +99,7 @@ namespace ScriptableSystems
         LayerMask defaultObstaclesLayer;
         float gridSize = 1.0f;
         float boundsEpsilon = 0.2f;
-
+        
         #endregion Settings
         public static BuildObjectData BuildObjectInfo { get { return buildObjectData; } }
         GameObject sceneObject;

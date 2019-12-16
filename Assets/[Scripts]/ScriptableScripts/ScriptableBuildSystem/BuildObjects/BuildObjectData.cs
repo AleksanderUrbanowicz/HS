@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using EditorTools;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace ScriptableSystems
@@ -25,8 +26,9 @@ namespace ScriptableSystems
 
         public List<BuildObjectMaterialData> materialData;
 
-        public List<string> dynamicParameters;
-        public List<string> hotelParameters;
+        public PluggableParams pluggableParams;
+        //public List<string> dynamicParameters;
+        //public List<string> hotelParameters;
 
 
         public BuildObjectData()
@@ -51,6 +53,16 @@ namespace ScriptableSystems
                 orientationVector = Vector3.back;
 
             }
+        }
+
+        public GameObject CreateInstance(Vector3 position, Quaternion rotation, Transform parent)
+        {
+            GameObject instance = GameObject.Instantiate(objectPrefab, position, Quaternion.identity, parent);
+            instance.name = id;
+            instance.AddComponent<PluggableObjectMonoBehaviour>();
+            PluggableObjectMonoBehaviour mb = instance.GetComponent<PluggableObjectMonoBehaviour>();
+            mb.Init(this);
+            return instance;
         }
 
     }
