@@ -59,9 +59,9 @@ namespace ScriptableSystems
         {
             GameObject instance = GameObject.Instantiate(objectPrefab, position, Quaternion.identity, parent);
             instance.name = id;
-            instance.AddComponent<PluggableObjectMonoBehaviour>();
-            PluggableObjectMonoBehaviour mb = instance.GetComponent<PluggableObjectMonoBehaviour>();
-            mb.Init(this);
+          //  instance.AddComponent<PluggableObjectMonoBehaviour>();
+           // PluggableObjectMonoBehaviour mb = instance.GetComponent<PluggableObjectMonoBehaviour>();
+           // mb.Init(this);
             return instance;
         }
 

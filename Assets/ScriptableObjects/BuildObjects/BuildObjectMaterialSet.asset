@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BuildObjectMaterialSet
   m_EditorClassIdentifier: 
   id: BuildObjectMaterialSet
-  materialType: Wood
-  objectType: Furniture
+  materialType: Receptionist
+  objectType: GuestData1
   availableMaterials: []

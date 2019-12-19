@@ -1,4 +1,6 @@
-﻿using Gameplay;
+﻿using EditorTools;
+using Gameplay;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace ScriptableSystems
@@ -10,29 +12,51 @@ namespace ScriptableSystems
 
         public void Init()
         {
-            parentTransform = new GameObject("BuildObjects").transform;
-            GameManager.instance.spawnerHelper = this;
-        }
-        public void SpawnObject(ObjectData od)
-        {
-            BuildObjectData buildObjectData = GameManager.instance.settings.GetBuildObjectData(od.id);
-            if (buildObjectData.id != od.id)
+            if (parentTransform == null)
             {
-                return;
-
+                parentTransform = new GameObject("BuildObjects").transform;
             }
+            ScriptableSystemManager.Instance.spawnerHelper = this;
+        }
+        public void SpawnSavedObject(ObjectData od)
+        {
+            BuildObjectData buildObjectData = ScriptableSystemManager.Instance.gameSettings.GetBuildObjectData(od.id);
+         
             Vector3 position = new Vector3(od.positionX, od.positionY, od.positionZ);
             Quaternion rotation = new Quaternion(od.rotationX, od.rotationY, od.rotationZ, od.rotationW);
-            // GameObject go = Instantiate(buildObjectData.objectPrefab, position, rotation, parentTransform);
-            buildObjectData.CreateInstance(position, rotation, parentTransform);
+            List<ParameterBase> savedConditions = od.currentConditions;
+            GameObject instance=  buildObjectData.CreateInstance(position, rotation, parentTransform);
+            PluggableObjectMonoBehaviour mb = instance.GetComponent<PluggableObjectMonoBehaviour>();
+            if(mb==null)
+            {
+                mb= instance.AddComponent<PluggableObjectMonoBehaviour>();
 
+            }
+            mb.Init(buildObjectData, savedConditions);
+            instance.name = buildObjectData.id;
+            instance.layer = LayerMask.NameToLayer(ScriptableSystemManager.Instance.gameSettings.scriptableBuildSystem.buildObjectLayerString);
+
+            instance.transform.parent = ScriptableSystemManager.Instance.buildSystemMonoBehaviour.buildObjectsParent;
+            instance.tag = ScriptableSystemManager.Instance.gameSettings.scriptableBuildSystem.buildObjectLayerString;
 
         }
-        public void SpawnObject(string _id, Vector3 position, Quaternion rotation)
+
+        public GameObject SpawnObject(BuildObjectData data, Vector3 position, Quaternion rotation)
         {
-            BuildObjectData buildObjectData = GameManager.instance.settings.GetBuildObjectData(_id);
-            //Instantiate(buildObjectData.objectPrefab, position, rotation, parentTransform);
-            buildObjectData.CreateInstance(position, rotation, parentTransform);
+            Debug.LogError("Spawnerhelper.SpawnObject");
+
+  
+            GameObject instance =data.CreateInstance(position, rotation, parentTransform);
+            PluggableObjectMonoBehaviour mb = instance.GetComponent<PluggableObjectMonoBehaviour>();
+            if (mb == null)
+            {
+                mb = instance.AddComponent<PluggableObjectMonoBehaviour>();
+
+            }
+            mb.Init(data);
+
+            return instance;
         }
+
     }
 }

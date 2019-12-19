@@ -23,6 +23,8 @@ namespace EditorTools
         [ConfigSelector]
         public List<string> interactionParameters = new List<string>();
         public List<string> bonusParameters = new List<string>();
+        
+        public TransformRuntimeCollection AllPluggableTransforms;
 
         public PluggableRuntimeCollection AllPluggables;
         public PluggableRuntimeCollection AllStatPluggables;
@@ -77,9 +79,11 @@ namespace EditorTools
 
         private void Awake()
         {
-            InitColors();
-            InitSelectors();
-            Debug.LogError("GlobalCOnfig Awake");
+#if UNITY_EDITOR
+            //InitColors();
+           // InitSelectors();
+#endif
+            Debug.LogError("GlobalConfig Awake");
             //  if(remainsInState==null)
             //  {
 
@@ -218,8 +222,8 @@ namespace EditorTools
         {
 #if UNITY_EDITOR
 
-            UpdateCharacters();
-            UpdateScriptableSelectors();
+           // UpdateCharacters();
+           // UpdateScriptableSelectors();
 
 #endif
         }

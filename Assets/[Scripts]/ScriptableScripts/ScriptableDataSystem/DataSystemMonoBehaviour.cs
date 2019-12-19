@@ -10,13 +10,12 @@ namespace ScriptableSystems
     {
         public GameObject[] objectsToSave;
         ScriptableDataSystem scriptableDataSystem;
-        public SpawnerHelper spawnerHelper;
 
         public void Init(ScriptableDataSystem _scriptableDataSystem)
         {
             scriptableDataSystem = _scriptableDataSystem;
-            GameManager.instance.cash = PlayerPrefs.GetInt(scriptableDataSystem.playerPrefsCashKey, 20000);
-            GameManager.instance.dataSystemMonoBehaviour = this;
+            ScriptableSystemManager.Instance.cash = PlayerPrefs.GetInt(scriptableDataSystem.playerPrefsCashKey, 20000);
+            ScriptableSystemManager.Instance.dataSystemMonoBehaviour = this;
             InitSpawner();
             LoadObjects();
         }
@@ -33,7 +32,18 @@ namespace ScriptableSystems
             for (int i = 0; i < objectsToSave.Length; i++)
             {
                 GameObject go = objectsToSave[i];
-                objectDatas.Add(new ObjectData(go.name, go.transform));
+                PluggableObjectMonoBehaviour pluggableObjectMonoBehaviour = go.GetComponent<PluggableObjectMonoBehaviour>();
+                if(pluggableObjectMonoBehaviour!=null)
+                {
+                    objectDatas.Add(new ObjectData(go.name, go.transform, pluggableObjectMonoBehaviour.currentConditions));
+
+                }
+                else
+                {
+                    Debug.LogWarning("SaveObjects(), Object: " + go.name + ", do not have PluggableObjectMonoBehaviour");
+                    objectDatas.Add(new ObjectData(go.name, go.transform, null));
+
+                }
 
             }
             BinaryFormatter bf = new BinaryFormatter();
@@ -46,12 +56,9 @@ namespace ScriptableSystems
         {
 
             PlayerData playerData = new PlayerData();
-            playerData.cash = GameManager.instance.cash;
+            playerData.cash = ScriptableSystemManager.Instance.cash;
             PlayerPrefs.SetInt(scriptableDataSystem.playerPrefsCashKey, playerData.cash);
-            //  BinaryFormatter bf = new BinaryFormatter();
-            //  FileStream file = File.Create(Application.persistentDataPath + scriptableDataSystem.playerDataFilename);
-            //  bf.Serialize(file, playerData);
-            //  file.Close();
+         
         }
 
         public void LoadObjects()
@@ -64,10 +71,18 @@ namespace ScriptableSystems
                 file.Close();
                 foreach (ObjectData od in objectDatas)
                 {
-                    spawnerHelper.SpawnObject(od);
+                    ScriptableSystemManager.Instance.spawnerHelper.SpawnSavedObject(od);
 
                 }
-                // SpawnLoadedObjects(objectDatas);
+            }
+
+        }
+
+        public void DeleteSavedObjects()
+        {
+            if (File.Exists(Application.persistentDataPath + scriptableDataSystem.objectsDataFilename))
+            {
+                File.Delete(Application.persistentDataPath + scriptableDataSystem.objectsDataFilename);
             }
 
         }
@@ -83,10 +98,14 @@ namespace ScriptableSystems
         }
         public void InitSpawner()
         {
-            spawnerHelper = new GameObject("spawnerHelper").AddComponent<SpawnerHelper>();
-            spawnerHelper.gameObject.transform.parent = gameObject.transform;
-            spawnerHelper.Init();
+            if(ScriptableSystemManager.Instance.spawnerHelper==null)
+            {
+                ScriptableSystemManager.Instance.spawnerHelper = new GameObject("spawnerHelper").AddComponent<SpawnerHelper>();
+                ScriptableSystemManager.Instance.spawnerHelper.gameObject.transform.parent = gameObject.transform;
+                ScriptableSystemManager.Instance.spawnerHelper.Init();
 
+            }
+           
         }
 
 

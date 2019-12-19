@@ -43,13 +43,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90140e3d2648aeb41bb52f6af22494b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cash: 0
+  dataSystemMonoBehaviour: {fileID: 0}
+  buildSystemMonoBehaviour: {fileID: 0}
+  spawnerHelper: {fileID: 0}
+  gameSettings: {fileID: 11400000, guid: 7ed54129e559e044e95601f480c3ee30, type: 2}
   infoText: {fileID: 0}
-  charactersToSpawn:
-  - {fileID: 11400000, guid: 554b15a2efb55d04388176ae8596ec44, type: 2}
   charactersTransform: {fileID: 0}
   systemsTansform: {fileID: 0}
   patrolWaypoints:
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -65,8 +67,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  scriptableSystems: []
-  pluggablesInScene: []
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   Set: {fileID: 11400000, guid: 95588f27c87211a488545e8b9877044b, type: 2}
-  Text: {fileID: 0}
-  charactersRandomSpread: {x: 20, y: 20}

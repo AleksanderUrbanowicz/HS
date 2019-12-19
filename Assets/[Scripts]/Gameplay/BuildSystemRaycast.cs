@@ -30,7 +30,17 @@ namespace ScriptableSystems
                 cam = GameObject.FindGameObjectWithTag("MainCamera").transform;
 
             }
-            layersToCheck = scriptableBuildSystem.buildObjects.items[0].layersToBuildOn;
+            if(scriptableBuildSystem.buildObjects.items==null || scriptableBuildSystem.buildObjects.items.Count==0)
+            {
+                layersToCheck = scriptableBuildSystem.defaultLayerToBuildOn;
+
+            }
+            else
+            {
+                layersToCheck = scriptableBuildSystem.buildObjects.items[0].layersToBuildOn;
+
+
+            }
             ScriptableEventHit = scriptableBuildSystem.EventPreviewRaycastHit;
             ScriptableEventMiss = scriptableBuildSystem.EventPreviewRaycastMiss;
             raycastInterval = scriptableBuildSystem.raycastInterval;

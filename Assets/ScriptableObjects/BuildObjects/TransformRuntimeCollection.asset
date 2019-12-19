@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91c8d17fa2838054cbae6803809a5996, type: 3}
-  m_Name: NewBuildObjectListData
+  m_Script: {fileID: 11500000, guid: 2c890092f401a2d41a781af76a36c909, type: 3}
+  m_Name: TransformRuntimeCollection
   m_EditorClassIdentifier: 
-  id: NewBuildObjectListData
-  items:
-  - {fileID: 11400000, guid: b408f128f63a6204b87b05ed3a0753e1, type: 2}
-  - {fileID: 11400000, guid: c2924798d8f3f4f4588314e5b27b8b9c, type: 2}
+  Items: []

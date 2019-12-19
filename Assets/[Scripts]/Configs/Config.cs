@@ -1,15 +1,24 @@
-﻿using System.Collections.Generic;
+﻿using ScriptableSystems;
+using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 namespace EditorTools
 {
     public static class Config
     {
+
+        public static Dictionary<string, List<Transform>> passiveInteractableTransforms = new Dictionary<string, List<Transform>>();
         public static GlobalConfig GlobalConfig
         {
             get
             {
+#if UNITY_EDITOR
+
                 return EditorStaticTools.GetFirstInstance<GlobalConfig>();
+#endif
+
+                return ScriptableSystemManager.Instance.gameSettings.globalConfig;
             }
         }
 
@@ -17,6 +26,54 @@ namespace EditorTools
         {
 
             return GlobalConfig.AllPasiveInteractables.Items;
+
+        }
+
+
+        public static List<Transform> GetPassiveInteractables(string id)
+        {
+            if(passiveInteractableTransforms!=null && passiveInteractableTransforms.Count>0)
+            {
+               if( passiveInteractableTransforms.ContainsKey(id))
+                {
+
+                    return passiveInteractableTransforms[id];
+                }
+               else
+                {
+
+                    
+                }
+
+            }
+            Debug.LogWarning("GetPassiveInteractables( " + id + ") No Transforms");
+            return null;
+
+        }
+
+        public static void RegisterPassiveInteractable(string id, Transform t)
+        {
+            if (passiveInteractableTransforms == null)
+            {
+                passiveInteractableTransforms = new Dictionary<string, List<Transform>>();
+            }
+            
+                if (passiveInteractableTransforms.ContainsKey(id))
+                {
+                    if(!passiveInteractableTransforms[id].Contains(t))
+                    {
+                        passiveInteractableTransforms[id].Add(t);
+
+                    }
+                     
+                }
+                else
+                {
+                    passiveInteractableTransforms.Add(id, new List<Transform>(){t});
+
+                }
+
+       
 
         }
 
@@ -60,11 +117,13 @@ namespace EditorTools
         public static void RegisterPluggable(PluggableMonoBehaviour pluggableMonoBehaviour)
         {
             GlobalConfig.AllPluggables.Add(pluggableMonoBehaviour);
+            GlobalConfig.AllPluggableTransforms.Add(pluggableMonoBehaviour.transform);
             PluggableParams interactable = pluggableMonoBehaviour.totalParams.GetInteractableParams();
             if (interactable.passiveParameters.Count > 0)
             {
 
                 GlobalConfig.AllPasiveInteractables.Add(pluggableMonoBehaviour);
+
 
             }
             if (interactable.activeParameters.Count > 0)

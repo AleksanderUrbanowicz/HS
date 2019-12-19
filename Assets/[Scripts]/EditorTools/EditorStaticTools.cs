@@ -133,6 +133,7 @@ namespace EditorTools
 
     public static class EditorList
     {
+#if UNITY_EDITOR
         public static void Show(SerializedProperty list, EditorListOption options = EditorListOption.Default)
         {
 
@@ -164,6 +165,7 @@ namespace EditorTools
             {
                 EditorGUI.indentLevel -= 1;
             }
+
         }
 
 
@@ -184,7 +186,7 @@ namespace EditorTools
                 }
             }
         }
-
+#endif
 
     }
 }

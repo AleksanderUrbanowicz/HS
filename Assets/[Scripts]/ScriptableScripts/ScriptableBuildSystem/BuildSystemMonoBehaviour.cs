@@ -55,7 +55,7 @@ namespace ScriptableSystems
         public void Init(ScriptableBuildSystem _scriptableBuildSystem)
         {
             scriptableBuildSystem = _scriptableBuildSystem;
-
+            ScriptableSystemManager.Instance.buildSystemMonoBehaviour = this;
             InitRaycaster(_scriptableBuildSystem);
             InitEventListeners(_scriptableBuildSystem);
 
@@ -101,7 +101,7 @@ namespace ScriptableSystems
             {
                 buildObjectsParent = new GameObject("BuildObjects").transform;
             }
-            GameManager.instance.buildSystemMonoBehaviour = this;
+            //GameManager.instance.buildSystemMonoBehaviour = this;
 
         }
 
@@ -189,14 +189,16 @@ namespace ScriptableSystems
 
         public void BuildPreviewObject()
         {
-
+            Debug.LogError("BuildPreviewObject");
             //rotation = Quaternion.identity;
-            GameManager.instance.cash -= currentBuildObject.cost;
-            GameObject go = Instantiate(currentBuildObject.objectPrefab, currentPosition, rotation);
+            ScriptableSystemManager.Instance.cash -= currentBuildObject.cost;
+            // GameObject go = Instantiate(currentBuildObject.objectPrefab, currentPosition, rotation);
+            GameObject go = ScriptableSystemManager.Instance.spawnerHelper.SpawnObject(currentBuildObject, currentPosition, rotation);
             go.name = currentBuildObject.id;
             go.layer = LayerMask.NameToLayer(scriptableBuildSystem.buildObjectLayerString);
-            go.tag = scriptableBuildSystem.buildObjectLayerString;
+         
             go.transform.parent = buildObjectsParent;
+            go.tag = scriptableBuildSystem.buildObjectLayerString;
             AddPreviewCollider(go, currentPreviewObject);
         }
 
@@ -302,8 +304,8 @@ namespace ScriptableSystems
             // halfEx.y *= previewCollider.transform.localScale.y;
             //  halfEx.z *= previewCollider.transform.localScale.z;
 
-            Debug.Log("halfEx:" + halfEx);
-            Debug.Log("previewCollider.bounds.extents:" + previewCollider.bounds.extents);
+          //  Debug.Log("halfEx:" + halfEx);
+           // Debug.Log("previewCollider.bounds.extents:" + previewCollider.bounds.extents);
 
             Collider[] hitColliders = Physics.OverlapBox(currentPreview.position + previewCollider.center, halfEx, previewCollider.transform.rotation, currentPreviewObject.obstacleLayers);
 
@@ -334,7 +336,7 @@ namespace ScriptableSystems
 
 
 
-            if (CheckAvailability() == true && GameManager.instance.cash >= currentBuildObject.cost)
+            if (CheckAvailability() == true && ScriptableSystemManager.Instance.cash >= currentBuildObject.cost)
             {
                 SetPreviewColor(availableColor);
                 canBeBuild = true;

@@ -9,7 +9,7 @@ namespace ScriptableSystems
 
 
         public string buildObjectLayerString;
-
+        public LayerMask defaultLayerToBuildOn;
         public BuildObjectListData buildObjects;
         public Color availableColor = new Color(0, 1.0f, 0, 0.2f);
         public Color unavailableColor = new Color(1.0f, 0, 0, 0.2f);

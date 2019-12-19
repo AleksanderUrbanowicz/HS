@@ -7,6 +7,7 @@ namespace Gameplay
 {
     public class GameManager : MonoBehaviour
     {
+        /*
         public int cash;
         public BuildSystemMonoBehaviour buildSystemMonoBehaviour;
         public DataSystemMonoBehaviour dataSystemMonoBehaviour;
@@ -91,5 +92,6 @@ namespace Gameplay
             dataSystemMonoBehaviour.SavePlayerData();
             Application.Quit();
         }
+        */
     }
 }

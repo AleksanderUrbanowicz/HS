@@ -33,11 +33,11 @@ public class StateControllerMB : MonoBehaviour
         aiActive = dynamiAI;
         if (aiActive)
         {
-            Debug.LogError("SetupAI Active");
+           // Debug.LogError("SetupAI Active");
         }
         else
         {
-            Debug.LogError("SetupAI Active");
+            //Debug.LogError("SetupAI Active");
         }
 
 
