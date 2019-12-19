@@ -26,7 +26,8 @@ namespace ScriptableSystems
 
         public List<BuildObjectMaterialData> materialData;
 
-        public PluggableParams pluggableParams;
+       // public PluggableParams pluggableParams;
+        public PluggableDynamicParams pluggableDynamicParams;
         //public List<string> dynamicParameters;
         //public List<string> hotelParameters;
 

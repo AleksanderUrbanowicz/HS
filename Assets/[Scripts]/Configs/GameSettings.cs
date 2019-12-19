@@ -17,14 +17,14 @@ namespace EditorTools
         public ScriptableBuildSystem scriptableBuildSystem;
         public ScriptableDataSystem scriptableDataSystem;
         public ScriptableSelectSystem scriptableSelectSystem;
-        private BuildObjectData[] allObjectsArray;
+        public BuildObjectData[] allObjectsArray;
         public Vector2Int charactersRandomSpread;
         public List<PluggableCharacterData> debugCharactersToSpawn = new List<PluggableCharacterData>();
         public List<ScriptableSystem> scriptableSystems = new List<ScriptableSystem>();
         private void OnEnable()
         {
 #if UNITY_EDITOR
-          //  allObjectsArray = EditorStaticTools.GetAllInstances<BuildObjectData>();
+            allObjectsArray = EditorStaticTools.GetAllInstances<BuildObjectData>();
 #endif
         }
 

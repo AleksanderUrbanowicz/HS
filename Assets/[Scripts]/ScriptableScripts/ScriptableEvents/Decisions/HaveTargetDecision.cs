@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Decision_HaveTarget", menuName = "States/Decisions/Target Decision")]
+[CreateAssetMenu(fileName = "Decision_HaveTarget", menuName = "States/Decisions/Characters/Target Decision")]
 
-public class HaveTargetDecision : Decision
+public class HaveTargetDecision : EmployeeDecision
 {
-    public override bool Decide(StateControllerMB controller)
+    public override bool Decide(StateControllerMBBase controller)
     {
-        return controller.target != null;
+        EmployeeStateControllerMB _controller = controller as EmployeeStateControllerMB;
+        return _controller.target != null;
     }
 }

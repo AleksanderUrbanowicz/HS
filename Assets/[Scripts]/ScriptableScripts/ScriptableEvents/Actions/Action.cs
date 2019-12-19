@@ -2,5 +2,5 @@
 
 public abstract class Action : ScriptableObject
 {
-    public abstract void Act(StateControllerMB controller);
+    public abstract void Act(StateControllerMBBase controller);
 }

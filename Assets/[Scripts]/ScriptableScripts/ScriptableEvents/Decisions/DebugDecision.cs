@@ -4,7 +4,7 @@
 public class DebugDecision : Decision
 {
     public bool b;
-    public override bool Decide(StateControllerMB controller)
+    public override  bool Decide(StateControllerMBBase controller)
     {
         return b;
         // throw new System.NotImplementedException();

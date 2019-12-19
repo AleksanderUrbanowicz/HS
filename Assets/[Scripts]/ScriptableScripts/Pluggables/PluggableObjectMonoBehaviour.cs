@@ -9,30 +9,30 @@ namespace ScriptableSystems
     {
         
         public BuildObjectData buildObjectData;
-        public List<ParameterBase> currentConditions;
+        public List<DynamicParameter> currentConditions;
         /// <summary>
         /// 
         /// </summary>
         /// <param name="_buildObjectData"></param>
         /// <param name="_currentConditions">passive interactable values for objects Loaded,for new build objects _currentConditions=null => currentConditions=startingConditions</param>
-        public void Init(BuildObjectData _buildObjectData, List<ParameterBase> _currentConditions=null)  
+        public void Init(BuildObjectData _buildObjectData, List<DynamicParameter> _currentConditions=null)  
         {
 
             Debug.LogError("PluggableObjectMonoBehaviour.Init");
             buildObjectData = _buildObjectData;
-             totalParams = _buildObjectData.pluggableParams;
+             totalParams = _buildObjectData.pluggableDynamicParams.ToPluggableParams();
             if (_currentConditions != null)
             {
-                currentConditions = new List<ParameterBase>(_currentConditions);
+                currentConditions = new List<DynamicParameter>(_currentConditions);
 
             }
             else
             {
-                currentConditions = new List<ParameterBase>();
-                foreach (ParameterBase parameterBase in totalParams.GetInteractableParams().passiveParameters)
+                currentConditions = new List<DynamicParameter>();
+                foreach (DynamicParameter dynamicParameter in _buildObjectData.pluggableDynamicParams.GetInteractableParams().passiveParameters)
                 {
 
-                    currentConditions.Add(new ParameterBase(parameterBase.id, parameterBase.value));
+                    currentConditions.Add(new DynamicParameter(dynamicParameter.id, dynamicParameter.value, dynamicParameter.changeRate));
                 }
             }
             

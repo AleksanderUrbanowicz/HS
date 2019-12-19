@@ -1,21 +1,12 @@
-﻿using UnityEngine;
-using System;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-[CreateAssetMenu(fileName = "State", menuName = "States/State")]
-public class State : ScriptableObject
+public class EmployeeState : State
 {
-
-    public Action[] actions;
-     public Transition[] transitions;
-    public Color sceneGizmoColor = Color.grey;
-
-    public void UpdateState(StateControllerMBBase controller)
-    {
-        DoActions(controller);
-        CheckTransitions(controller);
-    }
-
-    private void DoActions(StateControllerMBBase controller)
+   // new public EmployeeAction[] actions;
+    /*
+    private void DoActions(EmployeeStateControllerMB controller)
     {
         for (int i = 0; i < actions.Length; i++)
         {
@@ -23,7 +14,7 @@ public class State : ScriptableObject
         }
     }
 
-    private void CheckTransitions(StateControllerMBBase controller)
+    private void CheckTransitions(EmployeeStateControllerMB controller)
     {
         for (int i = 0; i < transitions.Length; i++)
         {
@@ -39,4 +30,5 @@ public class State : ScriptableObject
             }
         }
     }
+    */
 }

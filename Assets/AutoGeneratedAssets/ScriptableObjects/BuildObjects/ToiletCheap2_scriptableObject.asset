@@ -30,10 +30,12 @@ MonoBehaviour:
     m_Bits: 4196352
   collsionBoundsFraction: 0.95
   materialData: []
-  pluggableParams:
+  pluggableDynamicParams:
     activeParameters: []
     passiveParameters:
-    - id: Condition
-      value: 0
     - id: Cleanness
-      value: 0
+      value: 100
+      changeRate: 0.1
+    - id: Condition
+      value: 100
+      changeRate: 0.5

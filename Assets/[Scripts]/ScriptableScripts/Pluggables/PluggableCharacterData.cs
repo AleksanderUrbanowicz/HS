@@ -65,12 +65,14 @@ namespace Characters
             }
         }
 
-        public GameObject CreateInstance(GameObject go, Vector3 position)
+        public void CreateInstance(GameObject go, Vector3 position)
         {
+           // Debug.LogError("CreateInstance,go.name: " + go.name);
             GameObject instance = GameObject.Instantiate(prefab, position, Quaternion.identity, go.transform);
             instance.name = id;
+           // Debug.LogError("CreateInstance,instance.name: " + instance.name);
             instance.GetComponent<PluggableCharacterMonoBehaviour>().Init(this);
-            return instance;
+           // return instance;
         }
 
     }

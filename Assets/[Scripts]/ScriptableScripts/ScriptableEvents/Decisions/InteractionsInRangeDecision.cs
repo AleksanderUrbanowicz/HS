@@ -1,29 +1,30 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "Decision_InteractionInRange", menuName = "States/Decisions/InteractionInRangDecision")]
+[CreateAssetMenu(fileName = "Decision_InteractionInRange", menuName = "States/Decisions/Characters/InteractionInRangDecision")]
 
 
-public class InteractionsInRangeDecision : Decision
+public class InteractionsInRangeDecision : EmployeeDecision
 {
     public float min = 5;
-    public override bool Decide(StateControllerMB controller)
+    public override bool Decide(StateControllerMBBase controller)
     {
+        EmployeeStateControllerMB _controller = controller as EmployeeStateControllerMB;
         float minDist = 999;
         int index = -1;
-        foreach (Transform t in controller.interactablePoints)
+        foreach (Transform t in _controller.interactablePoints)
         {
             float temp = Vector3.Distance(controller.transform.position, t.position);
             if (temp < minDist)
             {
 
                 minDist = temp;
-                index = controller.interactablePoints.IndexOf(t);
+                index = _controller.interactablePoints.IndexOf(t);
             }
 
         }
         if (minDist < min && index >= 0)
         {
-            controller.target = controller.interactablePoints[index];
+            _controller.target = _controller.interactablePoints[index];
             return true;
 
         }

@@ -1,5 +1,187 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &107346559
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 107346561}
+  - component: {fileID: 107346560}
+  m_Layer: 0
+  m_Name: Directional Light (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &107346561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107346559}
+  m_LocalRotation: {x: 0.9607075, y: 0.0033879406, z: -0.011737798, w: 0.27729392}
+  m_LocalPosition: {x: 43.949165, y: 7.3214235, z: 4.107256}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4548515195730665285}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 147.8, y: 1.4, z: 0}
+--- !u!108 &107346560
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107346559}
+  m_Enabled: 1
+  serializedVersion: 9
+  m_Type: 1
+  m_Color: {r: 0.99106395, g: 1, b: 0.6556604, a: 1}
+  m_Intensity: 0.55
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!1 &349074798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 349074800}
+  - component: {fileID: 349074799}
+  m_Layer: 0
+  m_Name: Directional Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &349074800
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349074798}
+  m_LocalRotation: {x: 0.6495322, y: 0.009288463, z: -0.007935899, w: 0.7602359}
+  m_LocalPosition: {x: 43.949165, y: 7.3214235, z: 4.107256}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4548515195730665285}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 81.02, y: 1.4, z: 0}
+--- !u!108 &349074799
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349074798}
+  m_Enabled: 1
+  serializedVersion: 9
+  m_Type: 1
+  m_Color: {r: 0.75226945, g: 0.9593758, b: 0.990566, a: 1}
+  m_Intensity: 0.6
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &9497716138032170
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,7 +1210,7 @@ GameObject:
   - component: {fileID: 7587640310584159695}
   - component: {fileID: 1628588138936453069}
   - component: {fileID: 3336556878314387230}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: QuadCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1586,7 +1768,7 @@ GameObject:
   - component: {fileID: 5866528868441548250}
   - component: {fileID: 4089477403423955012}
   - component: {fileID: 990383252867849866}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: QuadCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2144,7 +2326,7 @@ GameObject:
   - component: {fileID: 7521196458934531094}
   - component: {fileID: 79601497898963517}
   - component: {fileID: 1194693990308914842}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: QuadCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2423,7 +2605,7 @@ GameObject:
   - component: {fileID: 2952949654793762744}
   - component: {fileID: 2441535642767582454}
   - component: {fileID: 5366184270967689001}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: QuadCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2702,7 +2884,7 @@ GameObject:
   - component: {fileID: 946464394473976753}
   - component: {fileID: 3254188876038592598}
   - component: {fileID: 997440464265647201}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: QuadCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3810,7 +3992,7 @@ GameObject:
   - component: {fileID: 8247929699550337564}
   - component: {fileID: 314854544985250743}
   - component: {fileID: 1995389559139512875}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: QuadCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4275,7 +4457,7 @@ GameObject:
   - component: {fileID: 4245334554936402567}
   - component: {fileID: 6114115293795607300}
   - component: {fileID: 6039627500114241809}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: QuadCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4701,7 +4883,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1882515767629352908}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
   m_LocalPosition: {x: 27.974262, y: 0, z: 29.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4715,7 +4897,7 @@ Transform:
   - {fileID: 3822587158296238469}
   - {fileID: 8241466865220770943}
   - {fileID: 4596029430437525536}
-  m_Father: {fileID: 2199412438694132510}
+  m_Father: {fileID: 8290403788385768257}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1896806041284239899
@@ -5888,7 +6070,7 @@ GameObject:
   - component: {fileID: 2199412438280389816}
   - component: {fileID: 2199412438280389799}
   - component: {fileID: 2199412438280389798}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: QuadCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6089,10 +6271,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2199412438314427938}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -4.1547, y: 0.59142, z: 2.4173}
-  m_LocalScale: {x: 5, y: 4, z: 0.10000006}
+  m_LocalPosition: {x: -4.1547, y: 0.59141994, z: 2.4173}
+  m_LocalScale: {x: 5, y: 4, z: 0.10000012}
   m_Children: []
-  m_Father: {fileID: 2199412438694132510}
+  m_Father: {fileID: 8290403788385768257}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!33 &2199412438314427942
@@ -6553,12 +6735,8 @@ Transform:
   m_LocalPosition: {x: -0.8452511, y: 1.408576, z: 0.08274412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2199412438314427939}
-  - {fileID: 2199412438839787407}
-  - {fileID: 5803264878697009085}
-  - {fileID: 7505823015733241640}
-  - {fileID: 4289959464213745364}
-  - {fileID: 5848938677926750149}
+  - {fileID: 4548515195730665285}
+  - {fileID: 8290403788385768257}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6588,11 +6766,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2199412438839787403}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
   m_LocalPosition: {x: 57.583, y: 0.59141994, z: -4.1547}
   m_LocalScale: {x: 5, y: 4, z: 0.10000006}
   m_Children: []
-  m_Father: {fileID: 2199412438694132510}
+  m_Father: {fileID: 8290403788385768257}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &2199412438839787406
@@ -8941,7 +9119,7 @@ GameObject:
   - component: {fileID: 8350500041336038050}
   - component: {fileID: 4911659081543327242}
   - component: {fileID: 4164770346946569273}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: QuadCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9406,7 +9584,7 @@ GameObject:
   - component: {fileID: 5789403067361455075}
   - component: {fileID: 6920047106429841815}
   - component: {fileID: 8632214447289190820}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: QuadCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10149,7 +10327,7 @@ GameObject:
   - component: {fileID: 6536977049368188716}
   - component: {fileID: 2063882214062344578}
   - component: {fileID: 5279236893793382984}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: QuadCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11146,7 +11324,7 @@ Transform:
   - {fileID: 2855598156440714457}
   - {fileID: 8708923156640732248}
   - {fileID: 8518102271301233923}
-  m_Father: {fileID: 2199412438694132510}
+  m_Father: {fileID: 8290403788385768257}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3509744133431210768
@@ -11161,7 +11339,7 @@ GameObject:
   - component: {fileID: 299091892318736602}
   - component: {fileID: 9096962726100477956}
   - component: {fileID: 6959707401529907337}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: QuadCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12412,7 +12590,7 @@ GameObject:
   - component: {fileID: 1754029270790489982}
   - component: {fileID: 2153417829962571180}
   - component: {fileID: 4870841136969988623}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: QuadCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13383,7 +13561,7 @@ GameObject:
   - component: {fileID: 7030119768652429211}
   - component: {fileID: 1462974367047194869}
   - component: {fileID: 7362661637239359729}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: QuadCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13476,7 +13654,7 @@ GameObject:
   - component: {fileID: 7458861991440361579}
   - component: {fileID: 8520775307035098260}
   - component: {fileID: 6078067525087722662}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: QuadCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14540,7 +14718,7 @@ GameObject:
   - component: {fileID: 696285044279997696}
   - component: {fileID: 1371719396409540841}
   - component: {fileID: 4499344508641084102}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: QuadCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17730,6 +17908,42 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &6320989518795290208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8290403788385768257}
+  m_Layer: 0
+  m_Name: Hotel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8290403788385768257
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6320989518795290208}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2199412438314427939}
+  - {fileID: 2199412438839787407}
+  - {fileID: 5803264878697009085}
+  - {fileID: 7505823015733241640}
+  - {fileID: 4289959464213745364}
+  - {fileID: 5848938677926750149}
+  m_Father: {fileID: 2199412438694132510}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6332209899429332761
 GameObject:
   m_ObjectHideFlags: 0
@@ -17928,7 +18142,7 @@ GameObject:
   - component: {fileID: 3117722734695150974}
   - component: {fileID: 598717411796284582}
   - component: {fileID: 5961395567542873219}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: QuadCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20355,11 +20569,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7237099016640305084}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 60.103, y: 0.59142, z: 43.326}
-  m_LocalScale: {x: 5, y: 4, z: 0.10000006}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 60.103004, y: 0.59141994, z: 43.326}
+  m_LocalScale: {x: 5, y: 4, z: 0.10000012}
   m_Children: []
-  m_Father: {fileID: 2199412438694132510}
+  m_Father: {fileID: 8290403788385768257}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &906864339298493206
@@ -20930,6 +21144,38 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &7435462924019317734
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4548515195730665285}
+  m_Layer: 0
+  m_Name: Lights
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4548515195730665285
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7435462924019317734}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 349074800}
+  - {fileID: 107346561}
+  m_Father: {fileID: 2199412438694132510}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7476113326176257851
 GameObject:
   m_ObjectHideFlags: 0
@@ -21049,11 +21295,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7542756172711915069}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6342, y: 0.59142, z: 44.898}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.6342001, y: 0.59141994, z: 44.898}
   m_LocalScale: {x: 5, y: 4, z: 0.10000006}
   m_Children: []
-  m_Father: {fileID: 2199412438694132510}
+  m_Father: {fileID: 8290403788385768257}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5755843091804930572
@@ -22285,7 +22531,7 @@ GameObject:
   - component: {fileID: 4173796383356658004}
   - component: {fileID: 7653410515680006878}
   - component: {fileID: 6341876255187474063}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: QuadCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23208,7 +23454,7 @@ GameObject:
   - component: {fileID: 3052932595223826663}
   - component: {fileID: 5211562042293618722}
   - component: {fileID: 7225968186746929024}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: QuadCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23859,7 +24105,7 @@ GameObject:
   - component: {fileID: 1566096792782383882}
   - component: {fileID: 905985513172446594}
   - component: {fileID: 7358796801484464385}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: QuadCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}

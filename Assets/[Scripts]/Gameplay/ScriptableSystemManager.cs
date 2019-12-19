@@ -63,7 +63,7 @@ namespace ScriptableSystems
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                GameObject instance = gameSettings.debugCharactersToSpawn[0].CreateInstance(charactersTransform.gameObject, new Vector3(0, 0, 0));
+                 gameSettings.debugCharactersToSpawn[0].CreateInstance(charactersTransform.gameObject, new Vector3(0, 0, 0));
 
             }
            
@@ -108,8 +108,8 @@ namespace ScriptableSystems
             foreach (PluggableCharacterData characterData in gameSettings.debugCharactersToSpawn)
             {
                 vector2Int = new Vector2Int(Random.Range(-gameSettings.charactersRandomSpread.x, gameSettings.charactersRandomSpread.x), Random.Range(-gameSettings.charactersRandomSpread.y, gameSettings.charactersRandomSpread.y));
-                GameObject instance = characterData.CreateInstance(charactersTransform.gameObject, new Vector3(vector2Int.x, 0, vector2Int.y));
-
+                characterData.CreateInstance(charactersTransform.gameObject, new Vector3(vector2Int.x, 0, vector2Int.y));
+                
 
             }
 

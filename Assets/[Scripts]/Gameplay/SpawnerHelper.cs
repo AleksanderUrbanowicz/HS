@@ -1,5 +1,4 @@
 ﻿using EditorTools;
-using Gameplay;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,7 +23,7 @@ namespace ScriptableSystems
          
             Vector3 position = new Vector3(od.positionX, od.positionY, od.positionZ);
             Quaternion rotation = new Quaternion(od.rotationX, od.rotationY, od.rotationZ, od.rotationW);
-            List<ParameterBase> savedConditions = od.currentConditions;
+            List<DynamicParameter> savedConditions = od.currentConditions;
             GameObject instance=  buildObjectData.CreateInstance(position, rotation, parentTransform);
             PluggableObjectMonoBehaviour mb = instance.GetComponent<PluggableObjectMonoBehaviour>();
             if(mb==null)

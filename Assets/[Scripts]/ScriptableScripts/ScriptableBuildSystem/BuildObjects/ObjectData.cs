@@ -9,7 +9,7 @@ namespace ScriptableSystems
     public class ObjectData
     {
         public string id;
-        public List<ParameterBase> currentConditions;  //ex. cleanless 45, condition 0
+        public List<DynamicParameter> currentConditions;  //ex. cleanless 45, condition 0
         public float positionX;
         public float positionY;
         public float positionZ;
@@ -18,7 +18,7 @@ namespace ScriptableSystems
         public float rotationY;
         public float rotationZ;
         public float rotationW;
-        public ObjectData(string _id, Transform t, List<ParameterBase> _currentConditions)
+        public ObjectData(string _id, Transform t, List<DynamicParameter> _currentConditions)
         {
             id = _id;
             positionX = t.position.x;

@@ -31,13 +31,87 @@ namespace EditorTools
     }
 
     [Serializable]
+    public class PluggableDynamicParams
+    {
+
+        public List<DynamicParameter> activeParameters = new List<DynamicParameter>();
+        public List<DynamicParameter> passiveParameters = new List<DynamicParameter>();
+
+        public PluggableDynamicParams(List<DynamicParameter> actives, List<DynamicParameter> passives)
+        {
+            activeParameters = actives;
+            passiveParameters = passives;
+
+        }
+
+        public PluggableDynamicParams()
+        {
+
+
+        }
+
+        public PluggableParams ToPluggableParams()
+        {
+            List<ParameterBase> actives=new List<ParameterBase>();
+            List<ParameterBase> passives = new List<ParameterBase>(); 
+            foreach(DynamicParameter par in activeParameters)
+            {
+                actives.Add(par.ToParameterBase());
+
+            }
+            foreach (DynamicParameter par in passiveParameters)
+            {
+                passives.Add(par.ToParameterBase());
+
+            }
+            PluggableParams parameters = new PluggableParams(actives, passives);
+            return parameters;
+        }
+
+        public PluggableDynamicParams GetInteractableParams()
+        {
+            PluggableDynamicParams par = new PluggableDynamicParams();
+            foreach (DynamicParameter parActive in activeParameters)
+            {
+                if (Config.GlobalConfig.interactionParameters.Contains(parActive.id))
+                {
+                    par.activeParameters.Add(new DynamicParameter(parActive.id, parActive.value, parActive.changeRate));
+
+                }
+
+            }
+
+            foreach (DynamicParameter parPassive in passiveParameters)
+            {
+                if (Config.GlobalConfig.interactionParameters.Contains(parPassive.id))
+                {
+                    par.passiveParameters.Add(new DynamicParameter(parPassive.id, parPassive.value, parPassive.changeRate));
+
+                }
+
+            }
+            return par;
+        }
+    }
+        [Serializable]
     public class PluggableParams
     {
 
         public List<ParameterBase> activeParameters = new List<ParameterBase>();
         public List<ParameterBase> passiveParameters = new List<ParameterBase>();
 
+        public PluggableParams(List<ParameterBase> actives, List<ParameterBase> passives)
+        {
+            activeParameters = actives;
+            passiveParameters = passives;
 
+        }
+
+        public PluggableParams()
+        {
+         
+
+        }
 
         public Vector3 GetDebugSum()
         {

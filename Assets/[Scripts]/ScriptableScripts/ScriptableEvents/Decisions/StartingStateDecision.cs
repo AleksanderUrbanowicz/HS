@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "Decision_Start_State", menuName = "States/Decisions/Start State Decision")]
+[CreateAssetMenu(fileName = "Decision_Start_State", menuName = "States/Decisions/Characters/Start State Decision")]
 
-public class StartingStateDecision : Decision
+public class StartingStateDecision : EmployeeDecision
 {
 
 
-    public override bool Decide(StateControllerMB controller)
+    public override bool Decide(StateControllerMBBase controller)
     {
-        bool targetIsActive = controller.target != null;
+        EmployeeStateControllerMB _controller = controller as EmployeeStateControllerMB;
+        bool targetIsActive = _controller.target != null;
         return targetIsActive;
     }
 

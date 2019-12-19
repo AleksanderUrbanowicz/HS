@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "Decision_NextTarget", menuName = "States/Decisions/Next Target Decision")]
+[CreateAssetMenu(fileName = "Decision_NextTarget", menuName = "States/Decisions/Characters/Next Target Decision")]
 
-public class NextTargetDecision : Decision
+public class NextTargetDecision : EmployeeDecision
 {
-    public override bool Decide(StateControllerMB controller)
+    public override bool Decide(StateControllerMBBase controller)
     {
         return false;
     }

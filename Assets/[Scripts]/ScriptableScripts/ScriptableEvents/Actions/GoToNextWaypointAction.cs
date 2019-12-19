@@ -1,16 +1,17 @@
 ﻿using UnityEngine;
-[CreateAssetMenu(fileName = "Action_GoToNextWaypoint", menuName = "States/Actions/Go To Next Waypoint Action")]
+[CreateAssetMenu(fileName = "Action_GoToNextWaypoint", menuName = "States/Actions/Characters/Go To Next Waypoint Action")]
 
-public class GoToNextWaypointAction : Action
+public class GoToNextWaypointAction : EmployeeAction
 {
 
-    public override void Act(StateControllerMB controller)
+    public override void Act(StateControllerMBBase controller)
     {
 
+        EmployeeStateControllerMB _controller = controller as EmployeeStateControllerMB;
 
-        if (controller.wayPointList != null && controller.wayPointList.Count > 0)
+        if (_controller.wayPointList != null && _controller.wayPointList.Count > 0)
         {
-            GoToTarget(controller);
+            GoToTarget(_controller);
 
 
         }
@@ -20,7 +21,7 @@ public class GoToNextWaypointAction : Action
         }
     }
 
-    private void GoToTarget(StateControllerMB controller)
+    private void GoToTarget(EmployeeStateControllerMB controller)
     {
 
         controller.navMeshAgent.destination = controller.wayPointList[controller.nextWayPoint].position;

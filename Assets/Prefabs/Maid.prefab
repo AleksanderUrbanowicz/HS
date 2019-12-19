@@ -108,15 +108,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a698a904e89d09f4c92cbf096f9d40ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stateTimeElapsed: 0
   currentState: {fileID: 11400000, guid: d1331a637da0eb24ab12587b98b3a9c1, type: 2}
   remainState: {fileID: 11400000, guid: 0d4e00db125e9574cacc48d4a6b3fd70, type: 2}
+  isActive: 0
+  interval: 30
   target: {fileID: 0}
   navMeshAgent: {fileID: 6883487911085845925}
   wayPointList: []
   interactablePoints: []
   nextWayPoint: 0
   nextInteractablePoint: 0
-  stateTimeElapsed: 0
 --- !u!114 &2800061214169964333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,8 +137,9 @@ MonoBehaviour:
   interactablePointList: []
   stateController: {fileID: 0}
   pluggableCharacterData: {fileID: 0}
-  setupUI: 1
-  AIStartEvent: {fileID: 11400000, guid: bc25fed80e8a0d249b62f005752fb52b, type: 2}
+  scriptableEventListener: {fileID: 0}
+  setupAI: 1
+  AIStartEvent: {fileID: 0}
   navMeshAgent: {fileID: 6883487911085845925}
 --- !u!195 &6883487911085845925
 NavMeshAgent:

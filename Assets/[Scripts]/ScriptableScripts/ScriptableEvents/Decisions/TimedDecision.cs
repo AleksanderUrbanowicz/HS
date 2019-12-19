@@ -5,9 +5,9 @@
 public class TimedDecision : Decision
 {
     public float time;
-    public override bool Decide(StateControllerMB controller)
+    public override  bool Decide(StateControllerMBBase controller)
     {
-        bool noEnemyInSight = controller.CheckIfCountDownElapsed(time);
-        return noEnemyInSight;
+        bool countdownElapsed = controller.CheckIfCountDownElapsed(time/(controller.interval+1));
+        return countdownElapsed;
     }
 }

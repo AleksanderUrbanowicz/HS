@@ -11,9 +11,10 @@ namespace Characters
     {
 
         public List<Transform> interactablePointList;
-        public StateControllerMB stateController;
+        public EmployeeStateControllerMB stateController;
         public PluggableCharacterData pluggableCharacterData;
-        public bool setupUI;
+        public ScriptableEventListener scriptableEventListener;
+        public bool setupAI;
         public ScriptableEvent AIStartEvent;
         public NavMeshAgent navMeshAgent;
         public void Init(PluggableCharacterData _pluggableCharacterData)
@@ -21,7 +22,7 @@ namespace Characters
             pluggableCharacterData = _pluggableCharacterData;
             // totalParams = _pluggableCharacterData.accumulatedParams;
             // totalParams = (_pluggableCharacterData as IPluggableParameters).GetAccumulatedParameters();
-
+     
             InitParams();
             InitNavigation();
 
@@ -43,10 +44,10 @@ namespace Characters
             }
             if (stateController == null)
             {
-                stateController = gameObject.GetComponent<StateControllerMB>();
+                stateController = gameObject.GetComponent<EmployeeStateControllerMB>();
                 if (stateController == null)
                 {
-                    stateController = gameObject.AddComponent<StateControllerMB>();
+                    stateController = gameObject.AddComponent<EmployeeStateControllerMB>();
 
                 }
 
@@ -54,11 +55,21 @@ namespace Characters
                 stateController.interactablePoints = ScriptableSystemManager.Instance.interactablePoints;
             }
             stateController.currentState = pluggableCharacterData.characterRole.startState;
+            if (AIStartEvent != null)
+            {
+                scriptableEventListener = GetComponent<ScriptableEventListener>();
+                if (scriptableEventListener != null)
+                {
+                    scriptableEventListener.Event = AIStartEvent;
+                    scriptableEventListener.Event.RegisterListener(scriptableEventListener);
+                }
+            }
+            else
+            {
+                SetupAI();
 
-           // navMeshAgent.speed = Random.Range(5.0f, 25.0f);
-            //navMeshAgent.acceleration = 10.0f;
-           // navMeshAgent.stoppingDistance = 0.5f;
-            stateController.SetupAI(setupUI);
+            }
+           
         }
 
 
@@ -67,7 +78,7 @@ namespace Characters
 
         public void SetupAI()
         {
-            stateController.SetupAI(setupUI);
+            stateController.Setup(setupAI);
 
         }
 

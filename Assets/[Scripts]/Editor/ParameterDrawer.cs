@@ -32,7 +32,7 @@ namespace EditorTools
     }
 
 
-    [CustomPropertyDrawer(typeof(DynamicParameter))]
+  //  [CustomPropertyDrawer(typeof(DynamicParameter))]
     public class DynamicParameterDrawer : PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)

@@ -1,14 +1,16 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "GoToAction", menuName = "States/Actions/Go To Action")]
+[CreateAssetMenu(fileName = "GoToAction", menuName = "States/Actions/Characters/Go To Action")]
 
-public class GoToTargetAction : Action
+public class GoToTargetAction : EmployeeAction
 {
-    public override void Act(StateControllerMB controller)
+    public override void Act(StateControllerMBBase controller)
     {
-        if (controller.target!=null)
+        EmployeeStateControllerMB _controller = controller as EmployeeStateControllerMB;
+
+        if (_controller.target!=null)
         {
-            GoToTarget(controller);
+            GoToTarget(_controller);
 
 
         }
@@ -18,7 +20,7 @@ public class GoToTargetAction : Action
         }
     }
 
-    private void GoToTarget(StateControllerMB controller)
+    private void GoToTarget(EmployeeStateControllerMB controller)
     {
 
 

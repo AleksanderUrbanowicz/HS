@@ -21,10 +21,7 @@ MonoBehaviour:
   charactersRandomSpread: {x: 1, y: 1}
   debugCharactersToSpawn:
   - {fileID: 11400000, guid: 554b15a2efb55d04388176ae8596ec44, type: 2}
-  - {fileID: 11400000, guid: a89ca865b843ee04f953f7b792e4e2b1, type: 2}
   - {fileID: 11400000, guid: 715508ba824855c419e959703eef2b6b, type: 2}
-  - {fileID: 11400000, guid: bcb16e276112af048a69d95f9567ed69, type: 2}
-  - {fileID: 11400000, guid: 80f4b7ad2b7263b44acad7394310d925, type: 2}
   scriptableSystems:
   - {fileID: 11400000, guid: 25b8af820f412a6449728b6e2b6a3476, type: 2}
   - {fileID: 11400000, guid: 3720109f1ddeae74397a9f3188b9566d, type: 2}
