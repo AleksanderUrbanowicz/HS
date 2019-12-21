@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Managers
+namespace UI
 {
     [ExecuteInEditMode]
     public class ThemeUI : MonoBehaviour

@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 
 
-namespace Managers
+namespace UI
 {
     [CreateAssetMenu(fileName = "ThemeUIData", menuName = "ScriptableSystems/UI System/Theme UI Data")]
 

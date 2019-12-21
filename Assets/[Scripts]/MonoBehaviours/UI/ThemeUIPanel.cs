@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using EditorTools;
+using UnityEngine;
 using UnityEngine.UI;
 
-namespace Managers
+namespace UI
 {
     [RequireComponent(typeof(Image))]
     public class ThemeUIPanel : ThemeUI
@@ -10,7 +11,7 @@ namespace Managers
 
 
         public Image iconImage;
-        public Managers.PanelType panelType;
+        public PanelType panelType;
 
         protected override void OnThemeDraw()
         {
@@ -21,21 +22,21 @@ namespace Managers
 
             switch (panelType)
             {
-                case Managers.PanelType.DEFAULT:
+                case PanelType.DEFAULT:
                     {
 
 
                         image.color = themeData.confirmationColor;
                         break;
                     }
-                case Managers.PanelType.LIST:
+                case PanelType.LIST:
                     {
 
 
                         image.color = themeData.warningColor;
                         break;
                     }
-                case Managers.PanelType.POPUP:
+                case PanelType.POPUP:
                     {
 
 

@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using EditorTools;
+using UnityEngine;
 using UnityEngine.UI;
 
-namespace Managers
+namespace UI
 {
     [RequireComponent(typeof(Button))]
     [RequireComponent(typeof(Image))]
@@ -11,7 +12,7 @@ namespace Managers
         Button button;
 
         public Image iconImage;
-        public Managers.ButtonType buttonType;
+        public ButtonType buttonType;
 
         protected override void OnThemeDraw()
         {
@@ -34,28 +35,28 @@ namespace Managers
             {
                 switch (buttonType)
                 {
-                    case Managers.ButtonType.CONFIRM:
+                    case ButtonType.CONFIRM:
                         {
 
                             iconImage.sprite = themeData.confirmationIcon;
                             image.color = themeData.confirmationColor;
                             break;
                         }
-                    case Managers.ButtonType.WARNING:
+                    case ButtonType.WARNING:
                         {
 
                             iconImage.sprite = themeData.warningIcon;
                             image.color = themeData.warningColor;
                             break;
                         }
-                    case Managers.ButtonType.ALERT:
+                    case ButtonType.ALERT:
                         {
 
                             iconImage.sprite = themeData.alertIcon;
                             image.color = themeData.alertColor;
                             break;
                         }
-                    case Managers.ButtonType.DEFAULT:
+                    case ButtonType.DEFAULT:
                         {
 
                             iconImage.enabled = false;
