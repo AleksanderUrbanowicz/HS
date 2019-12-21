@@ -36,11 +36,11 @@ namespace Characters
              accumulatedParams = new PluggableParams();
 
             AddBaseActives();
-            AddBasePassives();
+          
             AddTypeActives();
-            AddTypePassives();
+         
             (this as IPluggableParameters).AddIndividualActives();
-            (this as IPluggableParameters).AddIndividualPassives();
+            
 
 
             return accumulatedParams;
@@ -72,50 +72,9 @@ namespace Characters
             }
         }
 
-        private void AddBasePassives()
-        {
-            if (characterBaseParameters != null)
-            {
-                foreach (ParameterBase par in characterBaseParameters.passiveParameters)
-                {
-                    int index = accumulatedParams.GetIndexOfPassive(par.id);
-                    if (index != -1)
+    
 
-                    // if (accumulatedParams.staticBaseParameters.Contains(par))
-                    {
-                        accumulatedParams.passiveParameters[index].value += par.value;
-                    }
-                    else
-                    {
-                        accumulatedParams.passiveParameters.Add(new ParameterBase(par));
-
-                    }
-
-                }
-            }
-        }
-
-         void IPluggableParameters.AddIndividualPassives()
-        {
-
-            foreach (ParameterBase par in individualRoleParams.passiveParameters)
-            {
-                int index = accumulatedParams.GetIndexOfPassive(par.id);
-                if (index != -1)
-
-                // if (accumulatedParams.staticBaseParameters.Contains(par))
-                {
-                    accumulatedParams.passiveParameters[index].value += par.value;
-                }
-                else
-                {
-                    accumulatedParams.passiveParameters.Add(new ParameterBase(par));
-
-                }
-
-            }
-        
-        }
+         
 
          void IPluggableParameters.AddIndividualActives()
         {
@@ -139,29 +98,8 @@ namespace Characters
             }
         }
 
-        private void AddTypePassives()
-        {
-            if (characterTypeParams != null)
-            {
-                foreach (ParameterBase par in characterTypeParams.passiveParameters)
-                {
-                    int index = accumulatedParams.GetIndexOfPassive(par.id);
-                    if (index != -1)
-
-                    // if (accumulatedParams.staticBaseParameters.Contains(par))
-                    {
-                        accumulatedParams.passiveParameters[index].value += par.value;
-                    }
-                    else
-                    {
-                        accumulatedParams.passiveParameters.Add(new ParameterBase(par));
-
-                    }
-
-                }
-            }
-
-        }
+        
+        
 
         private void AddTypeActives()
         {

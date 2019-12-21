@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-namespace StateMachine
+namespace StateMachine.Actions
 {
 
     [CreateAssetMenu(fileName = "Action_Patrol", menuName = "States/Actions/Characters/Patrol Action")]

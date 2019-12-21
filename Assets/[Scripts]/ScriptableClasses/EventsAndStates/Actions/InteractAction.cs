@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-namespace StateMachine
+namespace StateMachine.Actions
 {
     [CreateAssetMenu(fileName = "InteractAction", menuName = "States/Actions/Characters/Interact Action")]
 

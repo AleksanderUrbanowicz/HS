@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-namespace StateMachine
+namespace StateMachine.Decisions
 {
     public abstract class Decision : ScriptableObject
     {

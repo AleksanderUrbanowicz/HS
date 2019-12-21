@@ -1,4 +1,4 @@
-﻿namespace EditorTools
+﻿namespace Definitions
 {
     public static class StringDefines
     {

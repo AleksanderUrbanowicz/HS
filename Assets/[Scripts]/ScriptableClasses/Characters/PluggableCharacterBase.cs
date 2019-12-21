@@ -14,15 +14,12 @@ namespace Characters
         public PluggableParams individualParams;
         public PluggableCharacterRole characterRole;
 
-        public GameObject GetPrefab()
+         GameObject ISpawnable.GetPrefab
         {
-            return prefab;
+            get { return prefab; }
         }
 
-        public string GetID()
-        {
-            return id;
-        }
+         string ISpawnable.GetID => id;
     }
 
 }

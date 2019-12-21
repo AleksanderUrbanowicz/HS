@@ -1,15 +1,15 @@
 ﻿using Characters;
-using ScriptableData;
 using Managers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Objects;
+using EditorTools;
 #if UNITY_EDITOR
 
 #endif
-namespace EditorTools
+namespace ScriptableData
 {
     [CreateAssetMenu(fileName = "GameSettings", menuName = "Settings/GameSettings")]
 
@@ -25,14 +25,18 @@ namespace EditorTools
         public List<PluggableCharacterData> debugCharactersToSpawn = new List<PluggableCharacterData>();
         private List<ScriptableSystem> scriptableSystems;
 
-        public List<ScriptableSystem> ScriptableSystems { get {
+        public List<ScriptableSystem> ScriptableSystems
+        {
+            get
+            {
                 if (scriptableSystems == null)
                 {
-                    scriptableSystems= new List<ScriptableSystem>(){ scriptableBuildSystem, scriptableDataSystem, scriptableSelectSystem };
-                   
+                    scriptableSystems = new List<ScriptableSystem>() { scriptableBuildSystem, scriptableDataSystem, scriptableSelectSystem };
+
                 }
                 return scriptableSystems;
-            } }
+            }
+        }
 
         private void OnEnable()
         {

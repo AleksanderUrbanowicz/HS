@@ -1,4 +1,4 @@
-﻿namespace StateMachine
+﻿namespace StateMachine.Decisions
 {
     public abstract class EmployeeDecision : Decision
     {

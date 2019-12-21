@@ -1,6 +1,6 @@
 ﻿using ScriptableData;
 using UnityEngine;
-namespace StateMachine
+namespace StateMachine.Decisions
 {
     [CreateAssetMenu(fileName = "Decision_Debug", menuName = "States/Decisions/Debug Decision")]
 

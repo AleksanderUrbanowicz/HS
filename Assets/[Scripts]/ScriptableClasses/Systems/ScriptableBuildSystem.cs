@@ -1,4 +1,5 @@
 ﻿using Objects;
+using ScriptableData;
 using StateMachine;
 using UnityEngine;
 

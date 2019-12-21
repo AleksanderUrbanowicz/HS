@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-namespace StateMachine
+namespace StateMachine.Decisions
 {
     [CreateAssetMenu(fileName = "Decision_Start_State", menuName = "States/Decisions/Characters/Start State Decision")]
 

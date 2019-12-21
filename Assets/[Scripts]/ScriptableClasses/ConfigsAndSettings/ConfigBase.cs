@@ -1,7 +1,8 @@
-﻿using System;
+﻿using EditorTools;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-namespace EditorTools
+namespace ScriptableData
 {
     public class ConfigBase : ScriptableObject
     {

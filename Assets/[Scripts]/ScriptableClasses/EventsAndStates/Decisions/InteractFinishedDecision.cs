@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace StateMachine
+namespace StateMachine.Decisions
 {
     [CreateAssetMenu(fileName = "Decision_InteractFinished", menuName = "States/Decisions/Characters/Interact Finished Decision")]
 

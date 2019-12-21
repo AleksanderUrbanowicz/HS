@@ -6,6 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using static EditorTools.EditorStaticTools;
 using Objects;
+using Definitions;
 
 namespace EditorTools
 {

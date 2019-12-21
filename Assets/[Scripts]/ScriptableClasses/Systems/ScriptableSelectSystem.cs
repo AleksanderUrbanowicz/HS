@@ -1,4 +1,5 @@
-﻿using StateMachine;
+﻿using ScriptableData;
+using StateMachine;
 using UnityEngine;
 
 namespace Managers

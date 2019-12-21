@@ -1,7 +1,8 @@
-﻿using StateMachine;
+﻿using Managers;
+using StateMachine;
 using UnityEngine;
 
-namespace Managers
+namespace Objects
 {
     public class BuildSystemRaycast : MonoBehaviour
     {

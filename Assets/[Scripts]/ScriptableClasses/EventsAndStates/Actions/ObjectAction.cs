@@ -1,4 +1,4 @@
-﻿namespace StateMachine
+﻿namespace StateMachine.Actions
 {
     public abstract class ObjectAction : Action
     {

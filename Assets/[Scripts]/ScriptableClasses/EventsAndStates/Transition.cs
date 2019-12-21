@@ -1,4 +1,6 @@
-﻿namespace StateMachine
+﻿using StateMachine.Decisions;
+
+namespace StateMachine
 {
     [System.Serializable]
     public class Transition

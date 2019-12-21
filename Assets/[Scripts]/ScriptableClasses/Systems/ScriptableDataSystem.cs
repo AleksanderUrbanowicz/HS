@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ScriptableData;
+using UnityEngine;
 namespace Managers
 {
     [CreateAssetMenu(fileName = "DataSystem", menuName = "ScriptableSystems/Data System/System Asset")]

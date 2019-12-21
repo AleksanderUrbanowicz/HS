@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-namespace StateMachine
+namespace StateMachine.Actions
+
 {
     public abstract class Action : ScriptableObject
     {

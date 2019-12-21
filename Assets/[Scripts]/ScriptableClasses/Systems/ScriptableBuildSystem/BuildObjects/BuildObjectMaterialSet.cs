@@ -1,8 +1,9 @@
-﻿using EditorTools;
+﻿using Definitions;
+using EditorTools;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Managers
+namespace Objects
 {
 
     [CreateAssetMenu(fileName = "BuildObjectMaterialSet", menuName = "ScriptableSystems/Build System/Build Object Material Set")]

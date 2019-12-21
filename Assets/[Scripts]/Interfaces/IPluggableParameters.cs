@@ -8,6 +8,6 @@ namespace Interfaces
         PluggableParams GetAccumulatedParameters();
 
         void AddIndividualActives();
-        void AddIndividualPassives();
+        
     }
 }

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-namespace StateMachine
+namespace StateMachine.Decisions
 {
     [CreateAssetMenu(fileName = "Decision_InteractionInRange", menuName = "States/Decisions/Characters/InteractionInRangDecision")]
 

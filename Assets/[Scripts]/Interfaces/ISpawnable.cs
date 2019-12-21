@@ -5,8 +5,8 @@ namespace Interfaces
 {
     public interface ISpawnable
     {
-        GameObject GetPrefab();
+        GameObject GetPrefab { get; }
 
-        string GetID();
+        string GetID { get; }
     }
 }

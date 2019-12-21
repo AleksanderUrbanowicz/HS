@@ -1,4 +1,5 @@
-﻿using EditorTools;
+﻿using Definitions;
+using EditorTools;
 using Interfaces;
 using Managers;
 using System.Collections.Generic;
@@ -52,16 +53,10 @@ namespace Objects
             }
         }
 
-      
 
-        public GameObject GetPrefab()
-        {
-            return objectPrefab;
-        }
 
-        public string GetID()
-        {
-            return id;
-        }
+         GameObject ISpawnable.GetPrefab => objectPrefab;
+
+        string ISpawnable.GetID => id;
     }
 }

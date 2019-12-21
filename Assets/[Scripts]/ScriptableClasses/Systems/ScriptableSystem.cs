@@ -1,7 +1,7 @@
 ﻿using StateMachine;
 using UnityEngine;
 
-namespace Managers
+namespace ScriptableData
 {
     public abstract class ScriptableSystem : ScriptableObject
     {

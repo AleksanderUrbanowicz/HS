@@ -1,5 +1,5 @@
 ﻿
-namespace StateMachine
+namespace StateMachine.Decisions
 {
     public abstract class ObjectDecision : Decision
 {

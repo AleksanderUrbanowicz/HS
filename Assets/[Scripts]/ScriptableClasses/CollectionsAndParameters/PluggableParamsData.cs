@@ -10,7 +10,7 @@ namespace EditorTools
     {
         
         public List<ParameterBase> activeParameters = new List<ParameterBase>();
-        public List<ParameterBase> passiveParameters = new List<ParameterBase>();
+       
 
       
 
@@ -21,12 +21,12 @@ namespace EditorTools
     {
 
         public List<DynamicParameter> activeParameters = new List<DynamicParameter>();
-        public List<DynamicParameter> passiveParameters = new List<DynamicParameter>();
+      
 
-        public PluggableDynamicParams(List<DynamicParameter> actives, List<DynamicParameter> passives)
+        public PluggableDynamicParams(List<DynamicParameter> actives)
         {
             activeParameters = actives;
-            passiveParameters = passives;
+            
 
         }
 
@@ -44,11 +44,7 @@ namespace EditorTools
                 parameters.activeParameters.Add(par as ParameterBase);
 
             }
-            foreach (DynamicParameter par in passiveParameters)
-            {
-                parameters.passiveParameters.Add(par as ParameterBase);
-
-            }
+         
             
             return parameters;
         }
@@ -66,15 +62,7 @@ namespace EditorTools
 
             }
 
-            foreach (DynamicParameter parPassive in passiveParameters)
-            {
-                if (Config.GlobalConfig.interactionParameters.Contains(parPassive.id))
-                {
-                    par.passiveParameters.Add(new DynamicParameter(parPassive.id, parPassive.value, parPassive.changeRate));
-
-                }
-
-            }
+          
             return par;
         }
     }
@@ -83,12 +71,10 @@ namespace EditorTools
     {
 
         public List<ParameterBase> activeParameters = new List<ParameterBase>();
-        public List<ParameterBase> passiveParameters = new List<ParameterBase>();
 
-        public PluggableParams(List<ParameterBase> actives, List<ParameterBase> passives)
+        public PluggableParams(List<ParameterBase> actives)
         {
             activeParameters = actives;
-            passiveParameters = passives;
 
         }
 
@@ -117,19 +103,7 @@ namespace EditorTools
 
         }
 
-        public int GetIndexOfPassive(string _id)
-        {
-            //int i = -1;
-            ParameterBase par = passiveParameters.FirstOrDefault(x => x.id == _id);
-            if (par != null)
-            {
-               int i = passiveParameters.IndexOf(par);
-
-            }
-
-            return -1;
-
-        }
+        
 
         public PluggableParams GetParams(List<string> _ids)
         {
@@ -143,12 +117,7 @@ namespace EditorTools
 
                     selected.activeParameters.Add(new ParameterBase(activeParameters[index].id, activeParameters[index].value));
                 }
-                index = GetIndexOfPassive(s);
-                if (index != -1)
-                {
-
-                    selected.passiveParameters.Add(new ParameterBase(passiveParameters[index].id, passiveParameters[index].value));
-                }
+           
             }
             return selected;
         }
@@ -168,55 +137,11 @@ namespace EditorTools
             return par;
         }
 
-        public bool CheckInteraction(PluggableParams passiveObject)
-        {
-            for (int i = 0; i < activeParameters.Count; i++)
-            {
-                ParameterBase par = activeParameters[i];
-                for (int j = 0; j < passiveObject.passiveParameters.Count; j++)
-                {
-                    ParameterBase pas = passiveObject.passiveParameters[j];
-                    if (pas.id == par.id)
-                    {
+        
 
-                        return true;
-                    }
-                }
+   
 
-
-            }
-            return false;
-        }
-
-        public void AddPassive(ParameterBase parameterBase)
-        {
-            foreach (ParameterBase par in passiveParameters)
-            {
-                if (par.id == parameterBase.id)
-                {
-                    par.value += parameterBase.value;
-
-                }
-
-
-            }
-
-        }
-
-        public ParameterBase GetPassive(string _id)
-        {
-            foreach (ParameterBase par in passiveParameters)
-            {
-                if (par.id == _id)
-                {
-                    return par;
-
-                }
-
-            }
-            return null;
-
-        }
+        
 
         public void AddActive(ParameterBase parameterBase)
         {

@@ -17,7 +17,7 @@ namespace Characters
             if (characterRole != null)
             {
                 accumulatedParams = characterRole.AccumulatedParams;
-               (this as IPluggableParameters).AddIndividualPassives();
+              
                 (this as IPluggableParameters).AddIndividualActives();
 
             }
@@ -32,25 +32,7 @@ namespace Characters
         }
 
 
-         void IPluggableParameters.AddIndividualPassives()
-        {
-            int index;
-            foreach (ParameterBase par in individualParams.passiveParameters)
-            {
-                 index = accumulatedParams.GetIndexOfPassive(par.id);
-                if (index != -1)
-                {
-                    accumulatedParams.passiveParameters[index].value += par.value;
-                }
-                else
-                {
-                    accumulatedParams.passiveParameters.Add(new ParameterBase(par.id, par.value));
-
-                }
-
-            }
-    
-        }
+        
 
         void IPluggableParameters.AddIndividualActives()
         {

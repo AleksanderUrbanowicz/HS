@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-namespace StateMachine
+namespace StateMachine.Decisions
 {
     [CreateAssetMenu(fileName = "Decision_ArrivedAtDestination", menuName = "States/Decisions/Characters/Arrived At Destination Decision")]
 

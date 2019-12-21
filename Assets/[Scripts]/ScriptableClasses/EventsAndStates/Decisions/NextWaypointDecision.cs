@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace StateMachine
+namespace StateMachine.Decisions
 {
     [CreateAssetMenu(fileName = "Decision_NextWaypoint", menuName = "States/Decisions/Characters/Next Waypoint Decision")]
 

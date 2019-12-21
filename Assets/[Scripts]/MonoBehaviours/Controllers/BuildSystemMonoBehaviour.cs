@@ -1,5 +1,5 @@
 ﻿
-using EditorTools;
+using Definitions;
 using Objects;
 using StateMachine;
 using System.Collections.Generic;
@@ -256,7 +256,7 @@ namespace Managers
 
             float distance = Vector3.Distance(currentPosition, point);
             sb.AppendLine("Distance: " + distance);
-            if (distance > (previewSnapFactor * gridSize))
+            if (distance > previewSnapFactor * gridSize)
             {
 
                 CalculatePreview(point, normal);
@@ -290,7 +290,7 @@ namespace Managers
             if (scriptableBuildSystem.logs) Debug.Log("CheckAvailability");
             collisionCenterDebug = currentPreview.position + previewCollider.center;
             Vector3 halfEx = previewCollider.bounds.extents * currentPreviewObject.collsionBoundsFraction;
-       
+
 
             Collider[] hitColliders = Physics.OverlapBox(currentPreview.position + previewCollider.center, halfEx, previewCollider.transform.rotation, currentPreviewObject.obstacleLayers);
 
@@ -301,7 +301,7 @@ namespace Managers
             {
                 Collider hitCollider = hitColliders[i];
 
-                if (hitCollider.gameObject != this.gameObject && hitCollider.gameObject.layer != currentPreviewObject.layersToBuildOn)
+                if (hitCollider.gameObject != gameObject && hitCollider.gameObject.layer != currentPreviewObject.layersToBuildOn)
                 {
 
                     return false;
@@ -380,7 +380,7 @@ namespace Managers
             else if (_currentPreviewObject.objectOrientation == ObjectOrientation.FLOOR)
             {
 
-                cube.transform.localPosition = new Vector3(0, (_currentPreviewObject.actualSize.y) / 2.0f, 0) + _currentPreviewObject.offset;
+                cube.transform.localPosition = new Vector3(0, _currentPreviewObject.actualSize.y / 2.0f, 0) + _currentPreviewObject.offset;
 
             }
             previewRenderer = cube.gameObject.GetComponent<MeshRenderer>();
@@ -392,15 +392,15 @@ namespace Managers
 
         private void RotatePreview(BuildObjectData _currentPreviewObject)
         {
-            float newAngle = ((rotation.eulerAngles.x * _currentPreviewObject.orientationVector.x * collisionNormal.x)
-                + (rotation.eulerAngles.y * _currentPreviewObject.orientationVector.y * collisionNormal.y)
-                + (rotation.eulerAngles.z * _currentPreviewObject.orientationVector.z * collisionNormal.z)
-                + _currentPreviewObject.rotationStep);
+            float newAngle = rotation.eulerAngles.x * _currentPreviewObject.orientationVector.x * collisionNormal.x
+                + rotation.eulerAngles.y * _currentPreviewObject.orientationVector.y * collisionNormal.y
+                + rotation.eulerAngles.z * _currentPreviewObject.orientationVector.z * collisionNormal.z
+                + _currentPreviewObject.rotationStep;
 
-            float newAngleAlt = ((rotation.eulerAngles.x * _currentPreviewObject.orientationVector.x)
-               + (rotation.eulerAngles.y * _currentPreviewObject.orientationVector.y)
-               + (rotation.eulerAngles.z * _currentPreviewObject.orientationVector.z)
-               + _currentPreviewObject.rotationStep);
+            float newAngleAlt = rotation.eulerAngles.x * _currentPreviewObject.orientationVector.x
+               + rotation.eulerAngles.y * _currentPreviewObject.orientationVector.y
+               + rotation.eulerAngles.z * _currentPreviewObject.orientationVector.z
+               + _currentPreviewObject.rotationStep;
             Vector3 orientationVectorMultiplied = new Vector3(_currentPreviewObject.orientationVector.x * collisionNormal.x,
                 _currentPreviewObject.orientationVector.y * collisionNormal.y,
                  _currentPreviewObject.orientationVector.z * collisionNormal.z);
@@ -454,7 +454,7 @@ namespace Managers
                 Gizmos.matrix = Matrix4x4.TRS(previewCollider.transform.position + previewCollider.center, previewCollider.transform.rotation, previewCollider.transform.localScale);
                 Gizmos.color = Color.magenta;
 
-                
+
             }
 
         }

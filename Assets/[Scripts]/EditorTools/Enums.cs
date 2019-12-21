@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EditorTools
+namespace Definitions
 {
     public enum ObjectOrientation
     {

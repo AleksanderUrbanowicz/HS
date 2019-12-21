@@ -1,7 +1,7 @@
 ﻿
 
 using UnityEngine;
-namespace StateMachine
+namespace StateMachine.Actions
 {
     [CreateAssetMenu(fileName = "Action_GoToNextWaypoint", menuName = "States/Actions/Characters/Go To Next Waypoint Action")]
 
