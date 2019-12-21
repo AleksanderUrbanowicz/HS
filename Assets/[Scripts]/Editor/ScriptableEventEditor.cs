@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace ScriptableSystems
+namespace StateMachine
 {
     [CustomEditor(typeof(ScriptableEvent), true)]
     public class ScriptableEventEditor : Editor

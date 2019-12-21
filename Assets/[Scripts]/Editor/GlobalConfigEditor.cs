@@ -1,9 +1,11 @@
 ﻿using Characters;
-using ScriptableSystems;
+using ScriptableData;
+using Managers;
 using System;
 using UnityEditor;
 using UnityEngine;
 using static EditorTools.EditorStaticTools;
+using Objects;
 
 namespace EditorTools
 {
@@ -14,9 +16,9 @@ namespace EditorTools
 
         private SerializedProperty colorsSetProperty;
         private SerializedProperty guestTypesProperty;
-        private SerializedProperty employeeTypesProperty;
+        //private SerializedProperty employeeTypesProperty;
         private SerializedProperty characterDatasProperty;
-        private SerializedProperty employeeDatasProperty;
+       // private SerializedProperty employeeDatasProperty;
         private SerializedProperty guestDatasProperty;
         private SerializedProperty employeeColorProperty;
         private SerializedProperty guestColorProperty;
@@ -34,7 +36,7 @@ namespace EditorTools
         public Color[] defaultColors = new Color[Enum.GetValues(typeof(ColorPurpose)).Length];
         GameObject sceneObject;
         bool displayObject = false;
-        private static CharacterDataBase characterDataBase;
+        //private static CharacterDataBase characterDataBase;
         private static BuildObjectData buildObjectData;
         private static readonly string[] doNotDrawProperties = new string[]
 {
@@ -75,13 +77,13 @@ namespace EditorTools
         {
 
             serializedObject.Update();
-            employeeTypesProperty = serializedObject.FindProperty("employeeTypes");
-            guestTypesProperty = serializedObject.FindProperty("guestTypes");
+           // employeeTypesProperty = serializedObject.FindProperty("employeeTypes");
+           // guestTypesProperty = serializedObject.FindProperty("guestTypes");
             characterDatasProperty = serializedObject.FindProperty("characterDatas");
             buildObjectsProperty = serializedObject.FindProperty("buildObjects");
-            employeeDatasProperty = serializedObject.FindProperty("employeeDatas");
+          //  employeeDatasProperty = serializedObject.FindProperty("employeeDatas");
             guestDatasProperty = serializedObject.FindProperty("guestDatas");
-            employeeColorProperty = serializedObject.FindProperty("employeeColor");
+          //  employeeColorProperty = serializedObject.FindProperty("employeeColor");
             guestColorProperty = serializedObject.FindProperty("guestColor");
             buildObjectColorProperty = serializedObject.FindProperty("buildObjectColor");
             defaultColorProperty = serializedObject.FindProperty("defaultColor");
@@ -251,8 +253,8 @@ namespace EditorTools
                 EditorGUILayout.PropertyField(allSelectorParametersProperty, true);
                 EditorGUILayout.PropertyField(selectorParametersProperty, true);
 
-                EditorGUILayout.PropertyField(employeeTypesProperty, true);
-                EditorGUILayout.PropertyField(guestTypesProperty, true);
+              //  EditorGUILayout.PropertyField(employeeTypesProperty, true);
+              //  EditorGUILayout.PropertyField(guestTypesProperty, true);
 
 
             }
@@ -263,7 +265,7 @@ namespace EditorTools
             EditorGUILayout.BeginVertical();
             if (charactersTabOpenProperty.boolValue)
             {
-                DrawCharacterCreator();
+                //DrawCharacterCreator();
 
 
 
@@ -327,20 +329,20 @@ namespace EditorTools
 
 
         }
-
+        /*
 
         public void DrawCharactersList()
         {
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.BeginVertical(GUI.skin.GetStyle("HelpBox"), GUILayout.Width(Screen.width / 4));
-            DrawEmployeesList();
-            DrawGuestsList();
+           // DrawEmployeesList();
+           // DrawGuestsList();
             DrawcharacterButtons();
             EditorGUILayout.EndVertical();
-            DrawCharacterDisplay(characterDataBase);
+           // DrawCharacterDisplay(characterDataBase);
             EditorGUILayout.EndHorizontal();
         }
-
+        
         public void DrawCharacterData(CharacterDataBase characterData)
         {
             characterData.prefab = (GameObject)EditorGUILayout.ObjectField(characterData.prefab, typeof(GameObject), false, GUILayout.Height(smallControlHeight));
@@ -378,6 +380,7 @@ namespace EditorTools
 
         public void DrawGuestData(CharacterDataBase characterData)
         {
+            
             if (characterData is GuestData)
             {
 
@@ -412,12 +415,14 @@ namespace EditorTools
                 }
 
             }
+           
 
-        }
+    }
+     
 
         public void DrawEmployeeData(CharacterDataBase characterData)
         {
-
+            
             if (characterData is EmployeeData)
             {
 
@@ -430,10 +435,11 @@ namespace EditorTools
                 (characterData as EmployeeData).speed = EditorGUILayout.FloatField(new GUIContent("Speed: "), (characterData as EmployeeData).speed, GUILayout.Height(smallControlHeight));
 
             }
-
+            
         }
         public void DrawEmployeesList()
         {
+            /*
             GUI.backgroundColor = employeeColorProperty.colorValue;
 
             EditorGUILayout.BeginVertical(GUI.skin.GetStyle("HelpBox"));
@@ -452,11 +458,12 @@ namespace EditorTools
             }
             EditorGUILayout.EndVertical();
             GUI.backgroundColor = EditorColorsCustomizer.GetColor(ColorPurpose.BackgroundColorLight, ref defaultColors);
-
+            
         }
 
         public void DrawGuestsList()
         {
+            /*
             GUI.backgroundColor = guestColorProperty.colorValue;
             EditorGUILayout.BeginVertical(GUI.skin.GetStyle("HelpBox"));
 
@@ -473,7 +480,7 @@ namespace EditorTools
             }
             EditorGUILayout.EndVertical();
             GUI.backgroundColor = EditorColorsCustomizer.GetColor(ColorPurpose.BackgroundColorLight, ref defaultColors);
-
+            
         }
 
         public void DrawCharacterDisplay(CharacterDataBase characterData)
@@ -494,7 +501,7 @@ namespace EditorTools
 
         private void InitCharacterData()
         {
-            characterDataBase = (CharacterDataBase)CreateInstance(typeof(CharacterDataBase));
+            //characterDataBase = (CharacterDataBase)CreateInstance(typeof(CharacterDataBase));
         }
 
         public void DrawCharacterCreator()
@@ -513,16 +520,16 @@ namespace EditorTools
                 {
                     displayObject = !displayObject;
                 }
-                if (characterDataBase == null)
-                {
-                    InitCharacterData();
-                }
+               // if (characterDataBase == null)
+              //  {
+              //      InitCharacterData();
+              //  }
 
             }
             GUILayout.EndVertical();
 
         }
-
+        */
         ////////////////////////Objects////////////////////////
         /// <summary>
         /// 
@@ -620,10 +627,10 @@ namespace EditorTools
                 {
                     displayObject = !displayObject;
                 }
-                if (characterDataBase == null)
-                {
-                    InitObjectData();
-                }
+              //  if (characterDataBase == null)
+              //  {
+               //     InitObjectData();
+              //  }
 
             }
             GUILayout.EndVertical();

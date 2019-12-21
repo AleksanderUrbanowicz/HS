@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace EasySurvivalScripts
+namespace UnityScripts
 {
     public enum PlayerStates
     {

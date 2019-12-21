@@ -8,7 +8,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace ScriptableSystems
+namespace StateMachine
 {
     [CustomEditor(typeof(GameEvent), true)]
     public class EventEditor : Editor

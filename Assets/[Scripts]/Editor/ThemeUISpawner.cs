@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace ScriptableSystems
+namespace Managers
 {
     public class ThemeUISpawner : Editor
     {

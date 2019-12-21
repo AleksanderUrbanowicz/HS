@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace EasySurvivalScripts
+namespace UnityScripts
 {
     public enum CameraPerspective
     {

@@ -2,6 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
+//Author: internet
 namespace EditorTools
 {
 

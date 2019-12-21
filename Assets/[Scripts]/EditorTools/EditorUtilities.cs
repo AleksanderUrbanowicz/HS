@@ -14,7 +14,6 @@ namespace EditorTools
         NoElementLabels = ListSize | ListLabel
     }
 
-
     [Serializable]
     public class EditorColors
     {
@@ -22,8 +21,6 @@ namespace EditorTools
 
 
     }
-
-
     public enum ColorPurpose
     {
         MainColor = 0,

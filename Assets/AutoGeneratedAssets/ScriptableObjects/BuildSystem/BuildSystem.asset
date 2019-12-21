@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3806ed1b2854a6f4b9a1ac8fecd27e68, type: 3}
+  m_Name: BuildSystem
+  m_EditorClassIdentifier: 
+  id: BuildSystemDebug
+  initializeOnStart: 1
+  monoBehaviourScript: {fileID: 0}
+  buildObjectLayerString: Object
+  defaultLayerToBuildOn:
+    serializedVersion: 2
+    m_Bits: 0
+  buildObjects: {fileID: 11400000, guid: 55649c043f053354787f492b97a82ecd, type: 2}
+  availableColor: {r: 0, g: 1, b: 0, a: 0.2}
+  unavailableColor: {r: 1, g: 0, b: 0, a: 0.2}
+  previewMaterial: {fileID: 2100000, guid: abcdbd2deb61ba04eb083079534c7bd7, type: 2}
+  raycastMaxDistance: 15
+  offset: 1
+  gridSize: 0.25
+  previewSnapFactor: 1
+  EventPreviewRaycastHit: {fileID: 11400000, guid: 8691be581d19bca4189f1e17b0100162,
+    type: 2}
+  EventPreviewRaycastMiss: {fileID: 11400000, guid: b544050df6a559f4ab53bb4f6500692b,
+    type: 2}
+  raycastInterval: 1
+  updateInterval: 2
+  logs: 0

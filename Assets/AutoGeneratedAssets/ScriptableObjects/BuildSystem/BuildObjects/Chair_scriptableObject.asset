@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 321c6482f6a60434aba91a4c94e1712d, type: 3}
+  m_Name: Chair_scriptableObject
+  m_EditorClassIdentifier: 
+  id: Chair
+  objectPrefab: {fileID: 6258080084422462676, guid: 542177b529316884497b094fe1c4b74e,
+    type: 3}
+  offset: {x: 0, y: 0, z: 0}
+  actualSize: {x: 0.6137047, y: 1.678667, z: 0.6251695}
+  gridSize: {x: 1, y: 2, z: 1}
+  orientationVector: {x: 0, y: 1, z: 0}
+  cost: 0
+  objectOrientation: 1
+  layersToBuildOn:
+    serializedVersion: 2
+    m_Bits: 2097152
+  obstacleLayers:
+    serializedVersion: 2
+    m_Bits: 4196352
+  collsionBoundsFraction: 0.95
+  rotationStep: 90
+  materialData: []
+  pluggableDynamicParams:
+    activeParameters: []
+    passiveParameters: []

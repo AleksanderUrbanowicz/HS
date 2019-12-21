@@ -1,0 +1,13 @@
+﻿using EditorTools;
+
+namespace Interfaces
+{
+    public interface IPluggableParameters
+    {
+
+        PluggableParams GetAccumulatedParameters();
+
+        void AddIndividualActives();
+        void AddIndividualPassives();
+    }
+}
