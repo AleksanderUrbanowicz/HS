@@ -20,11 +20,27 @@ namespace Managers
 
         }
 
+        [MenuItem("GameObject/ThemeUI/Slider", priority = 0)]
+
+        public static void AddSlider()
+        {
+            Create("ThemeSlider");
+
+        }
+
         public static GameObject selectedObject;
 
         private static GameObject Create(string name)
         {
-            GameObject instance = Instantiate(Resources.Load<GameObject>(name));
+            GameObject res = Resources.Load<GameObject>(name);
+            if (res == null)
+            {
+                Debug.LogError(name + " does not exist");
+                return res;
+
+            }
+            GameObject instance = Instantiate(res);
+         
             instance.name = name;
             selectedObject = UnityEditor.Selection.activeObject as GameObject;
             if (selectedObject != null)

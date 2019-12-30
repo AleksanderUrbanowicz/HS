@@ -25,3 +25,6 @@ MonoBehaviour:
   scriptableSystems:
   - {fileID: 11400000, guid: 25b8af820f412a6449728b6e2b6a3476, type: 2}
   - {fileID: 11400000, guid: 3720109f1ddeae74397a9f3188b9566d, type: 2}
+  buildObjectStartState: {fileID: 11400000, guid: 471650ef51717974f85b0256fb298e97,
+    type: 2}
+  remainInState: {fileID: 11400000, guid: 0d4e00db125e9574cacc48d4a6b3fd70, type: 2}

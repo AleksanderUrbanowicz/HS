@@ -17,7 +17,17 @@ namespace UI
         public Color warningColor;
         public Color alertColor;
 
+        public float smallControlWidth;
+        public float mediumControlWidth;
+
+        public Vector2 smallControlSize;
+        public Vector2 mediumControlSize;
+        public Vector2 largeControlSize;
+        public Vector2 hugeControlSize;
+
         public Sprite defaultButtonSprite;
+        public Sprite defaultBarSprite;
+
         public Sprite confirmationIcon;
         public Sprite alertIcon;
         public Sprite warningIcon;

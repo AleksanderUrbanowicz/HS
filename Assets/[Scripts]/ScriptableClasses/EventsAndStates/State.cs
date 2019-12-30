@@ -28,6 +28,11 @@ namespace StateMachine
         {
             for (int i = 0; i < transitions.Length; i++)
             {
+                if(transitions[i].decision==null)
+                {
+                    Debug.LogError(this.name+".transitions[" + i + "].decision is null");
+                    continue;
+                }
                 bool decisionSucceeded = transitions[i].decision.Decide(controller);
 
                 if (decisionSucceeded)

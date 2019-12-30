@@ -12,16 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a214f9ad23595ed45b0ce066e6c0bc4d, type: 3}
   m_Name: ThemeUIData
   m_EditorClassIdentifier: 
-  id: ThemeUIData
-  defaultColor: {r: 0, g: 0, b: 0, a: 0}
-  defaultBackgroundColor: {r: 0, g: 0, b: 0, a: 0}
-  defaultFontColor: {r: 0, g: 0, b: 0, a: 0}
-  confirmationColor: {r: 0, g: 0, b: 0, a: 0}
-  warningColor: {r: 0, g: 0, b: 0, a: 0}
-  alertColor: {r: 0, g: 0, b: 0, a: 0}
-  defaultButtonSprite: {fileID: 0}
-  confirmationIcon: {fileID: 0}
-  alertIcon: {fileID: 0}
-  warningIcon: {fileID: 0}
+  id: ThemeUIStandard
+  defaultColor: {r: 1, g: 1, b: 1, a: 0.60784316}
+  defaultBackgroundColor: {r: 0, g: 0, b: 0, a: 0.7607843}
+  defaultFontColor: {r: 1, g: 1, b: 1, a: 0}
+  confirmationColor: {r: 0.0012200644, g: 0.9622642, b: 0, a: 0.7411765}
+  warningColor: {r: 0.8773585, g: 0.33132628, b: 0.13656996, a: 0.6}
+  alertColor: {r: 0.3679245, g: 0, b: 0, a: 0.83137256}
+  smallControlWidth: 0
+  mediumControlWidth: 0
+  smallControlSize: {x: 50, y: 30}
+  mediumControlSize: {x: 100, y: 60}
+  largeControlSize: {x: 150, y: 90}
+  hugeControlSize: {x: 200, y: 120}
+  defaultButtonSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  defaultBarSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  confirmationIcon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  alertIcon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  warningIcon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   buttonImageType: 0
-  iconSize: {x: 0, y: 0}
+  iconSize: {x: 130.1, y: 102.9}

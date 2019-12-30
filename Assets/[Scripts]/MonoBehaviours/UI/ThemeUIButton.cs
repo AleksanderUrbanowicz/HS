@@ -13,26 +13,41 @@ namespace UI
 
         public Image iconImage;
         public ButtonType buttonType;
+        public Text text;
 
+        public Image[] images;
         protected override void OnThemeDraw()
         {
             base.OnThemeDraw();
-            image = GetComponent<Image>();
+            if(images==null)
+            {
 
+                images = GetComponentsInChildren<Image>();
+
+            }
+            //image = GetComponent<Image>();
+            image = images[0];
             button = GetComponent<Button>();
+            text = GetComponentInChildren<Text>();
             button.targetGraphic = image;
+            iconImage =images[1];
             image.sprite = themeData.defaultButtonSprite;
             image.type = themeData.buttonImageType;
             image.color = themeData.defaultColor;
 
-            if (themeData.iconSize != Vector2.zero)
-            {
-                iconImage.rectTransform.sizeDelta = themeData.iconSize;
-
-            }
+          
 
             if (iconImage != null)
             {
+                if (themeData.iconSize != Vector2.zero)
+                {
+                    iconImage.rectTransform.sizeDelta = themeData.iconSize;
+                    text.rectTransform.sizeDelta = themeData.iconSize;
+
+                    // image.rectTransform.sizeDelta = themeData.iconSize*1.25f;
+
+                }
+
                 switch (buttonType)
                 {
                     case ButtonType.CONFIRM:
@@ -65,6 +80,8 @@ namespace UI
                         }
 
                 }
+
+                
 
             }
         }

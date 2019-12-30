@@ -31,11 +31,7 @@ MonoBehaviour:
   rotationStep: 90
   materialData: []
   pluggableDynamicParams:
-    activeParameters: []
-    passiveParameters:
-    - id: 
-      value: 100
-      changeRate: 0.1
-    - id: 
-      value: 100
+    parameters:
+    - id: Cleanness
+      value: 50
       changeRate: 0.5

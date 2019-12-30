@@ -9,7 +9,7 @@ namespace StateMachine
         public State remainState;
         public bool isActive;
         [Range(0, 20)]
-        public int interval = 10;
+        public int interval = 0;
         private int counter = 0;
 
         public void Setup(bool _isActive)

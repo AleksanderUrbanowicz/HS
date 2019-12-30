@@ -19,19 +19,7 @@ MonoBehaviour:
   characterTypeParams: {fileID: 11400000, guid: 71e39902a3d87a844a0a329fdb846c81,
     type: 2}
   individualRoleParams:
-    activeParameters: []
-    passiveParameters: []
+    parameters: []
   accumulatedParams:
-    activeParameters:
-    - id: Politeness
-      value: 0
-    - id: Fatigue
-      value: 0
-    - id: Speed
-      value: 10
-    - id: Skill
-      value: 50
-    passiveParameters:
-    - id: Personel
-      value: 1
-  startState: {fileID: 11400000, guid: 779859e07bcbf88489bbf9ea70569b5a, type: 2}
+    parameters: []
+  startState: {fileID: 11400000, guid: d1331a637da0eb24ab12587b98b3a9c1, type: 2}

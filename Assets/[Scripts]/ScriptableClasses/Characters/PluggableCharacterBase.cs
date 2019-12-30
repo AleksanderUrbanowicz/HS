@@ -6,7 +6,7 @@ namespace Characters
 {
     // [CreateAssetMenu(fileName = "CharacterData", menuName = "Characters/Character Data")]
 
-    public class PluggableCharacterBase : ScriptableObject, ISpawnable
+    public abstract class PluggableCharacterBase : ScriptableObject, ISpawnable
     {
         public string id, displayName;
         public GameObject prefab;

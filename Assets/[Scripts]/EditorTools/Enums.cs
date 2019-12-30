@@ -22,6 +22,17 @@ namespace Definitions
 
     }
 
+
+    public enum ControlSize
+    {
+        DEFAULT,
+       SMALL, 
+       MEDIUM,
+       LARGE,
+       HUGE
+
+    }
+
     public enum PanelType
     {
         DEFAULT,

@@ -6,6 +6,7 @@ using System.Linq;
 using UnityEngine;
 using Objects;
 using EditorTools;
+using StateMachine;
 #if UNITY_EDITOR
 
 #endif
@@ -25,7 +26,8 @@ namespace ScriptableData
         public List<PluggableCharacterData> debugCharactersToSpawn = new List<PluggableCharacterData>();
         public List<ScriptableSystem> scriptableSystems;
 
-     
+        public State buildObjectStartState;
+        public State remainInState;
 
         private void OnEnable()
         {

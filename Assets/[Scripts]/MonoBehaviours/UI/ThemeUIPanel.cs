@@ -10,7 +10,7 @@ namespace UI
         Image image;
 
 
-        public Image iconImage;
+       // public Image iconImage;
         public PanelType panelType;
 
         protected override void OnThemeDraw()

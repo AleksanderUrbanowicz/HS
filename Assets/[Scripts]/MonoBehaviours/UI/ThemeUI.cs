@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Definitions;
+using UnityEngine;
 
 namespace UI
 {
@@ -7,9 +8,52 @@ namespace UI
     {
 
         public ThemeUIData themeData;
+        public ControlSize controlSize;
+        public RectTransform controlRect;
+        //public float relativeWidth=1.0f;
+        public Vector2 relativeSize=Vector2.one;
+
         protected virtual void OnThemeDraw()
         {
+            controlRect = GetComponent<RectTransform>();
+            switch (controlSize)
+            {
+                case ControlSize.DEFAULT:
+                    {
 
+                       
+                        break;
+                    }
+                case ControlSize.SMALL:
+                    {
+                        controlRect.sizeDelta = themeData.smallControlSize* relativeSize;
+
+                        break;
+                    }
+                case ControlSize.MEDIUM:
+                    {
+
+                        controlRect.sizeDelta = themeData.mediumControlSize * relativeSize; ;
+
+                        break;
+                    }
+                case ControlSize.LARGE:
+                    {
+
+                        controlRect.sizeDelta = themeData.largeControlSize * relativeSize; ;
+
+                        break;
+                    }
+                case ControlSize.HUGE:
+                    {
+
+                        controlRect.sizeDelta = themeData.hugeControlSize * relativeSize; ;
+
+                        break;
+                    }
+
+
+            }
 
         }
 
