@@ -189,44 +189,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2842916358076031073, guid: 47050b730428ae646aa708a3a291d6f9,
         type: 3}
-      propertyPath: interactablePoints.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2842916358076031073, guid: 47050b730428ae646aa708a3a291d6f9,
-        type: 3}
       propertyPath: interactablePoints.Array.data[0]
       value: 
       objectReference: {fileID: 1229777784}
-    - target: {fileID: 2842916358076031073, guid: 47050b730428ae646aa708a3a291d6f9,
-        type: 3}
-      propertyPath: interactablePoints.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2842916358076031073, guid: 47050b730428ae646aa708a3a291d6f9,
-        type: 3}
-      propertyPath: interactablePoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2842916358076031073, guid: 47050b730428ae646aa708a3a291d6f9,
-        type: 3}
-      propertyPath: interactablePoints.Array.data[3]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2842916358076031073, guid: 47050b730428ae646aa708a3a291d6f9,
-        type: 3}
-      propertyPath: interactablePoints.Array.data[4]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2842916358076031073, guid: 47050b730428ae646aa708a3a291d6f9,
-        type: 3}
-      propertyPath: interactablePoints.Array.data[5]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2842916358076031073, guid: 47050b730428ae646aa708a3a291d6f9,
-        type: 3}
-      propertyPath: interactablePoints.Array.data[6]
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47050b730428ae646aa708a3a291d6f9, type: 3}
 --- !u!1001 &490419054

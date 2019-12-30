@@ -20,12 +20,12 @@ namespace EditorTools
     public class PluggableDynamicParams
     {
 
-        public List<DynamicParameter> activeParameters = new List<DynamicParameter>();
+        public List<DynamicParameter> parameters = new List<DynamicParameter>();
       
 
-        public PluggableDynamicParams(List<DynamicParameter> actives)
+        public PluggableDynamicParams(List<DynamicParameter> _parameters)
         {
-            activeParameters = actives;
+            parameters = _parameters;
             
 
         }
@@ -39,9 +39,9 @@ namespace EditorTools
         public PluggableParams ToPluggableParams()
         {
             PluggableParams parameters = new PluggableParams();
-            foreach (DynamicParameter par in activeParameters)
+            foreach (DynamicParameter par in this.parameters)
             {
-                parameters.activeParameters.Add(par as ParameterBase);
+                parameters.parameters.Add(par as ParameterBase);
 
             }
          
@@ -52,11 +52,11 @@ namespace EditorTools
         public PluggableDynamicParams GetInteractableParams()
         {
             PluggableDynamicParams par = new PluggableDynamicParams();
-            foreach (DynamicParameter parActive in activeParameters)
+            foreach (DynamicParameter dynamicPar in parameters)
             {
-                if (Config.GlobalConfig.interactionParameters.Contains(parActive.id))
+                if (Config.GlobalConfig.interactionParameters.Contains(dynamicPar.id))
                 {
-                    par.activeParameters.Add(new DynamicParameter(parActive.id, parActive.value, parActive.changeRate));
+                    par.parameters.Add(new DynamicParameter(dynamicPar.id, dynamicPar.value, dynamicPar.changeRate));
 
                 }
 
@@ -70,11 +70,11 @@ namespace EditorTools
     public class PluggableParams
     {
 
-        public List<ParameterBase> activeParameters = new List<ParameterBase>();
+        public List<ParameterBase> parameters = new List<ParameterBase>();
 
-        public PluggableParams(List<ParameterBase> actives)
+        public PluggableParams(List<ParameterBase> _parameters)
         {
-            activeParameters = actives;
+            parameters = _parameters;
 
         }
 
@@ -92,10 +92,10 @@ namespace EditorTools
         {
             //int i = -1;
             
-            ParameterBase par = activeParameters.FirstOrDefault(x => x.id == _id);
+            ParameterBase par = parameters.FirstOrDefault(x => x.id == _id);
             if (par != null)
             {
-                int i = activeParameters.IndexOf(par);
+                int i = parameters.IndexOf(par);
 
             }
 
@@ -115,7 +115,7 @@ namespace EditorTools
                 if (index != -1)
                 {
 
-                    selected.activeParameters.Add(new ParameterBase(activeParameters[index].id, activeParameters[index].value));
+                    selected.parameters.Add(new ParameterBase(parameters[index].id, parameters[index].value));
                 }
            
             }
@@ -125,11 +125,11 @@ namespace EditorTools
         public PluggableParams GetInteractableParams()
         {
             PluggableParams par = new PluggableParams();
-            foreach (ParameterBase parActive in activeParameters)
+            foreach (ParameterBase parActive in parameters)
             {
                 if (Config.GlobalConfig.interactionParameters.Contains(parActive.id))
                 {
-                    par.activeParameters.Add(new ParameterBase(parActive.id, parActive.value));
+                    par.parameters.Add(new ParameterBase(parActive.id, parActive.value));
 
                 }
 
@@ -143,9 +143,9 @@ namespace EditorTools
 
         
 
-        public void AddActive(ParameterBase parameterBase)
+        public void Add(ParameterBase parameterBase)
         {
-            foreach (ParameterBase par in activeParameters)
+            foreach (ParameterBase par in parameters)
             {
                 if (par.id == parameterBase.id)
                 {
@@ -158,9 +158,9 @@ namespace EditorTools
 
         }
 
-        public ParameterBase GetActive(string _id)
+        public ParameterBase Get(string _id)
         {
-            foreach (ParameterBase par in activeParameters)
+            foreach (ParameterBase par in parameters)
             {
                 if (par.id == _id)
                 {

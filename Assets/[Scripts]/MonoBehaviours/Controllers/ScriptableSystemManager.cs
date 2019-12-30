@@ -84,7 +84,7 @@ namespace Managers
             {
                 systemsTansform = new GameObject("SystemsTansform").transform;
             }
-            foreach (ScriptableSystem scriptableSystem in gameSettings.ScriptableSystems)
+            foreach (ScriptableSystem scriptableSystem in gameSettings.scriptableSystems)
             {
 
                 if (scriptableSystem.initializeOnStart)

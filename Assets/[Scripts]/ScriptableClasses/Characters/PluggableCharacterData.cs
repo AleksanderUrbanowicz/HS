@@ -18,7 +18,7 @@ namespace Characters
             {
                 accumulatedParams = characterRole.AccumulatedParams;
               
-                (this as IPluggableParameters).AddIndividualActives();
+                (this as IPluggableParameters).AddIndividualParameters();
 
             }
             return accumulatedParams;
@@ -34,19 +34,19 @@ namespace Characters
 
         
 
-        void IPluggableParameters.AddIndividualActives()
+        void IPluggableParameters.AddIndividualParameters()
         {
             int index;
-            foreach (ParameterBase par in individualParams.activeParameters)
+            foreach (ParameterBase par in individualParams.parameters)
             {
                 index = accumulatedParams.GetIndexOfActive(par.id);
                 if (index != -1)
                 {
-                    accumulatedParams.activeParameters[index].value += par.value;
+                    accumulatedParams.parameters[index].value += par.value;
                 }
                 else
                 {
-                    accumulatedParams.activeParameters.Add(new ParameterBase(par.id, par.value));
+                    accumulatedParams.parameters.Add(new ParameterBase(par.id, par.value));
 
                 }
 

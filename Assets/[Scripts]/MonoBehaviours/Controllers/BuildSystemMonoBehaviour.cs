@@ -12,8 +12,8 @@ namespace Managers
 {
     public class BuildSystemMonoBehaviour : MonoBehaviour
     {
-        public BuildSystemRaycast buildSystemRaycast;
-
+        //public BuildSystemRaycast buildSystemRaycast;
+        public RaycastExecutor buildSystemRaycast;
         private Color availableColor = new Color(0, 1.0f, 0, 0.2f);
         private Color unavailableColor = new Color(1.0f, 0, 0, 0.2f);
         private Material previewMaterial;
@@ -54,8 +54,8 @@ namespace Managers
 
         public ScriptableBuildSystem scriptableBuildSystem;
 
-        public ScriptableEventListener scriptableEventListenerOnHit;
-        public ScriptableEventListener scriptableEventListenerOnMiss;
+        public BoolEventListener hitMissListeners;
+
         public void Init(ScriptableBuildSystem _scriptableBuildSystem)
         {
             scriptableBuildSystem = _scriptableBuildSystem;
@@ -75,28 +75,15 @@ namespace Managers
 
         public void InitEventListeners(ScriptableBuildSystem _scriptableBuildSystem)
         {
-            scriptableEventListenerOnHit = new GameObject("scriptableEventListenerOnHit").AddComponent<ScriptableEventListener>();
-            scriptableEventListenerOnHit.gameObject.transform.parent = gameObject.transform;
-            scriptableEventListenerOnHit.Response = new UnityEngine.Events.UnityEvent();
+            hitMissListeners = new BoolEventListener("BuildRaycastHit", gameObject.transform, _scriptableBuildSystem.raycastData.hitMissEvents.scriptableEventTrue, HandlePreviewHit, _scriptableBuildSystem.raycastData.hitMissEvents.scriptableEventFalse, HandlePreviewMiss);
 
-            scriptableEventListenerOnMiss = new GameObject("scriptableEventListenerOnMiss").AddComponent<ScriptableEventListener>();
-            scriptableEventListenerOnMiss.gameObject.transform.parent = gameObject.transform;
-            scriptableEventListenerOnMiss.Response = new UnityEngine.Events.UnityEvent();
-
-            scriptableEventListenerOnHit.Event = _scriptableBuildSystem.EventPreviewRaycastHit;
-            scriptableEventListenerOnHit.Response.AddListener(() => HandlePreviewHit());
-            scriptableEventListenerOnHit.Validate();
-
-            scriptableEventListenerOnMiss.Event = _scriptableBuildSystem.EventPreviewRaycastMiss;
-            scriptableEventListenerOnMiss.Response.AddListener(() => HandlePreviewMiss());
-            scriptableEventListenerOnMiss.Validate();
         }
 
         public void InitRaycaster(ScriptableBuildSystem _scriptableBuildSystem)
         {
-            buildSystemRaycast = new GameObject("buildSystemRaycast").AddComponent<BuildSystemRaycast>();
+            buildSystemRaycast = new GameObject("buildSystemRaycast").AddComponent<RaycastExecutor>();
             buildSystemRaycast.gameObject.transform.parent = gameObject.transform;
-            buildSystemRaycast.Init(_scriptableBuildSystem);
+            buildSystemRaycast.Init(_scriptableBuildSystem.raycastData);
 
         }
         private void Start()
@@ -190,14 +177,14 @@ namespace Managers
 
         public void BuildPreviewObject()
         {
-            Debug.LogError("BuildPreviewObject");
+          //  Debug.LogError("BuildPreviewObject");
             ScriptableSystemManager.Instance.cash -= currentBuildObject.cost;
             GameObject go = ScriptableSystemManager.Instance.spawnerHelper.SpawnObject(currentBuildObject, currentPosition, rotation);
             go.name = currentBuildObject.id;
-            go.layer = LayerMask.NameToLayer(scriptableBuildSystem.buildObjectLayerString);
+            go.layer = LayerMask.NameToLayer(scriptableBuildSystem.raycastData.buildObjectLayerString);
 
             go.transform.parent = buildObjectsParent;
-            go.tag = scriptableBuildSystem.buildObjectLayerString;
+            go.tag = scriptableBuildSystem.raycastData.buildObjectLayerString;
             AddPreviewCollider(go, currentPreviewObject);
         }
 
@@ -217,7 +204,7 @@ namespace Managers
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
             }
-            buildSystemRaycast.StopExecute();
+            (buildSystemRaycast as IUpdateExecutor).StopExecute();
 
         }
 
@@ -238,7 +225,7 @@ namespace Managers
         public void ShowPreview()
         {
             bool b = currentPreviewObject == null;
-            b = b || raycastHit.point == buildSystemRaycast.raycastHit.point;
+            b = b || raycastHit.point == buildSystemRaycast.raycastHitOutput.point;
             if (scriptableBuildSystem.logs) Debug.Log("ShowPreview");
             if (b)
             {
@@ -246,7 +233,7 @@ namespace Managers
                 if (scriptableBuildSystem.logs) Debug.LogError("ShowPreview: Hit.point have not changed");
                 return;
             }
-            raycastHit = buildSystemRaycast.raycastHit;
+            raycastHit = buildSystemRaycast.raycastHitOutput;
 
             Vector3 point = raycastHit.point;
             Vector3 normal = raycastHit.normal;

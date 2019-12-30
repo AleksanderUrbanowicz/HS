@@ -48,7 +48,7 @@ namespace EditorTools
             GlobalConfig.AllPluggableTransforms.Add(pluggableMonoBehaviour.transform);
             PluggableParams interactable = pluggableMonoBehaviour.totalParams.GetInteractableParams();
           
-            if (interactable.activeParameters.Count > 0)
+            if (interactable.parameters.Count > 0)
             {
 
                 GlobalConfig.AllActiveInteractables.Add(pluggableMonoBehaviour);

@@ -23,20 +23,9 @@ namespace ScriptableData
         private BuildObjectData[] allObjectsArray;
         public Vector2Int charactersRandomSpread;
         public List<PluggableCharacterData> debugCharactersToSpawn = new List<PluggableCharacterData>();
-        private List<ScriptableSystem> scriptableSystems;
+        public List<ScriptableSystem> scriptableSystems;
 
-        public List<ScriptableSystem> ScriptableSystems
-        {
-            get
-            {
-                if (scriptableSystems == null)
-                {
-                    scriptableSystems = new List<ScriptableSystem>() { scriptableBuildSystem, scriptableDataSystem, scriptableSelectSystem };
-
-                }
-                return scriptableSystems;
-            }
-        }
+     
 
         private void OnEnable()
         {
@@ -47,7 +36,7 @@ namespace ScriptableData
 
         public BuildObjectData GetBuildObjectData(string _id)
         {
-            /*
+            
             allObjectsArray.FirstOrDefault(x => x.id == _id);
             for (int i = 0; i < allObjectsArray.Length; i++)
             {
@@ -57,7 +46,7 @@ namespace ScriptableData
 
                 }
 
-            }*/
+            }
             return allObjectsArray.FirstOrDefault(x => x.id == _id); ;
         }
     }

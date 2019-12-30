@@ -39,7 +39,7 @@ namespace Characters
           
             AddTypeActives();
          
-            (this as IPluggableParameters).AddIndividualActives();
+            (this as IPluggableParameters).AddIndividualParameters();
             
 
 
@@ -60,11 +60,11 @@ namespace Characters
 
                     // if (accumulatedParams.staticBaseParameters.Contains(par))
                     {
-                        accumulatedParams.activeParameters[index].value += par.value;
+                        accumulatedParams.parameters[index].value += par.value;
                     }
                     else
                     {
-                        accumulatedParams.activeParameters.Add(new ParameterBase(par));
+                        accumulatedParams.parameters.Add(new ParameterBase(par));
 
                     }
 
@@ -76,22 +76,22 @@ namespace Characters
 
          
 
-         void IPluggableParameters.AddIndividualActives()
+         void IPluggableParameters.AddIndividualParameters()
         {
 
        
-            foreach (ParameterBase par in individualRoleParams.activeParameters)
+            foreach (ParameterBase par in individualRoleParams.parameters)
             {
                 int index = accumulatedParams.GetIndexOfActive(par.id);
                 if (index != -1)
 
                 // if (accumulatedParams.staticBaseParameters.Contains(par))
                 {
-                    accumulatedParams.activeParameters[index].value += par.value;
+                    accumulatedParams.parameters[index].value += par.value;
                 }
                 else
                 {
-                    accumulatedParams.activeParameters.Add(new ParameterBase(par));
+                    accumulatedParams.parameters.Add(new ParameterBase(par));
 
                 }
 
@@ -112,11 +112,11 @@ namespace Characters
 
                     // if (accumulatedParams.staticBaseParameters.Contains(par))
                     {
-                        accumulatedParams.activeParameters[index].value += par.value;
+                        accumulatedParams.parameters[index].value += par.value;
                     }
                     else
                     {
-                        accumulatedParams.activeParameters.Add(new ParameterBase(par));
+                        accumulatedParams.parameters.Add(new ParameterBase(par));
 
                     }
 

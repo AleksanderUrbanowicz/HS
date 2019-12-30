@@ -12,7 +12,8 @@ namespace Managers
         private Material sellectedMaterial;
         private ScriptableSelectSystem scriptableSelectSystem;
         private float raycastMaxDistance;
-        public BuildSystemRaycast buildSystemRaycast;
+        //public BuildSystemRaycast buildSystemRaycast;
+        public RaycastExecutor buildSystemRaycast;
         private int raycastInterval;
         private Camera highlightCamera;
         private bool isInSelectMode;
@@ -47,7 +48,7 @@ namespace Managers
                 isInSelectMode = !isInSelectMode;
                 if (!isInSelectMode)
                 {
-                    buildSystemRaycast.StopExecute();
+                    (buildSystemRaycast as IUpdateExecutor).StopExecute();
                 }
                 else
                 {
@@ -81,9 +82,9 @@ namespace Managers
 
         public void InitRaycaster(ScriptableSelectSystem _scriptableSelectSystem)
         {
-            buildSystemRaycast = new GameObject("selectSystemRaycast").AddComponent<BuildSystemRaycast>();
+            buildSystemRaycast = new GameObject("selectSystemRaycast").AddComponent<RaycastExecutor> ();
             buildSystemRaycast.gameObject.transform.parent = gameObject.transform;
-            buildSystemRaycast.Init(_scriptableSelectSystem);
+          //  buildSystemRaycast.Init(_scriptableSelectSystem);
 
         }
 
@@ -91,7 +92,7 @@ namespace Managers
         {
             highlightCamera = GetComponent<Camera>();
             highlightCamera.clearFlags = CameraClearFlags.Depth;
-            transform.parent = buildSystemRaycast.cam.transform;
+            transform.parent = buildSystemRaycast.targetFrom.transform;
             transform.localPosition = Vector3.zero;
             highlightCamera.cullingMask = LayerMask.NameToLayer(highlightedLayer);
             highlightCamera.backgroundColor = new Color(0, 0, 0, 0);
@@ -110,7 +111,7 @@ namespace Managers
         private void HandleSelectHit()
         {
             Debug.LogError("HandleSelectHit");
-            highlightedObject = buildSystemRaycast.raycastHit.collider.gameObject;
+            highlightedObject = buildSystemRaycast.raycastHitOutput.collider.gameObject;
             tempLayer = LayerMask.LayerToName(highlightedObject.layer);
             highlightedObject.layer = LayerMask.NameToLayer(highlightedLayer);
             //highlightedObject.transform.ch

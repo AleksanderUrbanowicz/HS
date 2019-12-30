@@ -45,16 +45,16 @@ namespace Managers
             }
             mb.Init(buildObjectData, savedConditions);
             instance.name = buildObjectData.id;
-            instance.layer = LayerMask.NameToLayer(ScriptableSystemManager.Instance.gameSettings.scriptableBuildSystem.buildObjectLayerString);
+            instance.layer = LayerMask.NameToLayer(ScriptableSystemManager.Instance.gameSettings.scriptableBuildSystem.raycastData.buildObjectLayerString);
 
             instance.transform.parent = ScriptableSystemManager.Instance.buildSystemMonoBehaviour.buildObjectsParent;
-            instance.tag = ScriptableSystemManager.Instance.gameSettings.scriptableBuildSystem.buildObjectLayerString;
+            instance.tag = ScriptableSystemManager.Instance.gameSettings.scriptableBuildSystem.raycastData.buildObjectLayerString;
 
         }
 
         public GameObject SpawnObject(BuildObjectData data, Vector3 position, Quaternion rotation)
         {
-            Debug.LogError("Spawnerhelper.SpawnObject");
+           // Debug.LogError("Spawnerhelper.SpawnObject");
 
             GameObject instance = spawner.CreateInstance(objectsTransform, position, rotation, (data as ISpawnable));
 

@@ -8,13 +8,13 @@ namespace ScriptableData {
 
         public void Awake()
         {
-            Debug.Log("Awake:" + name);
+        //    Debug.Log("Awake:" + name);
             Config.RegisterPluggable(this);
         }
 
         public void OnDestroy()
         {
-            Debug.Log("OnDestroy:" + name );
+         //   Debug.Log("OnDestroy:" + name );
             Config.UnregisterPluggable(this);
         }
 
