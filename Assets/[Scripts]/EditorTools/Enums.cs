@@ -26,10 +26,10 @@ namespace Definitions
     public enum ControlSize
     {
         DEFAULT,
-       SMALL, 
-       MEDIUM,
-       LARGE,
-       HUGE
+        SMALL,
+        MEDIUM,
+        LARGE,
+        HUGE
 
     }
 

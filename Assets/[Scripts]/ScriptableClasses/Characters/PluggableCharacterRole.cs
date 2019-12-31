@@ -11,11 +11,11 @@ namespace Characters
     {
         public string id, displayName;
         public PluggableParamsData characterBaseParameters;
-       // public PluggableParamsData[] baseTypeParameters=new PluggableParamsData[2];
-         public PluggableParamsData characterTypeParams;
+        // public PluggableParamsData[] baseTypeParameters=new PluggableParamsData[2];
+        public PluggableParamsData characterTypeParams;
         //public PluggableParams[] individualAccumulatedParameters = new PluggableParams[2];
 
-         public PluggableParams individualRoleParams;
+        public PluggableParams individualRoleParams;
 
         public PluggableParams accumulatedParams;
         public State startState;
@@ -32,23 +32,23 @@ namespace Characters
         }
         PluggableParams IPluggableParameters.GetAccumulatedParameters()
         {
-       
-             accumulatedParams = new PluggableParams();
+
+            accumulatedParams = new PluggableParams();
 
             AddBaseActives();
-          
+
             AddTypeActives();
-         
+
             (this as IPluggableParameters).AddIndividualParameters();
-            
+
 
 
             return accumulatedParams;
         }
 
-     
-    
-     
+
+
+
         private void AddBaseActives()
         {
             if (characterBaseParameters != null)
@@ -72,14 +72,14 @@ namespace Characters
             }
         }
 
-    
 
-         
 
-         void IPluggableParameters.AddIndividualParameters()
+
+
+        void IPluggableParameters.AddIndividualParameters()
         {
 
-       
+
             foreach (ParameterBase par in individualRoleParams.parameters)
             {
                 int index = accumulatedParams.GetIndexOfActive(par.id);
@@ -98,8 +98,8 @@ namespace Characters
             }
         }
 
-        
-        
+
+
 
         private void AddTypeActives()
         {

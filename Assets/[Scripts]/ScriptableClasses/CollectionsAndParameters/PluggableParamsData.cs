@@ -8,11 +8,11 @@ namespace EditorTools
     [CreateAssetMenu(fileName = "PluggableParams", menuName = "Characters/PluggableParams")]
     public class PluggableParamsData : ScriptableObject
     {
-        
-        public List<ParameterBase> activeParameters = new List<ParameterBase>();
-       
 
-      
+        public List<ParameterBase> activeParameters = new List<ParameterBase>();
+
+
+
 
     }
 
@@ -21,12 +21,12 @@ namespace EditorTools
     {
 
         public List<DynamicParameter> parameters = new List<DynamicParameter>();
-      
+
 
         public PluggableDynamicParams(List<DynamicParameter> _parameters)
         {
             parameters = _parameters;
-            
+
 
         }
 
@@ -44,8 +44,8 @@ namespace EditorTools
                 parameters.parameters.Add(par as ParameterBase);
 
             }
-         
-            
+
+
             return parameters;
         }
 
@@ -62,7 +62,7 @@ namespace EditorTools
 
             }
 
-          
+
             return par;
         }
     }
@@ -85,13 +85,13 @@ namespace EditorTools
 
         }
 
-       
+
 
 
         public int GetIndexOfActive(string _id)
         {
             //int i = -1;
-            
+
             ParameterBase par = parameters.FirstOrDefault(x => x.id == _id);
             if (par != null)
             {
@@ -103,7 +103,7 @@ namespace EditorTools
 
         }
 
-        
+
 
         public PluggableParams GetParams(List<string> _ids)
         {
@@ -117,7 +117,7 @@ namespace EditorTools
 
                     selected.parameters.Add(new ParameterBase(parameters[index].id, parameters[index].value));
                 }
-           
+
             }
             return selected;
         }
@@ -137,11 +137,11 @@ namespace EditorTools
             return par;
         }
 
-        
 
-   
 
-        
+
+
+
 
         public void Add(ParameterBase parameterBase)
         {

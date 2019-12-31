@@ -15,16 +15,16 @@ namespace EditorTools
 
 
         }
-        public DynamicParameter(string _id, float _val):this()
+        public DynamicParameter(string _id, float _val) : this()
         {
             id = _id;
             value = _val;
-           
+
 
         }
         public DynamicParameter(string _id, float _val, float _valChange) : this(_id, _val)
         {
-           
+
             changeRate = _valChange;
 
         }
@@ -32,7 +32,7 @@ namespace EditorTools
         public DynamicParameter(DynamicParameter dynamicParameter) : this(dynamicParameter.id, dynamicParameter.value, dynamicParameter.changeRate)
         {
 
-            
+
 
         }
 

@@ -2,6 +2,6 @@
 {
     public abstract class ObjectAction : Action
     {
-       // public abstract void Act(BuildObjectStateControllerMB controller);
+        // public abstract void Act(BuildObjectStateControllerMB controller);
     }
 }

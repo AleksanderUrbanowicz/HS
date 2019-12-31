@@ -73,7 +73,7 @@ namespace Managers
                 List<ObjectData> objectDatas = (List<ObjectData>)bf.Deserialize(file);
                 file.Close();
                 LoadObjects(objectDatas);
-               
+
             }
 
         }

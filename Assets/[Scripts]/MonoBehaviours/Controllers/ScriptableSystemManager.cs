@@ -36,7 +36,7 @@ namespace Managers
         public List<Transform> patrolWaypoints = new List<Transform>();
         public List<Transform> interactablePoints = new List<Transform>();
         public PluggableRuntimeCollection Set;
-        private int previousCount = -1;
+        //private int previousCount = -1;
 
         private void OnEnable()
         {
@@ -96,7 +96,7 @@ namespace Managers
 
             }
 
-          
+
 
             if (charactersTransform == null)
             {
@@ -106,8 +106,8 @@ namespace Managers
             foreach (PluggableCharacterData characterData in gameSettings.debugCharactersToSpawn)
             {
                 vector2Int = new Vector2Int(Random.Range(-gameSettings.charactersRandomSpread.x, gameSettings.charactersRandomSpread.x), Random.Range(-gameSettings.charactersRandomSpread.y, gameSettings.charactersRandomSpread.y));
-               GameObject instance= spawnerHelper.SpawnCharacter(characterData, charactersTransform.gameObject.transform, new Vector3(vector2Int.x, 0, vector2Int.y), Quaternion.identity);
-                
+                GameObject instance = spawnerHelper.SpawnCharacter(characterData, charactersTransform.gameObject.transform, new Vector3(vector2Int.x, 0, vector2Int.y), Quaternion.identity);
+
                 //  (characterData as ICreateInstance).CreateInstance(charactersTransform.gameObject.transform, new Vector3(vector2Int.x, 0, vector2Int.y), Quaternion.identity);
 
 

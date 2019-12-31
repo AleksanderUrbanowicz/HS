@@ -9,15 +9,15 @@ namespace Characters
     public class PluggableCharacterData : PluggableCharacterBase, IPluggableParameters
     {
 
-      
+
 
         PluggableParams IPluggableParameters.GetAccumulatedParameters()
         {
-            
+
             if (characterRole != null)
             {
                 accumulatedParams = characterRole.AccumulatedParams;
-              
+
                 (this as IPluggableParameters).AddIndividualParameters();
 
             }
@@ -32,7 +32,7 @@ namespace Characters
         }
 
 
-        
+
 
         void IPluggableParameters.AddIndividualParameters()
         {
@@ -51,11 +51,11 @@ namespace Characters
                 }
 
             }
-        
+
         }
 
-      
 
-      
+
+
     }
 }

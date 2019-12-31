@@ -21,22 +21,25 @@ namespace Characters
         public ScriptableEvent AIStartEvent;
         //private NavMeshAgent navMeshAgent;
 
-        public EmployeeStateControllerMB StateController { 
-            get {
+        public EmployeeStateControllerMB StateController
+        {
+            get
+            {
                 if (stateController == null)
                 {
                     stateController = GetComponent<EmployeeStateControllerMB>() != null ? GetComponent<EmployeeStateControllerMB>() : gameObject.AddComponent<EmployeeStateControllerMB>();
 
                 }
                 return stateController;
-            }  }
+            }
+        }
 
-        public NavMeshAgent NavMeshAgent { get => StateController.NavMeshAgent;  }
+        public NavMeshAgent NavMeshAgent { get => StateController.NavMeshAgent; }
 
         public void Init(PluggableCharacterData _pluggableCharacterData)
         {
             pluggableCharacterData = _pluggableCharacterData;
-       
+
 
             InitParams();
             InitNavigation();
@@ -46,16 +49,16 @@ namespace Characters
         {
             totalParams = (pluggableCharacterData as IPluggableParameters).GetAccumulatedParameters();
 
-            
+
         }
-      
+
 
 
 
         public void InitNavigation()
         {
-            
-        
+
+
             //StateController.WayPointList = ScriptableSystemManager.Instance.patrolWaypoints;
             StateController.interactablePoints = ScriptableSystemManager.Instance.interactablePoints;
             StateController.currentState = pluggableCharacterData.characterRole.startState;
@@ -79,14 +82,14 @@ namespace Characters
             {
                 scriptableEventListener = gameObject.AddComponent<ScriptableEventListener>();
             }
-            
-                scriptableEventListener.Event = AIStartEvent;
-                scriptableEventListener.Event.RegisterListener(scriptableEventListener);
-            
+
+            scriptableEventListener.Event = AIStartEvent;
+            scriptableEventListener.Event.RegisterListener(scriptableEventListener);
+
 
         }
 
-    public void SetupAI()
+        public void SetupAI()
         {
             StateController.Setup(setupAI);
 

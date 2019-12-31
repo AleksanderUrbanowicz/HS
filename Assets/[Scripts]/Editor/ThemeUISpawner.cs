@@ -28,6 +28,14 @@ namespace Managers
 
         }
 
+        [MenuItem("GameObject/ThemeUI/Labelled Bar", priority = 0)]
+
+        public static void AddLabelledBar()
+        {
+            Create("ThemeLabelledBar");
+
+        }
+        
         public static GameObject selectedObject;
 
         private static GameObject Create(string name)
@@ -40,7 +48,7 @@ namespace Managers
 
             }
             GameObject instance = Instantiate(res);
-         
+
             instance.name = name;
             selectedObject = UnityEditor.Selection.activeObject as GameObject;
             if (selectedObject != null)

@@ -1,20 +1,21 @@
 ﻿using EditorTools;
 using UnityEngine;
 
-namespace ScriptableData {
+namespace ScriptableData
+{
     public class PluggableMonoBehaviour : MonoBehaviour
     {
         public PluggableParams totalParams = new PluggableParams();
 
         public void Awake()
         {
-        //    Debug.Log("Awake:" + name);
+            //    Debug.Log("Awake:" + name);
             Config.RegisterPluggable(this);
         }
 
         public void OnDestroy()
         {
-         //   Debug.Log("OnDestroy:" + name );
+            //   Debug.Log("OnDestroy:" + name );
             Config.UnregisterPluggable(this);
         }
 

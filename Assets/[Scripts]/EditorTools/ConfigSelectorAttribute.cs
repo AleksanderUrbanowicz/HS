@@ -100,7 +100,7 @@ namespace EditorTools
             var list = stringInList.Elements;
             if (property.propertyType == SerializedPropertyType.String)
             {
-                
+
 
                 if (list == null || list.Length == 0)
                 {

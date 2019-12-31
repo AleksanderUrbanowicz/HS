@@ -1,6 +1,4 @@
 ﻿using Interfaces;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -10,14 +8,14 @@ namespace StateMachine.Decisions
 
     public class IsInteractableObjectDecision : ObjectDecision
     {
-      
+
 
         public override bool Decide(StateControllerMBBase controller)
         {
             BuildObjectStateControllerMB _controller = controller as BuildObjectStateControllerMB;
-            if(_controller!=null)
+            if (_controller != null)
             {
-                IInteractable interactable= _controller.gameObject.GetComponent<IInteractable>() as IInteractable;
+                IInteractable interactable = _controller.gameObject.GetComponent<IInteractable>() as IInteractable;
                 return interactable != null;
             }
             return false;

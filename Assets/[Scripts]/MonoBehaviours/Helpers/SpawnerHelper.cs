@@ -19,7 +19,7 @@ namespace Managers
         {
             if (objectsTransform == null)
             {
-               
+
                 objectsTransform = new GameObject("BuildObjects").transform;
             }
             if (charactersTransform == null)
@@ -35,7 +35,7 @@ namespace Managers
             Vector3 position = new Vector3(od.positionX, od.positionY, od.positionZ);
             Quaternion rotation = new Quaternion(od.rotationX, od.rotationY, od.rotationZ, od.rotationW);
             List<DynamicParameter> savedConditions = od.currentConditions;
-            GameObject instance= spawner.CreateInstance(objectsTransform, position, rotation, (buildObjectData as ISpawnable));
+            GameObject instance = spawner.CreateInstance(objectsTransform, position, rotation, (buildObjectData as ISpawnable));
             //GameObject instance = (buildObjectData as ICreateInstance).CreateInstance(parentTransform,position, rotation);
             PluggableObjectMonoBehaviour mb = instance.GetComponent<PluggableObjectMonoBehaviour>();
             if (mb == null)
@@ -54,7 +54,7 @@ namespace Managers
 
         public GameObject SpawnObject(BuildObjectData data, Vector3 position, Quaternion rotation)
         {
-           // Debug.LogError("Spawnerhelper.SpawnObject");
+            // Debug.LogError("Spawnerhelper.SpawnObject");
 
             GameObject instance = spawner.CreateInstance(objectsTransform, position, rotation, (data as ISpawnable));
 
@@ -70,10 +70,10 @@ namespace Managers
             return instance;
         }
 
-        public GameObject SpawnCharacter(PluggableCharacterData data,Transform parent, Vector3 position, Quaternion rotation)
+        public GameObject SpawnCharacter(PluggableCharacterData data, Transform parent, Vector3 position, Quaternion rotation)
         {
-           
-                GameObject instance= spawner.CreateInstance(charactersTransform, position, rotation, (data as ISpawnable));
+
+            GameObject instance = spawner.CreateInstance(charactersTransform, position, rotation, (data as ISpawnable));
             instance.GetComponent<PluggableCharacterMonoBehaviour>().Init(data);
             return instance;
         }

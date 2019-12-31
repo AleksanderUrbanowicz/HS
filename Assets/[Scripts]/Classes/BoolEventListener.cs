@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 namespace StateMachine
@@ -11,15 +9,15 @@ namespace StateMachine
         public ScriptableEventListener scriptableEventListenerOnTrue;
         public ScriptableEventListener scriptableEventListenerOnFalse;
 
-        public BoolEventListener(string _id,Transform _parent, ScriptableEvent _eventTrue, UnityAction _responseTrue, ScriptableEvent _eventFalse, UnityAction _responseFalse)
+        public BoolEventListener(string _id, Transform _parent, ScriptableEvent _eventTrue, UnityAction _responseTrue, ScriptableEvent _eventFalse, UnityAction _responseFalse)
         {
-            
+
             id = _id;
-            scriptableEventListenerOnTrue = new GameObject(id+"True").AddComponent<ScriptableEventListener>();
+            scriptableEventListenerOnTrue = new GameObject(id + "True").AddComponent<ScriptableEventListener>();
             scriptableEventListenerOnTrue.gameObject.transform.parent = _parent;
             scriptableEventListenerOnTrue.Response = new UnityEngine.Events.UnityEvent();
             scriptableEventListenerOnTrue.Event = _eventTrue;
-            scriptableEventListenerOnTrue.Response.AddListener( _responseTrue);
+            scriptableEventListenerOnTrue.Response.AddListener(_responseTrue);
             scriptableEventListenerOnTrue.Validate();
 
             scriptableEventListenerOnFalse = new GameObject(id + "False").AddComponent<ScriptableEventListener>();
@@ -28,14 +26,14 @@ namespace StateMachine
             scriptableEventListenerOnFalse.Event = _eventFalse;
             scriptableEventListenerOnFalse.Response.AddListener(_responseFalse);
             scriptableEventListenerOnFalse.Validate();
-         
-            
+
+
         }
 
         public string Log()
         {
 
-            return "ScriptableEventsBoolGroup_"+id;
+            return "ScriptableEventsBoolGroup_" + id;
         }
     }
 }

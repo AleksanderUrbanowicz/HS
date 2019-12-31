@@ -1,10 +1,8 @@
 ﻿using EditorTools;
 using Interfaces;
-using Managers;
 using ScriptableData;
 using StateMachine;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace Objects
 {
@@ -15,19 +13,21 @@ namespace Objects
         public List<DynamicParameter> currentConditions;
         private BuildObjectStateControllerMB stateController;
 
-        public BuildObjectStateControllerMB StateController { 
-            get { 
+        public BuildObjectStateControllerMB StateController
+        {
+            get
+            {
                 if (stateController == null)
                 {
                     stateController = GetComponent<BuildObjectStateControllerMB>();
-                    if(stateController==null)
+                    if (stateController == null)
                     {
                         stateController = gameObject.AddComponent<BuildObjectStateControllerMB>();
                     }
                 }
-                    return stateController; 
-            } 
-            set { } 
+                return stateController;
+            }
+            set { }
         }
 
         public void Init(BuildObjectData _buildObjectData, List<DynamicParameter> _currentConditions = null)

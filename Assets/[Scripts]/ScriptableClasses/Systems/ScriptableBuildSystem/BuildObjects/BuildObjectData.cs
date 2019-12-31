@@ -1,7 +1,6 @@
 ﻿using Definitions;
 using EditorTools;
 using Interfaces;
-using Managers;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,8 +22,8 @@ namespace Objects
         //private Dictionary<string, Vector3> sizes;
 
         public int cost;
-        public ObjectOrientation objectOrientation= ObjectOrientation.FLOOR;
-        
+        public ObjectOrientation objectOrientation = ObjectOrientation.FLOOR;
+
         public LayerMask layersToBuildOn;
         public LayerMask obstacleLayers;
 
@@ -32,21 +31,21 @@ namespace Objects
         public float rotationStep = 90.0f;
 
         public List<BuildObjectMaterialData> materialData;
-       
+
         public PluggableDynamicParams pluggableDynamicParams;
-        
+
 
 
         public BuildObjectData()
         {
-           
+
         }
 
 
 
         private void OnEnable()
         {
-         if (objectOrientation == ObjectOrientation.WALL)
+            if (objectOrientation == ObjectOrientation.WALL)
             {
                 orientationVector = Vector3.back;
 
@@ -55,7 +54,7 @@ namespace Objects
 
 
 
-         GameObject ISpawnable.GetPrefab => objectPrefab;
+        GameObject ISpawnable.GetPrefab => objectPrefab;
 
         string ISpawnable.GetID => id;
     }

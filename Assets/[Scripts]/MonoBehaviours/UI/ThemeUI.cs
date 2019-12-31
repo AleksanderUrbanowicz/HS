@@ -11,22 +11,34 @@ namespace UI
         public ControlSize controlSize;
         public RectTransform controlRect;
         //public float relativeWidth=1.0f;
-        public Vector2 relativeSize=Vector2.one;
-
+        public Vector2 relativeSize = Vector2.one;
+       
         protected virtual void OnThemeDraw()
         {
-            controlRect = GetComponent<RectTransform>();
-            switch (controlSize)
+            /*
+            if(!controlRect)
+            {
+
+                controlRect = GetComponent<RectTransform>();
+            }
+            if(controlSize==0)
+            {
+                controlSize = themeData.defaultSliderSize;
+
+            }
+            controlRect.sizeDelta = themeData.defaultSliderSize * relativeSize;
+            
+            /*switch (controlSize)
             {
                 case ControlSize.DEFAULT:
                     {
 
-                       
+
                         break;
                     }
                 case ControlSize.SMALL:
                     {
-                        controlRect.sizeDelta = themeData.smallControlSize* relativeSize;
+                        controlRect.sizeDelta = themeData.smallControlSize * relativeSize;
 
                         break;
                     }
@@ -54,6 +66,7 @@ namespace UI
 
 
             }
+            */
 
         }
 

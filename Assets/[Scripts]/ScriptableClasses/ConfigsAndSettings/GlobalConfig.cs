@@ -2,16 +2,15 @@
 
 #define HIDE
 //#define LOGS
-using Characters;
+using Definitions;
 using EditorTools;
 using Objects;
 using StateMachine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 using UI;
-using Definitions;
+using UnityEngine;
 
 namespace ScriptableData
 {
@@ -31,10 +30,10 @@ namespace ScriptableData
         public TransformRuntimeCollection AllPluggableTransforms;
 
         public PluggableRuntimeCollection AllPluggables;
-        
+
         public PluggableRuntimeCollection AllPasiveInteractables;
         public PluggableRuntimeCollection AllActiveInteractables;
-       
+
         private bool isInitialized;
 
 

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace StateMachine.Actions
 {
@@ -13,7 +11,7 @@ namespace StateMachine.Actions
             BuildObjectStateControllerMB _controller = controller as BuildObjectStateControllerMB;
             if (_controller != null)
             {
-                _controller.paramValue -= _controller.paramDecreaseRate* (_controller.interval+1);
+                _controller.paramValue -= _controller.paramDecreaseRate * (_controller.interval + 1);
             }
         }
     }

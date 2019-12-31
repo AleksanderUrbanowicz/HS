@@ -10,7 +10,7 @@ namespace UI
         Image image;
 
 
-       // public Image iconImage;
+        // public Image iconImage;
         public PanelType panelType;
 
         protected override void OnThemeDraw()
@@ -26,23 +26,17 @@ namespace UI
                     {
 
 
-                        image.color = themeData.confirmationColor;
+                        image.color = themeData.generalColorData.negativeColor;
                         break;
                     }
                 case PanelType.LIST:
                     {
 
 
-                        image.color = themeData.warningColor;
+                        image.color = themeData.generalColorData.positiveColor;
                         break;
                     }
-                case PanelType.POPUP:
-                    {
 
-
-                        image.color = themeData.alertColor;
-                        break;
-                    }
 
 
 

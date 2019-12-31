@@ -1,5 +1,4 @@
-﻿using Objects;
-using StateMachine;
+﻿using StateMachine;
 using UnityEngine;
 
 namespace Managers
@@ -82,9 +81,9 @@ namespace Managers
 
         public void InitRaycaster(ScriptableSelectSystem _scriptableSelectSystem)
         {
-            buildSystemRaycast = new GameObject("selectSystemRaycast").AddComponent<RaycastExecutor> ();
+            buildSystemRaycast = new GameObject("selectSystemRaycast").AddComponent<RaycastExecutor>();
             buildSystemRaycast.gameObject.transform.parent = gameObject.transform;
-          //  buildSystemRaycast.Init(_scriptableSelectSystem);
+            //  buildSystemRaycast.Init(_scriptableSelectSystem);
 
         }
 

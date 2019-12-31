@@ -177,7 +177,7 @@ namespace Managers
 
         public void BuildPreviewObject()
         {
-          //  Debug.LogError("BuildPreviewObject");
+            //  Debug.LogError("BuildPreviewObject");
             ScriptableSystemManager.Instance.cash -= currentBuildObject.cost;
             GameObject go = ScriptableSystemManager.Instance.spawnerHelper.SpawnObject(currentBuildObject, currentPosition, rotation);
             go.name = currentBuildObject.id;

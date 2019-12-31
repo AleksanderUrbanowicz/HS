@@ -1,6 +1,5 @@
 ﻿using Managers;
 using Objects;
-using UnityEngine;
 
 namespace StateMachine
 {
@@ -9,9 +8,9 @@ namespace StateMachine
 
         public float paramDecreaseRate;
         public float paramValue;
-       // [Range(0, 20)]
-      //  public new int interval = 0;
-        
+        // [Range(0, 20)]
+        //  public new int interval = 0;
+
 
         public void Init(BuildObjectData _buildObjectData)
         {

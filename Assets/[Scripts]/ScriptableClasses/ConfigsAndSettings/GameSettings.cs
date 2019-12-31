@@ -1,12 +1,12 @@
 ﻿using Characters;
+using EditorTools;
 using Managers;
+using Objects;
+using StateMachine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using Objects;
-using EditorTools;
-using StateMachine;
 #if UNITY_EDITOR
 
 #endif
@@ -38,7 +38,7 @@ namespace ScriptableData
 
         public BuildObjectData GetBuildObjectData(string _id)
         {
-            
+
             allObjectsArray.FirstOrDefault(x => x.id == _id);
             for (int i = 0; i < allObjectsArray.Length; i++)
             {

@@ -4,44 +4,44 @@ namespace StateMachine.Decisions
 {
     [CreateAssetMenu(fileName = "Decision_Employee_NextWaypoint", menuName = "States/Decisions/Characters/Next Waypoint Decision")]
 
-public class NextWaypointEmployeeDecision : EmployeeDecision
-{
-    public float distance = -1;
-    [Tooltip("If destination==null  destination = nearest waypoint, instead of next")]
-    public bool findNearest = false; // if null destination
-    public override bool Decide(StateControllerMBBase controller)
+    public class NextWaypointEmployeeDecision : EmployeeDecision
     {
-        EmployeeStateControllerMB _controller = controller as EmployeeStateControllerMB;
-
-        if (distance == -1)
+        public float distance = -1;
+        [Tooltip("If destination==null  destination = nearest waypoint, instead of next")]
+        public bool findNearest = false; // if null destination
+        public override bool Decide(StateControllerMBBase controller)
         {
-            distance = _controller.NavMeshAgent.stoppingDistance;
+            EmployeeStateControllerMB _controller = controller as EmployeeStateControllerMB;
 
-        }
-
-        if (_controller.NavMeshAgent.destination == null)
-        {
-            if (findNearest)
+            if (distance == -1)
             {
-                _controller.SetNearestWaypoint();
+                distance = _controller.NavMeshAgent.stoppingDistance;
 
             }
 
+            if (_controller.NavMeshAgent.destination == null)
+            {
+                if (findNearest)
+                {
+                    _controller.SetNearestWaypoint();
 
-            _controller.NavMeshAgent.SetDestination(_controller.WayPointList[_controller.nextWayPoint].position);
+                }
+
+
+                _controller.NavMeshAgent.SetDestination(_controller.WayPointList[_controller.nextWayPoint].position);
                 _controller.NavMeshAgent.isStopped = false;
                 return false;
 
             }
-        if (_controller.NavMeshAgent.remainingDistance <= distance && !_controller.NavMeshAgent.pathPending)
-        {
-            _controller.nextWayPoint = (_controller.nextWayPoint + 1) % _controller.WayPointList.Count;
-            _controller.NavMeshAgent.SetDestination(_controller.WayPointList[_controller.nextWayPoint].position);
-            _controller.NavMeshAgent.isStopped = false;
-            return true;
-        }
+            if (_controller.NavMeshAgent.remainingDistance <= distance && !_controller.NavMeshAgent.pathPending)
+            {
+                _controller.nextWayPoint = (_controller.nextWayPoint + 1) % _controller.WayPointList.Count;
+                _controller.NavMeshAgent.SetDestination(_controller.WayPointList[_controller.nextWayPoint].position);
+                _controller.NavMeshAgent.isStopped = false;
+                return true;
+            }
 
-        return false;
+            return false;
+        }
     }
-}
 }

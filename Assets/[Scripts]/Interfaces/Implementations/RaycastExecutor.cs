@@ -1,7 +1,4 @@
-﻿using Managers;
-using StateMachine;
-using System.Collections;
-using System.Collections.Generic;
+﻿using StateMachine;
 using UnityEngine;
 
 public class RaycastExecutor : MonoBehaviour, IUpdateExecutor
@@ -26,24 +23,24 @@ public class RaycastExecutor : MonoBehaviour, IUpdateExecutor
 
 
         raycastdata.hitMissEvents = new BoolEventGroup(raycastdata.hitMissEvents.scriptableEventTrue, raycastdata.hitMissEvents.scriptableEventFalse);
-    
+
     }
 
     public void Update()
     {
-        if(raycastdata==null)
+        if (raycastdata == null)
         {
             Debug.Log("raycastdata==null");
             return;
         }
-     
-            if ((this as IUpdateExecutor).CheckUpdateConditions)
-            {
+
+        if ((this as IUpdateExecutor).CheckUpdateConditions)
+        {
             //Debug.Log("CheckUpdateConditions true");
             Execute();
-      
-            }
-   
+
+        }
+
     }
 
 
@@ -51,7 +48,7 @@ public class RaycastExecutor : MonoBehaviour, IUpdateExecutor
     {
         layersToCheck = _layersToBuildOn;
         StartExecute();
-           
+
     }
 
 
@@ -83,7 +80,7 @@ public class RaycastExecutor : MonoBehaviour, IUpdateExecutor
 
     public void StopExecute()
     {
-       isRaycasting = false;
+        isRaycasting = false;
     }
 
     public void Execute()
@@ -94,7 +91,7 @@ public class RaycastExecutor : MonoBehaviour, IUpdateExecutor
             SendEvent();
 
         }
-        
+
 
 
     }
@@ -103,7 +100,7 @@ public class RaycastExecutor : MonoBehaviour, IUpdateExecutor
     {
         get
         {
-            if(raycastdata.raycastInterval==0)
+            if (raycastdata.raycastInterval == 0)
             {
                 return true;
 
@@ -114,10 +111,10 @@ public class RaycastExecutor : MonoBehaviour, IUpdateExecutor
             {
 
                 counter = 0;
-              //  Debug.Log("Update");
+                //  Debug.Log("Update");
                 return true;
             }
-          //  Debug.Log("SkipUpdate");
+            //  Debug.Log("SkipUpdate");
             return false;
         }
     }

@@ -1,9 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public interface IConditionalExecutor 
+﻿public interface IConditionalExecutor
 {
-   // bool CheckEventConditions { get; }
+    // bool CheckEventConditions { get; }
     bool CheckPreConditions { get; }
 }
