@@ -26,6 +26,10 @@ namespace Managers
 
         [SerializeField]
         public int cash;
+        // public IScriptableManager systemsManager;
+        public List<IScriptableManager> _managers = new List<IScriptableManager>();
+    
+
         public DataSystemMonoBehaviour dataSystemMonoBehaviour;
         public BuildSystemMonoBehaviour buildSystemMonoBehaviour;
         public SpawnerHelper spawnerHelper;
@@ -45,6 +49,11 @@ namespace Managers
 
         void Awake()
         {
+            Debug.LogError(SelectManager.Instance.raycastData.raycastMaxDistance++);
+           /// if (systemsManager)
+           //// {
+           //     _managers.Add(systemsManager);
+          //  }
             DontDestroyOnLoad(gameObject);
             if (ScriptableSystemManager.instance == null)
             {
@@ -73,6 +82,10 @@ namespace Managers
 
         void Start()
         {
+            foreach (IScriptableManager manager in _managers)
+            {
+                manager.Initialize(new GameObject());
+            }
 
             InitSpawner();
             if (gameSettings.charactersRandomSpread == null || gameSettings.charactersRandomSpread == Vector2Int.zero)

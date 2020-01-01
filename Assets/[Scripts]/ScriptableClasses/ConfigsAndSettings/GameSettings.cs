@@ -12,7 +12,7 @@ using UnityEngine;
 #endif
 namespace ScriptableData
 {
-    [CreateAssetMenu(fileName = "GameSettings", menuName = "Settings/GameSettings")]
+    [CreateAssetMenu(fileName = "GameSettings", menuName = "Data/Settings/GameSettings")]
 
     [Serializable]
     public class GameSettings : ScriptableObject

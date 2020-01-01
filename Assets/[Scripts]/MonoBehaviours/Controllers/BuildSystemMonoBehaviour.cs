@@ -181,10 +181,10 @@ namespace Managers
             ScriptableSystemManager.Instance.cash -= currentBuildObject.cost;
             GameObject go = ScriptableSystemManager.Instance.spawnerHelper.SpawnObject(currentBuildObject, currentPosition, rotation);
             go.name = currentBuildObject.id;
-            go.layer = LayerMask.NameToLayer(scriptableBuildSystem.raycastData.buildObjectLayerString);
+            go.layer = LayerMask.NameToLayer(scriptableBuildSystem.raycastData.layerString);
 
             go.transform.parent = buildObjectsParent;
-            go.tag = scriptableBuildSystem.raycastData.buildObjectLayerString;
+            go.tag = scriptableBuildSystem.raycastData.layerString;
             AddPreviewCollider(go, currentPreviewObject);
         }
 
@@ -225,7 +225,7 @@ namespace Managers
         public void ShowPreview()
         {
             bool b = currentPreviewObject == null;
-            b = b || raycastHit.point == buildSystemRaycast.raycastHitOutput.point;
+            b = b || raycastHit.point == buildSystemRaycast.raycastExecutorData.raycastHitOutput.point;
             if (scriptableBuildSystem.logs) Debug.Log("ShowPreview");
             if (b)
             {
@@ -233,7 +233,7 @@ namespace Managers
                 if (scriptableBuildSystem.logs) Debug.LogError("ShowPreview: Hit.point have not changed");
                 return;
             }
-            raycastHit = buildSystemRaycast.raycastHitOutput;
+            raycastHit = buildSystemRaycast.raycastExecutorData.raycastHitOutput;
 
             Vector3 point = raycastHit.point;
             Vector3 normal = raycastHit.normal;

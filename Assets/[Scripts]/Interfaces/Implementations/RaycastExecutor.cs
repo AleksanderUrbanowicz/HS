@@ -1,148 +1,157 @@
 ﻿using StateMachine;
 using UnityEngine;
 
-public class RaycastExecutor : MonoBehaviour, IUpdateExecutor
+namespace Managers
 {
-
-    public bool isRaycasting;
-    public bool boolOutput;
-    private int counter = 0;
-
-    public Vector3 collisionNormal;
-    public LayerMask layersToCheck;
-    public Transform targetFrom;
-    public RaycastHit raycastHitOutput;
-    public RaycastData raycastdata;
-    public void Init(RaycastData _raycastdata)
-    {
-        raycastdata = _raycastdata;
-        if (targetFrom == null)
-        {
-            targetFrom = GameObject.FindGameObjectWithTag("MainCamera").transform;
-        }
-
-
-        raycastdata.hitMissEvents = new BoolEventGroup(raycastdata.hitMissEvents.scriptableEventTrue, raycastdata.hitMissEvents.scriptableEventFalse);
-
-    }
-
-    public void Update()
-    {
-        if (raycastdata == null)
-        {
-            Debug.Log("raycastdata==null");
-            return;
-        }
-
-        if ((this as IUpdateExecutor).CheckUpdateConditions)
-        {
-            //Debug.Log("CheckUpdateConditions true");
-            Execute();
-
-        }
-
-    }
-
-
-    public void StartExecute(LayerMask _layersToBuildOn)
-    {
-        layersToCheck = _layersToBuildOn;
-        StartExecute();
-
-    }
-
-
-    public void SendEvent()
+    public class RaycastExecutor : MonoBehaviour, IUpdateExecutor
     {
 
-        boolOutput = !boolOutput;
-        if (boolOutput)
+        public bool isRaycasting;
+        //public bool boolOutput;
+        private int counter = 0;
+        public RaycastExecutorData raycastExecutorData;
+        //public Vector3 collisionNormal;
+        public LayerMask layersToCheck;
+        public Transform targetFrom;
+       // public RaycastHit raycastHitOutput;
+        public RaycastData raycastdata;
+        public void Init(RaycastData _raycastdata)
         {
-            if (raycastdata.stopAfterHit)
+            isRaycasting = false;
+            raycastdata = _raycastdata;
+            if (targetFrom == null)
             {
-                (this as IUpdateExecutor).StopExecute();
-
+                targetFrom = GameObject.FindGameObjectWithTag("MainCamera").transform;
             }
-            raycastdata.hitMissEvents.scriptableEventTrue.Raise();
-        }
-        else
-        {
-            raycastdata.hitMissEvents.scriptableEventFalse.Raise();
-        }
-    }
 
-    #region Interface implementations
 
-    public void StartExecute()
-    {
-        isRaycasting = true;
-    }
-
-    public void StopExecute()
-    {
-        isRaycasting = false;
-    }
-
-    public void Execute()
-    {
-        if (boolOutput != Physics.Raycast(targetFrom.position, targetFrom.forward, out raycastHitOutput, raycastdata.raycastMaxDistance, layersToCheck))
-        {
-
-            SendEvent();
+            raycastdata.hitMissEvents = new BoolEventGroup(raycastdata.hitMissEvents.scriptableEventTrue, raycastdata.hitMissEvents.scriptableEventFalse);
 
         }
 
-
-
-    }
-
-    bool IUpdateExecutor.CheckUpdateConditions
-    {
-        get
+        public void Update()
         {
-            if (raycastdata.raycastInterval == 0)
+            if (raycastdata == null)
             {
-                return true;
+                Debug.Log("raycastdata==null");
+                return;
+            }
+            if (!CheckPreConditions)
+            {
+                return;
+            }
+            
+
+            if ((this as IUpdateExecutor).CheckUpdateConditions)
+            {
+                //Debug.Log("CheckUpdateConditions true");
+                Execute();
 
             }
 
-            counter++;
-            if (counter > raycastdata.raycastInterval)
+        }
+
+
+        public void StartExecute(LayerMask _layersToCheck)
+        {
+            layersToCheck = _layersToCheck;
+            StartExecute();
+
+        }
+
+
+        public void SendEvent()
+        {
+
+            raycastExecutorData.boolOutput = !raycastExecutorData.boolOutput;
+            if (raycastExecutorData.boolOutput)
+            {
+                if (raycastdata.stopAfterHit)
+                {
+                    (this as IUpdateExecutor).StopExecute();
+
+                }
+                raycastdata.hitMissEvents.scriptableEventTrue.Raise();
+            }
+            else
+            {
+                raycastdata.hitMissEvents.scriptableEventFalse.Raise();
+            }
+        }
+
+        #region Interface implementations
+
+        public void StartExecute()
+        {
+            isRaycasting = true;
+        }
+
+        public void StopExecute()
+        {
+            isRaycasting = false;
+        }
+
+        public void Execute()
+        {
+            if (raycastExecutorData.boolOutput != Physics.Raycast(targetFrom.position, targetFrom.forward, out raycastExecutorData.raycastHitOutput, raycastdata.raycastMaxDistance, layersToCheck))
             {
 
-                counter = 0;
-                //  Debug.Log("Update");
-                return true;
+                SendEvent();
+
             }
-            //  Debug.Log("SkipUpdate");
-            return false;
+
+
+
         }
-    }
-    /*
-    bool IConditionalExecutor.CheckEventConditions
-    {
-        get
+
+        bool IUpdateExecutor.CheckUpdateConditions
         {
-            if (isRaycasting && boolOutput != Physics.Raycast(targetFrom.position, targetFrom.forward, out raycastHitOutput, raycastdata.raycastMaxDistance, layersToCheck))
+            get
             {
+                if (raycastdata.raycastInterval == 0)
+                {
+                    return true;
 
-                return true;
+                }
 
+                counter++;
+                if (counter > raycastdata.raycastInterval)
+                {
+
+                    counter = 0;
+                    //  Debug.Log("Update");
+                    return true;
+                }
+                //  Debug.Log("SkipUpdate");
+                return false;
             }
-            return false;
         }
-    }
-    */
-
-    public bool CheckPreConditions
-    {
-        get
+        /*
+        bool IConditionalExecutor.CheckEventConditions
         {
-            return isRaycasting;
+            get
+            {
+                if (isRaycasting && boolOutput != Physics.Raycast(targetFrom.position, targetFrom.forward, out raycastHitOutput, raycastdata.raycastMaxDistance, layersToCheck))
+                {
+
+                    return true;
+
+                }
+                return false;
+            }
         }
+        */
+
+        public bool CheckPreConditions
+        {
+            get
+            {
+                return isRaycasting;
+            }
+        }
+
+
+
+        #endregion Interface implementations
     }
-
-
-
-    #endregion Interface implementations
 }

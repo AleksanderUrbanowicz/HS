@@ -6,7 +6,7 @@ namespace Managers
 {
     [CreateAssetMenu(fileName = "SelectSystem", menuName = "ScriptableSystems/Select System/System Asset")]
 
-    public class ScriptableSelectSystem : ScriptableSystem
+    public class ScriptableSelectSystem : ScriptableSystem, IScriptableManager
     {
         public Material heighlightedMaterial;
         public Material sellectedMaterial;

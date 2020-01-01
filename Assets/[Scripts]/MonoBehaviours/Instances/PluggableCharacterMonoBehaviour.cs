@@ -10,7 +10,7 @@ namespace Characters
 {
     [RequireComponent(typeof(NavMeshAgent))]
     //  [RequireComponent(typeof(StateControllerMB))]
-    public class PluggableCharacterMonoBehaviour : PluggableMonoBehaviour, IInteractable
+    public class PluggableCharacterMonoBehaviour : PluggableMonoBehaviour
     {
 
         public List<Transform> interactablePointList;

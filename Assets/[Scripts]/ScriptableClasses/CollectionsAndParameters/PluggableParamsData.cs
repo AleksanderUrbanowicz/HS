@@ -5,14 +5,11 @@ using UnityEngine;
 
 namespace EditorTools
 {
-    [CreateAssetMenu(fileName = "PluggableParams", menuName = "Characters/PluggableParams")]
+    [CreateAssetMenu(fileName = "PluggableParams_", menuName = "Data/PluggableParams")]
     public class PluggableParamsData : ScriptableObject
     {
 
         public List<ParameterBase> activeParameters = new List<ParameterBase>();
-
-
-
 
     }
 

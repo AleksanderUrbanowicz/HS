@@ -5,15 +5,13 @@ using UnityEngine;
 
 namespace Characters
 {
-    [CreateAssetMenu(fileName = "PluggableCharacterRole", menuName = "Characters/Pluggable Character Role")]
+    [CreateAssetMenu(fileName = "CharacterRole_", menuName = "Characters/Character Role")]
 
     public class PluggableCharacterRole : ScriptableObject, IPluggableParameters
     {
         public string id, displayName;
         public PluggableParamsData characterBaseParameters;
-        // public PluggableParamsData[] baseTypeParameters=new PluggableParamsData[2];
         public PluggableParamsData characterTypeParams;
-        //public PluggableParams[] individualAccumulatedParameters = new PluggableParams[2];
 
         public PluggableParams individualRoleParams;
 

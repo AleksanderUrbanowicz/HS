@@ -16,7 +16,7 @@ namespace ScriptableData
 {
 
     [Serializable]
-    [CreateAssetMenu(fileName = "GlobalConfig", menuName = "Config/Global Config")]
+    [CreateAssetMenu(fileName = "GlobalConfig", menuName = "Data/Config/Global Config")]
     public class GlobalConfig : ConfigBase
     {
 

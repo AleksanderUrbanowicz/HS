@@ -45,10 +45,10 @@ namespace Managers
             }
             mb.Init(od.buildObjectData, savedConditions);
             instance.name = od.buildObjectData.id;
-            instance.layer = LayerMask.NameToLayer(ScriptableSystemManager.Instance.gameSettings.scriptableBuildSystem.raycastData.buildObjectLayerString);
+            instance.layer = LayerMask.NameToLayer(ScriptableSystemManager.Instance.gameSettings.scriptableBuildSystem.raycastData.layerString);
 
             instance.transform.parent = ScriptableSystemManager.Instance.buildSystemMonoBehaviour.buildObjectsParent;
-            instance.tag = ScriptableSystemManager.Instance.gameSettings.scriptableBuildSystem.raycastData.buildObjectLayerString;
+            instance.tag = ScriptableSystemManager.Instance.gameSettings.scriptableBuildSystem.raycastData.layerString;
 
         }
 

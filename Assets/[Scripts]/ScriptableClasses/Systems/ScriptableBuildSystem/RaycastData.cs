@@ -3,12 +3,13 @@ using System;
 using UnityEngine;
 
 [Serializable]
-[CreateAssetMenu(fileName = "RaycastData_BuildSystemRaycast", menuName = "ScriptableSystems/Build System/Raycast Data Asset")]
+[CreateAssetMenu(fileName = "RaycastData_", menuName = "ScriptableSystems/Helpers/Raycast Data Asset")]
 
 public class RaycastData : ScriptableObject
 {
-    public string buildObjectLayerString;
-    public LayerMask defaultLayerToBuildOn;
+    public string layerString;
+    public LayerMask defaultLayerToScan;
+    public string targetTag;
 
     public float raycastMaxDistance;
     [Tooltip("Events to notify when hit<->miss")]

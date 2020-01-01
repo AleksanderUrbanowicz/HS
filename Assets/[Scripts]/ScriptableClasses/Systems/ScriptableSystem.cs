@@ -3,22 +3,25 @@ using UnityEngine;
 
 namespace ScriptableData
 {
-    public abstract class ScriptableSystem : ScriptableObject
+   // [CreateAssetMenu]
+    public abstract  class ScriptableSystem : ScriptableObject, IScriptableManager
     {
         public string id;
 
         public bool initializeOnStart;
 
-        public MonoBehaviour monoBehaviourScript;
-
-        private ScriptableEvent OnStartEvent;
-        private ScriptableEvent OnStopEvent;
         public virtual void Initialize(GameObject obj)
         {
             obj.name = id;
 
-
         }
 
+        public void LoadState()
+        {
+        }
+
+        public void SaveState()
+        {
+        }
     }
 }

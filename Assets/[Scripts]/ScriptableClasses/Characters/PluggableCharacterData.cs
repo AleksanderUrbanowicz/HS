@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Characters
 {
-    [CreateAssetMenu(fileName = "CharacterData", menuName = "Characters/Pluggable Character Data")]
+    [CreateAssetMenu(fileName = "CharacterData", menuName = "Characters/Character Data")]
 
     public class PluggableCharacterData : PluggableCharacterBase, IPluggableParameters
     {

@@ -5,11 +5,9 @@ using StateMachine;
 using UnityEditor;
 using UnityEngine;
 
-namespace Managers
+namespace BuildObjects
 {
-    //namespace EditorTools
-    //{
-    //[CreateAssetMenu(fileName = "BuildObjectCreator", menuName = "Build System/Build Object Creator")]
+
     public class BuildObjectEditorWindow : EditorWindow
     {
 
@@ -88,7 +86,7 @@ namespace Managers
 
         private void InitData()
         {
-            buildObjectData = (BuildObjectData)ScriptableObject.CreateInstance(typeof(BuildObjectData));
+            buildObjectData = (BuildObjectData)CreateInstance(typeof(BuildObjectData));
         }
 
         #endregion Window
@@ -279,20 +277,20 @@ namespace Managers
             }
 
             Vector3 floatGridSize = Vector3.zero;
-            while (floatGridSize.x < (_size.x + boundsEpsilon))
+            while (floatGridSize.x < _size.x + boundsEpsilon)
             {
                 floatGridSize.x += gridSize;
 
             }
 
-            while (floatGridSize.y < (_size.y + boundsEpsilon))
+            while (floatGridSize.y < _size.y + boundsEpsilon)
             {
                 floatGridSize.y += gridSize;
 
             }
 
 
-            while (floatGridSize.z < (_size.z + boundsEpsilon))
+            while (floatGridSize.z < _size.z + boundsEpsilon)
             {
                 floatGridSize.z += gridSize;
 

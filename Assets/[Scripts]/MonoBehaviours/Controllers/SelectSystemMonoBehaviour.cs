@@ -51,7 +51,7 @@ namespace Managers
                 }
                 else
                 {
-                    buildSystemRaycast.StartExecute(_layersToBuildOn: scriptableSelectSystem.highlightableLayerMask);
+                    buildSystemRaycast.StartExecute(_layersToCheck: scriptableSelectSystem.highlightableLayerMask);
 
                 }
 
@@ -110,7 +110,7 @@ namespace Managers
         private void HandleSelectHit()
         {
             Debug.LogError("HandleSelectHit");
-            highlightedObject = buildSystemRaycast.raycastHitOutput.collider.gameObject;
+            highlightedObject = buildSystemRaycast.raycastExecutorData.raycastHitOutput.collider.gameObject;
             tempLayer = LayerMask.LayerToName(highlightedObject.layer);
             highlightedObject.layer = LayerMask.NameToLayer(highlightedLayer);
             //highlightedObject.transform.ch
