@@ -9,7 +9,8 @@ namespace Objects
     public class ObjectData
     {
         public string id;
-        public List<DynamicParameter> currentConditions;  //ex. cleanless 45, condition 0
+        public BuildObjectData buildObjectData;
+        public List<DynamicParameter> currentConditions;  
         public float positionX;
         public float positionY;
         public float positionZ;
@@ -18,9 +19,10 @@ namespace Objects
         public float rotationY;
         public float rotationZ;
         public float rotationW;
-        public ObjectData(string _id, Transform t, List<DynamicParameter> _currentConditions)
+        public ObjectData(string _id, Transform t, List<DynamicParameter> _currentConditions, BuildObjectData _buildObjectData)
         {
             id = _id;
+            buildObjectData = _buildObjectData;
             positionX = t.position.x;
             positionY = t.position.y;
             positionZ = t.position.z;

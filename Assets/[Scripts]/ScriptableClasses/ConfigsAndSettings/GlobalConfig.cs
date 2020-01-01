@@ -59,6 +59,7 @@ namespace ScriptableData
         public Color employeeColor = Color.red;
         public Color buildObjectColor = Color.blue;
         public Color defaultColor = Color.black;
+        public ThemeUIData overrideTheme;
         /// //////////////////////////////////Tabs///////////////////////////////////////////////////////////
 
         [HideInInspector] public bool initTabOpen;

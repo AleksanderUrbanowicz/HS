@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a214f9ad23595ed45b0ce066e6c0bc4d, type: 3}
-  m_Name: ThemeUIData
+  m_Name: ThemeUI_Large
   m_EditorClassIdentifier: 
-  id: ThemeUIStandard
+  id: Large
   defaultSize: {x: 74.03, y: 79.22}
   generalColorData:
     defaultColor: {r: 0, g: 0, b: 0, a: 1}
@@ -31,7 +31,7 @@ MonoBehaviour:
     frontSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
     backgroundSprite: {fileID: 21300000, guid: 86d1885107fa74149969d2801c7053a7, type: 3}
     detailSprite: {fileID: 0}
-  defaultButtonSize: {x: 127.3, y: 36.6}
+  defaultButtonSize: {x: 224, y: 53.7}
   defaultButtonAspect: 1
   defaultIconSize: {x: 23.87, y: 32.8}
   buttonsColorData:

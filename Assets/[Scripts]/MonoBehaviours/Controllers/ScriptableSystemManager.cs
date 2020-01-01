@@ -168,8 +168,8 @@ namespace Managers
 
         public void Quit()
         {
-            dataSystemMonoBehaviour.SaveObjects();
-            dataSystemMonoBehaviour.SavePlayerData();
+            //dataSystemMonoBehaviour.SaveObjects();
+           // dataSystemMonoBehaviour.SavePlayerData();
             Application.Quit();
         }
         public void DeleteSave()

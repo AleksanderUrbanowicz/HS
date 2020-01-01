@@ -26,14 +26,14 @@ namespace UI
                     {
 
 
-                        image.color = themeData.generalColorData.negativeColor;
+                        image.color = ThemeData.sliderData.colorData.NegativeColor;
                         break;
                     }
                 case PanelType.LIST:
                     {
 
 
-                        image.color = themeData.generalColorData.positiveColor;
+                        image.color = ThemeData.sliderData.colorData.PositiveColor;
                         break;
                     }
 

@@ -21,7 +21,7 @@ namespace ScriptableData
         public ScriptableBuildSystem scriptableBuildSystem;
         public ScriptableDataSystem scriptableDataSystem;
         public ScriptableSelectSystem scriptableSelectSystem;
-        private BuildObjectData[] allObjectsArray;
+        public BuildObjectData[] allObjectsArray;
         public Vector2Int charactersRandomSpread;
         public List<PluggableCharacterData> debugCharactersToSpawn = new List<PluggableCharacterData>();
         public List<ScriptableSystem> scriptableSystems;
@@ -32,14 +32,14 @@ namespace ScriptableData
         private void OnEnable()
         {
 #if UNITY_EDITOR
-            allObjectsArray = EditorStaticTools.GetAllInstances<BuildObjectData>();
+           // allObjectsArray = EditorStaticTools.GetAllInstances<BuildObjectData>();
 #endif
         }
 
         public BuildObjectData GetBuildObjectData(string _id)
         {
 
-            allObjectsArray.FirstOrDefault(x => x.id == _id);
+            //allObjectsArray.FirstOrDefault(x => x.id == _id);
             for (int i = 0; i < allObjectsArray.Length; i++)
             {
                 if (allObjectsArray[i].id == _id)

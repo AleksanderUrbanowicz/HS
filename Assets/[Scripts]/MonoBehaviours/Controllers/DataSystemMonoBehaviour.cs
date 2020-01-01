@@ -18,7 +18,7 @@ namespace Managers
             ScriptableSystemManager.Instance.cash = PlayerPrefs.GetInt(scriptableDataSystem.playerPrefsCashKey, 20000);
             ScriptableSystemManager.Instance.dataSystemMonoBehaviour = this;
             InitSpawner();
-            LoadObjects();
+           // LoadObjects();
         }
         public void GetObjectsToSave()
         {
@@ -36,19 +36,20 @@ namespace Managers
                 PluggableObjectMonoBehaviour pluggableObjectMonoBehaviour = go.GetComponent<PluggableObjectMonoBehaviour>();
                 if (pluggableObjectMonoBehaviour != null)
                 {
-                    objectDatas.Add(new ObjectData(go.name, go.transform, pluggableObjectMonoBehaviour.currentConditions));
+                    objectDatas.Add(new ObjectData(go.name, go.transform, pluggableObjectMonoBehaviour.currentConditions, pluggableObjectMonoBehaviour.buildObjectData));
 
                 }
                 else
                 {
                     Debug.LogWarning("SaveObjects(), Object: " + go.name + ", do not have PluggableObjectMonoBehaviour");
-                    objectDatas.Add(new ObjectData(go.name, go.transform, null));
+                    objectDatas.Add(new ObjectData(go.name, go.transform, null, pluggableObjectMonoBehaviour.buildObjectData));
 
                 }
 
             }
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Create(Application.persistentDataPath + scriptableDataSystem.objectsDataFilename);
+            //JsonUtility.FromJson(,typeof(ObjectData))
             bf.Serialize(file, objectDatas);
             file.Close();
         }

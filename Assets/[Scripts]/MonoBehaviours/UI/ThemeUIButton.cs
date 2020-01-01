@@ -64,23 +64,23 @@ namespace UI
       
          
             button.targetGraphic = image;
-            image.type = themeData.buttonImageType;
+            image.type = ThemeData.buttonData.imageType;
 
             switch (buttonType)
             {
                 case ButtonType.CONFIRM:
                     {
 
-                        iconImage.sprite = themeData.buttonsSpriteData.positiveSprite;
+                        iconImage.sprite = ThemeData.buttonData.spriteData.positiveSprite;
 
-                        image.color = themeData.buttonsColorData.positiveColor;
+                        image.color = ThemeData.buttonData.colorData.PositiveColor;
                         break;
                     }
                 case ButtonType.WARNING:
                     {
 
-                        iconImage.sprite = themeData.buttonsSpriteData.neutralSprite;
-                        image.color = themeData.buttonsColorData.neutralColor;
+                        iconImage.sprite = ThemeData.buttonData.spriteData.neutralSprite;
+                        image.color = ThemeData.buttonData.colorData.NeutralColor;
                         break;
                     }
 
@@ -88,8 +88,8 @@ namespace UI
                     {
 
                         //iconImage.enabled = false;
-                        image.color = themeData.buttonsColorData.negativeColor;
-                        iconImage.sprite = themeData.buttonsSpriteData.negativeSprite;
+                        image.color = ThemeData.buttonData.colorData.NegativeColor;
+                        iconImage.sprite = ThemeData.buttonData.spriteData.negativeSprite;
 
                         break;
                     }
@@ -103,14 +103,14 @@ namespace UI
         {
             if (size == 0)
             {
-                size = (int)(themeData.defaultSize.x + themeData.defaultSize.y) / 10;
+                size = (int)(ThemeData.generalData.defaultSize.x + ThemeData.generalData.defaultSize.y) / 10;
 
             }
             text.fontSize = size;
-            text.color = themeData.buttonsColorData.fontColor;
-            controlRect.sizeDelta = themeData.defaultButtonSize * relativeSize;
-            text.rectTransform.sizeDelta = themeData.defaultButtonSize  * relativeSize * 0.6f; ;
-            iconImage.rectTransform.sizeDelta = themeData.defaultIconSize  *relativeSize ;
+            text.color = ThemeData.buttonData.colorData.FontColor;
+            controlRect.sizeDelta = ThemeData.buttonData.defaultSize * relativeSize;
+            text.rectTransform.sizeDelta = ThemeData.buttonData.defaultSize * relativeSize * 0.6f; ;
+            iconImage.rectTransform.sizeDelta = ThemeData.buttonData.detailSize  *relativeSize ;
 
             // text.rectTransform.sizeDelta = themeData.smallControlSize * new Vector2(themeData.buttonTextRect.width, themeData.buttonTextRect.height) * relativeSize;
 

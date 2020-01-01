@@ -28,24 +28,24 @@ namespace UI
             fillImage = slider.fillRect.gameObject.GetComponent<Image>();
             handleImage = slider.handleRect.gameObject.GetComponent<Image>();
 
-            fillImage.type = themeData.sliderImageType;
-            fillImage.sprite = themeData.sliderSpriteData.frontSprite;
-            fillImage.color = themeData.sliderColorData.positiveColor;
+            fillImage.type = ThemeData.sliderData.imageType;
+            fillImage.sprite = ThemeData.sliderData.spriteData.frontSprite;
+            fillImage.color = ThemeData.sliderData.colorData.PositiveColor;
 
-            backgroundImage.type = themeData.sliderImageType;
-            backgroundImage.color = themeData.sliderColorData.negativeColor;
-            backgroundImage.sprite = themeData.sliderSpriteData.backgroundSprite;
+            backgroundImage.type = ThemeData.sliderData.imageType;
+            backgroundImage.color = ThemeData.sliderData.colorData.NegativeColor;
+            backgroundImage.sprite = ThemeData.sliderData.spriteData.backgroundSprite;
 
-            handleImage.sprite = themeData.sliderSpriteData.detailSprite;
-            handleImage.color = themeData.sliderColorData.neutralColor;
+            handleImage.sprite = ThemeData.sliderData.spriteData.detailSprite;
+            handleImage.color = ThemeData.sliderData.colorData.NeutralColor;
 
-            backgroundPanelImage.sprite = themeData.generalSpriteData.backgroundSprite;
-            backgroundPanelImage.color = themeData.sliderColorData.backgroundColor;
+            backgroundPanelImage.sprite = ThemeData.sliderData.spriteData.backgroundSprite;
+            backgroundPanelImage.color = ThemeData.sliderData.colorData.BackgroundColor;
 
             foreach (Text t in labels)
             {
 
-                t.color = themeData.sliderColorData.fontColor;
+                t.color = ThemeData.sliderData.colorData.FontColor;
             }
         }
     }

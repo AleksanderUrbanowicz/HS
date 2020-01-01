@@ -30,12 +30,12 @@ namespace Managers
         }
         public void SpawnSavedObject(ObjectData od)
         {
-            BuildObjectData buildObjectData = ScriptableSystemManager.Instance.gameSettings.GetBuildObjectData(od.id);
+            //BuildObjectData buildObjectData = ScriptableSystemManager.Instance.gameSettings.GetBuildObjectData(od.id);
 
             Vector3 position = new Vector3(od.positionX, od.positionY, od.positionZ);
             Quaternion rotation = new Quaternion(od.rotationX, od.rotationY, od.rotationZ, od.rotationW);
             List<DynamicParameter> savedConditions = od.currentConditions;
-            GameObject instance = spawner.CreateInstance(objectsTransform, position, rotation, (buildObjectData as ISpawnable));
+            GameObject instance = spawner.CreateInstance(objectsTransform, position, rotation, (od.buildObjectData as ISpawnable));
             //GameObject instance = (buildObjectData as ICreateInstance).CreateInstance(parentTransform,position, rotation);
             PluggableObjectMonoBehaviour mb = instance.GetComponent<PluggableObjectMonoBehaviour>();
             if (mb == null)
@@ -43,8 +43,8 @@ namespace Managers
                 mb = instance.AddComponent<PluggableObjectMonoBehaviour>();
 
             }
-            mb.Init(buildObjectData, savedConditions);
-            instance.name = buildObjectData.id;
+            mb.Init(od.buildObjectData, savedConditions);
+            instance.name = od.buildObjectData.id;
             instance.layer = LayerMask.NameToLayer(ScriptableSystemManager.Instance.gameSettings.scriptableBuildSystem.raycastData.buildObjectLayerString);
 
             instance.transform.parent = ScriptableSystemManager.Instance.buildSystemMonoBehaviour.buildObjectsParent;
