@@ -21,7 +21,7 @@ namespace Assets._Scripts.Gameplay.Managers
             Debug.Log(GetType().Name + " Init.");
 
             // InitRaycaster();
-            InitEventListeners();
+           // InitEventListeners();
 
 
 
