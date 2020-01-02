@@ -1,0 +1,3 @@
+[submodule "submodules/ScriptableTools"]
+	path = submodules/ScriptableTools
+	url = https://github.com/AleksanderUrbanowicz/ScriptableTools
