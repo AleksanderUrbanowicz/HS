@@ -2,3 +2,6 @@
 [submodule "Submodules/Library_Implementations"]
 	path = Submodules/Library_Implementations
 	url = https://github.com/AleksanderUrbanowicz/Library_Implementations
+[submodule "Submodules/ScriptableObjectsLibrary"]
+	path = Submodules/ScriptableObjectsLibrary
+	url = https://github.com/AleksanderUrbanowicz/ScriptableObjectsLibrary
