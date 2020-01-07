@@ -1,10 +1,10 @@
-﻿using Assets._Scripts.Data.Definitions;
+﻿using Data.Definitions;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
 //Author: internet
-namespace Assets._Scripts.Data.Containers
+namespace Data.Containers
 {
 
     public class EditorStaticTools

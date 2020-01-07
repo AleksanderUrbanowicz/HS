@@ -1,4 +1,4 @@
-﻿namespace Assets._Scripts.Data.Definitions
+﻿namespace Data.Definitions
 {
     public static class StringDefines
     {

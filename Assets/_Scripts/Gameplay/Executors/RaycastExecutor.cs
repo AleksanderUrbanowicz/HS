@@ -1,9 +1,12 @@
-﻿using Assets._Scripts.Data.Containers;
+﻿using Data.Containers;
 
-using Assets._Scripts.StateMachine;
+using StateMachine;
+using StateMachine;
 using UnityEngine;
+using BaseLibrary.Managers;
+using Data;
 
-namespace Assets._Scripts.Gameplay.Executors
+namespace Managers
 {
     public class RaycastExecutor : MonoBehaviour, IUpdateExecutor
     {

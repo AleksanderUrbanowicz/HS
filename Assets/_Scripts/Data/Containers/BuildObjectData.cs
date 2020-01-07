@@ -1,9 +1,10 @@
-﻿using Assets._Scripts.Data.Definitions;
-using Assets._Scripts.Gameplay.MonoBehaviourHookups;
+﻿using Data.Definitions;
+using Managers;
+using Managers;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets._Scripts.Data.Containers
+namespace Data.Containers
 {
     [System.Serializable]
     [CreateAssetMenu(fileName = "NewBuildObjectData", menuName = "ScriptableSystems/Build System/Build Object Data")]

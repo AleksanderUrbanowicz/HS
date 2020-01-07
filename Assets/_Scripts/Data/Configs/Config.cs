@@ -1,10 +1,10 @@
-﻿using Assets._Scripts.Data.Containers;
-using Assets._Scripts.Gameplay.Managers;
-using Assets._Scripts.Gameplay.MonoBehaviourHookups;
+﻿using Data;
+using Data.Containers;
+using Managers;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets._Scripts.Data.Configs
+namespace HotelSimulator.Data
 {
     public static class Config
     {

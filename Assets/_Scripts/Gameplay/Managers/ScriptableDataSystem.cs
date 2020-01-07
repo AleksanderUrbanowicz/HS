@@ -1,6 +1,6 @@
-﻿using Assets._Scripts.Gameplay.MonoBehaviourHookups;
+﻿using Managers;
 using UnityEngine;
-namespace Assets._Scripts.Gameplay.Managers
+namespace Managers
 {
     [CreateAssetMenu(fileName = "DataSystem", menuName = "ScriptableSystems/Data System/System Asset")]
 

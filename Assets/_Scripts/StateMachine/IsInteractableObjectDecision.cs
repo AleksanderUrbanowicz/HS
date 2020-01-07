@@ -1,8 +1,8 @@
-﻿using Assets._Scripts.Gameplay.MonoBehaviourHookups;
+﻿using Managers;
 using UnityEngine;
 
 
-namespace Assets._Scripts.StateMachine
+namespace StateMachine
 {
     [CreateAssetMenu(fileName = "Decision_Object_IsInteractable", menuName = "States/Decisions/Objects/Is Interactable Decision")]
 

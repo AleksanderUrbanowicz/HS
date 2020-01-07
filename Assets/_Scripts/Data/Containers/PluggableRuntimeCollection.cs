@@ -1,7 +1,8 @@
-﻿using Assets._Scripts.Gameplay.MonoBehaviourHookups;
+﻿using BaseLibrary.Data;
+using Managers;
 using UnityEngine;
 
-namespace Assets._Scripts.Data.Containers
+namespace Data
 {
     [CreateAssetMenu]
 

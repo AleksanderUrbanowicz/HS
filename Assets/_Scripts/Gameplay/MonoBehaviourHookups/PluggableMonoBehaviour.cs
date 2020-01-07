@@ -1,8 +1,9 @@
-﻿using Assets._Scripts.Data.Configs;
-using Assets._Scripts.Data.Containers;
+﻿using Data;
+using Data.Containers;
+using HotelSimulator.Data;
 using UnityEngine;
 
-namespace Assets._Scripts.Gameplay.MonoBehaviourHookups
+namespace Managers
 {
     public class PluggableMonoBehaviour : MonoBehaviour
     {

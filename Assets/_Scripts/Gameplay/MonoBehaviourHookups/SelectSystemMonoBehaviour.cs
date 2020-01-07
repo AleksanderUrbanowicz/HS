@@ -1,9 +1,8 @@
-﻿using Assets._Scripts.Gameplay.Executors;
-using Assets._Scripts.Gameplay.Helpers;
-using Assets._Scripts.Gameplay.Managers;
+﻿using BaseLibrary.Managers;
+using StateMachine;
 using UnityEngine;
 
-namespace Assets._Scripts.Gameplay.MonoBehaviourHookups
+namespace Managers
 {
     [RequireComponent(typeof(Camera))]
     public class SelectSystemMonoBehaviour : MonoBehaviour

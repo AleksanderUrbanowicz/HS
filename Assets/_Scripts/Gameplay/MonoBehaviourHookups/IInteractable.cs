@@ -1,4 +1,4 @@
-﻿namespace Assets._Scripts.Gameplay.MonoBehaviourHookups
+﻿namespace Managers
 {
     public interface IInteractable
     {

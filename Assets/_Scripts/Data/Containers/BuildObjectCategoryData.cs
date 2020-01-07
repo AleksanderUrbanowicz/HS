@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-namespace Assets._Scripts.Data.Containers
+namespace Data.Containers
 {
     [Serializable]
     [CreateAssetMenu(fileName = "NewBuildObjectCategoryData", menuName = "ScriptableSystems/Build System/Build Object Category Data")]

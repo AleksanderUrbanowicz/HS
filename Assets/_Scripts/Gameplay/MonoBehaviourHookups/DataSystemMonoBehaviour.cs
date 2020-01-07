@@ -1,11 +1,11 @@
-﻿using Assets._Scripts.Data.Containers;
-using Assets._Scripts.Gameplay.Helpers;
-using Assets._Scripts.Gameplay.Managers;
+﻿using Data;
+using Data.Containers;
+using Managers;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
-namespace Assets._Scripts.Gameplay.MonoBehaviourHookups
+namespace Managers
 {
     public class DataSystemMonoBehaviour : MonoBehaviour
     {

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-namespace Assets._Scripts.StateMachine
+namespace StateMachine
 {
     [CreateAssetMenu(fileName = "Decision_Employee_NextTarget", menuName = "States/Decisions/Characters/Next Target Decision")]
 

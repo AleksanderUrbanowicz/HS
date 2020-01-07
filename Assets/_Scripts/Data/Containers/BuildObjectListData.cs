@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Data.Containers;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-namespace Assets._Scripts.Data.Containers
+namespace Data
 {
     [Serializable]
     [CreateAssetMenu(fileName = "NewBuildObjectListData", menuName = "ScriptableSystems/Build System/Build Object List Data")]

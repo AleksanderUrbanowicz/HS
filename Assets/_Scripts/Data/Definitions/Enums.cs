@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Assets._Scripts.Data.Definitions
+namespace Data.Definitions
 {
     public enum ObjectOrientation
     {

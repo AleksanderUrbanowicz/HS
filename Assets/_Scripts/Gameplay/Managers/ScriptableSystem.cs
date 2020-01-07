@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets._Scripts.Gameplay.Managers
+namespace Managers
 {
     // [CreateAssetMenu]
     public abstract class ScriptableSystem : ScriptableObject, IScriptableManager

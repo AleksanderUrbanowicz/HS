@@ -1,12 +1,11 @@
-﻿using Assets._Scripts.Data.Containers;
-using Assets._Scripts.Gameplay.Helpers;
-using Assets._Scripts.Gameplay.Managers;
-using Assets._Scripts.StateMachine;
+﻿using Data;
+using Managers;
+using StateMachine;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Assets._Scripts.Gameplay.MonoBehaviourHookups
+namespace Data
 {
     [RequireComponent(typeof(NavMeshAgent))]
     //  [RequireComponent(typeof(StateControllerMB))]

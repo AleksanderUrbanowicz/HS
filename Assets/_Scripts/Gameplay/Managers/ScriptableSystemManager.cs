@@ -1,12 +1,13 @@
-﻿using Assets._Scripts.Data.Configs;
-using Assets._Scripts.Data.Containers;
-using Assets._Scripts.Gameplay.Helpers;
-using Assets._Scripts.Gameplay.MonoBehaviourHookups;
+﻿using Data;
+using Data.Containers;
+using HotelSimulator.Data;
+using Managers;
+using Managers;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Assets._Scripts.Gameplay.Managers
+namespace Managers
 {
     // Class: ScriptableSystemManager
     //  MonoBehaviour script for managing scriptable systems of different levels

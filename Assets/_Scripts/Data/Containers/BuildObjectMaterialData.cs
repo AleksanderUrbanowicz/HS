@@ -1,9 +1,9 @@
-﻿using Assets._Scripts.Data.Definitions;
-using Assets._Scripts.EditorUtilities;
+﻿using Data.Definitions;
+using EditorUtilities;
 using System;
 using UnityEngine;
 
-namespace Assets._Scripts.Data.Containers
+namespace Data
 {
     [Serializable]
     public class BuildObjectMaterialData

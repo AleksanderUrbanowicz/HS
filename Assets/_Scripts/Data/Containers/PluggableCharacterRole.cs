@@ -1,13 +1,13 @@
-﻿using Assets._Scripts.StateMachine;
+﻿using StateMachine;
 using UnityEngine;
-namespace Assets._Scripts.Data.Containers
+namespace Data
 {
     [CreateAssetMenu(fileName = "CharacterRole_", menuName = "Characters/Character Role")]
 
     public class PluggableCharacterRole : ScriptableObject, IPluggableParameters
     {
         public string id, displayName;
-        public PluggableParamsData characterBaseParameters;
+        public PluggableParams characterBaseParameters;
         public PluggableParamsData characterTypeParams;
 
         public PluggableParams individualRoleParams;
@@ -48,7 +48,7 @@ namespace Assets._Scripts.Data.Containers
         {
             if (characterBaseParameters != null)
             {
-                foreach (ParameterBase par in characterBaseParameters.activeParameters)
+                foreach (ParameterBase par in characterBaseParameters.parameters)
                 {
                     int index = accumulatedParams.GetIndexOfActive(par.id);
                     if (index != -1)
@@ -119,5 +119,9 @@ namespace Assets._Scripts.Data.Containers
             }
 
         }
+
+      
+
+      
     }
 }

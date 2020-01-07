@@ -1,8 +1,8 @@
-﻿using Assets._Scripts.Gameplay.MonoBehaviourHookups;
-using Assets._Scripts.StateMachine;
+﻿using Managers;
+using StateMachine;
 using UnityEngine;
 
-namespace Assets._Scripts.Gameplay.Managers
+namespace Managers
 {
     [CreateAssetMenu(fileName = "SelectSystem", menuName = "ScriptableSystems/Select System/System Asset")]
 

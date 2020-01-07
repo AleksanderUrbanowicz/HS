@@ -1,10 +1,11 @@
-﻿using Assets._Scripts.Data.Configs;
+﻿
+using HotelSimulator.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Assets._Scripts.Data.Containers
+namespace Data
 {
     [CreateAssetMenu(fileName = "PluggableParams_", menuName = "Data/PluggableParams")]
     public class PluggableParamsData : ScriptableObject

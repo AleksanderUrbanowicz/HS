@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets._Scripts.Data.Containers
+namespace Data
 {
     [CreateAssetMenu(fileName = "CharacterData", menuName = "Characters/Character Data")]
 

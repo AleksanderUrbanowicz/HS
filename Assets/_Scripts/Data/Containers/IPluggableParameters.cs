@@ -1,4 +1,4 @@
-﻿namespace Assets._Scripts.Data.Containers
+﻿namespace Data
 {
     public interface IPluggableParameters
     {

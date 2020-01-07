@@ -1,15 +1,14 @@
-﻿using Assets._Scripts.Data.Containers;
-using Assets._Scripts.Data.Definitions;
-using Assets._Scripts.Gameplay.Executors;
-using Assets._Scripts.Gameplay.Helpers;
-using Assets._Scripts.Gameplay.Managers;
+﻿using BaseLibrary.Managers;
+using Data.Containers;
+using Data.Definitions;
+using StateMachine;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
 //TO REIMPLEMENT
 
-namespace Assets._Scripts.Gameplay.MonoBehaviourHookups
+namespace Managers
 {
     public class BuildSystemMonoBehaviour : MonoBehaviour
     {

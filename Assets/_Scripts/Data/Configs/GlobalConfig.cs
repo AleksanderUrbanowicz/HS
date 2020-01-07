@@ -2,18 +2,21 @@
 
 #define HIDE
 //#define LOGS
-using Assets._Scripts.Data.Containers;
-using Assets._Scripts.Data.Definitions;
+using Data.Containers;
+using Data.Definitions;
 
-using Assets._Scripts.EditorUtilities;
-using Assets._Scripts.StateMachine;
-using Assets._Scripts.UI.Data;
+using EditorUtilities;
+using StateMachine;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Assets._Scripts.Data.Configs
+using Data;
+using BaseLibrary.Data;
+
+namespace HotelSimulator.Data
 {
 
     [Serializable]
@@ -49,7 +52,7 @@ namespace Assets._Scripts.Data.Configs
         [HideInInspector] public BuildObjectListData[] buildObjectLists;
         [HideInInspector] public GameEvent[] gameEvents;
         [HideInInspector] public ScriptableEvent[] scriptableEvents;
-        [HideInInspector] public ThemeUIData[] uiThemes;
+       // [HideInInspector] public ThemeUIData[] uiThemes;
         [HideInInspector] public BuildObjectMaterialSet[] materialSets;
 
         /// <summary>
@@ -60,7 +63,7 @@ namespace Assets._Scripts.Data.Configs
         public Color employeeColor = Color.red;
         public Color buildObjectColor = Color.blue;
         public Color defaultColor = Color.black;
-        public ThemeUIData overrideTheme;
+      //  public ThemeUIData overrideTheme;
         /// //////////////////////////////////Tabs///////////////////////////////////////////////////////////
 
         [HideInInspector] public bool initTabOpen;
@@ -238,8 +241,8 @@ namespace Assets._Scripts.Data.Configs
             AddOrEditSelectorParams(StringDefines.ScriptableEventSelectorKey, scriptableEvents.Select(x => x.id).ToList());
 
 
-            uiThemes = EditorStaticTools.GetAllInstances<ThemeUIData>();
-            AddOrEditSelectorParams(StringDefines.ThemeUIDataSelectorKey, uiThemes.Select(x => x.id).ToList());
+          //  uiThemes = EditorStaticTools.GetAllInstances<ThemeUIData>();
+         //   AddOrEditSelectorParams(StringDefines.ThemeUIDataSelectorKey, uiThemes.Select(x => x.id).ToList());
 
             materialSets = EditorStaticTools.GetAllInstances<BuildObjectMaterialSet>();
             AddOrEditSelectorParams(StringDefines.MaterialSetSelectorKey, materialSets.Select(x => x.id).ToList());

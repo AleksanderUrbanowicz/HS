@@ -1,8 +1,8 @@
-﻿using Assets._Scripts.Data.Definitions;
-using Assets._Scripts.EditorUtilities;
+﻿using Data.Definitions;
+using EditorUtilities;
 using System.Collections.Generic;
 using UnityEngine;
-namespace Assets._Scripts.Data.Containers
+namespace Data
 {
 
     [CreateAssetMenu(fileName = "BuildObjectMaterialSet", menuName = "ScriptableSystems/Build System/Build Object Material Set")]

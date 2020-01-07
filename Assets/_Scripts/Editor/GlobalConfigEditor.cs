@@ -1,12 +1,12 @@
-﻿using Assets._Scripts.Data.Configs;
-using Assets._Scripts.Data.Containers;
-using Assets._Scripts.Data.Definitions;
+﻿using Data.Containers;
+using Data.Definitions;
+using HotelSimulator.Data;
 using System;
 using UnityEditor;
 using UnityEngine;
-using static Assets._Scripts.Data.Containers.EditorStaticTools;
+using static Data.Containers.EditorStaticTools;
 
-namespace Assets._Scripts.EditorUtilities
+namespace EditorUtilities
 {
     [CustomEditor(typeof(GlobalConfig))]
     public class GlobalConfigEditor : Editor

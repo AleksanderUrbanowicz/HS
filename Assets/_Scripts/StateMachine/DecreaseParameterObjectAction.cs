@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets._Scripts.StateMachine
+namespace StateMachine
 {
     [CreateAssetMenu(fileName = "Action_Object_DecreaseParameters", menuName = "States/Actions/Objects/Decrease Parameters")]
 

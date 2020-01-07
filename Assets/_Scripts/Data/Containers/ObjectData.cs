@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Data.Containers;
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets._Scripts.Data.Containers
+namespace Data
 {
     [System.Serializable]
 

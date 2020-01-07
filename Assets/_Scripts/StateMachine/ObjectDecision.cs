@@ -1,5 +1,5 @@
 ﻿
-namespace Assets._Scripts.StateMachine
+namespace StateMachine
 {
     public abstract class ObjectDecision : Decision
     {

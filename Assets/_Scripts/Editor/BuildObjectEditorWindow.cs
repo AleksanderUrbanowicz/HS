@@ -1,11 +1,11 @@
-﻿using Assets._Scripts.Data.Containers;
-using Assets._Scripts.Data.Definitions;
-using Assets._Scripts.Gameplay.MonoBehaviourHookups;
-using Assets._Scripts.StateMachine;
+﻿using Data.Containers;
+using Data.Definitions;
+using Managers;
+using StateMachine;
 using UnityEditor;
 using UnityEngine;
 
-namespace Assets._Scripts.EditorUtilities
+namespace EditorUtilities
 {
 
     public class BuildObjectEditorWindow : EditorWindow

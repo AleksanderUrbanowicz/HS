@@ -1,8 +1,8 @@
-﻿using Assets._Scripts.Gameplay.Managers;
+﻿using Managers;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-namespace Assets._Scripts.StateMachine
+namespace StateMachine
 {
     public class EmployeeStateControllerMB : StateControllerMBBase
     {

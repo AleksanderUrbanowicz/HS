@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Assets._Scripts.EditorUtilities
+namespace EditorUtilities
 {
 
     //[CustomPropertyDrawer(typeof(ParameterBase))]

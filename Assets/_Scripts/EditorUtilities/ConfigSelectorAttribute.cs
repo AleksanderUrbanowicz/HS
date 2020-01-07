@@ -1,12 +1,13 @@
-﻿using Assets._Scripts.Data.Configs;
-using Assets._Scripts.Data.Containers;
-using Assets._Scripts.Data.Definitions;
+﻿using Data;
+using Data.Containers;
+using Data.Definitions;
+using HotelSimulator.Data;
 using System;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace Assets._Scripts.EditorUtilities
+namespace EditorUtilities
 {
     public class ConfigSelectorAttribute : PropertyAttribute
     {

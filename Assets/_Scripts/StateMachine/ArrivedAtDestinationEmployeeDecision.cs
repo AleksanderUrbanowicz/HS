@@ -1,5 +1,6 @@
-﻿using UnityEngine;
-namespace Assets._Scripts.StateMachine
+﻿using StateMachine;
+using UnityEngine;
+namespace StateMachine
 {
     [CreateAssetMenu(fileName = "Decision_Employee_ArrivedAtDestination", menuName = "States/Decisions/Characters/Arrived At Destination Decision")]
 

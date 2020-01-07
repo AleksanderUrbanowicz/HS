@@ -1,6 +1,7 @@
-﻿using Assets._Scripts.Data.Containers;
-using Assets._Scripts.Gameplay.Managers;
-using Assets._Scripts.StateMachine;
+﻿using Data;
+using Data.Containers;
+using Managers;
+using StateMachine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using UnityEngine;
 #if UNITY_EDITOR
 
 #endif
-namespace Assets._Scripts.Data.Configs
+namespace HotelSimulator.Data
 {
     [CreateAssetMenu(fileName = "GameSettings", menuName = "Data/Settings/GameSettings")]
 

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets._Scripts.Gameplay.Managers
+namespace Managers
 {
     public interface IScriptableManager
     {

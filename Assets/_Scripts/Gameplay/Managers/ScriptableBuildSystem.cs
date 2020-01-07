@@ -1,8 +1,7 @@
-﻿using Assets._Scripts.Data.Containers;
-using Assets._Scripts.Gameplay.MonoBehaviourHookups;
+﻿using Data;
 using UnityEngine;
 
-namespace Assets._Scripts.Gameplay.Managers
+namespace Managers
 {
     [CreateAssetMenu(fileName = "BuildSystem", menuName = "ScriptableSystems/Build System/System Asset")]
     public class ScriptableBuildSystem : ScriptableSystem

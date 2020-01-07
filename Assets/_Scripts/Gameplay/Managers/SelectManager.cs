@@ -1,10 +1,11 @@
-﻿using Assets._Scripts.Data.Containers;
-using Assets._Scripts.Gameplay.Executors;
-using Assets._Scripts.Gameplay.Helpers;
+﻿using BaseLibrary.Managers;
+using Data;
+using Data.Containers;
+using StateMachine;
 using UnityEngine;
 
 
-namespace Assets._Scripts.Gameplay.Managers
+namespace Managers
 {
     [CreateAssetMenu(fileName = "SelectManager", menuName = "ScriptableSystems/Select System/Singleton Manager asset")]
     public class SelectManager : ScriptableSingleton<SelectManager>

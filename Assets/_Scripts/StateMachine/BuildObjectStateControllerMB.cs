@@ -1,7 +1,8 @@
-﻿using Assets._Scripts.Data.Containers;
-using Assets._Scripts.Gameplay.Managers;
+﻿using Data.Containers;
+using Managers;
 
-namespace Assets._Scripts.StateMachine
+ namespace StateMachine
+
 {
     public class BuildObjectStateControllerMB : StateControllerMBBase
     {

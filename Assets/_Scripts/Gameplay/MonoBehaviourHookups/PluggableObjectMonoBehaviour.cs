@@ -1,8 +1,9 @@
-﻿using Assets._Scripts.Data.Containers;
-using Assets._Scripts.StateMachine;
+﻿using Data;
+using Data.Containers;
+using StateMachine;
 using System.Collections.Generic;
 
-namespace Assets._Scripts.Gameplay.MonoBehaviourHookups
+namespace Managers
 {
     public class PluggableObjectMonoBehaviour : PluggableMonoBehaviour, IInteractable
     {

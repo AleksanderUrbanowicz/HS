@@ -1,8 +1,9 @@
-﻿using Assets._Scripts.Data.Containers;
+﻿using Data;
+using Data.Containers;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-namespace Assets._Scripts.Data.Configs
+namespace HotelSimulator.Data
 {
     public class ConfigBase : ScriptableObject
     {

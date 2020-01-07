@@ -1,4 +1,4 @@
-﻿namespace Assets._Scripts.StateMachine
+﻿namespace StateMachine
 {
     public abstract class EmployeeDecision : Decision
     {

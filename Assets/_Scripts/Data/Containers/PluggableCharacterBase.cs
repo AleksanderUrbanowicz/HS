@@ -1,7 +1,8 @@
-﻿using Assets._Scripts.Gameplay.MonoBehaviourHookups;
+﻿using Managers;
+using Managers;
 using UnityEngine;
 
-namespace Assets._Scripts.Data.Containers
+namespace Data
 {
     // [CreateAssetMenu(fileName = "CharacterData", menuName = "Characters/Character Data")]
 
