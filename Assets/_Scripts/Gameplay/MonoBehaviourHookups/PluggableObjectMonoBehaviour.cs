@@ -1,11 +1,11 @@
-﻿using Data;
-using Data.Containers;
+﻿using Data.Containers;
+using GeneralImplementations.Data;
 using StateMachine;
 using System.Collections.Generic;
 
 namespace Managers
 {
-    public class PluggableObjectMonoBehaviour : PluggableMonoBehaviour, IInteractable
+    public class PluggableObjectMonoBehaviour : PluggableMonoBehaviour//, IInteractable
     {
 
         public BuildObjectData buildObjectData;

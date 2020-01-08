@@ -1,6 +1,4 @@
-﻿using Data.Definitions;
-using EditorUtilities;
-using System;
+﻿using System;
 using UnityEngine;
 
 namespace Data
@@ -11,7 +9,7 @@ namespace Data
         public Material defaultMaterial;
         public Texture2D dirtyMask, damagedMask;
 
-        [ConfigSelector(ParamsSetKey = StringDefines.MaterialSetSelectorKey)]
+        //[ConfigSelector(ParamsSetKey = StringDefines.MaterialSetSelectorKey)]
         public string materialSet;
     }
 }

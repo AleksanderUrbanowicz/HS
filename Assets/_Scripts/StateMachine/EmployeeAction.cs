@@ -1,4 +1,6 @@
-﻿namespace StateMachine
+﻿using BaseLibrary.StateMachine;
+
+namespace StateMachine
 {
     public abstract class EmployeeAction : Action
     {

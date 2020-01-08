@@ -1,7 +1,8 @@
-﻿using Data;
+﻿using BaseLibrary.Managers;
+using Data;
 using Data.Containers;
-using Managers;
-
+using GeneralImplementations.Data;
+using GeneralImplementations.Managers;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,7 +27,7 @@ namespace Managers
             {
                 charactersTransform = new GameObject("Characters").transform;
             }
-            ScriptableSystemManager.Instance.spawnerHelper = this;
+            //ScriptableSystemManager.Instance.spawnerHelper = this;
         }
         public void SpawnSavedObject(ObjectData od)
         {
@@ -45,10 +46,10 @@ namespace Managers
             }
             mb.Init(od.buildObjectData, savedConditions);
             instance.name = od.buildObjectData.id;
-            instance.layer = LayerMask.NameToLayer(ScriptableSystemManager.Instance.gameSettings.scriptableBuildSystem.raycastData.layerString);
+         //   instance.layer = LayerMask.NameToLayer(ScriptableSystemManager.Instance.gameSettings.scriptableBuildSystem.raycastData.layerString);
 
-            instance.transform.parent = ScriptableSystemManager.Instance.buildSystemMonoBehaviour.buildObjectsParent;
-            instance.tag = ScriptableSystemManager.Instance.gameSettings.scriptableBuildSystem.raycastData.layerString;
+          //  instance.transform.parent = ScriptableSystemManager.Instance.buildSystemMonoBehaviour.buildObjectsParent;
+          //  instance.tag = ScriptableSystemManager.Instance.gameSettings.scriptableBuildSystem.raycastData.layerString;
 
         }
 

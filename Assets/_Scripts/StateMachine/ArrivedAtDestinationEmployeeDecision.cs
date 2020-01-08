@@ -1,4 +1,4 @@
-﻿using StateMachine;
+﻿using BaseLibrary.StateMachine;
 using UnityEngine;
 namespace StateMachine
 {

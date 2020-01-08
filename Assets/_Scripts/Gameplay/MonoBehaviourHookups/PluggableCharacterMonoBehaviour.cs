@@ -1,4 +1,4 @@
-﻿using Data;
+﻿using BaseLibrary.StateMachine;
 using Managers;
 using StateMachine;
 using System.Collections.Generic;
@@ -59,7 +59,7 @@ namespace Data
 
 
             //StateController.WayPointList = ScriptableSystemManager.Instance.patrolWaypoints;
-            StateController.interactablePoints = ScriptableSystemManager.Instance.interactablePoints;
+            //StateController.interactablePoints = ScriptableSystemManager.Instance.interactablePoints;
             StateController.currentState = pluggableCharacterData.characterRole.startState;
             if (AIStartEvent != null)
             {

@@ -1,4 +1,4 @@
-﻿using Managers;
+﻿using BaseLibrary.StateMachine;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -18,7 +18,7 @@ namespace StateMachine
             {
                 if (wayPointList == null)
                 {
-                    wayPointList = ScriptableSystemManager.Instance.patrolWaypoints;
+                   // wayPointList = ScriptableSystemManager.Instance.patrolWaypoints;
                 }
                 return wayPointList;
             }

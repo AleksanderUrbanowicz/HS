@@ -1,5 +1,5 @@
 ﻿
-using HotelSimulator.Data;
+using GeneralImplementations.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,7 +47,7 @@ namespace Data
 
             return parameters;
         }
-
+        /*
         public PluggableDynamicParams GetInteractableParams()
         {
             PluggableDynamicParams par = new PluggableDynamicParams();
@@ -64,6 +64,7 @@ namespace Data
 
             return par;
         }
+        */
     }
     [Serializable]
     public class PluggableParams
@@ -120,7 +121,7 @@ namespace Data
             }
             return selected;
         }
-
+        /*
         public PluggableParams GetInteractableParams()
         {
             PluggableParams par = new PluggableParams();
@@ -139,7 +140,7 @@ namespace Data
 
 
 
-
+    */
 
 
         public void Add(ParameterBase parameterBase)

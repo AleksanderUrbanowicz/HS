@@ -1,6 +1,4 @@
-﻿using Data.Definitions;
-using EditorUtilities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 namespace Data
 {
@@ -11,10 +9,10 @@ namespace Data
     {
         public string id;
 
-        [ConfigSelector(ParamsSetKey = StringDefines.MaterialTypeSelectorKey)]
+        //[ConfigSelector(ParamsSetKey = StringDefines.MaterialTypeSelectorKey)]
         public string materialType;
 
-        [ConfigSelector(ParamsSetKey = StringDefines.ObjectTypeSelectorKey)]
+        //[ConfigSelector(ParamsSetKey = StringDefines.ObjectTypeSelectorKey)]
 
         public string objectType;
 

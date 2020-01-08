@@ -1,6 +1,5 @@
 ﻿using Data;
-using Data.Containers;
-using HotelSimulator.Data;
+
 using UnityEngine;
 
 namespace Managers
@@ -12,13 +11,13 @@ namespace Managers
         public void Awake()
         {
             //    Debug.Log("Awake:" + name);
-            Config.RegisterPluggable(this);
+          //  Config.RegisterPluggable(this);
         }
 
         public void OnDestroy()
         {
             //   Debug.Log("OnDestroy:" + name );
-            Config.UnregisterPluggable(this);
+          //  Config.UnregisterPluggable(this);
         }
 
     }
