@@ -1,13 +1,13 @@
 ﻿using BaseLibrary.Managers;
-using Data.Definitions;
+using Managers;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Data.Containers
+namespace Data
 {
     [System.Serializable]
     [CreateAssetMenu(fileName = "NewBuildObjectData", menuName = "ScriptableSystems/Build System/Build Object Data")]
-    public class BuildObjectData : ScriptableObject, ISpawnable
+    public class BuildObjectData : ScriptableObject, ISpawnableBuildObject
     {
 
         public string id;
@@ -52,9 +52,51 @@ namespace Data.Containers
         }
 
 
+        GameObject ISpawnable.GetPrefab
+        {
+            get
+            {
+                return objectPrefab;
+            }
+        }
 
-        GameObject ISpawnable.GetPrefab => objectPrefab;
+        string ISpawnable.GetID
+        {
+            get
+            {
+                return id;
+            }
+        }
 
-        string ISpawnable.GetID => id;
+        public Vector3 GetOrientation
+        {
+            get
+            {
+                return orientationVector;
+            }
+        }
+
+        public Vector3 GetGridSize
+        {
+            get
+            {
+                return gridSize;
+            }
+        }
+
+        public Vector3 GetActualSize
+        {
+            get
+            {
+                return actualSize;
+            }
+        }
+        public Vector3 GetOffset
+        {
+            get
+            {
+                return offset;
+            }
+        }
     }
 }

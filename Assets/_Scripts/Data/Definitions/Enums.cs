@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Data.Definitions
+namespace Data
 {
     public enum ObjectOrientation
     {
