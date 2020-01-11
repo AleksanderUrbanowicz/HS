@@ -1,24 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &1116857428711531404
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6258080084422462676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3f44da597294424686f95795474578d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  totalParams:
-    activeParameters:
-    - id: Receptionist
-      value: 0
-  buildObjectData: {fileID: 0}
-  currentConditions: []
---- !u!1001 &2736156368762164701
+--- !u!1001 &3939971195183144319
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -28,7 +10,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 9a89971e2fde83347865e074fdc8805d,
         type: 3}
       propertyPath: m_Name
-      value: Chair_prefab
+      value: Chair
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 9a89971e2fde83347865e074fdc8805d,
         type: 3}
@@ -87,9 +69,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a89971e2fde83347865e074fdc8805d, type: 3}
---- !u!1 &6258080084422462676 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 9a89971e2fde83347865e074fdc8805d,
-    type: 3}
-  m_PrefabInstance: {fileID: 2736156368762164701}
-  m_PrefabAsset: {fileID: 0}

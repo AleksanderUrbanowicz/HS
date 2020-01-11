@@ -4,7 +4,7 @@ public class Scripts : IExecutor
 {
     public void Execute()
     {
-        
+
     }
 
 }

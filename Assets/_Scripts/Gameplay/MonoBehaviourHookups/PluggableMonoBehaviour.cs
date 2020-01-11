@@ -11,13 +11,13 @@ namespace Managers
         public void Awake()
         {
             //    Debug.Log("Awake:" + name);
-          //  Config.RegisterPluggable(this);
+            //  Config.RegisterPluggable(this);
         }
 
         public void OnDestroy()
         {
             //   Debug.Log("OnDestroy:" + name );
-          //  Config.UnregisterPluggable(this);
+            //  Config.UnregisterPluggable(this);
         }
 
     }

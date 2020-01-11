@@ -1,5 +1,5 @@
 ﻿using BaseLibrary.Managers;
-using Managers;
+using GeneralImplementations.Data;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -98,5 +98,11 @@ namespace Data
                 return offset;
             }
         }
+
+        public ScriptableObject GetScriptableObject => this as ScriptableObject;
+
+        public LayerMask GetObstacleLayerMask => obstacleLayers;
+
+        public LayerMask GetBuildLayerMask => layersToBuildOn;
     }
 }

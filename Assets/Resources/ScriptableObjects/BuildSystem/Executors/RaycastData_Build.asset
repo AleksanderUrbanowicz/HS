@@ -12,15 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0c098d12c7a8ed4c96d5e33db516e01, type: 3}
   m_Name: RaycastData_Build
   m_EditorClassIdentifier: 
-  layerString: 
   defaultLayerToScan:
     serializedVersion: 2
-    m_Bits: 0
-  targetTag: 
-  raycastMaxDistance: 0
+    m_Bits: 2097152
+  targetTag: MainCamera
+  raycastMaxDistance: 15
   hitMissEvents:
-    id: 
-    scriptableEventTrue: {fileID: 0}
-    scriptableEventFalse: {fileID: 0}
-  raycastInterval: 0
+    id: BuildRaycastEvents
+    scriptableEventTrue: {fileID: 11400000, guid: 8bedb4dfcafdb614e96ff35daa4eb216,
+      type: 2}
+    scriptableEventFalse: {fileID: 11400000, guid: bce1ecd4353050e47869f26cadee86f5,
+      type: 2}
+  raycastInterval: 60
   stopAfterHit: 0

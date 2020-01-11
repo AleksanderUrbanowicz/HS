@@ -18,7 +18,7 @@ namespace StateMachine
             {
                 if (wayPointList == null)
                 {
-                   // wayPointList = ScriptableSystemManager.Instance.patrolWaypoints;
+                    // wayPointList = ScriptableSystemManager.Instance.patrolWaypoints;
                 }
                 return wayPointList;
             }

@@ -15,8 +15,8 @@ namespace StateMachine
             BuildObjectStateControllerMB _controller = controller as BuildObjectStateControllerMB;
             if (_controller != null)
             {
-               // IInteractable interactable = _controller.gameObject.GetComponent<IInteractable>() as IInteractable;
-               /// return interactable != null;
+                // IInteractable interactable = _controller.gameObject.GetComponent<IInteractable>() as IInteractable;
+                /// return interactable != null;
             }
             return false;
         }

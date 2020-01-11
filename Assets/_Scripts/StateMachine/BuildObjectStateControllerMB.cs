@@ -15,8 +15,8 @@ namespace StateMachine
 
         public void Init(BuildObjectData _buildObjectData)
         {
-          //  currentState = ScriptableSystemManager.Instance.gameSettings.buildObjectStartState;
-         //   remainState = ScriptableSystemManager.Instance.gameSettings.remainInState;
+            //  currentState = ScriptableSystemManager.Instance.gameSettings.buildObjectStartState;
+            //   remainState = ScriptableSystemManager.Instance.gameSettings.remainInState;
             paramDecreaseRate = 0.01f;
             paramValue = 100.0f;
         }

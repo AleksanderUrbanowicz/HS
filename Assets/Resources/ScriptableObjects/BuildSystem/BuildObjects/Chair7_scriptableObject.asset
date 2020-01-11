@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 321c6482f6a60434aba91a4c94e1712d, type: 3}
-  m_Name: Chair_scriptableObject
+  m_Script: {fileID: 11500000, guid: c651b00daff92aa438fc2e3b7ba10b60, type: 3}
+  m_Name: Chair7_scriptableObject
   m_EditorClassIdentifier: 
-  id: Chair
-  objectPrefab: {fileID: 6258080084422462676, guid: 542177b529316884497b094fe1c4b74e,
+  id: Chair7
+  objectPrefab: {fileID: 3896669571371778817, guid: fd57d9a91e492b3418977638dff3f884,
     type: 3}
   offset: {x: 0, y: 0, z: 0}
   actualSize: {x: 0.6137047, y: 1.678667, z: 0.6251695}
@@ -26,10 +26,9 @@ MonoBehaviour:
     m_Bits: 2097152
   obstacleLayers:
     serializedVersion: 2
-    m_Bits: 4196352
+    m_Bits: 2048
   collsionBoundsFraction: 0.95
   rotationStep: 90
   materialData: []
   pluggableDynamicParams:
-    activeParameters: []
-    passiveParameters: []
+    parameters: []

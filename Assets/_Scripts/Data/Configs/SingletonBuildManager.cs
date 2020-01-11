@@ -3,62 +3,52 @@ using BaseLibrary.StateMachine;
 using Data;
 using GeneralImplementations.Data;
 using GeneralImplementations.Managers;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 namespace Managers
 {
     [CreateAssetMenu(fileName = "Manager_Build", menuName = "Managers/ Singleton Build Manager")]
     public class SingletonBuildManager : ScriptableSingleton<SingletonBuildManager>
-    
     {
-     
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        public static void BeforeSceneLoad() { CreateSingletonInstance(); }
         private int currentBuildObjectIndex = 0;
-        
+        private bool isManagerActive;
+        public bool logs = true;
         private BuildObjectData[] buildObjectsData;
-        private BuildObjectData currentBuildObject;
-        
-        private Quaternion rotation;
-        private BuildPreviewExecutor buildPreviewExecutor;
-        public RaycastExecutor buildSystemRaycast;
-        public BoolEventListener hitMissListeners;
-
-        public RaycastData raycastData;
-        public PreviewData previewData;
-       // private RaycastExecutorData raycastExecutorData;
-
-        [Header("Debug and Gizmos")]
-        public bool logs = false;
-
-        public bool IsShowingPreview { get => BuildPreviewExecutor.isPreviewActive;  }
-        public BuildPreviewExecutor BuildPreviewExecutor 
-            { get 
-                { 
-                if(buildPreviewExecutor==null)
-                {
-                    buildPreviewExecutor = new BuildPreviewExecutor();
-                    buildPreviewExecutor.Init(previewData,CurrentBuildObject);
-                }
-                return buildPreviewExecutor; 
-            } set => buildPreviewExecutor = value; }
-
-        public BuildObjectData CurrentBuildObject { 
-            get {
-                return BuildObjectsData[CurrentBuildObjectIndex]; 
-            }
-            set => currentBuildObject = value; }
-
-        public int CurrentBuildObjectIndex 
-        { 
-            get 
+        public RaycastData rycastData;
+        [SerializeField] public PreviewData previewData;
+        [SerializeField] private RaycastExecutorData raycastExecutorData;
+        private MonoBehaviourHookup monoBehaviourHookup;
+        public bool IsShowingPreview { get => BuildPreviewExecutor.IsExecuting; }
+        public BuildPreviewExecutor BuildPreviewExecutor
+        {
+            get
             {
-           
-                
-                    return currentBuildObjectIndex; 
-            } set => currentBuildObjectIndex = value % BuildObjectsData.Length; }
-        public BuildObjectData[] BuildObjectsData { 
-            get {
+               
+                return MonoBehaviourHookup.buildPreviewExecutor;
+            }
+            set => MonoBehaviourHookup.buildPreviewExecutor = value;
+        }
+        public BuildObjectData CurrentBuildObject
+        {
+            get
+            {
+                return BuildObjectsData[CurrentBuildObjectIndex];
+            }
+
+        }
+        public int CurrentBuildObjectIndex
+        {
+            get
+            {
+                return currentBuildObjectIndex;
+            }
+            set => currentBuildObjectIndex = value % BuildObjectsData.Length;
+        }
+        public BuildObjectData[] BuildObjectsData
+        {
+            get
+            {
                 if (buildObjectsData == null || buildObjectsData.Length == 0)
                 {
 
@@ -67,68 +57,136 @@ namespace Managers
                     {
 
                         Debug.LogError("No build Objects");
-                        _MonoBehaviour.gameObject.SetActive(false);
+                        StopBuildManager();
+
                         return null;
                     }
                 }
-                return buildObjectsData; 
-            } set => buildObjectsData = value; }
+                return buildObjectsData;
+            }
+            set => buildObjectsData = value;
+        }
+        public RaycastExecutorData RaycastExecutorData { get { 
+                if(raycastExecutorData==null)
+                {
+                    raycastExecutorData = new RaycastExecutorData();
 
-        public void InitEventListeners()
+                }
+                return raycastExecutorData; } set => raycastExecutorData = value; }
+        public bool IsManagerActive
         {
-            hitMissListeners = new BoolEventListener("BuildRaycastHit", _MonoBehaviour.transform, raycastData.hitMissEvents.scriptableEventTrue, HandlePreviewHit, raycastData.hitMissEvents.scriptableEventFalse, HandlePreviewMiss);
+            get
+            {
+                return isManagerActive;
+            }
+
+            set
+            {
+
+                if (value != isManagerActive)
+                {
+                    isManagerActive = value;
+                    if (value)
+                    {
+                        StartBuildManager();
+                    }
+                    else
+                    {
+
+                        StopBuildManager();
+                    }
+                }
+
+            }
+}
+        public MonoBehaviourHookup MonoBehaviourHookup { get { 
+                if(monoBehaviourHookup==null)
+                {
+                    monoBehaviourHookup = _MonoBehaviour.GetComponent<MonoBehaviourHookup>();
+                }
+                return monoBehaviourHookup; } set => monoBehaviourHookup = value; }
+        public RaycastExecutor BuildSystemRaycast { get => MonoBehaviourHookup.buildSystemRaycast; set => MonoBehaviourHookup.buildSystemRaycast = value; }
+        public override void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                IsManagerActive = true;
+            }
+            if (Input.GetKeyDown(KeyCode.V))
+            {
+                IsManagerActive = false;
+            }
+        }
+        public override void Start()
+        {
+            Debug.LogError(" SingletonBuildManager.Start ID: " + CurrentBuildObject.id);
+            InitRaycaster();
+            InitPreviewExecutor(CurrentBuildObject);
+            // StartBuildManager();
 
         }
 
         public void InitRaycaster()
         {
-            buildSystemRaycast = _MonoBehaviour.gameObject.AddComponent<RaycastExecutor>();
-         
-            buildSystemRaycast.Init(raycastData);
+           // RaycastExecutorData = new RaycastExecutorData();
+            MonoBehaviourHookup.buildSystemRaycast = _MonoBehaviour.gameObject.AddComponent<RaycastExecutor>();
+
+            MonoBehaviourHookup.buildSystemRaycast.Init(rycastData);
+
+            MonoBehaviourHookup.buildSystemRaycast.hitMissListeners = new BoolEventListener("BuildRaycast", MonoBehaviourHookup.transform, rycastData.hitMissEvents.scriptableEventTrue, HandleBuildHit, rycastData.hitMissEvents.scriptableEventFalse, HandleBuildMiss);
+
+            
 
         }
-
-        public void StartBuildManager()
+        public void InitPreviewExecutor(ISpawnableBuildObject spawnableBuildObject)
         {
-            //BuildPreviewExecutor
+            //RaycastExecutorData = new RaycastExecutorData();
+            if (BuildPreviewExecutor == null)
+            {
+                BuildPreviewExecutor = _MonoBehaviour.gameObject.AddComponent<BuildPreviewExecutor>();
+
+            }
+
+            BuildPreviewExecutor.Init(previewData, spawnableBuildObject);
 
         }
+        public void StartBuildManager()
 
+        {
+            Debug.LogError("StartBuildManager");
+            //IsManagerActive = true;
+            MonoBehaviourHookup.buildSystemRaycast.StartExecute();
+           // BuildPreviewExecutor.StartExecute();
+           // _MonoBehaviour.gameObject.SetActive(true);
+
+        }
         void StopBuildManager()
         {
+            Debug.LogError("StoptBuildManager");
 
+            // IsManagerActive = false;
+            BuildPreviewExecutor.StopExecute();
+           // MonoBehaviourHookup.buildSystemRaycast.StopExecute();
+          //  _MonoBehaviour.gameObject.SetActive(false);
 
         }
-
-        public void InitPreview(ISpawnableBuildObject spawnableBuildObject)
+        
+        public void HandleBuildHit()
         {
-          //  BuildPreviewExecutor
-
-        }
-
-        public override void Update()
-        {
-            Debug.Log(" SingletonBuildManager");
-            
-        }
-
-
-        public void HandlePreviewHit()
-        {
-            if (logs) Debug.Log("HandlePreviewHit");
+            if (logs) Debug.Log("HandleBuildHit");
             // IsShowingPreview = true;
             BuildPreviewExecutor.StartExecute();
 
         }
-        public void HandlePreviewMiss()
+        public void HandleBuildMiss()
         {
-            if (logs) Debug.Log("HandlePreviewMiss");
+            if (logs) Debug.Log("HandleBuildMiss");
             BuildPreviewExecutor.StopExecute();
             // IsShowingPreview = false;
 
         }
 
-      
+
 
     }
 }
