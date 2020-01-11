@@ -61,5 +61,5 @@ crashlytics-build.properties
 
 
 # Submodules (symlinks)
-Plugins/
-Plugins.meta
+Submodules
+Submodules.meta

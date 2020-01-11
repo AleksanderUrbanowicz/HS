@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Managers
 {
     [CreateAssetMenu(fileName = "Manager_Select", menuName = "Managers/ Singleton Select Manager")]
-    public class SingletonSelectManager : ScriptableSingleton<SingletonSelectManager>
+    public class SingletonSelectManager : ScriptableSingleton<SingletonSelectManager, MonoBehaviourHookup>
     {
         //  public RaycastExecutor raycastExecutor;
         public RaycastData raycastData;

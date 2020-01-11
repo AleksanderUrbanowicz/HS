@@ -23,5 +23,5 @@ MonoBehaviour:
       type: 2}
     scriptableEventFalse: {fileID: 11400000, guid: bce1ecd4353050e47869f26cadee86f5,
       type: 2}
-  raycastInterval: 60
+  raycastInterval: 1
   stopAfterHit: 0

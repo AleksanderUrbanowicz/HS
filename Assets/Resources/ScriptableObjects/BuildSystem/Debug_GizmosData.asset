@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d256a5716ca5a4d887aa7b296c7981, type: 3}
+  m_Name: Debug_GizmosData
+  m_EditorClassIdentifier: 
+  mainAxisLength: 15
+  collisionNormal: {x: 0, y: 0, z: 0}
+  horizontalSmall:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 100
+    height: 45
+  horizontalMedium:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 150
+    height: 60
