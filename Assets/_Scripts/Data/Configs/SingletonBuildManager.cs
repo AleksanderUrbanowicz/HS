@@ -1,6 +1,5 @@
 ﻿using BaseLibrary.Managers;
 using BaseLibrary.StateMachine;
-using Data;
 using GeneralImplementations.Data;
 using GeneralImplementations.Managers;
 using UnityEngine;
@@ -20,7 +19,8 @@ namespace Managers
         private bool isManagerActive;
         public bool logs = true;
         private BuildManagerMonoBehaviourHookup monoBehaviourHookup;
-
+        //PreviewObject previewObject;
+        public PreviewObject PreviewObject { get => MonoBehaviourHookup.PreviewObject; set => MonoBehaviourHookup.PreviewObject = value; }
         public BuildManagerMonoBehaviourHookup MonoBehaviourHookup
         {
             get
@@ -33,16 +33,16 @@ namespace Managers
             }
             set => monoBehaviourHookup = value;
         }
-        public RaycastExecutor BuildSystemRaycast { get => MonoBehaviourHookup.buildSystemRaycast; set => MonoBehaviourHookup.buildSystemRaycast = value; }
+        public RaycastExecutor BuildSystemRaycast { get => MonoBehaviourHookup.BuildSystemRaycast; set => MonoBehaviourHookup.BuildSystemRaycast = value; }
 
         public BuildPreviewExecutor BuildPreviewExecutor
         {
             get
             {
 
-                return MonoBehaviourHookup.buildPreviewExecutor;
+                return MonoBehaviourHookup.BuildPreviewExecutor;
             }
-            set => MonoBehaviourHookup.buildPreviewExecutor = value;
+            set => MonoBehaviourHookup.BuildPreviewExecutor = value;
         }
 
         public bool IsManagerActive
@@ -71,7 +71,8 @@ namespace Managers
 
             }
         }
-    
+
+
 
         public override void Update()
         {
@@ -90,15 +91,15 @@ namespace Managers
 
         public void InitRaycaster()
         {
-            MonoBehaviourHookup.buildSystemRaycast = MonoBehaviourHookup.buildSystemRaycast != null ? MonoBehaviourHookup.buildSystemRaycast : monoBehaviourHookup.gameObject.AddComponent<RaycastExecutor>();
-            MonoBehaviourHookup.buildSystemRaycast.Init(rycastData);
-            MonoBehaviourHookup.buildSystemRaycast.hitMissListeners = new BoolEventListener("BuildRaycast", _MonoBehaviour.transform, rycastData.hitMissEvents.scriptableEventTrue, HandleBuildHit, rycastData.hitMissEvents.scriptableEventFalse, HandleBuildMiss);
+            MonoBehaviourHookup.BuildSystemRaycast = MonoBehaviourHookup.BuildSystemRaycast != null ? MonoBehaviourHookup.BuildSystemRaycast : monoBehaviourHookup.gameObject.AddComponent<RaycastExecutor>();
+            MonoBehaviourHookup.BuildSystemRaycast.Init(rycastData);
+            MonoBehaviourHookup.BuildSystemRaycast.hitMissListeners = new BoolEventListener("BuildRaycast", _MonoBehaviour.transform, rycastData.hitMissEvents.scriptableEventTrue, HandleBuildHit, rycastData.hitMissEvents.scriptableEventFalse, HandleBuildMiss);
 
         }
         public void InitPreviewExecutor(ISpawnableBuildObject spawnableBuildObject)
         {
-            MonoBehaviourHookup.buildPreviewExecutor = MonoBehaviourHookup.buildPreviewExecutor != null ? MonoBehaviourHookup.buildPreviewExecutor : monoBehaviourHookup.gameObject.AddComponent<BuildPreviewExecutor>();
-            MonoBehaviourHookup.buildPreviewExecutor.Init(spawnableBuildObject);
+            MonoBehaviourHookup.BuildPreviewExecutor = MonoBehaviourHookup.BuildPreviewExecutor != null ? MonoBehaviourHookup.BuildPreviewExecutor : monoBehaviourHookup.gameObject.AddComponent<BuildPreviewExecutor>();
+            MonoBehaviourHookup.BuildPreviewExecutor.Init(spawnableBuildObject);
 
         }
 
@@ -118,7 +119,7 @@ namespace Managers
         {
             Debug.LogError("StartBuildManager");
             BuildPreviewExecutor.TooglePreviewGameObject(true);
-            MonoBehaviourHookup.buildSystemRaycast.StartExecute();
+            MonoBehaviourHookup.BuildSystemRaycast.StartExecute();
 
         }
         void StopBuildManager()
@@ -127,7 +128,7 @@ namespace Managers
 
 
             BuildPreviewExecutor.TooglePreviewGameObject(false);
-            MonoBehaviourHookup.buildSystemRaycast.StopExecute();
+            MonoBehaviourHookup.BuildSystemRaycast.StopExecute();
 
         }
 

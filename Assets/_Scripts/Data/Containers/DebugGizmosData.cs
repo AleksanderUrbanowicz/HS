@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 [CreateAssetMenu(fileName = "Debug_GizmosData", menuName = "Data/ Debug Gizmos data")]
 
 public class DebugGizmosData : ScriptableObject

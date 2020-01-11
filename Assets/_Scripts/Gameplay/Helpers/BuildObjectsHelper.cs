@@ -1,7 +1,5 @@
 ﻿using Data;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Managers
@@ -14,7 +12,7 @@ namespace Managers
         public int currentBuildObjectIndex = 0;
         public BuildObjectData[] buildObjectsData;
 
-       // public BuildManagerMonoBehaviourHookup monoBehaviourHookup;
+        // public BuildManagerMonoBehaviourHookup monoBehaviourHookup;
 
         public BuildObjectData CurrentBuildObject
         {

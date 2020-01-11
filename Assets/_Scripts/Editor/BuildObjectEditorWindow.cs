@@ -1,8 +1,6 @@
 ﻿
 using Data;
 using Data.Containers;
-using Managers;
-using StateMachine;
 using UnityEditor;
 using UnityEngine;
 
@@ -116,8 +114,8 @@ namespace EditorUtilities
 
             GUILayout.Label("Settings:\nGridSize: " + gridSize + "\nSO path: " + scriptableObjectsPath + "\nSO file suffix: " + scriptableObjectSuffix + "\nBounds epsilon: " + boundsEpsilon + "\nprebfab path: " + prefabsPath + "\nprebfab suffix: " + prefabSuffix + "\n");
             defaultObstaclesLayer = EditorStaticTools.LayerMaskField("Default obstacles mask", defaultObstaclesLayer);
-            scriptableObjectsPath= GUILayout.TextField(scriptableObjectsPath);
-            prefabsPath= GUILayout.TextField(prefabsPath);
+            scriptableObjectsPath = GUILayout.TextField(scriptableObjectsPath);
+            prefabsPath = GUILayout.TextField(prefabsPath);
             GUILayout.EndArea();
         }
 
@@ -185,8 +183,8 @@ namespace EditorUtilities
 
                 if (GUILayout.Button("Create Prefab"))
                 {
-                   // sceneObject.AddComponent<PluggableObjectMonoBehaviour>();
-                   // sceneObject.AddComponent<BuildObjectStateControllerMB>();
+                    // sceneObject.AddComponent<PluggableObjectMonoBehaviour>();
+                    // sceneObject.AddComponent<BuildObjectStateControllerMB>();
                     string correctPath = prefabsPath + buildObjectData.id + prefabSuffix + ".prefab";
                     buildObjectData.objectPrefab = PrefabUtility.SaveAsPrefabAsset(sceneObject, correctPath);
 

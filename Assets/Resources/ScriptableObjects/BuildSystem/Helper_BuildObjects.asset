@@ -16,3 +16,5 @@ MonoBehaviour:
   buildObjectsData:
   - {fileID: 11400000, guid: 60af1e16faf59fe4f8b11be13e20e612, type: 2}
   - {fileID: 11400000, guid: 08f4fe20f273d104e8d1cb16c50602e7, type: 2}
+  - {fileID: 11400000, guid: c6c5a9c16fd179b49a428071135bb683, type: 2}
+  - {fileID: 11400000, guid: 3a9f4420c1d5fcc4a99fab99bdc9830c, type: 2}

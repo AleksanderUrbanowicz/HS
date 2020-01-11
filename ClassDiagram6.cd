@@ -1,70 +1,84 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Managers.SingletonBuildManager">
-    <Position X="23" Y="4.5" Width="4.75" />
+    <Position X="21" Y="10.5" Width="4.75" />
     <TypeIdentifier>
-      <HashCode>QAQAEJgAUGAQEQIAAAAAAAEAwAIIAAAAAEABAAAAAAA=</HashCode>
+      <HashCode>QAQAEJgAUGAQEQIAAAAAAAEAwAIIAAQAAEABAAAAAAA=</HashCode>
       <FileName>Assets\_Scripts\Data\Configs\SingletonBuildManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Managers.BuildObjectsHelper">
-    <Position X="14.75" Y="7.5" Width="2" />
+    <Position X="18.25" Y="8.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAIAAAAAAAAAAACAAAIAQAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>Assets\_Scripts\Gameplay\Helpers\BuildObjectsHelper.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Managers.BuildManagerMonoBehaviourHookup">
-    <Position X="22.5" Y="1.25" Width="2.75" />
+    <Position X="14.5" Y="9" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAQAAAAQAAAAAAABAAAAAAIAAAACEAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAQAAAAQAAAAAAABAgAAAAIQAAACBAAAAAAA=</HashCode>
       <FileName>Assets\Submodules\Library_Implementations\Scripts\Managers\BuildManagerMonoBehaviourHookup.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Managers.BuildPreviewExecutor">
-    <Position X="10" Y="5" Width="2.25" />
+    <Position X="8.5" Y="14.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAQAIAAABAAEAkQEAAAAAAJAAgAAAA0hAAAGAQAABWA=</HashCode>
+      <HashCode>AAQAIAAABAAEAkQEAAAAAAJAAgAAAAwhAAAGAQAABWA=</HashCode>
       <FileName>Assets\Submodules\Library_Implementations\Scripts\Managers\BuildPreviewExecutor.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="GeneralImplementations.Data.PreviewData">
-    <Position X="12.75" Y="7.25" Width="1.75" />
+    <Position X="21" Y="9.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACAACAAAAAAAAAAAAAAEAAAIAAAAIAAAgIAAAQAAAA=</HashCode>
+      <HashCode>AACAACAAAAAAAAAAAAAAEAAAAAAAAIAAAgIAAAQAAAA=</HashCode>
       <FileName>Assets\Submodules\Library_Implementations\Scripts\Data\PreviewData.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GeneralImplementations.Data.PreviewObject">
-    <Position X="17" Y="6.25" Width="2" />
+    <Position X="12.75" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAEAAAARAAAAAAhAAAAAAAICAgAAAAIAAABAAAA=</HashCode>
       <FileName>Assets\Submodules\Library_Implementations\Scripts\Data\PreviewObject.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GeneralImplementations.Data.RaycastData">
-    <Position X="18" Y="1.25" Width="1.75" />
+    <Position X="16.75" Y="14" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAIAAAAABAAAAQAAAAAAQAAAAAABBAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAIAAAAABAAAAQAAAAAAQAAAAAABAAAAAAAAA=</HashCode>
       <FileName>Assets\Submodules\Library_Implementations\Scripts\Data\RaycastData.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GeneralImplementations.Managers.RaycastExecutor">
-    <Position X="15.5" Y="0.5" Width="2" />
+    <Position X="11.5" Y="14.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAQEAJAAAAAQAAQAAAgQAABAABAAAAgAAAACAAAABAA=</HashCode>
+      <HashCode>AAAEKIAAAAAAAAQAAAAQAABAABAAAAgAAAACAAAABAA=</HashCode>
       <FileName>Assets\Submodules\Library_Implementations\Scripts\Managers\RaycastExecutor.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="BaseLibrary.Managers.UpdateExecutorBase">
-    <Position X="11.5" Y="0.5" Width="2" />
+    <Position X="10" Y="9.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAQAABAAAAAQgAQAgIgAAACAAgAAAAkAAAAAAAAQAgA=</HashCode>
       <FileName>Assets\Submodules\Library_Implementations\Scripts\Managers\UpdateExecutorBase.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
+  <Interface Name="GeneralImplementations.Managers.IPreviewExecutor">
+    <Position X="17.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAABAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAACA=</HashCode>
+      <FileName>Assets\Submodules\Library_Implementations\Scripts\Managers\IPreviewExecutor.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GeneralImplementations.Managers.IRaycastExecutor">
+    <Position X="19.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Assets\Submodules\Library_Implementations\Scripts\Managers\IRaycastExecutor.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
