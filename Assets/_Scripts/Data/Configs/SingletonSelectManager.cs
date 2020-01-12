@@ -12,8 +12,8 @@ namespace Managers
         public RaycastData raycastData;
         //  public BoolEventListener hitMissListeners;
         public int n = 3;
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-        public static void BeforeSceneLoad() { CreateSingletonInstance(); }
+       // [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+       // public static void BeforeSceneLoad() { CreateSingletonInstance(); }
 
         public void Init()
         {

@@ -19,7 +19,7 @@ namespace Managers
         private bool isManagerActive;
         public bool logs = true;
         private BuildManagerMonoBehaviourHookup monoBehaviourHookup;
-        //PreviewObject previewObject;
+        
         public PreviewObject PreviewObject { get => MonoBehaviourHookup.PreviewObject; set => MonoBehaviourHookup.PreviewObject = value; }
         public BuildManagerMonoBehaviourHookup MonoBehaviourHookup
         {
@@ -71,9 +71,6 @@ namespace Managers
 
             }
         }
-
-
-
         public override void Update()
         {
             GetDebugInput();
@@ -88,7 +85,6 @@ namespace Managers
 
         }
 
-
         public void InitRaycaster()
         {
             MonoBehaviourHookup.BuildSystemRaycast = MonoBehaviourHookup.BuildSystemRaycast != null ? MonoBehaviourHookup.BuildSystemRaycast : monoBehaviourHookup.gameObject.AddComponent<RaycastExecutor>();
@@ -102,7 +98,6 @@ namespace Managers
             MonoBehaviourHookup.BuildPreviewExecutor.Init(spawnableBuildObject);
 
         }
-
         public void GetDebugInput()
         {
             if (Input.GetKeyDown(KeyCode.B))
@@ -128,6 +123,7 @@ namespace Managers
 
 
             BuildPreviewExecutor.TooglePreviewGameObject(false);
+            MonoBehaviourHookup.BuildPreviewExecutor.StopExecute();
             MonoBehaviourHookup.BuildSystemRaycast.StopExecute();
 
         }
