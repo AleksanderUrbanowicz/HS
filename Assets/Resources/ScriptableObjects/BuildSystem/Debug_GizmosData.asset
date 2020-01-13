@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Debug_GizmosData
   m_EditorClassIdentifier: 
   mainAxisLength: 15
+  cornerAxisVector: {x: -3.8, y: 0, z: -5}
   collisionNormal: {x: 0, y: 0, z: 0}
   horizontalSmall:
     serializedVersion: 2

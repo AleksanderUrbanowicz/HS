@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildObjectsHelper: {fileID: 11400000, guid: a6c13bb1400c4b145ab42e9c736832dc, type: 2}
   gizmosData: {fileID: 11400000, guid: 76aaba51c48253442b09e496c5d7dbe1, type: 2}
-  rycastData: {fileID: 11400000, guid: a7791469583466240aecfa1515095076, type: 2}
+  raycastData: {fileID: 11400000, guid: a7791469583466240aecfa1515095076, type: 2}
   previewData: {fileID: 11400000, guid: 3bcba799594c36f40b93b334f119c25a, type: 2}
   logs: 1

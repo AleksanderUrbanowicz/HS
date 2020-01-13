@@ -21,7 +21,7 @@ MonoBehaviour:
       type: 2}
     scriptableEventFalse: {fileID: 11400000, guid: 529e8dbeba2e8c245b9d8f390f2c2ecd,
       type: 2}
-  displayInterval: 2
-  offset: 1
+  offset: -6.9
   gridSize: 0.5
-  previewSnapFactor: 0.25
+  previewSnapFactor: 1
+  gridSizeEpsilon: 0.1

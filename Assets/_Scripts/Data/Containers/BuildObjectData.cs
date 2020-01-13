@@ -68,41 +68,12 @@ namespace Data
             }
         }
 
-        public Vector3 GetOrientation
-        {
-            get
-            {
-                return orientationVector;
-            }
-        }
 
-        public Vector3 GetGridSize
-        {
-            get
-            {
-                return gridSize;
-            }
-        }
 
-        public Vector3 GetActualSize
-        {
-            get
-            {
-                return actualSize;
-            }
-        }
-        public Vector3 GetOffset
-        {
-            get
-            {
-                return offset;
-            }
-        }
 
         public ScriptableObject GetScriptableObject => this as ScriptableObject;
 
-        public LayerMask GetObstacleLayerMask => obstacleLayers;
 
-        public LayerMask GetBuildLayerMask => layersToBuildOn;
+        BuildObjectData ISpawnableBuildObject.BuildObjectData => this;
     }
 }

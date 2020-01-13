@@ -23,7 +23,7 @@ MonoBehaviour:
   objectOrientation: 1
   layersToBuildOn:
     serializedVersion: 2
-    m_Bits: 2097152
+    m_Bits: 6291456
   obstacleLayers:
     serializedVersion: 2
     m_Bits: 2048

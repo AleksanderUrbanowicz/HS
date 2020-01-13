@@ -12,12 +12,12 @@ namespace Managers
         public RaycastData raycastData;
         //  public BoolEventListener hitMissListeners;
         public int n = 3;
-       // [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-       // public static void BeforeSceneLoad() { CreateSingletonInstance(); }
+        // [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        // public static void BeforeSceneLoad() { CreateSingletonInstance(); }
 
         public void Init()
         {
-            Debug.Log(GetType().Name + " Init." + Instance.name);
+            //Debug.Log(GetType().Name + " Init." + Instance.name);
             n++;
         }
 
@@ -25,8 +25,8 @@ namespace Managers
 
         public override void MonoBehaviourAwake()
         {
-            Debug.Log(GetType().Name + " Awake.");
-            n++;
+            // Debug.Log(GetType().Name + " Awake.");
+            // n++;
             Init();
         }
 
