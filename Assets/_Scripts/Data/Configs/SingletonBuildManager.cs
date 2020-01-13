@@ -27,7 +27,9 @@ namespace Managers
             {
                 if (monoBehaviourHookup == null)
                 {
+                    Debug.LogError("BEFORE SingletonBuildManager.MonoBehaviourHookup == null");
                     monoBehaviourHookup = _MonoBehaviour.GetComponent<BuildManagerMonoBehaviourHookup>();
+                    Debug.LogError("AFTER SingletonBuildManager.MonoBehaviourHookup :"+monoBehaviourHookup.name);
                 }
                 return monoBehaviourHookup;
             }
@@ -77,7 +79,7 @@ namespace Managers
         }
         public override void Start()
         {
-            Debug.LogError(" SingletonBuildManager.Start ID: " + BuildObjectsHelper.CurrentBuildObject.id);
+           // Debug.LogError(" SingletonBuildManager.Start ID: " + BuildObjectsHelper.CurrentBuildObject.id);
             InitRaycaster();
             InitPreviewExecutor();
             isManagerActive = false;
@@ -85,6 +87,7 @@ namespace Managers
         }
         public void InitRaycaster()
         {
+            Debug.Log(" SingletonBuildManager.InitRaycaster " );
             MonoBehaviourHookup.BuildSystemRaycast = MonoBehaviourHookup.BuildSystemRaycast != null ? MonoBehaviourHookup.BuildSystemRaycast : monoBehaviourHookup.gameObject.AddComponent<RaycastExecutor>();
             MonoBehaviourHookup.BuildSystemRaycast.Init();
             MonoBehaviourHookup.BuildSystemRaycast.hitMissListeners = new BoolEventListener("BuildRaycast", _MonoBehaviour.transform, raycastData.hitMissEvents.scriptableEventTrue, HandleBuildHit, raycastData.hitMissEvents.scriptableEventFalse, HandleBuildMiss);
@@ -92,11 +95,11 @@ namespace Managers
         }
         public void InitPreviewExecutor()
         {
-
+            Debug.Log(" SingletonBuildManager.InitPreviewExecutor ");
             MonoBehaviourHookup.BuildPreviewExecutor = MonoBehaviourHookup.BuildPreviewExecutor != null ? MonoBehaviourHookup.BuildPreviewExecutor : monoBehaviourHookup.gameObject.AddComponent<BuildPreviewExecutor>();
             MonoBehaviourHookup.BuildPreviewExecutor.Init(BuildObjectsHelper.CurrentBuildObject);
-            // MonoBehaviourHookup.BuildPreviewExecutor.llis = new BoolEventListener("Preview_GridSnap", _MonoBehaviour.transform, previewData.hitMissEvents.scriptableEventTrue, HandleBuildHit, previewData .hitMissEvents.scriptableEventFalse, HandleBuildMiss);
-
+            // MonoBehaviourHookup.RaycastHitInterpreter = MonoBehaviourHookup.RaycastHitInterpreter != null ? MonoBehaviourHookup.RaycastHitInterpreter : monoBehaviourHookup.gameObject.AddComponent<PreviewRaycastHitInterpreter>();
+            //  MonoBehaviourHookup.RaycastHitInterpreter PreviewRaycastHitInterpreter
         }
         public void GetDebugInput()
         {

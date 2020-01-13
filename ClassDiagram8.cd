@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Managers.SingletonBuildManager">
+    <Position X="0.5" Y="0.5" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>QAQAEBgAUGAQEQIAAAAAABEAwAIIAAAAAEABAAAQAAA=</HashCode>
+      <FileName>Assets\_Scripts\Data\Configs\SingletonBuildManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Managers.BuildObjectsHelperData" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAACAAAIAQAAAAAQAAAACAACCA=</HashCode>
+      <FileName>Assets\_Scripts\Gameplay\Helpers\BuildObjectsHelperData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Managers.BuildManagerMonoBehaviourHookup">
+    <Position X="11.25" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAQAAAAAAABAgAAAAIAAAACBAAAAAAA=</HashCode>
+      <FileName>Assets\Submodules\Library_Implementations\Scripts\Managers\BuildManagerMonoBehaviourHookup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Managers.BuildPreviewExecutor">
+    <Position X="8.75" Y="3.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAQEAAAAAAAAAWQAAAEAAABgAgAAAAgCAAACAAAgBCA=</HashCode>
+      <FileName>Assets\Submodules\Library_Implementations\Scripts\Managers\BuildPreviewExecutor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GeneralImplementations.Managers.PreviewHelper">
+    <Position X="6.5" Y="5.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAhAAAAhAAAAQAAAAAAQDAEAAIAAAAAA=</HashCode>
+      <FileName>Assets\_Scripts\Gameplay\Helpers\PreviewHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeneralImplementations.Managers.PreviewSpawner" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAhAAAAAASAAQAACAAAAAAAAAAAAQAAEAEAAAAAAA=</HashCode>
+      <FileName>Assets\_Scripts\Gameplay\Helpers\PreviewSpawner.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GeneralImplementations.Managers.RaycastExecutor">
+    <Position X="13.5" Y="3.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAHQAAAAAAABAAhAAAAgAAAACAAAgBAA=</HashCode>
+      <FileName>Assets\Submodules\Library_Implementations\Scripts\Managers\RaycastExecutor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GeneralImplementations.Data.PreviewData" Collapsed="true">
+    <Position X="0.5" Y="8" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AACCACAAAAAAAAAAAAAAEAAAAAAAAIAAAgIAAEAAAAA=</HashCode>
+      <FileName>Assets\Submodules\Library_Implementations\Scripts\Data\PreviewData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeneralImplementations.Data.RaycastData" Collapsed="true">
+    <Position X="0.5" Y="7.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAABAAAAQAAAAAAQAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Assets\Submodules\Library_Implementations\Scripts\Data\RaycastData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseLibrary.Managers.UpdateExecutorBase">
+    <Position X="11.5" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAABAAAAAQgAQAgIgAAACAAgAAAAkAAAAAAAAQAgA=</HashCode>
+      <FileName>Assets\Submodules\Library_Implementations\Scripts\Managers\UpdateExecutorBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

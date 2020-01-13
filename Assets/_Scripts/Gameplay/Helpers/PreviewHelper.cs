@@ -4,14 +4,15 @@ using UnityEngine;
 
 namespace GeneralImplementations.Managers
 {
-    public class PreviewHelper
+    public class PreviewHelper : MonoBehaviour
     {
         public PreviewSpawner previewSpawner;
         public ISpawnableBuildObject spawnable;
         public PreviewBuildObject previewBuildObject;
-        public Vector3 lastPoint;
-        public Vector3 lastMappedPoint;
-        public float userRotationF;
+        //public Vector3 lastPoint;
+       // public Vector3 lastMappedPoint;
+        //public PreviewRaycastHitInterpreter raycastHitInterpreter;
+       
 
         // public RaycastHit RaycastHitOutput { get => MonoBehaviourHookup.RaycastHitOutput; }
         public PreviewData PreviewData { get => SingletonBuildManager.Instance.previewData; set => SingletonBuildManager.Instance.previewData = value; }
@@ -19,55 +20,51 @@ namespace GeneralImplementations.Managers
 
         private void ChangePreview(ISpawnableBuildObject _spawnable)
         {
+            Debug.LogError("PreviewHelper.ChangePreview(ISpawnableBuildObject)");
             spawnable = _spawnable;
             previewSpawner.CreateInstance(spawnable);
         }
 
         public PreviewHelper(ISpawnableBuildObject _spawnable)
         {
+            Debug.LogError("PreviewHelper(ISpawnableBuildObject)");
+
             this.spawnable = _spawnable;
-            previewSpawner = new PreviewSpawner(_spawnable);
+            previewSpawner = SingletonBuildManager.Instance.BuildPreviewExecutor.gameObject.AddComponent<PreviewSpawner>();
         }
 
+        public PreviewHelper()
 
-
-        public void MapPreviewToGrid(Vector3 _point, Vector3 _normal, Vector3 orientationVector = new Vector3())
         {
-
-            //  Debug.LogError("MapPreviewToGrid");
-            Quaternion Rotation;
-            Vector3 CurrentPosition;
-            // collisionNormal = _normal;
-            if (orientationVector == default)
+            Debug.LogError("PreviewHelper()");
+            if (previewSpawner==null)
             {
-                orientationVector.y = 1.0f;
+
 
             }
-            Rotation = Quaternion.FromToRotation(orientationVector, _normal);
-            Rotation *= Quaternion.Euler(orientationVector * userRotationF);
 
-            CurrentPosition = _point;
-            if (PreviewData.gridSize > PreviewData.gridSizeEpsilon)
-            {
-                CurrentPosition -= Vector3.one * PreviewData.offset;
-                CurrentPosition /= PreviewData.gridSize;
-                CurrentPosition = new Vector3(Mathf.Round(CurrentPosition.x), Mathf.Round(CurrentPosition.y), Mathf.Round(CurrentPosition.z));
-                CurrentPosition *= PreviewData.gridSize;
-                CurrentPosition += Vector3.one * PreviewData.offset;
-            }
+        }
+        public void Awake()
+
+        {
+            Debug.LogError("PreviewHelper.Awake");
+            previewSpawner = SingletonBuildManager.Instance.BuildPreviewExecutor.gameObject.AddComponent<PreviewSpawner>();
 
 
-            PreviewObject.transform.position = CurrentPosition;
+        }
 
-            PreviewObject.transform.rotation = Rotation;
-            lastMappedPoint = CurrentPosition;
-            PreviewData.gridSnapEvent.Raise();
+        public void Start()
+
+        {
+            Debug.LogError("PreviewHelper.Start");
+
+
         }
         public void UpdateCurrentPreview()
         {
             Debug.LogError("UpdateCurrentPreviewEvent");
 
-            ChangePreview(SingletonBuildManager.Instance.BuildObjectsHelper.CurrentBuildObject);
+           // ChangePreview(SingletonBuildManager.Instance.BuildObjectsHelper.CurrentBuildObject);
 
         }
 

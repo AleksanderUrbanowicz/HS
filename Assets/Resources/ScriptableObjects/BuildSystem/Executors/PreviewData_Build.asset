@@ -15,13 +15,8 @@ MonoBehaviour:
   availableColor: {r: 0, g: 1, b: 0, a: 0.2}
   unavailableColor: {r: 1, g: 0, b: 0, a: 0.2}
   previewMaterial: {fileID: 2100000, guid: abcdbd2deb61ba04eb083079534c7bd7, type: 2}
-  buildAvailableEvents:
-    id: PreviewRaycastEvents
-    scriptableEventTrue: {fileID: 11400000, guid: fbcb0a7c85361a34a9bd57fca314ad39,
-      type: 2}
-    scriptableEventFalse: {fileID: 11400000, guid: 529e8dbeba2e8c245b9d8f390f2c2ecd,
-      type: 2}
-  offset: -6.9
+  gridSnapEvent: {fileID: 0}
+  offset: 1
   gridSize: 0.5
   previewSnapFactor: 1
   gridSizeEpsilon: 0.1
