@@ -11,95 +11,127 @@ namespace Managers
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         public static void BeforeSceneLoad() { CreateSingletonInstance(); }
         [SerializeField]
-        private BuildObjectsHelperData buildObjectsHelper;
+        public BuildObjectsHelperData buildObjectsHelper;
         public DebugGizmosData gizmosData;
         public RaycastData raycastData;
         public PreviewData previewData;
-
         private bool isManagerActive;
-        public bool logs = true;
         private BuildManagerMonoBehaviourHookup monoBehaviourHookup;
 
-        // public PreviewBuildObject PreviewObject { get => BuildPreviewExecutor.PreviewObject;  }
-        public BuildManagerMonoBehaviourHookup MonoBehaviourHookup
+        public static BuildObjectsHelperData BuildObjectsHelper { get => Instance.buildObjectsHelper; set => Instance.buildObjectsHelper = value; }
+        public static DebugGizmosData GizmosData { get => Instance.gizmosData; set => Instance.gizmosData = value; }
+        public static RaycastData RaycastData { get => Instance.raycastData; set => Instance.raycastData = value; }
+        public static PreviewData PreviewData { get => Instance.previewData; set => Instance.previewData = value; }
+        public static bool IsManagerActive
         {
             get
             {
-                if (monoBehaviourHookup == null)
-                {
-                    Debug.LogError("BEFORE SingletonBuildManager.MonoBehaviourHookup == null");
-                    monoBehaviourHookup = _MonoBehaviour.GetComponent<BuildManagerMonoBehaviourHookup>();
-                    Debug.LogError("AFTER SingletonBuildManager.MonoBehaviourHookup :"+monoBehaviourHookup.name);
-                }
-                return monoBehaviourHookup;
-            }
-            set => monoBehaviourHookup = value;
-        }
-        public RaycastExecutor BuildSystemRaycast { get => MonoBehaviourHookup.BuildSystemRaycast; set => MonoBehaviourHookup.BuildSystemRaycast = value; }
-        public BuildPreviewExecutor BuildPreviewExecutor
-        {
-            get
-            {
-
-                return MonoBehaviourHookup.BuildPreviewExecutor;
-            }
-            set => MonoBehaviourHookup.BuildPreviewExecutor = value;
-        }
-
-        public bool IsManagerActive
-        {
-            get
-            {
-                return isManagerActive;
+                return Instance.isManagerActive;
             }
 
             set
             {
 
-                if (value != isManagerActive)
+                if (value != Instance.isManagerActive)
                 {
-                    isManagerActive = value;
+                    Instance.isManagerActive = value;
                     if (value)
                     {
-                        StartBuildManager();
+                        Instance.StartBuildManager();
                     }
                     else
                     {
 
-                        StopBuildManager();
+                        Instance.StopBuildManager();
                     }
                 }
 
             }
         }
-        public BuildObjectsHelperData BuildObjectsHelper { get => buildObjectsHelper; set => buildObjectsHelper = value; }
+
+        public static BuildManagerMonoBehaviourHookup MonoBehaviourHookup
+        {
+            get
+            {
+                if (Instance.monoBehaviourHookup == null)
+                {
+                    Instance.monoBehaviourHookup = _MonoBehaviour.GetComponent<BuildManagerMonoBehaviourHookup>();
+                }
+                return Instance.monoBehaviourHookup;
+            }
+            set => Instance.monoBehaviourHookup = value;
+        }
+        public static RaycastExecutor BuildSystemRaycast { get => MonoBehaviourHookup.BuildSystemRaycast; set => MonoBehaviourHookup.BuildSystemRaycast = value; }
+        public static BuildPreviewExecutor BuildPreviewExecutor
+        {
+            get
+            {
+                return MonoBehaviourHookup.BuildPreviewExecutor;
+            }
+            set => MonoBehaviourHookup.BuildPreviewExecutor = value;
+        }
+
         public override void Update()
         {
             GetDebugInput();
         }
         public override void Start()
         {
-           // Debug.LogError(" SingletonBuildManager.Start ID: " + BuildObjectsHelper.CurrentBuildObject.id);
-            InitRaycaster();
-            InitPreviewExecutor();
-            isManagerActive = false;
+            // Debug.LogError(" SingletonBuildManager.Start ID: " + BuildObjectsHelper.CurrentBuildObject.id);
+            //InitRaycaster();
+            //  InitPreviewExecutor();
+            InitMonoBehaviours();
+              isManagerActive = false;
 
+        }
+
+        public void InitMonoBehaviours()
+        {
+            MonoBehaviourHookup.BuildSystemRaycast = monoBehaviourHookup.GetComponent<RaycastExecutor>() != null ? monoBehaviourHookup.GetComponent<RaycastExecutor>() : monoBehaviourHookup.gameObject.AddComponent<RaycastExecutor>();
+            MonoBehaviourHookup.BuildPreviewExecutor = monoBehaviourHookup.GetComponent<BuildPreviewExecutor>() != null ? monoBehaviourHookup.GetComponent<BuildPreviewExecutor>() : monoBehaviourHookup.gameObject.AddComponent<BuildPreviewExecutor>();
+
+            MonoBehaviourHookup.RaycastExecutorData = monoBehaviourHookup.GetComponent<RaycastExecutorData>() != null ? monoBehaviourHookup.GetComponent<RaycastExecutorData>() : monoBehaviourHookup.gameObject.AddComponent<RaycastExecutorData>();
+            MonoBehaviourHookup.PreviewHelper = monoBehaviourHookup.GetComponent<PreviewHelper>() != null ? monoBehaviourHookup.GetComponent<PreviewHelper>() : monoBehaviourHookup.gameObject.AddComponent<PreviewHelper>();
+            MonoBehaviourHookup.PreviewHelper.previewSpawner = monoBehaviourHookup.GetComponent<PreviewSpawner>() != null ? monoBehaviourHookup.GetComponent<PreviewSpawner>() : monoBehaviourHookup.gameObject.AddComponent<PreviewSpawner>();
+            MonoBehaviourHookup.BuildPreviewExecutor.RaycastHitInterpreter = monoBehaviourHookup.GetComponent<PreviewRaycastHitInterpreter>() != null ? monoBehaviourHookup.GetComponent<PreviewRaycastHitInterpreter>() : monoBehaviourHookup.gameObject.AddComponent<PreviewRaycastHitInterpreter>();
+
+            MonoBehaviourHookup.EventsListenersParent = MonoBehaviourHookup.EventsListenersParent == null ? new GameObject("EventsListeners").transform : MonoBehaviourHookup.EventsListenersParent;
+            MonoBehaviourHookup.EventsListenersParent.parent = MonoBehaviourHookup.transform;
+            MonoBehaviourHookup.BuildSystemRaycast.hitMissListeners = new BoolEventListener("BuildRaycast", monoBehaviourHookup.EventsListenersParent.transform, RaycastData.hitMissEvents.scriptableEventTrue, HandleBuildHit, RaycastData.hitMissEvents.scriptableEventFalse, HandleBuildMiss);
         }
         public void InitRaycaster()
         {
-            Debug.Log(" SingletonBuildManager.InitRaycaster " );
-            MonoBehaviourHookup.BuildSystemRaycast = MonoBehaviourHookup.BuildSystemRaycast != null ? MonoBehaviourHookup.BuildSystemRaycast : monoBehaviourHookup.gameObject.AddComponent<RaycastExecutor>();
-            MonoBehaviourHookup.BuildSystemRaycast.Init();
-            MonoBehaviourHookup.BuildSystemRaycast.hitMissListeners = new BoolEventListener("BuildRaycast", _MonoBehaviour.transform, raycastData.hitMissEvents.scriptableEventTrue, HandleBuildHit, raycastData.hitMissEvents.scriptableEventFalse, HandleBuildMiss);
+           // Debug.Log(" SingletonBuildManager.InitRaycaster ");
 
+            if (MonoBehaviourHookup.BuildSystemRaycast == null)
+            {
+                MonoBehaviourHookup.BuildSystemRaycast = monoBehaviourHookup.GetComponent<RaycastExecutor>() != null ? monoBehaviourHookup.GetComponent<RaycastExecutor>() : monoBehaviourHookup.gameObject.AddComponent<RaycastExecutor>();
+                //MonoBehaviourHookup.BuildSystemRaycast.Init();
+              //  MonoBehaviourHookup.BuildSystemRaycast.hitMissListeners = new BoolEventListener("BuildRaycast", _MonoBehaviour.transform, RaycastData.hitMissEvents.scriptableEventTrue, HandleBuildHit, RaycastData.hitMissEvents.scriptableEventFalse, HandleBuildMiss);
+            }
+            if (MonoBehaviourHookup.RaycastExecutorData == null)
+            {
+                MonoBehaviourHookup.RaycastExecutorData = monoBehaviourHookup.GetComponent<RaycastExecutorData>() != null ? monoBehaviourHookup.GetComponent<RaycastExecutorData>() : monoBehaviourHookup.gameObject.AddComponent<RaycastExecutorData>();
+
+            }
         }
         public void InitPreviewExecutor()
         {
-            Debug.Log(" SingletonBuildManager.InitPreviewExecutor ");
-            MonoBehaviourHookup.BuildPreviewExecutor = MonoBehaviourHookup.BuildPreviewExecutor != null ? MonoBehaviourHookup.BuildPreviewExecutor : monoBehaviourHookup.gameObject.AddComponent<BuildPreviewExecutor>();
-            MonoBehaviourHookup.BuildPreviewExecutor.Init(BuildObjectsHelper.CurrentBuildObject);
-            // MonoBehaviourHookup.RaycastHitInterpreter = MonoBehaviourHookup.RaycastHitInterpreter != null ? MonoBehaviourHookup.RaycastHitInterpreter : monoBehaviourHookup.gameObject.AddComponent<PreviewRaycastHitInterpreter>();
-            //  MonoBehaviourHookup.RaycastHitInterpreter PreviewRaycastHitInterpreter
+
+            if (MonoBehaviourHookup.BuildPreviewExecutor == null)
+            {
+                MonoBehaviourHookup.BuildPreviewExecutor = monoBehaviourHookup.GetComponent<BuildPreviewExecutor>() != null ? monoBehaviourHookup.GetComponent<BuildPreviewExecutor>() : monoBehaviourHookup.gameObject.AddComponent<BuildPreviewExecutor>();
+               // MonoBehaviourHookup.BuildPreviewExecutor.Init();
+            }
+               
+            if (MonoBehaviourHookup.PreviewHelper==null)
+            {
+
+                MonoBehaviourHookup.PreviewHelper = monoBehaviourHookup.GetComponent<PreviewHelper>() != null ? monoBehaviourHookup.GetComponent<PreviewHelper>() : monoBehaviourHookup.gameObject.AddComponent<PreviewHelper>();
+
+            }
+            // MonoBehaviourHookup.BuildPreviewExecutor.Init();
+
         }
         public void GetDebugInput()
         {
@@ -115,70 +147,37 @@ namespace Managers
         public void StartBuildManager()
 
         {
-            Debug.LogError("StartBuildManager");
-            //BuildPreviewExecutor.TooglePreviewGameObject(true);
-            //BuildObjectsHelper.CurrentBuildObjectIndex++;
-            // BuildPreviewExecutor.PreviewObject.ChangePreviewObject(BuildObjectsHelper.CurrentBuildObject);
+            Debug.Log("StartBuildManager");
+            
             MonoBehaviourHookup.BuildSystemRaycast.StartExecute();
 
         }
         void StopBuildManager()
         {
-            Debug.LogError("StoptBuildManager");
+            Debug.Log("StoptBuildManager");
 
 
             //  BuildPreviewExecutor.TooglePreviewGameObject(false);
-            MonoBehaviourHookup.BuildPreviewExecutor.StopExecute();
+            //MonoBehaviourHookup.BuildPreviewExecutor.StopExecute();
             MonoBehaviourHookup.BuildSystemRaycast.StopExecute();
 
         }
         public void HandleBuildHit()
         {
-            if (logs) Debug.Log("HandleBuildHit");
-            // IsShowingPreview = true;
+
+
             BuildPreviewExecutor.StartExecute();
 
         }
         public void HandleBuildMiss()
         {
-            if (logs) Debug.Log("HandleBuildMiss");
+
             BuildPreviewExecutor.StopExecute();
-            // IsShowingPreview = false;
+
 
         }
 
 
 
     }
-    /*
-////
-///
-Open Build UI
-Raycast layer
-{
-Start prev
-activate 
-or Create object, delete/disable former, addcollider and mesh, se
-Check hit
-MapToGrid
-CheckAvail
-SetColor
-Display
-Build
-Next
-
-
-    ******************
-    * 
-    * 
-    * Start
-    * 
-
 }
-
-
-    */
-}
-//////
-///
-

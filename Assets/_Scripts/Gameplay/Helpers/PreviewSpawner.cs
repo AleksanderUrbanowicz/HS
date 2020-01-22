@@ -7,16 +7,25 @@ namespace GeneralImplementations.Managers
     public class PreviewSpawner : MonoBehaviour, ITempSpawner
     {
 
-        private IPreviewObject previewObject;
+        public PreviewBuildObject previewObject;
         private GameObject instanceGameObject;
         private ISpawnableBuildObject spawnableInstance;
 
-        public PreviewSpawner(ISpawnableBuildObject spawnableInstance)
+
+        public void Awake()
         {
-            this.spawnableInstance = spawnableInstance;
-            CreateInstance();
+            
+            
+
         }
 
+        public void Init(ISpawnableBuildObject spawnableBuildObject)
+        {
+            spawnableInstance = spawnableBuildObject;
+            CreateInstance(spawnableBuildObject);
+
+
+        }
         public GameObject InstanceGameObject
         {
             get
@@ -33,13 +42,13 @@ namespace GeneralImplementations.Managers
 
         public ISpawnableBuildObject SpawnableInstance { get { return spawnableInstance; } set => spawnableInstance = value; }
 
-        public IPreviewObject PreviewObject
+        public PreviewBuildObject PreviewObject
         {
             get
             {
                 if (previewObject == null)
                 {
-                    previewObject = instanceGameObject.GetComponent<IPreviewObject>() != null ? instanceGameObject.GetComponent<IPreviewObject>() : instanceGameObject.AddComponent<PreviewBuildObject>();
+                   // previewObject = instanceGameObject.GetComponent<IPreviewObject>() != null ? instanceGameObject.GetComponent<IPreviewObject>() : instanceGameObject.AddComponent<PreviewBuildObject>();
 
                 }
                 return previewObject;
@@ -57,13 +66,13 @@ namespace GeneralImplementations.Managers
             if (instanceGameObject != null)
             {
 
-                DestroyInstance();
+               // DestroyInstance();
             }
             instanceGameObject = Object.Instantiate(_spawnable.GetPrefab, Vector3.zero, Quaternion.identity, transform);
             instanceGameObject.name = _spawnable.GetID;
             spawnableInstance = _spawnable;
-            PreviewBuildObject previewBuildObject = instanceGameObject.AddComponent<PreviewBuildObject>();
-            previewBuildObject.Init(_spawnable);
+           previewObject = instanceGameObject.AddComponent<PreviewBuildObject>();
+            PreviewObject.Init(_spawnable.BuildObjectData);
             return instanceGameObject;
         }
         public void CreateInstance()

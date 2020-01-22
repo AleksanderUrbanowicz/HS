@@ -6,34 +6,29 @@ namespace Managers
 {
     public class PreviewRaycastHitInterpreter : MonoBehaviour
     {
-        [SerializeField]
-        private RaycastExecutorData raycastExecutorData;
-
-
-        private PreviewData previewData;
+        //private PreviewData previewData;
         public float userRotationF;
-        public PreviewData PreviewData { get => previewData; set => previewData = value; }
+        public PreviewData PreviewData { get => SingletonBuildManager.PreviewData; set => SingletonBuildManager.PreviewData = value; }
         public RaycastExecutorData RaycastExecutorData { get {
-                if(raycastExecutorData==null)
-                {
-                    Debug.LogError("PreviewRaycastHitInterpreter.RaycastExecutorData == null");
-                    raycastExecutorData = gameObject.AddComponent<RaycastExecutorData>();
-
-                }
-                return raycastExecutorData; } set => raycastExecutorData = value; }
-
-        public PreviewRaycastHitInterpreter(Transform previewObjectTransform)
+          
+                return SingletonBuildManager.MonoBehaviourHookup.RaycastExecutorData; } set => SingletonBuildManager.MonoBehaviourHookup.RaycastExecutorData = value; }
+        public void Awake()
         {
-            Debug.LogError("PreviewRaycastHitInterpreter(Transform)");
-            RaycastExecutorData.previewObjectTransform = previewObjectTransform;
-            PreviewData = SingletonBuildManager.Instance.previewData;
-
+            Debug.LogError("PreviewRaycastHitInterpreter.Awake()");
+           // Init();
         }
-        public PreviewRaycastHitInterpreter()
+      
+        public void Init()
         {
-            Debug.LogError("PreviewRaycastHitInterpreter()");
-            //RaycastExecutorData.previewObjectTransform = SingletonBuildManager.Instance.BuildPreviewExecutor.PreviewHelper.PreviewObject.transform;
-            PreviewData = SingletonBuildManager.Instance.previewData;
+            Debug.Log("PreviewRaycastHitInterpreter.Init()");
+            if(SingletonBuildManager.MonoBehaviourHookup.BuildPreviewExecutor.RaycastHitInterpreter==null)
+            {
+                SingletonBuildManager.MonoBehaviourHookup.BuildPreviewExecutor.RaycastHitInterpreter = this;
+
+            }
+           // SingletonBuildManager.MonoBehaviourHookup.BuildPreviewExecutor.RaycastHitInterpreter = this;
+            //RaycastExecutorData.previewObjectTransform = SingletonBuildManager.BuildPreviewExecutor.PreviewHelper.PreviewObject.transform;
+            //previewData = SingletonBuildManager.PreviewData;
         }
         public bool CheckRaycastDelta()
         {
@@ -45,7 +40,7 @@ namespace Managers
             }
 
 
-            float distance = Vector3.Distance(RaycastExecutorData.previewObjectTransform.position, _point);
+            float distance = Vector3.Distance(RaycastExecutorData.PreviewObjectTransform.position, _point);
             if (distance > PreviewData.previewSnapFactor * PreviewData.gridSize)
             {
                 RaycastExecutorData.lastPoint = _point;
@@ -60,7 +55,7 @@ namespace Managers
         {
             Vector3 _point = RaycastExecutorData.RaycastHitOutput.point;
             Vector3 _normal = RaycastExecutorData.RaycastHitOutput.normal;
-            Vector3 orientationVector = SingletonBuildManager.Instance.BuildObjectsHelper.CurrentBuildObject.orientationVector;
+            Vector3 orientationVector = SingletonBuildManager.BuildObjectsHelper.CurrentBuildObject.orientationVector;
             //  Debug.LogError("MapPreviewToGrid");
             Quaternion Rotation;
             Vector3 CurrentPosition;
@@ -84,9 +79,9 @@ namespace Managers
             }
 
 
-            RaycastExecutorData.previewObjectTransform.position = CurrentPosition;
+            RaycastExecutorData.PreviewObjectTransform.position = CurrentPosition;
 
-            RaycastExecutorData.previewObjectTransform.rotation = Rotation;
+            RaycastExecutorData.PreviewObjectTransform.rotation = Rotation;
             RaycastExecutorData.lastMappedPoint = CurrentPosition;
             PreviewData.gridSnapEvent.Raise();
         }

@@ -28,8 +28,11 @@ namespace Managers
 
         }
 
+
+
         public void OnEnable()
         {
+            CurrentBuildObjectIndex++;
             if (currentchangedEvent == null)
             {
                 Debug.LogError("BuildObjectsHelper.OnEnable: currentchangedEvent==null");
