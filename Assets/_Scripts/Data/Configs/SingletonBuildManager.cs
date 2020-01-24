@@ -176,16 +176,17 @@ namespace Managers
                     Debug.Log(MonoBehaviourHookup.PreviewHelper.PreviewBuildObject.userRotationF);
                 }
             }
-            /*
-            else if (Input.GetKeyDown(KeyCode.S))
+            
+            else if (  Input.GetKeyDown(KeyCode.E))
             {
-                SingletonUIManager.Instance.ToggleUI(spawnableUIData, true);
+                if(MonoBehaviourHookup.PreviewHelper.IsAvailable)
+                {
+                   // MonoBehaviourHookup.PreviewHelper.previewSpawner.CreateInstance(monoBehaviourHookup.transform, PreviewBuildObject.transform.position, PreviewBuildObject.transform.rotation, PreviewBuildObject.buildObjectData);
+
+                }
+             
             }
-            else if (Input.GetKeyDown(KeyCode.H))
-            {
-                SingletonUIManager.Instance.ToggleUI(spawnableUIData, false);
-            }
-            */
+          
         }
         public void StartBuildManager()
 

@@ -23,10 +23,10 @@ MonoBehaviour:
   objectOrientation: 1
   layersToBuildOn:
     serializedVersion: 2
-    m_Bits: 6291456
+    m_Bits: 2097152
   obstacleLayers:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 4196352
   collsionBoundsFraction: 0.9
   rotationStep: 90
   materialData: []

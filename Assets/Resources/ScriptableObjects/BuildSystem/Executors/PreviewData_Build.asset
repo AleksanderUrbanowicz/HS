@@ -17,6 +17,6 @@ MonoBehaviour:
   previewMaterial: {fileID: 2100000, guid: abcdbd2deb61ba04eb083079534c7bd7, type: 2}
   gridSnapEvent: {fileID: 11400000, guid: 69e4c85f59a3c45448825c8f8b029f84, type: 2}
   offset: 1
-  gridSize: 0.5
+  gridSize: 0.05
   previewSnapFactor: 0.5
-  gridSizeEpsilon: 0.05
+  gridSizeEpsilon: 0.06

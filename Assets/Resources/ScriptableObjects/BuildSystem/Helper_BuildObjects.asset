@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentBuildObjectIndex: 1
   buildObjectsData:
-  - {fileID: 11400000, guid: 60af1e16faf59fe4f8b11be13e20e612, type: 2}
   - {fileID: 11400000, guid: 08f4fe20f273d104e8d1cb16c50602e7, type: 2}
   - {fileID: 11400000, guid: 3a9f4420c1d5fcc4a99fab99bdc9830c, type: 2}
   currentchangedEvent: {fileID: 11400000, guid: 69e4c85f59a3c45448825c8f8b029f84,
     type: 2}
-  currentBuildObject: {fileID: 11400000, guid: 08f4fe20f273d104e8d1cb16c50602e7, type: 2}
+  currentBuildObject: {fileID: 11400000, guid: 3a9f4420c1d5fcc4a99fab99bdc9830c, type: 2}
