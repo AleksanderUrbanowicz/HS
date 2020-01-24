@@ -9,8 +9,10 @@ namespace GeneralImplementations.Managers
         public PreviewSpawner previewSpawner;
         public ISpawnableBuildObject spawnable;
         private PreviewBuildObject previewBuildObject;
+        private bool isAvailable;
         public PreviewData PreviewData { get => SingletonBuildManager.PreviewData; set => SingletonBuildManager.PreviewData = value; }
         public PreviewBuildObject PreviewBuildObject { get => previewSpawner.previewObject; set => previewSpawner.previewObject = value; }
+        public bool IsAvailable { get => isAvailable; set => isAvailable = value; }
 
         private void ChangePreview(ISpawnableBuildObject _spawnable)
         {

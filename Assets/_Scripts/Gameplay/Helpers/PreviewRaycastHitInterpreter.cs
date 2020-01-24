@@ -8,15 +8,15 @@ namespace Managers
     public class PreviewRaycastHitInterpreter : MonoBehaviour
     {
         //private PreviewData previewData;
-        public float userRotationF;
+        
         public PreviewData PreviewData { get => SingletonBuildManager.PreviewData; set => SingletonBuildManager.PreviewData = value; }
         public RaycastExecutorData RaycastExecutorData { get {
           
                 return SingletonBuildManager.MonoBehaviourHookup.RaycastExecutorData; } set => SingletonBuildManager.MonoBehaviourHookup.RaycastExecutorData = value; }
         public void Awake()
         {
-          //  Debug.LogError("PreviewRaycastHitInterpreter.Awake()");
-           // Init();
+            
+        
         }
       
         public void Init()
@@ -56,42 +56,38 @@ namespace Managers
             return false;
         }
 
-
-        public void MapPreviewToGrid()
+        public void UpdatePreviewTransform(Vector3 _position)
         {
-            Vector3 _point = RaycastExecutorData.RaycastHitOutput.point;
-            Vector3 _normal = RaycastExecutorData.RaycastHitOutput.normal;
+           
             Vector3 orientationVector = SingletonBuildManager.BuildObjectsHelper.CurrentBuildObject.orientationVector;
-            //  Debug.LogError("MapPreviewToGrid");
-            Quaternion Rotation;
-            Vector3 CurrentPosition;
-            // collisionNormal = _normal;
+            
+           
+            Vector3 collisionNormal = RaycastExecutorData.RaycastHitOutput.normal;
             if (orientationVector == default)
             {
                 orientationVector.y = 1.0f;
 
             }
-            Rotation = Quaternion.FromToRotation(orientationVector, _normal);
-            Rotation *= Quaternion.Euler(orientationVector * userRotationF);
-
-            CurrentPosition = _point;
-            if (PreviewData.gridSize > PreviewData.gridSizeEpsilon)
-            {
+            Quaternion Rotation = Quaternion.FromToRotation(orientationVector, collisionNormal);
+            Rotation *= Quaternion.Euler(orientationVector * SingletonBuildManager.PreviewBuildObject.userRotationF);
+            RaycastExecutorData.PreviewObjectTransform.position = _position;
+            RaycastExecutorData.PreviewObjectTransform.rotation = Rotation;
+        }
+            public Vector3 MapPositionToGrid()
+        {
+            Vector3 CurrentPosition = RaycastExecutorData.RaycastHitOutput.point;
+           
+            
                 CurrentPosition -= Vector3.one * PreviewData.offset;
                 CurrentPosition /= PreviewData.gridSize;
                 CurrentPosition = new Vector3(Mathf.Round(CurrentPosition.x), Mathf.Round(CurrentPosition.y), Mathf.Round(CurrentPosition.z));
                 CurrentPosition *= PreviewData.gridSize;
                 CurrentPosition += Vector3.one * PreviewData.offset;
-            }
+            
 
-
-
-           
             RaycastExecutorData.lastMappedPoint = CurrentPosition;
-            RaycastExecutorData.PreviewObjectTransform.position = CurrentPosition;
-            RaycastExecutorData.PreviewObjectTransform.rotation = Rotation;
-
-            PreviewData.gridSnapEvent.Raise();
+            return CurrentPosition;
+            
         }
 
     }

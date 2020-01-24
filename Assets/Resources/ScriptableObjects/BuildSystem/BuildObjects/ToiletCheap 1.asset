@@ -27,7 +27,7 @@ MonoBehaviour:
   obstacleLayers:
     serializedVersion: 2
     m_Bits: 2048
-  collsionBoundsFraction: 0.95
+  collsionBoundsFraction: 0.9
   rotationStep: 90
   materialData: []
   pluggableDynamicParams:

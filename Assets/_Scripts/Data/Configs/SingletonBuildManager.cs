@@ -78,7 +78,24 @@ namespace Managers
             set => MonoBehaviourHookup.BuildPreviewExecutor = value;
         }
 
-       
+        public static PreviewHelper PreviewHelper
+        {
+            get
+            {
+                return MonoBehaviourHookup.PreviewHelper;
+            }
+            set => MonoBehaviourHookup.PreviewHelper = value;
+        }
+
+        public static PreviewBuildObject PreviewBuildObject
+        {
+            get
+            {
+                return MonoBehaviourHookup.PreviewHelper.PreviewBuildObject;
+            }
+            set => MonoBehaviourHookup.PreviewHelper.PreviewBuildObject = value;
+        }
+
 
         public override void Update()
         {
@@ -149,11 +166,17 @@ namespace Managers
             {
                 IsManagerActive = !isManagerActive;
             }
-            /*
-           else if (Input.GetKeyDown(KeyCode.U))
+            
+           else if (Input.GetKeyDown(KeyCode.R))
             {
-                IsManagerActive = false;
+                if(IsManagerActive)
+                {
+                    MonoBehaviourHookup.PreviewHelper.PreviewBuildObject.userRotationF += MonoBehaviourHookup.PreviewHelper.PreviewBuildObject.buildObjectData.rotationStep;
+                    MonoBehaviourHookup.BuildPreviewExecutor.RaycastHitInterpreter.UpdatePreviewTransform(BuildPreviewExecutor.RaycastExecutorData.lastMappedPoint);
+                    Debug.Log(MonoBehaviourHookup.PreviewHelper.PreviewBuildObject.userRotationF);
+                }
             }
+            /*
             else if (Input.GetKeyDown(KeyCode.S))
             {
                 SingletonUIManager.Instance.ToggleUI(spawnableUIData, true);

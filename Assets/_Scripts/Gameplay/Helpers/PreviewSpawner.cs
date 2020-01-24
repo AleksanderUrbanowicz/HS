@@ -11,7 +11,7 @@ namespace GeneralImplementations.Managers
         public PreviewBuildObject previewObject;
         private GameObject instanceGameObject;
         private ISpawnableBuildObject spawnableInstance;
-
+        
 
         public void Awake()
         {
@@ -88,7 +88,8 @@ namespace GeneralImplementations.Managers
 
         public void ToggleInstance(bool b)
         {
-            InstanceGameObject.SetActive(b);
+            previewObject.ToggleVisibility(b);
+            //InstanceGameObject.SetActive(b);
         }
     }
 }
