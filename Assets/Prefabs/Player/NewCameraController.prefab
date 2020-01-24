@@ -2813,7 +2813,7 @@ MonoBehaviour:
   MouseXInput: Mouse X
   MouseYInput: Mouse Y
   SwitchPerspectiveInput: Crouch
-  mouseSensitivity: 250
+  mouseSensitivity: 200
   cameraPerspective: 0
   CharacterAnimator: {fileID: 1759415951851331212}
   FPS_CameraOffset: {x: -0.6, y: 0.13, z: 0.1}

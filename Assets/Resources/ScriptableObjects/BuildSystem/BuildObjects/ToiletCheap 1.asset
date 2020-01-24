@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c651b00daff92aa438fc2e3b7ba10b60, type: 3}
   m_Name: ToiletCheap 1
   m_EditorClassIdentifier: 
-  id: ToiletCheap1
+  id: Toilet1
   objectPrefab: {fileID: 1972296334025312101, guid: c519b13947e72534ab7c8624cd7736d7,
     type: 3}
   offset: {x: 0, y: 0, z: 0}
   actualSize: {x: 0.55410004, y: 0.861, z: 0.7049}
   gridSize: {x: 1, y: 2, z: 1}
   orientationVector: {x: 0, y: 1, z: 0}
-  cost: 0
+  render: {fileID: 21300000, guid: 09a7c71db88a6bf4e9907329a102ac36, type: 3}
+  cost: 1
   objectOrientation: 1
   layersToBuildOn:
     serializedVersion: 2

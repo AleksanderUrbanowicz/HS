@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c651b00daff92aa438fc2e3b7ba10b60, type: 3}
   m_Name: Chair 1
   m_EditorClassIdentifier: 
-  id: Chair7
+  id: Chair1
   objectPrefab: {fileID: 5011516804198483062, guid: 2a4949c2cda1abc40b2de55407c8b138,
     type: 3}
   offset: {x: 0, y: 0, z: 0}
   actualSize: {x: 0.6137047, y: 1.678667, z: 0.6251695}
   gridSize: {x: 1, y: 2, z: 1}
   orientationVector: {x: 0, y: 1, z: 0}
-  cost: 0
+  render: {fileID: 21300000, guid: f57e9119bca8a764b8674819fff0cd35, type: 3}
+  cost: 5
   objectOrientation: 1
   layersToBuildOn:
     serializedVersion: 2

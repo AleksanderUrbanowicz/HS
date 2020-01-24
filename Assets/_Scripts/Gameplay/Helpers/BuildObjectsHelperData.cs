@@ -32,11 +32,11 @@ namespace Managers
 
         public void OnEnable()
         {
-            CurrentBuildObjectIndex++;
+           
             if (currentchangedEvent == null)
             {
-                Debug.LogError("BuildObjectsHelper.OnEnable: currentchangedEvent==null");
-                ScriptableEvent scriptableEvent = new ScriptableEvent();
+                //Debug.LogError("BuildObjectsHelper.OnEnable: currentchangedEvent==null");
+                ScriptableEvent scriptableEvent = ScriptableObject.CreateInstance<ScriptableEvent>();
                 string path = "Assets/Resources/ScriptableObjects/Auto/" + "Event_CurrentChanged.asset";
                 AssetDatabase.CreateAsset(scriptableEvent, path);
 

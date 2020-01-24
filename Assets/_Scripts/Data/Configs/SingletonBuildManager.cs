@@ -126,40 +126,7 @@ namespace Managers
             MonoBehaviourHookup.EventsListenersParent.parent = MonoBehaviourHookup.transform;
             MonoBehaviourHookup.BuildSystemRaycast.hitMissListeners = new BoolEventListener("BuildRaycast", monoBehaviourHookup.EventsListenersParent.transform, RaycastData.hitMissEvents.scriptableEventTrue, HandleBuildHit, RaycastData.hitMissEvents.scriptableEventFalse, HandleBuildMiss);
         }
-        public void InitRaycaster()
-        {
-           // Debug.Log(" SingletonBuildManager.InitRaycaster ");
-
-            if (MonoBehaviourHookup.BuildSystemRaycast == null)
-            {
-                MonoBehaviourHookup.BuildSystemRaycast = monoBehaviourHookup.GetComponent<RaycastExecutor>() != null ? monoBehaviourHookup.GetComponent<RaycastExecutor>() : monoBehaviourHookup.gameObject.AddComponent<RaycastExecutor>();
-                //MonoBehaviourHookup.BuildSystemRaycast.Init();
-              //  MonoBehaviourHookup.BuildSystemRaycast.hitMissListeners = new BoolEventListener("BuildRaycast", _MonoBehaviour.transform, RaycastData.hitMissEvents.scriptableEventTrue, HandleBuildHit, RaycastData.hitMissEvents.scriptableEventFalse, HandleBuildMiss);
-            }
-            if (MonoBehaviourHookup.RaycastExecutorData == null)
-            {
-                MonoBehaviourHookup.RaycastExecutorData = monoBehaviourHookup.GetComponent<RaycastExecutorData>() != null ? monoBehaviourHookup.GetComponent<RaycastExecutorData>() : monoBehaviourHookup.gameObject.AddComponent<RaycastExecutorData>();
-
-            }
-        }
-        public void InitPreviewExecutor()
-        {
-
-            if (MonoBehaviourHookup.BuildPreviewExecutor == null)
-            {
-                MonoBehaviourHookup.BuildPreviewExecutor = monoBehaviourHookup.GetComponent<BuildPreviewExecutor>() != null ? monoBehaviourHookup.GetComponent<BuildPreviewExecutor>() : monoBehaviourHookup.gameObject.AddComponent<BuildPreviewExecutor>();
-               // MonoBehaviourHookup.BuildPreviewExecutor.Init();
-            }
-               
-            if (MonoBehaviourHookup.PreviewHelper==null)
-            {
-
-                MonoBehaviourHookup.PreviewHelper = monoBehaviourHookup.GetComponent<PreviewHelper>() != null ? monoBehaviourHookup.GetComponent<PreviewHelper>() : monoBehaviourHookup.gameObject.AddComponent<PreviewHelper>();
-
-            }
-            // MonoBehaviourHookup.BuildPreviewExecutor.Init();
-
-        }
+      
         public void GetDebugInput()
         {
             if (Input.GetKeyDown(KeyCode.B))

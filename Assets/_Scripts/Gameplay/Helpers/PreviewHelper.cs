@@ -22,34 +22,7 @@ namespace GeneralImplementations.Managers
            // previewSpawner.PreviewObject.ToggleVisibility(tr);
         }
 
-        public void Awake()
-
-        {
-           // Init();
-        }
-        public void Init()
-
-        {
-            if (SingletonBuildManager.MonoBehaviourHookup.PreviewHelper  == null)
-            {
-
-                Debug.LogError("BEFORE PreviewHelper.Awake:PreviewHelper == null");
-                SingletonBuildManager.MonoBehaviourHookup.PreviewHelper = this;
-                Debug.LogError("After PreviewHelper.Awake:PreviewHelper:"+ SingletonBuildManager.MonoBehaviourHookup.BuildPreviewExecutor.PreviewHelper.name);
-
-            }
-            if (SingletonBuildManager.MonoBehaviourHookup.BuildPreviewExecutor.PreviewHelper.previewSpawner == null)
-            {
-
-                Debug.LogError("PreviewHelper.Awake:previewSpawner == null");
-                SingletonBuildManager.MonoBehaviourHookup.BuildPreviewExecutor.PreviewHelper.previewSpawner = this.gameObject.AddComponent<PreviewSpawner>();
-                SingletonBuildManager.MonoBehaviourHookup.BuildPreviewExecutor.PreviewHelper.previewSpawner.Init(SingletonBuildManager.BuildObjectsHelper.CurrentBuildObject);
-                spawnable = SingletonBuildManager.BuildObjectsHelper.CurrentBuildObject;
-            }
-           // SingletonBuildManager.Instance.MonoBehaviourHookup.BuildPreviewExecutor.PreviewHelper.previewSpawner = SingletonBuildManager.Instance.MonoBehaviourHookup.gameObject.AddComponent<PreviewSpawner>();
-           // spawnable = SingletonBuildManager.Instance.BuildObjectsHelper.CurrentBuildObject;
-
-        }
+        
 
         public void Start()
 

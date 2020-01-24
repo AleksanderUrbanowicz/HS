@@ -35,11 +35,7 @@ namespace Managers
             // Debug.LogError("PluggableObjectMonoBehaviour.Init");
             buildObjectData = _buildObjectData;
             totalParams = _buildObjectData.pluggableDynamicParams.ToPluggableParams();
-            if (_currentConditions != null)
-            {
-                currentConditions = new List<DynamicParameter>(_currentConditions);
-
-            }
+          
             StateController.Init(_buildObjectData);
             Setup();
         }

@@ -29,11 +29,7 @@ namespace Data
 
         }
 
-        public PluggableDynamicParams()
-        {
-
-
-        }
+       
 
         public PluggableParams ToPluggableParams()
         {
@@ -47,24 +43,7 @@ namespace Data
 
             return parameters;
         }
-        /*
-        public PluggableDynamicParams GetInteractableParams()
-        {
-            PluggableDynamicParams par = new PluggableDynamicParams();
-            foreach (DynamicParameter dynamicPar in parameters)
-            {
-                if (Config.GlobalConfig.interactionParameters.Contains(dynamicPar.id))
-                {
-                    par.parameters.Add(new DynamicParameter(dynamicPar.id, dynamicPar.value, dynamicPar.changeRate));
-
-                }
-
-            }
-
-
-            return par;
-        }
-        */
+       
     }
     [Serializable]
     public class PluggableParams
@@ -72,11 +51,7 @@ namespace Data
 
         public List<ParameterBase> parameters = new List<ParameterBase>();
 
-        public PluggableParams(List<ParameterBase> _parameters)
-        {
-            parameters = _parameters;
-
-        }
+        
 
 
         public PluggableParams()
@@ -96,7 +71,7 @@ namespace Data
             if (par != null)
             {
                 int i = parameters.IndexOf(par);
-
+                return i;
             }
 
             return -1;
@@ -121,27 +96,7 @@ namespace Data
             }
             return selected;
         }
-        /*
-        public PluggableParams GetInteractableParams()
-        {
-            PluggableParams par = new PluggableParams();
-            foreach (ParameterBase parActive in parameters)
-            {
-                if (Config.GlobalConfig.interactionParameters.Contains(parActive.id))
-                {
-                    par.parameters.Add(new ParameterBase(parActive.id, parActive.value));
-
-                }
-
-            }
-            return par;
-        }
-
-
-
-
-    */
-
+       
 
         public void Add(ParameterBase parameterBase)
         {

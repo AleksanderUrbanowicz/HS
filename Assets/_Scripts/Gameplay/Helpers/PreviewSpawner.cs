@@ -3,7 +3,7 @@ using BaseLibrary.Managers;
 using GeneralImplementations.Data;
 using UnityEngine;
 
-namespace GeneralImplementations.Managers
+namespace Managers
 {
     public class PreviewSpawner : MonoBehaviour, ITempSpawner
     {
@@ -11,12 +11,12 @@ namespace GeneralImplementations.Managers
         public PreviewBuildObject previewObject;
         private GameObject instanceGameObject;
         private ISpawnableBuildObject spawnableInstance;
-        
+
 
         public void Awake()
         {
-            
-            
+
+
 
         }
 
@@ -24,7 +24,7 @@ namespace GeneralImplementations.Managers
         {
             spawnableInstance = spawnableBuildObject;
             CreateInstance(spawnableBuildObject);
-          //  ToggleInstance(false);
+            //  ToggleInstance(false);
 
 
         }
@@ -68,12 +68,12 @@ namespace GeneralImplementations.Managers
             if (instanceGameObject != null)
             {
 
-               // DestroyInstance();
+                // DestroyInstance();
             }
-            instanceGameObject = Object.Instantiate(_spawnable.GetPrefab, Vector3.zero, Quaternion.identity, transform);
+            instanceGameObject = Instantiate(_spawnable.GetPrefab, Vector3.zero, Quaternion.identity, transform);
             instanceGameObject.name = _spawnable.GetID;
             spawnableInstance = _spawnable;
-           previewObject = instanceGameObject.AddComponent<PreviewBuildObject>();
+            previewObject = instanceGameObject.AddComponent<PreviewBuildObject>();
             PreviewObject.Init(_spawnable.BuildObjectData);
             return instanceGameObject;
         }

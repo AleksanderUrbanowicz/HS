@@ -32,8 +32,8 @@ namespace Managers
         {
             //BuildObjectData buildObjectData = ScriptableSystemManager.Instance.gameSettings.GetBuildObjectData(od.id);
 
-            Vector3 position = new Vector3(od.positionX, od.positionY, od.positionZ);
-            Quaternion rotation = new Quaternion(od.rotationX, od.rotationY, od.rotationZ, od.rotationW);
+            Vector3 position = new Vector3(od.positionAndRotation[0], od.positionAndRotation[1], od.positionAndRotation[2]);
+            Quaternion rotation = new Quaternion(od.positionAndRotation[3], od.positionAndRotation[4], od.positionAndRotation[5],od.positionAndRotation[6]);
             List<DynamicParameter> savedConditions = od.currentConditions;
             GameObject instance = spawner.CreateInstance(objectsTransform, position, rotation, (od.buildObjectData as ISpawnable));
             //GameObject instance = (buildObjectData as ICreateInstance).CreateInstance(parentTransform,position, rotation);
@@ -45,11 +45,7 @@ namespace Managers
             }
             mb.Init(od.buildObjectData, savedConditions);
             instance.name = od.buildObjectData.id;
-            //   instance.layer = LayerMask.NameToLayer(ScriptableSystemManager.Instance.gameSettings.scriptableBuildSystem.raycastData.layerString);
-
-            //  instance.transform.parent = ScriptableSystemManager.Instance.buildSystemMonoBehaviour.buildObjectsParent;
-            //  instance.tag = ScriptableSystemManager.Instance.gameSettings.scriptableBuildSystem.raycastData.layerString;
-
+      
         }
 
         public GameObject SpawnObject(BuildObjectData data, Vector3 position, Quaternion rotation)

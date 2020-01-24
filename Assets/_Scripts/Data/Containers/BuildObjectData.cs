@@ -18,7 +18,7 @@ namespace Data
         public Vector3 actualSize;
         public Vector3 gridSize;
         public Vector3 orientationVector = Vector3.up;
-
+        public Sprite render;
         //private Dictionary<string, Vector3> sizes;
 
         public int cost;
@@ -33,24 +33,6 @@ namespace Data
         public List<BuildObjectMaterialData> materialData;
 
         public PluggableDynamicParams pluggableDynamicParams;
-
-
-
-        public BuildObjectData()
-        {
-
-        }
-
-
-
-        private void OnEnable()
-        {
-            if (objectOrientation == ObjectOrientation.WALL)
-            {
-                orientationVector = Vector3.back;
-
-            }
-        }
 
 
         GameObject ISpawnable.GetPrefab

@@ -11,26 +11,22 @@ namespace Data
         public string id;
         public BuildObjectData buildObjectData;
         public List<DynamicParameter> currentConditions;
-        public float positionX;
-        public float positionY;
-        public float positionZ;
-
-        public float rotationX;
-        public float rotationY;
-        public float rotationZ;
-        public float rotationW;
+        public float[] positionAndRotation;
+       
         public ObjectData(string _id, Transform t, List<DynamicParameter> _currentConditions, BuildObjectData _buildObjectData)
         {
             id = _id;
+            positionAndRotation = new float[7];
             buildObjectData = _buildObjectData;
-            positionX = t.position.x;
-            positionY = t.position.y;
-            positionZ = t.position.z;
-            _currentConditions = currentConditions;
-            rotationX = t.rotation.x;
-            rotationY = t.rotation.y;
-            rotationZ = t.rotation.z;
-            rotationW = t.rotation.w;
+            positionAndRotation[0]= t.position.x;
+            positionAndRotation[0] = t.position.y;
+            positionAndRotation[0] = t.position.z;
+            positionAndRotation[0] = t.rotation.x;
+            positionAndRotation[0] = t.rotation.y;
+            positionAndRotation[0] = t.rotation.z;
+            positionAndRotation[0] = t.rotation.w;
+
+          
 
 
         }
