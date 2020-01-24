@@ -39,9 +39,14 @@ namespace Managers
             {
                 return false;
             }
+            if (PreviewData.gridSize < PreviewData.gridSizeEpsilon)
+            {
+                RaycastExecutorData.lastPoint = _point;
+                return true;
+            }
+            
 
-
-            float distance = Vector3.Distance(RaycastExecutorData.PreviewObjectTransform.position, _point);
+                float distance = Vector3.Distance(RaycastExecutorData.PreviewObjectTransform.position, _point);
             if (distance > PreviewData.previewSnapFactor * PreviewData.gridSize)
             {
                 RaycastExecutorData.lastPoint = _point;
