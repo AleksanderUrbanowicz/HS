@@ -10,16 +10,16 @@ namespace UI
     [RequireComponent(typeof(Image))]
     public class BuildObjectUI : MonoBehaviour
     {
-        private Image image;
-        private Text text;
+        public Image image;
+        public Text text;
         public BuildObjectData buildObjectData;
 
         public void Init(BuildObjectData _spawnable)
         {
 
             this.buildObjectData = _spawnable;
-            Image.sprite = buildObjectData.render;
-            Text.text = buildObjectData.id="   "+buildObjectData.cost;
+            Image.sprite = buildObjectData.renderSprite;
+            Text.text = buildObjectData.id+" :  "+buildObjectData.cost;
         }
 
         public Image Image
@@ -38,7 +38,11 @@ namespace UI
         public Text Text { get {
                 if(text==null)
                 {
-                    text=  new GameObject("BuildObjectText", typeof(Text)).GetComponent<Text>();
+                    text=GetComponentInChildren<Text>();
+                    if (text == null)
+                    {
+                        text = new GameObject("BuildObjectText", typeof(Text)).GetComponent<Text>();
+                    }
                     text.transform.parent = transform;
                 }
                 return text; } set => text = value; }

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c651b00daff92aa438fc2e3b7ba10b60, type: 3}
+  m_Name: chairFBX5_scriptableObject
+  m_EditorClassIdentifier: 
+  id: chairFBX5
+  objectPrefab: {fileID: 1208626301772773224, guid: bc5991572e70efb4abdaff3d1a1c4e4b,
+    type: 3}
+  offset: {x: 0, y: 0, z: 0}
+  actualSize: {x: 1.0157235, y: 1.1337982, z: 0.505365}
+  gridSize: {x: 2, y: 2, z: 1}
+  orientationVector: {x: 0, y: 1, z: 0}
+  renderSprite: {fileID: 0}
+  renderTexture: {fileID: 8400000, guid: 0f8c9a5826e45fd48877206bbae41536, type: 2}
+  cost: 0
+  objectOrientation: 1
+  layersToBuildOn:
+    serializedVersion: 2
+    m_Bits: 2097152
+  obstacleLayers:
+    serializedVersion: 2
+    m_Bits: 4196352
+  collsionBoundsFraction: 0.95
+  rotationStep: 90
+  materialData: []
+  pluggableDynamicParams:
+    parameters: []

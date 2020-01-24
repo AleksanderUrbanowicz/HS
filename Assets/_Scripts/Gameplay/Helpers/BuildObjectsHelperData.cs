@@ -22,6 +22,7 @@ namespace Managers
             get
             {
                 //for inspector
+                
                 currentBuildObject = BuildObjectsData[CurrentBuildObjectIndex];
                 return currentBuildObject;
             }
@@ -32,7 +33,7 @@ namespace Managers
 
         public void OnEnable()
         {
-           
+            
             if (currentchangedEvent == null)
             {
                 //Debug.LogError("BuildObjectsHelper.OnEnable: currentchangedEvent==null");
@@ -43,6 +44,7 @@ namespace Managers
 
                 currentchangedEvent = scriptableEvent;
             }
+           // CurrentBuildObjectIndex++;
 
         }
 
@@ -79,6 +81,7 @@ namespace Managers
                         return null;
                     }
                 }
+                
                 return buildObjectsData;
             }
             set => buildObjectsData = value;

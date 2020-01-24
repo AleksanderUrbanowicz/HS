@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c651b00daff92aa438fc2e3b7ba10b60, type: 3}
   m_Name: ToiletCheap
   m_EditorClassIdentifier: 
-  id: Toilet2
+  id: ToiletCheap
   objectPrefab: {fileID: 1972296334025312101, guid: 7c7315925a669d049a3a396071dd0cf0,
     type: 3}
   offset: {x: 0, y: 0, z: 0}

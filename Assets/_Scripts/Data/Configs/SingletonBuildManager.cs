@@ -19,7 +19,7 @@ namespace Managers
         public PreviewData previewData;
         
         public new SpawnableUIData spawnableUIData;
-
+        public bool startOnUIShow = true;
         private bool isManagerActive;
         private BuildManagerMonoBehaviourHookup monoBehaviourHookup;
 
@@ -148,19 +148,31 @@ namespace Managers
             {
                 if(MonoBehaviourHookup.PreviewHelper.IsAvailable)
                 {
-                   // MonoBehaviourHookup.PreviewHelper.previewSpawner.CreateInstance(monoBehaviourHookup.transform, PreviewBuildObject.transform.position, PreviewBuildObject.transform.rotation, PreviewBuildObject.buildObjectData);
+                    MonoBehaviourHookup.PreviewHelper.previewSpawner.CreateInstance(monoBehaviourHookup.transform, PreviewBuildObject.transform.position, PreviewBuildObject.transform.rotation, PreviewBuildObject.buildObjectData);
 
                 }
              
             }
-          
+            else if (Input.GetKeyDown(KeyCode.N))
+            {
+                BuildObjectsHelper.CurrentBuildObjectIndex++;
+
+            }
+
         }
         public void StartBuildManager()
 
         {
             //  Debug.Log("StartBuildManager");
             SingletonUIManager.Instance.ToggleUI(SpawnableUIData, true);
+            if(startOnUIShow)
+            {
             MonoBehaviourHookup.BuildSystemRaycast.StartExecute();
+            }
+            if (startOnUIShow)
+            {
+                MonoBehaviourHookup.BuildSystemRaycast.StartExecute();
+            }
 
         }
         void StopBuildManager()
@@ -171,8 +183,11 @@ namespace Managers
             //  BuildPreviewExecutor.TooglePreviewGameObject(false);
             //MonoBehaviourHookup.BuildPreviewExecutor.StopExecute();
             SingletonUIManager.Instance.ToggleUI(SpawnableUIData, false);
-            MonoBehaviourHookup.BuildSystemRaycast.StopExecute();
-
+            
+         if (startOnUIShow)
+                    {
+                MonoBehaviourHookup.BuildSystemRaycast.StopExecute();
+            }
         }
         public void HandleBuildHit()
         {
