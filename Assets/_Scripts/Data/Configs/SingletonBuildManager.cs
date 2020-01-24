@@ -1,5 +1,7 @@
-﻿using BaseLibrary.Managers;
+﻿using BaseLibrary.Data;
+using BaseLibrary.Managers;
 using BaseLibrary.StateMachine;
+using Data;
 using GeneralImplementations.Data;
 using GeneralImplementations.Managers;
 using UnityEngine;
@@ -15,6 +17,9 @@ namespace Managers
         public DebugGizmosData gizmosData;
         public RaycastData raycastData;
         public PreviewData previewData;
+        
+        public new SpawnableUIData spawnableUIData;
+
         private bool isManagerActive;
         private BuildManagerMonoBehaviourHookup monoBehaviourHookup;
 
@@ -22,6 +27,8 @@ namespace Managers
         public static DebugGizmosData GizmosData { get => Instance.gizmosData; set => Instance.gizmosData = value; }
         public static RaycastData RaycastData { get => Instance.raycastData; set => Instance.raycastData = value; }
         public static PreviewData PreviewData { get => Instance.previewData; set => Instance.previewData = value; }
+
+        protected override SpawnableUIData SpawnableUIData { get => spawnableUIData;  }
         public static bool IsManagerActive
         {
             get
@@ -71,6 +78,8 @@ namespace Managers
             set => MonoBehaviourHookup.BuildPreviewExecutor = value;
         }
 
+       
+
         public override void Update()
         {
             GetDebugInput();
@@ -80,6 +89,7 @@ namespace Managers
             // Debug.LogError(" SingletonBuildManager.Start ID: " + BuildObjectsHelper.CurrentBuildObject.id);
             //InitRaycaster();
             //  InitPreviewExecutor();
+
             InitMonoBehaviours();
               isManagerActive = false;
 
@@ -137,28 +147,39 @@ namespace Managers
         {
             if (Input.GetKeyDown(KeyCode.B))
             {
-                IsManagerActive = true;
+                IsManagerActive = !isManagerActive;
             }
-            if (Input.GetKeyDown(KeyCode.V))
+            /*
+           else if (Input.GetKeyDown(KeyCode.U))
             {
                 IsManagerActive = false;
             }
+            else if (Input.GetKeyDown(KeyCode.S))
+            {
+                SingletonUIManager.Instance.ToggleUI(spawnableUIData, true);
+            }
+            else if (Input.GetKeyDown(KeyCode.H))
+            {
+                SingletonUIManager.Instance.ToggleUI(spawnableUIData, false);
+            }
+            */
         }
         public void StartBuildManager()
 
         {
-            Debug.Log("StartBuildManager");
-            
+            //  Debug.Log("StartBuildManager");
+            SingletonUIManager.Instance.ToggleUI(SpawnableUIData, true);
             MonoBehaviourHookup.BuildSystemRaycast.StartExecute();
 
         }
         void StopBuildManager()
         {
-            Debug.Log("StoptBuildManager");
+            // Debug.Log("StoptBuildManager");
 
 
             //  BuildPreviewExecutor.TooglePreviewGameObject(false);
             //MonoBehaviourHookup.BuildPreviewExecutor.StopExecute();
+            SingletonUIManager.Instance.ToggleUI(SpawnableUIData, false);
             MonoBehaviourHookup.BuildSystemRaycast.StopExecute();
 
         }

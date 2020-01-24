@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed1e99eb98c2abb48b82b718f6708d45, type: 3}
-  m_Name: RuntimeCollection_AllActiveInteractables
+  m_Script: {fileID: 11500000, guid: 9d66eef4b0511dc4e87d3df36bd9302f, type: 3}
+  m_Name: SpawnableUIData_DebugUI2
   m_EditorClassIdentifier: 
-  Items: []
+  id: DebugUI2
+  objectPrefab: {fileID: 4832935858864099696, guid: 7c449e3d95731b845a0eb4afcf8251f4,
+    type: 3}
+  isVisible: 0

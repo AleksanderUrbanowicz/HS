@@ -14,10 +14,10 @@ namespace GeneralImplementations.Managers
 
         private void ChangePreview(ISpawnableBuildObject _spawnable)
         {
-            Debug.LogError("PreviewHelper.ChangePreview(ISpawnableBuildObject)");
+           // Debug.LogError("PreviewHelper.ChangePreview(ISpawnableBuildObject)");
             spawnable = _spawnable;
             previewSpawner.CreateInstance(spawnable);
-            previewSpawner.PreviewObject.ToggleVisibility(false);
+           // previewSpawner.PreviewObject.ToggleVisibility(tr);
         }
 
         public void Awake()
@@ -52,13 +52,13 @@ namespace GeneralImplementations.Managers
         public void Start()
 
         {
-            Debug.Log("PreviewHelper.Start");
+           // Debug.Log("PreviewHelper.Start");
             UpdateCurrentPreview();
 
         }
         public void UpdateCurrentPreview()
         {
-            Debug.LogError("UpdateCurrentPreview");
+           // Debug.LogError("UpdateCurrentPreview");
 
             ChangePreview(SingletonBuildManager.BuildObjectsHelper.CurrentBuildObject);
 

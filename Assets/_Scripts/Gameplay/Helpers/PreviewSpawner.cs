@@ -1,4 +1,5 @@
-﻿using BaseLibrary.Managers;
+﻿using BaseLibrary.Data;
+using BaseLibrary.Managers;
 using GeneralImplementations.Data;
 using UnityEngine;
 
@@ -23,6 +24,7 @@ namespace GeneralImplementations.Managers
         {
             spawnableInstance = spawnableBuildObject;
             CreateInstance(spawnableBuildObject);
+          //  ToggleInstance(false);
 
 
         }
@@ -48,7 +50,7 @@ namespace GeneralImplementations.Managers
             {
                 if (previewObject == null)
                 {
-                   // previewObject = instanceGameObject.GetComponent<IPreviewObject>() != null ? instanceGameObject.GetComponent<IPreviewObject>() : instanceGameObject.AddComponent<PreviewBuildObject>();
+                    previewObject = instanceGameObject.GetComponent<PreviewBuildObject>() != null ? instanceGameObject.GetComponent<PreviewBuildObject>() : instanceGameObject.AddComponent<PreviewBuildObject>();
 
                 }
                 return previewObject;

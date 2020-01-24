@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6330f6a170538f84d809905236f83cde, type: 3}
+  m_Name: Manager_UI
+  m_EditorClassIdentifier: 
+  currentPluggableUI: {fileID: 0}
+  overridePluggableUI: {fileID: 0}
+  pluggableUIs: []
+  ipluggableUIs: []
+  colors: []
+  sprites: []
+  autoRegisterSpawnableUIs: 1
+  spawnableUIData: {fileID: 11400000, guid: 29b77948418862d43bac214903c6af0d, type: 2}
+  canvasData: {fileID: 11400000, guid: 20c0983329e6edc40a55f545e11bd974, type: 2}
+  spawnableUIDatas:
+  - {fileID: 11400000, guid: 6fbb89239d187f447ade5b7d7cf407be, type: 2}
+  - {fileID: 11400000, guid: 29b77948418862d43bac214903c6af0d, type: 2}
+  - {fileID: 11400000, guid: 349a1d1cd18835d43a19fc67d0e517b3, type: 2}
+  - {fileID: 11400000, guid: 79796893904c4194c90632d043358cea, type: 2}

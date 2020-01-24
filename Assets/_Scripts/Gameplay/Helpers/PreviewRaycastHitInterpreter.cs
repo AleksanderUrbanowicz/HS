@@ -1,4 +1,5 @@
-﻿using GeneralImplementations.Data;
+﻿using Data;
+using GeneralImplementations.Data;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,7 +15,7 @@ namespace Managers
                 return SingletonBuildManager.MonoBehaviourHookup.RaycastExecutorData; } set => SingletonBuildManager.MonoBehaviourHookup.RaycastExecutorData = value; }
         public void Awake()
         {
-            Debug.LogError("PreviewRaycastHitInterpreter.Awake()");
+          //  Debug.LogError("PreviewRaycastHitInterpreter.Awake()");
            // Init();
         }
       
@@ -79,10 +80,12 @@ namespace Managers
             }
 
 
-            RaycastExecutorData.PreviewObjectTransform.position = CurrentPosition;
 
-            RaycastExecutorData.PreviewObjectTransform.rotation = Rotation;
+           
             RaycastExecutorData.lastMappedPoint = CurrentPosition;
+            RaycastExecutorData.PreviewObjectTransform.position = CurrentPosition;
+            RaycastExecutorData.PreviewObjectTransform.rotation = Rotation;
+
             PreviewData.gridSnapEvent.Raise();
         }
 

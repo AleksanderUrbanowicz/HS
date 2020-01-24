@@ -1,4 +1,5 @@
-﻿using BaseLibrary.Managers;
+﻿using BaseLibrary.Data;
+using BaseLibrary.Managers;
 using UnityEngine;
 
 namespace Data
