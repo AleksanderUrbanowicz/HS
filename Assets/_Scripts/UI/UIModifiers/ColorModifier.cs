@@ -1,8 +1,7 @@
-﻿using BaseLibrary.Interfaces;
-using System;
+﻿using System;
 using UnityEngine;
 
-namespace BaseLibrary.UI
+namespace UI
 {
     [Serializable]
     public class ColorModifier : IColorApplier

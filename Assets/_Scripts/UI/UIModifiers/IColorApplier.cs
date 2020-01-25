@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace BaseLibrary.Interfaces
+namespace UI
 {
     public interface IColorApplier
     {
