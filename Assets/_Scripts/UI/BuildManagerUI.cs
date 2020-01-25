@@ -1,9 +1,5 @@
-﻿using BaseLibrary.Data;
-using Data;
+﻿using Data;
 using Managers;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace UI

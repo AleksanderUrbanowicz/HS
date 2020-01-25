@@ -1,6 +1,4 @@
-﻿using BaseLibrary.Data;
-using BaseLibrary.Managers;
-using GeneralImplementations.Data;
+﻿using BaseLibrary.Interfaces;
 using System.Collections.Generic;
 using UnityEngine;
 

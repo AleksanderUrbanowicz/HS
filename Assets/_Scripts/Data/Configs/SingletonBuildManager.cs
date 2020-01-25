@@ -1,9 +1,7 @@
-﻿using BaseLibrary.Data;
-using BaseLibrary.Managers;
+﻿using BaseLibrary.BaseAndAbstracts;
+using BaseLibrary.DataContainers;
 using BaseLibrary.StateMachine;
 using Data;
-using GeneralImplementations.Data;
-using GeneralImplementations.Managers;
 using UnityEngine;
 namespace Managers
 {

@@ -1,6 +1,5 @@
-﻿using BaseLibrary.Data;
-using BaseLibrary.Managers;
-using GeneralImplementations.Data;
+﻿using BaseLibrary.Interfaces;
+using Data;
 using UnityEngine;
 
 namespace Managers

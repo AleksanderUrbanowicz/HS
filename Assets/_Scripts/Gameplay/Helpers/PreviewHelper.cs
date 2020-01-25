@@ -1,8 +1,7 @@
-﻿using GeneralImplementations.Data;
-using Managers;
+﻿using Data;
 using UnityEngine;
 
-namespace GeneralImplementations.Managers
+namespace Managers
 {
     public class PreviewHelper : MonoBehaviour
     {

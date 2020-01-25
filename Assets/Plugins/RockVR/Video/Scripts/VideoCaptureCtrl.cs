@@ -2,7 +2,6 @@
 using System.IO;
 using System.Threading;
 using System.Collections.Generic;
-using RockVR.Common;
 
 namespace RockVR.Video
 {

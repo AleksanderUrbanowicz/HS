@@ -1,7 +1,5 @@
-﻿using BaseLibrary.Data;
-using BaseLibrary.Managers;
+﻿using BaseLibrary.Interfaces;
 using Data;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 namespace UI
