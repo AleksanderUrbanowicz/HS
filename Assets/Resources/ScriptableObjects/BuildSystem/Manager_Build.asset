@@ -17,3 +17,4 @@ MonoBehaviour:
   raycastData: {fileID: 11400000, guid: a7791469583466240aecfa1515095076, type: 2}
   previewData: {fileID: 11400000, guid: 3bcba799594c36f40b93b334f119c25a, type: 2}
   spawnableUIData: {fileID: 11400000, guid: 6fbb89239d187f447ade5b7d7cf407be, type: 2}
+  startOnUIShow: 1

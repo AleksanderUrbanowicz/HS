@@ -19,10 +19,8 @@ MonoBehaviour:
   colors: []
   sprites: []
   autoRegisterSpawnableUIs: 1
-  spawnableUIData: {fileID: 11400000, guid: 29b77948418862d43bac214903c6af0d, type: 2}
+  spawnableUIData: {fileID: 11400000, guid: 183769fea45135845839634487981206, type: 2}
   canvasData: {fileID: 11400000, guid: 20c0983329e6edc40a55f545e11bd974, type: 2}
   spawnableUIDatas:
   - {fileID: 11400000, guid: 6fbb89239d187f447ade5b7d7cf407be, type: 2}
-  - {fileID: 11400000, guid: 29b77948418862d43bac214903c6af0d, type: 2}
-  - {fileID: 11400000, guid: 349a1d1cd18835d43a19fc67d0e517b3, type: 2}
-  - {fileID: 11400000, guid: 79796893904c4194c90632d043358cea, type: 2}
+  - {fileID: 11400000, guid: 183769fea45135845839634487981206, type: 2}
