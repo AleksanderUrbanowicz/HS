@@ -22,7 +22,7 @@ namespace Data
         //private Dictionary<string, Vector3> sizes;
 
         public int cost;
-        public ObjectOrientation objectOrientation = ObjectOrientation.FLOOR;
+        //public ObjectOrientation objectOrientation = ObjectOrientation.FLOOR;
 
         public LayerMask layersToBuildOn;
         public LayerMask obstacleLayers;

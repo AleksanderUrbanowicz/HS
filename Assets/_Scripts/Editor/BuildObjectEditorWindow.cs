@@ -225,7 +225,7 @@ namespace EditorUtilities
         {
             GUILayout.BeginArea(mainSection);
             GUILayout.Label("Display new object:");
-            buildObjectData.objectOrientation = (ObjectOrientation)EditorGUILayout.EnumPopup("Orientation: ", buildObjectData.objectOrientation);
+           // buildObjectData.objectOrientation = (ObjectOrientation)EditorGUILayout.EnumPopup("Orientation: ", buildObjectData.objectOrientation);
             buildObjectData.id = EditorGUILayout.TextField("id", buildObjectData.id);
             buildObjectData.gridSize = EditorGUILayout.Vector3Field(label: "Grid size:", buildObjectData.gridSize);
             buildObjectData.actualSize = EditorGUILayout.Vector3Field(label: "Actual size:", buildObjectData.actualSize);

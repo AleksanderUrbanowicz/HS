@@ -59,9 +59,21 @@ namespace Managers
 
         public GameObject CreateInstance(Transform parent, Vector3 position, Quaternion rotation, ISpawnable _spawnable)
         {
-            return CreateInstance(_spawnable as ISpawnableBuildObject);
+            instanceGameObject = Instantiate(_spawnable.GetPrefab, position, rotation, parent);
+            instanceGameObject.name = _spawnable.GetID;
+            spawnableInstance = _spawnable as ISpawnableBuildObject;
+            previewObject = instanceGameObject.AddComponent<PreviewBuildObject>();
+            PreviewObject.Init(spawnableInstance.BuildObjectData);
+            return instanceGameObject;
         }
-
+        public GameObject CreateInstance(ISpawnable _spawnable)
+        {
+            return CreateInstance(new GameObject(_spawnable.GetID).transform, _spawnable);
+        }
+        public GameObject CreateInstance(Transform parent, ISpawnable _spawnable)
+        {
+            return CreateInstance(parent, parent.transform.position, parent.transform.rotation,_spawnable);
+        }
         public GameObject CreateInstance(ISpawnableBuildObject _spawnable)
         {
             if (instanceGameObject != null)
